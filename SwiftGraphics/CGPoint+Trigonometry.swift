@@ -106,7 +106,8 @@ public extension CGPoint {
         return (distanceTo(perp), perp)
     }
 
-    // TODO: This should be identical to atan2() and it isn't!
+    // Returns the angle between this vector and another vector 'vec'.
+    // The result sign indicates the rotation direction from this vector to 'vec': positive for counter-clockwise, negative for clockwise.
     func angleTo(vec:CGPoint) -> CGFloat {       // [-M_PI, M_PI)
         return atan2(crossProduct(self, vec), dotProduct(self, vec))
     }
