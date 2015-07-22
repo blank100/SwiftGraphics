@@ -7,7 +7,7 @@ import SwiftGraphics
 
 extension NSImage {
     var CGImage:Cocoa.CGImage? {
-        return CGImageForProposedRect(nil, context:nil, hints:nil)?.takeUnretainedValue()
+        return CGImageForProposedRect(nil, context:nil, hints:nil)
     }
 }
 
@@ -186,6 +186,15 @@ extension CGImage: Imageable {
     }
 }
 
+extension Circle {
+    func circleWithRadius(radius:CGFloat) -> Circle {
+        return Circle(center: center, radius: radius)
+    }
+
+    func inset(delta:CGFloat) -> Circle {
+        return circleWithRadius(radius + delta)
+    }
+}
 
 var image = NSImage(named: "albert-einstein-tongue")!.CGImage!
 
@@ -197,9 +206,10 @@ image = composite([image, CGColor.redColor()], blendMode:.Normal, alpha:0.15)
 
 let r = image.size.min * 0.5
 let circle = Circle(center: CGPoint(x:r, y:r), radius: r - 10)
-image = image.clipped(circle)
+image = image.clipped(circle.inset(-20))
 
 image = image.with() {
+
     $0.lineWidth = 20
     $0.strokeColor = CGColor.blueColor().withAlpha(0.25)
     circle.drawInContext($0)
