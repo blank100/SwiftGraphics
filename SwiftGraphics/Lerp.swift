@@ -24,19 +24,19 @@ public func lerp <T:Lerpable, U:Subtractable where U:FloatLiteralConvertible, U 
 }
 
 extension Double: Lerpable, Subtractable {
-    typealias FactorType = Double
+    public typealias FactorType = Double
 }
 
 extension CGFloat: Lerpable, Subtractable {
-    typealias FactorType = CGFloat
+    public typealias FactorType = CGFloat
 }
 
 extension CGPoint: Lerpable {
-    typealias FactorType = CGFloat
+    public typealias FactorType = CGFloat
 }
 
 extension CGSize: Lerpable {
-    typealias FactorType = CGFloat
+    public typealias FactorType = CGFloat
 }
 
 public func lerp(lower:CGRect, _ upper:CGRect, _ factor:CGFloat) -> CGRect {

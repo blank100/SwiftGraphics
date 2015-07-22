@@ -83,7 +83,7 @@ public extension HSV {
 // MARK: Lerping HSV
 
 extension HSV: Lerpable {
-    typealias FactorType = CGFloat
+    public typealias FactorType = CGFloat
 }
 
 public func + (lhs:HSV, rhs:HSV) -> HSV {

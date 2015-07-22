@@ -38,7 +38,7 @@ public class QuadTree <T> {
 
 public class QuadTreeNode <T> {
 
-    typealias Item = (point:CGPoint, object:T)
+    public typealias Item = (point:CGPoint, object:T)
 
     public let frame: CGRect
     private let config: QuadTreeConfig
