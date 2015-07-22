@@ -68,6 +68,11 @@ public extension CGContext {
 
 
 public extension CGContext {
+
+    var image: CGImage! {
+        return CGBitmapContextCreateImage(self)
+    }
+
 #if os(OSX)
     var nsimage: NSImage {
         // This assumes the context is a bitmap context

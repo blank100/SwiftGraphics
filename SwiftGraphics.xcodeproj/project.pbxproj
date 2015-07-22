@@ -333,6 +333,7 @@
 		458C59071A7410A500E993A6 /* GeometryProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryProtocols.swift; sourceTree = "<group>"; };
 		458C590A1A74121600E993A6 /* CGContext+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+Drawing.swift"; sourceTree = "<group>"; };
 		458C590D1A74136000E993A6 /* Insidedness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insidedness.swift; sourceTree = "<group>"; };
+		4591F0771B5D764A00E08FBD /* Images.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Images.playground; sourceTree = "<group>"; };
 		4594B08719AEDC2100101EB4 /* SwiftGraphicsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftGraphicsHelper.h; sourceTree = "<group>"; };
 		4594B08819AEDC2100101EB4 /* SwiftGraphicsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftGraphicsHelper.m; sourceTree = "<group>"; };
 		4594B09119AEE31E00101EB4 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
@@ -578,8 +579,7 @@
 				457C74A01A7C3B01004F3DBF /* BezierPathSplitting.playground */,
 				45E38D311A7424F600EC672A /* Broken or Limited Usefulness */,
 				45E38D321A74254000EC672A /* Very WIP */,
-				457B6E751ABE07D6007083C0 /* Squircle.playground */,
-				455179841B2BE85B00B8E5AB /* Layout.playground */,
+				4590E8611B5E1775004EC402 /* Experimental */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
@@ -661,6 +661,16 @@
 				458BDD8119BCF7D100CD0EAC /* QuadTree.swift */,
 			);
 			name = Algorithms;
+			sourceTree = "<group>";
+		};
+		4590E8611B5E1775004EC402 /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				457B6E751ABE07D6007083C0 /* Squircle.playground */,
+				455179841B2BE85B00B8E5AB /* Layout.playground */,
+				4591F0771B5D764A00E08FBD /* Images.playground */,
+			);
+			name = Experimental;
 			sourceTree = "<group>";
 		};
 		459EE5DB19AEC5130012E023 /* SwiftGraphics */ = {
