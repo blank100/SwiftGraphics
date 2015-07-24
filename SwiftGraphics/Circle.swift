@@ -37,7 +37,7 @@ extension Circle: Geometry {
 extension Circle {
 
     // TODO: Just convert into an ellipse.
-    var toBezierCurves:(BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
+    func toBezierCurves() -> (BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
         let quadrants = [
             CGSize(w:-1.0, h:-1.0),
             CGSize(w:1.0, h:-1.0),

@@ -57,7 +57,7 @@ public struct HSV {
         (self.h, self.s, self.v) = tuple
     }
 
-    public var toTuple:(CGFloat, CGFloat, CGFloat) {
+    public func toTuple() -> (CGFloat, CGFloat, CGFloat) {
         return (h,s,v)
     }
 }

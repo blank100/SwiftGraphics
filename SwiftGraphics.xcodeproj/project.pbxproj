@@ -328,6 +328,7 @@
 		457DEBD41A649689003E4363 /* Path.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Path.playground; sourceTree = "<group>"; };
 		457E54501A68D35B0059B357 /* Turn.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Turn.playground; sourceTree = "<group>"; };
 		457E72861A72EA6E00E5A7A1 /* RegularPolygon.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RegularPolygon.playground; sourceTree = "<group>"; };
+		457F99AE1B62ED77007CC480 /* CoreImage.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CoreImage.playground; sourceTree = "<group>"; };
 		458A6D391A8455D900DEFBFA /* CGPoint+Trigonometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Trigonometry.swift"; sourceTree = "<group>"; };
 		458BDD8119BCF7D100CD0EAC /* QuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadTree.swift; sourceTree = "<group>"; };
 		458C59071A7410A500E993A6 /* GeometryProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryProtocols.swift; sourceTree = "<group>"; };
@@ -666,6 +667,7 @@
 		4590E8611B5E1775004EC402 /* Experimental */ = {
 			isa = PBXGroup;
 			children = (
+				457F99AE1B62ED77007CC480 /* CoreImage.playground */,
 				457B6E751ABE07D6007083C0 /* Squircle.playground */,
 				455179841B2BE85B00B8E5AB /* Layout.playground */,
 				4591F0771B5D764A00E08FBD /* Images.playground */,

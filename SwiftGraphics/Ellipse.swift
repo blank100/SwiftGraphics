@@ -92,7 +92,7 @@ public extension Ellipse {
 
     /// Smallest rect that can contain the ellipse.
     var boundingBox:CGRect {
-        let bezierCurves = toBezierCurves
+        let bezierCurves = toBezierCurves()
         let rects = [
             bezierCurves.0.boundingBox,
             bezierCurves.1.boundingBox,
@@ -105,7 +105,7 @@ public extension Ellipse {
 }
 
 public extension Ellipse {
-    var toCircle: Circle? {
+    func toCircle() -> Circle? {
         if e == 0.0 {
             assert(a == b)
             assert(F == 0.0)
@@ -119,7 +119,7 @@ public extension Ellipse {
 
 public extension Ellipse {
 
-    var toBezierChain:(BezierCurveChain) {
+    func toBezierChain() -> BezierCurveChain {
         let curves = toBezierCurves()
         let curvesArray = [curves.0, curves.1, curves.2, curves.3]
         return BezierCurveChain(curves:curvesArray)
@@ -160,11 +160,5 @@ public extension Ellipse {
             )
 
         return (curve0, curve1, curve2, curve3)
-    }
-
-    var toBezierCurves:(BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
-//            let c:CGFloat = 0.551915024494
-//            let c:CGFloat = 4.0 * (sqrt(2.0) - 1.0) / 3.0 // 0.5522847498307936
-        return toBezierCurves()
     }
 }

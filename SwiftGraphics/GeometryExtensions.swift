@@ -40,7 +40,7 @@ extension Circle: CGPathable {
 extension Ellipse: CGPathable {
     public var cgpath:CGPath {
         let path = CGPathCreateMutable()
-        let (b1, b2, b3, b4) = self.toBezierCurves
+        let (b1, b2, b3, b4) = toBezierCurves()
         
         path.move(b1.start!)
         path.addCurve(BezierCurve(controls: b1.controls, end: b1.end))

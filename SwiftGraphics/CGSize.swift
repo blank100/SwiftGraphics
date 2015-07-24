@@ -88,7 +88,7 @@ public enum Orientation {
 }
 
 public extension CGSize {
-    var topectRatio: CGFloat {
+    var aspectRatio: CGFloat {
         return width / height
     }
 
@@ -103,6 +103,10 @@ public extension CGSize {
             return .Portrait
         }
     }
+
+    func toRect() -> CGRect {
+        return CGRect(size: self)
+    }
 }
 
 
@@ -111,11 +115,16 @@ public extension CGSize {
         (width, height) = v
     }
 
-    var toTuple: (CGFloat, CGFloat) {
+    func toTuple() -> (CGFloat, CGFloat) {
         return (width, height)
     }
 }
 
-
-
-
+public extension CGSize {
+    var min:CGFloat {
+        return Swift.min(width, height)
+    }
+    var max:CGFloat {
+        return Swift.max(width, height)
+    }
+}

@@ -39,7 +39,7 @@ public extension CGPoint {
     init(_ v:(CGFloat, CGFloat)) {
         (x, y) = v
     }
-    var toTuple: (CGFloat, CGFloat) {
+    func toTuple() -> (CGFloat, CGFloat) {
         return (x, y)
     }
 }

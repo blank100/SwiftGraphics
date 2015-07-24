@@ -193,7 +193,7 @@ public extension CGRect {
         union(CGRect(center:point, radius:0.0))
     }
 
-    var toTuple: (CGFloat, CGFloat, CGFloat, CGFloat) {
+    func toTuple() -> (CGFloat, CGFloat, CGFloat, CGFloat) {
         return (origin.x, origin.y, size.width, size.height)
     }
 
