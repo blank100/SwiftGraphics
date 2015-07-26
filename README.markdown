@@ -118,7 +118,7 @@ Your help wanted. I would definitely appreciate contributions from other members
 You can help by using Swift Graphics in your projects and discovering its shortcomings. I encourage you to file [issues](issues] against this project. Alterjative see our [TODO](TODO) document
 
 [issues]: https://github.com/schwa/SwiftGraphics/issues
-[TODO]: TODO.markdown
+[TODO]: Documentation/TODO.markdown
 
 Contributions are always welcome in the following areas:
 
