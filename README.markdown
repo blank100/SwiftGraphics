@@ -2,11 +2,11 @@
 
 ## **IMPORTANT**
 
-All development happens on the [develop](develop) branch. Code is merged back on master branch infrequently.
+All development happens on the [develop][develop] branch. Code is merged back on master branch infrequently.
 
 [develop]: https://github.com/schwa/SwiftGraphics/tree/develop
 
-Also note this project has moved to Swift 2.0 which requires Xcode 7.0 and Mac OS X 10.10. Note that this change breaks [Travis CI](issue58). This project will move to [BuildKite](buildkite). A Swift 1.2 branch has been made available - but no development will be occurring on this branch.
+Also note this project has moved to Swift 2.0 which requires Xcode 7.0 and Mac OS X 10.10. Note that this change breaks [Travis CI][issue58]. This project will move to [BuildKite][buildkite]. A Swift 1.2 branch has been made available - but no development will be occurring on this branch.
 
 [issue58]: https://github.com/schwa/SwiftGraphics/issues/58
 [buildkite]: http://buildkite.com/
@@ -46,7 +46,7 @@ cubic of course)
 * Convex Hull Generation
 * QuadTree data structure
 * Metaballs (Marching Squares algorithm) implementation
-* CoreImage wrappers that implement all filters and attributes as classes and properties (see: [this tweet](tweet_1))
+* CoreImage wrappers that implement all filters and attributes as classes and properties (see: [this tweet][tweet_1])
 * More! (This README is badly out of date)
 
 ![Convex Hull Screenshot](Documentation/ConvexHull.png)
@@ -81,13 +81,13 @@ You can add SwiftGraphics to your project in one of the following ways:
   git submodule add https://github.com/schwa/SwiftGraphics.git
   ```
 
-- Install with [Carthage](carthage_url) (Recommended):
+- Install with [Carthage][carthage_url] (Recommended):
 
   1. Add `github "schwa/SwiftGraphics"` to your project Cartfile (alternatively add `github "schwa/SwiftGraphics" develop` if you want latest bits).
   2. Run `carthage update` to download and build SwiftGraphics.
   3. Drag SwiftGraphics.framework to your project and link it.
 
-- Install with CocoaPods [v0.36.0+](CocoaPods beta) and add the following to your project Podfile:
+- Install with CocoaPods [v0.36.0+][CocoaPods beta] and add the following to your project Podfile:
 
   ```
   platform :ios, '8.0'
@@ -115,7 +115,7 @@ You can play with SwiftGraphics in Xcode 6 Playgrounds. **IMPORTANT** just make 
 
 Your help wanted. I would definitely appreciate contributions from other members of the Swift/Cocoa community. Please fork this project and submit pull requests.
 
-You can help by using Swift Graphics in your projects and discovering its shortcomings. I encourage you to file [issues](issues] against this project. Alternatively see our [TODO](TODO) document
+You can help by using Swift Graphics in your projects and discovering its shortcomings. I encourage you to file [issues][issues] against this project. Alternatively see our [TODO][TODO] document
 
 [issues]: https://github.com/schwa/SwiftGraphics/issues
 [TODO]: Documentation/TODO.markdown
@@ -125,7 +125,7 @@ Contributions are always welcome in the following areas:
 * Header doc comments explaining what the functions do
 * Unit tests
 * Playgrounds showing graphically what SwiftGraphics can do
-* New graphical algorithms (take your pick from [wikipedia](wikipedia))
+* New graphical algorithms (take your pick from [wikipedia][wikipedia])
 * New geometry structs
 
 [wikipedia]: https://en.wikipedia.org/wiki/Category:Computer_graphics_algorithms
