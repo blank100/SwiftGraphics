@@ -1,0 +1,48 @@
+{% macro type(value) -%}
+    {% if value.CIAttributeClass in ["NSNumber"] %}
+        CGFloat
+    {% else %}
+        {{ value.CIAttributeClass }}
+    {% endif %}
+{%- endmacro %}
+import CoreImage
+
+{% for item in items[0:] %}
+/**
+{{ item.description }}
+
+[More Information]({{ item.description_url }})
+*/
+public class {{ item.CIAttributeFilterName[2:] }}: Filter {
+
+    let name = "{{ item.CIAttributeFilterName }}"
+
+    public init({% for key in item.inputs %}{{ key }}: {{ type(item[key]) | trim }}? = nil{% if not loop.last %}, {% endif %}{% endfor %}) {
+        super.init(name:"{{ item.CIAttributeFilterName }}")
+
+        {% for key in item.inputs %}
+        if let {{ key }} = {{ key }} {
+            self.{{ key }} = {{ key }}
+        }
+        {% endfor %}
+    }
+
+    {% for key in item.inputs %}
+    {% set value = item[key] %}
+
+    {% if value.CIAttributeDescription %}
+    /// {{ value.CIAttributeDescription }}
+    {% endif %}
+    public var {{ key }}: {{ type(item[key]) | trim }}? {
+        get {
+            return valueForKey("{{ key }}") as? {{ type(item[key]) | trim }}
+        }
+        set {
+            setValue(newValue, forKey:"{{ key }}")
+        }
+    }
+    {% endfor %}
+}
+
+{% endfor %}
+
