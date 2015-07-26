@@ -48,6 +48,8 @@ cubic of course)
 * Convex Hull Generation
 * QuadTree data structure
 * Metaballs (Marching Squares algorithm) implementation
+* CoreImage wrappers that implement all filters and attributes as classes and properties (see: https://twitter.com/schwa/status/625139322132389888)
+* More! (This README is badly out of date)
 
 ![Convex Hull Screenshot](Documentation/ConvexHull.png)
 ![Metaballs Screenshot](Documentation/Metaballs.png)
@@ -67,12 +69,11 @@ SwiftGraphics is made up of:
 * Two SwiftGraphics dynamic frameworks (one for iOS and one for Mac OS X),
 * A Mac OS X only SwiftGraphicsPlayground framework (containing code generally useful when using Playground)
 * A directory of Playground files
-* A Mac OS X testbed app “SwiftGraphics_OSX_UITest” that highlights some of the more interactive code
 * Unit Test Targets
 
 ## Installation
 
-You can add SwiftGraphics in your project as one of the following ways:
+You can add SwiftGraphics to your project in one of the following ways:
 
 - Add SwiftGraphics.xcodeproj to your project and set up your dependencies appropriately.
   You can add SwiftGraphics as a submodule by opening the Terminal, trying to enter the command:
@@ -83,7 +84,7 @@ You can add SwiftGraphics in your project as one of the following ways:
 
 - Install with [Carthage][carthage_url] (Recommended):
 
-  1. Add `github "schwa/SwiftGraphics"` to your project Cartfile.
+  1. Add `github "schwa/SwiftGraphics"` to your project Cartfile (alternatively add `github "schwa/SwiftGraphics" develop` if you want latest bits).
   2. Run `carthage update` to download and build SwiftGraphics.
   3. Drag SwiftGraphics.framework to your project and link it.
 
