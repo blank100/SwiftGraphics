@@ -18,18 +18,16 @@ class CGPointTests: XCTestCase {
     }
 
     func testTuples() {
-
         let pt = CGPoint((100, 200))
         XCTAssertEqual(pt, CGPoint(x:100, y:200))
-        XCTAssertEqual(pt.toTuple.0, CGFloat(100))
-        XCTAssertEqual(pt.toTuple.1, CGFloat(200))
+        XCTAssertEqual(pt.toTuple().0, CGFloat(100))
+        XCTAssertEqual(pt.toTuple().1, CGFloat(200))
     }
 
     func testUnaryOperators() {
         XCTAssertEqual(+CGPoint(x:10, y:20), CGPoint(x:10, y:20))
         XCTAssertEqual(-CGPoint(x:10, y:20), CGPoint(x:-10, y:-20))
     }
-
 
     func testArithmeticOperators() {        
         XCTAssertEqual(CGPoint(x:10, y:20) + CGPoint(x:1, y:2), CGPoint(x:11, y:22))
