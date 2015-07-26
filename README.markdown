@@ -115,7 +115,7 @@ You can play with SwiftGraphics in Xcode 6 Playgrounds. **IMPORTANT** just make 
 
 Your help wanted. I would definitely appreciate contributions from other members of the Swift/Cocoa community. Please fork this project and submit pull requests.
 
-You can help by using Swift Graphics in your projects and discovering its shortcomings. I encourage you to file [issues](issues] against this project. Alterjative see our [TODO](TODO) document
+You can help by using Swift Graphics in your projects and discovering its shortcomings. I encourage you to file [issues](issues] against this project. Alternatively see our [TODO](TODO) document
 
 [issues]: https://github.com/schwa/SwiftGraphics/issues
 [TODO]: Documentation/TODO.markdown
