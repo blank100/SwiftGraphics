@@ -48,3 +48,11 @@ public extension CGContext {
 }
 
 
+public extension Drawable {
+    func toCGImage(size:CGSize, style:Style? = nil) -> CGImage {
+        let context = CGContext.bitmapContext(size)
+        context.draw(self, style:style)
+        return CGBitmapContextCreateImage(context)!
+    }
+}
+

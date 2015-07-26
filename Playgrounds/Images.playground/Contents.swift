@@ -2,6 +2,7 @@
 
 import Cocoa
 import CoreGraphics
+import CoreImage
 
 import SwiftGraphics
 
@@ -18,8 +19,8 @@ public extension CGImage {
 }
 
 public extension CGImage {
-    var NSImage:Cocoa.NSImage! {
-        return Cocoa.NSImage(CGImage: self, size: self.size)
+    func toNSImage() -> NSImage {
+        return NSImage(CGImage: self, size: self.size)
     }
 }
 
@@ -118,7 +119,7 @@ extension CGImage {
 
 func composite(imageables:[Imageable], size:CGSize, blendMode:CGBlendMode? = nil, alpha:CGFloat = 1.0) -> CGImage {
 
-    let images = imageables.map() { return $0.toImage(size) }
+    let images = imageables.map() { return $0.toCGImage(size) }
 
     guard let firstImage = images.first else {
         preconditionFailure()
@@ -143,11 +144,28 @@ func composite(imageables:[Imageable], size:CGSize, blendMode:CGBlendMode? = nil
 }
 
 protocol Imageable {
-    func toImage(size:CGSize) -> CGImage
+    func toCGImage() -> CGImage
+    func toCGImage(size:CGSize) -> CGImage
+}
+
+extension Imageable {
+    func toCIImage() -> CIImage {
+        let cgImage = toCGImage()
+        let ciImage = CIImage(CGImage: cgImage)
+        return ciImage
+    }
+    func toCIImage(size:CGSize) -> CIImage {
+        let cgImage = toCGImage(size)
+        let ciImage = CIImage(CGImage: cgImage)
+        return ciImage
+    }
 }
 
 extension CGColor: Imageable {
-    func toImage(size:CGSize = CGSize(width:1, height:1)) -> CGImage {
+    func toCGImage() -> CGImage {
+        return toCGImage(CGSize(w:1, h:1))
+    }
+    func toCGImage(size:CGSize = CGSize(width:1, height:1)) -> CGImage {
         let context = CGContext.bitmapContext(size)
         context.with() {
             context.fillColor = self
@@ -158,11 +176,26 @@ extension CGColor: Imageable {
 }
 
 extension CGImage: Imageable {
-    func toImage(size:CGSize) -> CGImage {
+    func toCGImage() -> CGImage {
+        return self
+    }
+    func toCGImage(size:CGSize) -> CGImage {
         assert(size == self.size)
         return self
     }
 }
+
+extension CIImage: Imageable {
+    func toCGImage() -> CGImage {
+        let c = CIContext()
+        return c.createCGImage(self, fromRect: self.extent)
+    }
+    func toCGImage(size:CGSize) -> CGImage {
+        let c = CIContext()
+        return c.createCGImage(self, fromRect: self.extent)
+    }
+}
+
 
 extension Circle {
     func circleWithRadius(radius:CGFloat) -> Circle {
@@ -192,8 +225,13 @@ image = image.with() {
     circle.drawInContext($0)
 }
 
+let circleImage = circle.toCGImage(circle.frame.insetBy(dx: -10, dy: -10).size, style: nil)
+circleImage.toNSImage()
 
-image.NSImage
+
+let f1 = Crystallize(inputImage: image.toCIImage())
+image = f1.outputImage!.toCGImage()
+image.toNSImage()
 
 
 
