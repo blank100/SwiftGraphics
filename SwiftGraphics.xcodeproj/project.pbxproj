@@ -352,6 +352,7 @@
 		459EE5E519AEC5130012E023 /* Scaling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scaling.swift; sourceTree = "<group>"; };
 		45A14E1B1A69D582006F4949 /* GenericGeometryTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericGeometryTypes.swift; sourceTree = "<group>"; };
 		45B32D451A637DF3004FD3FB /* Arc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
+		45B8F47B1B647AE100C42FBC /* Filter.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Filter.playground; sourceTree = "<group>"; };
 		45BA25B719CA112E00B612B7 /* MonotoneChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonotoneChain.swift; sourceTree = "<group>"; };
 		45BA25BB19CA156800B612B7 /* Triangle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Triangle.playground; sourceTree = "<group>"; };
 		45BA25BC19CA1E8A00B612B7 /* ConvexHullTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvexHullTests.swift; sourceTree = "<group>"; };
@@ -671,6 +672,7 @@
 				457B6E751ABE07D6007083C0 /* Squircle.playground */,
 				455179841B2BE85B00B8E5AB /* Layout.playground */,
 				4591F0771B5D764A00E08FBD /* Images.playground */,
+				45B8F47B1B647AE100C42FBC /* Filter.playground */,
 			);
 			name = Experimental;
 			sourceTree = "<group>";

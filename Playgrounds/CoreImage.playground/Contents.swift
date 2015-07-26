@@ -12,19 +12,26 @@ public extension CGRect {
     }
 }
 
-//print(CIFilter.filterNamesInCategory(nil))
+let names = CIFilter.filterNamesInCategory(nil)//[0...0]
+let allAttributes = names.map() {
+    (name:String) -> [String:AnyObject] in
+    let filter = CIFilter(name: name)!
+    let attributes = filter.attributes
+    return attributes
+}
 
-let context = CIContext()
+let filteredAttributes = allAttributes.map() {
+    return filterDictionary($0)
+}
 
-let generator = CIFilter(name: "CICheckerboardGenerator")!
-generator.setDefaults()
-let crop = CIFilter(name: "CICrop")!
-print(crop.attributes)
-crop.setDefaults()
-crop.setValue(generator.outputImage, forKey: "inputImage")
-crop.setValue(CGRect(w:256, h:256).toCIVector(), forKey: "inputRectangle")
-crop.outputImage
+let data = try! NSJSONSerialization.dataWithJSONObject(filteredAttributes, options: NSJSONWritingOptions.PrettyPrinted)
+print(data.length)
+data.writeToFile("test.json", atomically: false)
 
 
-
-//filter.valueForKey("outputImage")
+//let data = try! NSPropertyListSerialization.dataWithPropertyList(filteredAttributes, format: .BinaryFormat_v1_0, options: 0)
+//print(data.length)
+//
+//data.writeToFile("test.json", atomically: false)
+//
+print(NSFileManager().currentDirectoryPath)
