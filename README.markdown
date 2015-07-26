@@ -6,7 +6,7 @@ All development happens on the [develop](develop) branch. Code is merged back on
 
 [develop]: https://github.com/schwa/SwiftGraphics/tree/develop
 
-Also note this project has moved to Swift 2.0 which requires Xcode 7.0 and Mac OS X 10.10. Note that this change breaks [Travis CI](issue58] (again). This project will move to [BuildKite)(BuildKite). A Swift 1.2 branch has been made available - but no development will be occurring on this branch.
+Also note this project has moved to Swift 2.0 which requires Xcode 7.0 and Mac OS X 10.10. Note that this change breaks [Travis CI](issue58). This project will move to [BuildKite](buildkite). A Swift 1.2 branch has been made available - but no development will be occurring on this branch.
 
 [issue58]: https://github.com/schwa/SwiftGraphics/issues/58
 [buildkite]: http://buildkite.com/
@@ -46,7 +46,7 @@ cubic of course)
 * Convex Hull Generation
 * QuadTree data structure
 * Metaballs (Marching Squares algorithm) implementation
-* CoreImage wrappers that implement all filters and attributes as classes and properties (see: https://twitter.com/schwa/status/625139322132389888)
+* CoreImage wrappers that implement all filters and attributes as classes and properties (see: [this tweet](tweet_1))
 * More! (This README is badly out of date)
 
 ![Convex Hull Screenshot](Documentation/ConvexHull.png)
@@ -54,6 +54,7 @@ cubic of course)
 ![QuadTree Screenshot](Documentation/QuadTree.png)
 ![Ellipse Screenshot](Documentation/Ellipse.png)
 
+[tweet_1]: https://twitter.com/schwa/status/625139322132389888
 
 ## In Progress
 
