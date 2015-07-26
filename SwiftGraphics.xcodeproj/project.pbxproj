@@ -95,6 +95,10 @@
 		455179811B2BE3AD00B8E5AB /* Scratch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455179801B2BE3AD00B8E5AB /* Scratch.swift */; };
 		45563F2E19B1047E003B1639 /* CColorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45563F2C19B1047E003B1639 /* CColorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45563F2F19B1047E003B1639 /* CColorConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45563F2D19B1047E003B1639 /* CColorConverter.m */; };
+		45589CA61B653A6A007B5ED4 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45589CA41B653A6A007B5ED4 /* Filter.swift */; };
+		45589CA71B653A6A007B5ED4 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45589CA41B653A6A007B5ED4 /* Filter.swift */; };
+		45589CA81B653A6A007B5ED4 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45589CA51B653A6A007B5ED4 /* Filters.swift */; };
+		45589CA91B653A6A007B5ED4 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45589CA51B653A6A007B5ED4 /* Filters.swift */; };
 		4563EFD91A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
 		4563EFDA1A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
 		456877E219B6857B004BEFD6 /* CoordinateSystems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456877E119B6857B004BEFD6 /* CoordinateSystems.swift */; };
@@ -315,6 +319,9 @@
 		455179841B2BE85B00B8E5AB /* Layout.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Layout.playground; sourceTree = "<group>"; };
 		45563F2C19B1047E003B1639 /* CColorConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CColorConverter.h; sourceTree = "<group>"; };
 		45563F2D19B1047E003B1639 /* CColorConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CColorConverter.m; sourceTree = "<group>"; };
+		45589CA41B653A6A007B5ED4 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		45589CA51B653A6A007B5ED4 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		45589CAA1B653B80007B5ED4 /* SimpleFilters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SimpleFilters.playground; sourceTree = "<group>"; };
 		45592F501A61B65200F496D2 /* TransformTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TransformTest.playground; sourceTree = "<group>"; };
 		455D0A5D1A64A3EF00189879 /* Color.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Color.playground; sourceTree = "<group>"; };
 		4563EFD81A7E9B7000019643 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
@@ -328,7 +335,7 @@
 		457DEBD41A649689003E4363 /* Path.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Path.playground; sourceTree = "<group>"; };
 		457E54501A68D35B0059B357 /* Turn.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Turn.playground; sourceTree = "<group>"; };
 		457E72861A72EA6E00E5A7A1 /* RegularPolygon.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RegularPolygon.playground; sourceTree = "<group>"; };
-		457F99AE1B62ED77007CC480 /* CoreImage.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CoreImage.playground; sourceTree = "<group>"; };
+		457F99AE1B62ED77007CC480 /* CoreJSONImage.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CoreJSONImage.playground; sourceTree = "<group>"; };
 		458A6D391A8455D900DEFBFA /* CGPoint+Trigonometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Trigonometry.swift"; sourceTree = "<group>"; };
 		458BDD8119BCF7D100CD0EAC /* QuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadTree.swift; sourceTree = "<group>"; };
 		458C59071A7410A500E993A6 /* GeometryProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryProtocols.swift; sourceTree = "<group>"; };
@@ -352,7 +359,6 @@
 		459EE5E519AEC5130012E023 /* Scaling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scaling.swift; sourceTree = "<group>"; };
 		45A14E1B1A69D582006F4949 /* GenericGeometryTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericGeometryTypes.swift; sourceTree = "<group>"; };
 		45B32D451A637DF3004FD3FB /* Arc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
-		45B8F47B1B647AE100C42FBC /* Filter.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Filter.playground; sourceTree = "<group>"; };
 		45BA25B719CA112E00B612B7 /* MonotoneChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonotoneChain.swift; sourceTree = "<group>"; };
 		45BA25BB19CA156800B612B7 /* Triangle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Triangle.playground; sourceTree = "<group>"; };
 		45BA25BC19CA1E8A00B612B7 /* ConvexHullTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvexHullTests.swift; sourceTree = "<group>"; };
@@ -579,6 +585,7 @@
 				457E72861A72EA6E00E5A7A1 /* RegularPolygon.playground */,
 				45BA25BB19CA156800B612B7 /* Triangle.playground */,
 				457C74A01A7C3B01004F3DBF /* BezierPathSplitting.playground */,
+				45589CAA1B653B80007B5ED4 /* SimpleFilters.playground */,
 				45E38D311A7424F600EC672A /* Broken or Limited Usefulness */,
 				45E38D321A74254000EC672A /* Very WIP */,
 				4590E8611B5E1775004EC402 /* Experimental */,
@@ -605,6 +612,15 @@
 				454FE66519C77031002E4DEF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45589CA11B653A60007B5ED4 /* CoreImage */ = {
+			isa = PBXGroup;
+			children = (
+				45589CA41B653A6A007B5ED4 /* Filter.swift */,
+				45589CA51B653A6A007B5ED4 /* Filters.swift */,
+			);
+			path = CoreImage;
 			sourceTree = "<group>";
 		};
 		458A6D381A8454AD00DEFBFA /* CoreTypes */ = {
@@ -668,11 +684,10 @@
 		4590E8611B5E1775004EC402 /* Experimental */ = {
 			isa = PBXGroup;
 			children = (
-				457F99AE1B62ED77007CC480 /* CoreImage.playground */,
+				457F99AE1B62ED77007CC480 /* CoreJSONImage.playground */,
 				457B6E751ABE07D6007083C0 /* Squircle.playground */,
 				455179841B2BE85B00B8E5AB /* Layout.playground */,
 				4591F0771B5D764A00E08FBD /* Images.playground */,
-				45B8F47B1B647AE100C42FBC /* Filter.playground */,
 			);
 			name = Experimental;
 			sourceTree = "<group>";
@@ -694,6 +709,7 @@
 				02AAA8EC1A7A16A5001898E2 /* Gradient.swift */,
 				451908921A8A8131006894B4 /* CGPath+Intersects.swift */,
 				451908931A8A8131006894B4 /* GeometryExtensions.swift */,
+				45589CA11B653A60007B5ED4 /* CoreImage */,
 				45E38D301A74249000EC672A /* Markup */,
 			);
 			path = SwiftGraphics;
@@ -1087,6 +1103,7 @@
 				02DABB661A8F110F000C8D9F /* CGPathFromSVGPath.swift in Sources */,
 				4563EFD91A7E9B7000019643 /* Matrix.swift in Sources */,
 				4594B08B19AEDC2100101EB4 /* SwiftGraphicsHelper.m in Sources */,
+				45589CA81B653A6A007B5ED4 /* Filters.swift in Sources */,
 				459EE5F119AEC5130012E023 /* CGRect.swift in Sources */,
 				45CFDC691A61CB4500053F96 /* GrahamScan.swift in Sources */,
 				459EE5E719AEC5130012E023 /* BezierCurve.swift in Sources */,
@@ -1097,6 +1114,7 @@
 				459EE5F919AEC5130012E023 /* Scaling.swift in Sources */,
 				451908941A8A8131006894B4 /* CGPath+Intersects.swift in Sources */,
 				459EE5F719AEC5130012E023 /* Quadrant.swift in Sources */,
+				45589CA61B653A6A007B5ED4 /* Filter.swift in Sources */,
 				459A4C4C1A69913600E87608 /* Circle.swift in Sources */,
 				4535BD601AB260F3005A04A5 /* BezierCurve+Transforms.swift in Sources */,
 				459EE5F319AEC5130012E023 /* CGSize.swift in Sources */,
@@ -1170,6 +1188,7 @@
 				45CFDC6D1A61CB6800053F96 /* ConvexHull.swift in Sources */,
 				459EE5EC19AEC5130012E023 /* CGContext.swift in Sources */,
 				4594B08C19AEDC2100101EB4 /* SwiftGraphicsHelper.m in Sources */,
+				45589CA91B653A6A007B5ED4 /* Filters.swift in Sources */,
 				45E38D261A74235800EC672A /* Style.swift in Sources */,
 				4574C0281A64613A00454DE5 /* CGContext+BitmapContexts.swift in Sources */,
 				459EE5F219AEC5130012E023 /* CGRect.swift in Sources */,
@@ -1184,6 +1203,7 @@
 				45E38D221A74235800EC672A /* Drawable.swift in Sources */,
 				458BDD8319BCF7D100CD0EAC /* QuadTree.swift in Sources */,
 				45FA46521A7F3DBB000473B5 /* Rectangle+Markup.swift in Sources */,
+				45589CA71B653A6A007B5ED4 /* Filter.swift in Sources */,
 				45066D011A743BD400F561E1 /* Triangle+Markup.swift in Sources */,
 				459EE5E819AEC5130012E023 /* BezierCurve.swift in Sources */,
 				02C9D0131A71D12F00B9696E /* RegularPolygon.swift in Sources */,

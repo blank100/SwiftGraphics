@@ -12,11 +12,16 @@ public extension CGRect {
     }
 }
 
-let names = CIFilter.filterNamesInCategory(nil)//[0...0]
+let names = CIFilter.filterNamesInCategory(nil)
 let allAttributes = names.map() {
     (name:String) -> [String:AnyObject] in
     let filter = CIFilter(name: name)!
-    let attributes = filter.attributes
+    var attributes = filter.attributes
+    attributes["description"] = CIFilter.localizedDescriptionForFilterName(name)
+    attributes["description_url"] = CIFilter.localizedReferenceDocumentationForFilterName(name)
+    attributes["inputs"] = filter.inputKeys
+    attributes["outputs"] = filter.outputKeys
+
     return attributes
 }
 
@@ -26,12 +31,6 @@ let filteredAttributes = allAttributes.map() {
 
 let data = try! NSJSONSerialization.dataWithJSONObject(filteredAttributes, options: NSJSONWritingOptions.PrettyPrinted)
 print(data.length)
-data.writeToFile("test.json", atomically: false)
+data.writeToFile("filters.json", atomically: false)
 
-
-//let data = try! NSPropertyListSerialization.dataWithPropertyList(filteredAttributes, format: .BinaryFormat_v1_0, options: 0)
-//print(data.length)
-//
-//data.writeToFile("test.json", atomically: false)
-//
 print(NSFileManager().currentDirectoryPath)
