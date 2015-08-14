@@ -96,9 +96,7 @@
 		45563F2E19B1047E003B1639 /* CColorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45563F2C19B1047E003B1639 /* CColorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45563F2F19B1047E003B1639 /* CColorConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45563F2D19B1047E003B1639 /* CColorConverter.m */; };
 		45589CA61B653A6A007B5ED4 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45589CA41B653A6A007B5ED4 /* Filter.swift */; };
-		45589CA71B653A6A007B5ED4 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45589CA41B653A6A007B5ED4 /* Filter.swift */; };
 		45589CA81B653A6A007B5ED4 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45589CA51B653A6A007B5ED4 /* Filters.swift */; };
-		45589CA91B653A6A007B5ED4 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45589CA51B653A6A007B5ED4 /* Filters.swift */; };
 		4563EFD91A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
 		4563EFDA1A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
 		456877E219B6857B004BEFD6 /* CoordinateSystems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456877E119B6857B004BEFD6 /* CoordinateSystems.swift */; };
@@ -1189,7 +1187,6 @@
 				45CFDC6D1A61CB6800053F96 /* ConvexHull.swift in Sources */,
 				459EE5EC19AEC5130012E023 /* CGContext.swift in Sources */,
 				4594B08C19AEDC2100101EB4 /* SwiftGraphicsHelper.m in Sources */,
-				45589CA91B653A6A007B5ED4 /* Filters.swift in Sources */,
 				45E38D261A74235800EC672A /* Style.swift in Sources */,
 				4574C0281A64613A00454DE5 /* CGContext+BitmapContexts.swift in Sources */,
 				459EE5F219AEC5130012E023 /* CGRect.swift in Sources */,
@@ -1204,7 +1201,6 @@
 				45E38D221A74235800EC672A /* Drawable.swift in Sources */,
 				458BDD8319BCF7D100CD0EAC /* QuadTree.swift in Sources */,
 				45FA46521A7F3DBB000473B5 /* Rectangle+Markup.swift in Sources */,
-				45589CA71B653A6A007B5ED4 /* Filter.swift in Sources */,
 				45066D011A743BD400F561E1 /* Triangle+Markup.swift in Sources */,
 				459EE5E819AEC5130012E023 /* BezierCurve.swift in Sources */,
 				02C9D0131A71D12F00B9696E /* RegularPolygon.swift in Sources */,
