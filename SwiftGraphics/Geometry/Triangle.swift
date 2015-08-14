@@ -11,12 +11,10 @@ import CoreGraphics
 import SwiftUtilities
 
 public struct Triangle {
-    // TODO: Rename -> vertex
-    public let points: (CGPoint, CGPoint, CGPoint)
+    public let vertex: (CGPoint, CGPoint, CGPoint)
 
-    // TODO: Deprecate and take a tuple
     public init(_ p0:CGPoint, _ p1:CGPoint, _ p2:CGPoint) {
-        self.points = (p0, p1, p2)
+        self.vertex = (p0, p1, p2)
     }
 }
 
@@ -39,7 +37,7 @@ public extension Triangle {
             p2 *= transform
         }
 
-        self.points = (p0, p1, p2)
+        self.vertex = (p0, p1, p2)
     }
 }
 
@@ -47,11 +45,11 @@ public extension Triangle {
 
     init(points:[CGPoint]) {
         assert(points.count == 3)
-        self.points = (points[0], points[1], points[2])
+        self.vertex = (points[0], points[1], points[2])
     }
 
     public var pointsArray:[CGPoint] {
-        return [points.0, points.1, points.2]
+        return [vertex.0, vertex.1, vertex.2]
     }
 
 }
@@ -60,15 +58,15 @@ public extension Triangle {
 
     public var lengths: (CGFloat, CGFloat, CGFloat) {
         return (
-            (points.0 - points.1).magnitude,
-            (points.1 - points.2).magnitude,
-            (points.2 - points.0).magnitude
+            (vertex.0 - vertex.1).magnitude,
+            (vertex.1 - vertex.2).magnitude,
+            (vertex.2 - vertex.0).magnitude
         )
     }
 
     public var angles: (CGFloat, CGFloat, CGFloat) {
-        let a1 = angle(points.0, points.1, points.2)
-        let a2 = angle(points.1, points.2, points.0)
+        let a1 = angle(vertex.0, vertex.1, vertex.2)
+        let a2 = angle(vertex.1, vertex.2, vertex.0)
         let a3 = DegreesToRadians(180) - a1 - a2
         return (a1,a2,a3)
     }
@@ -114,15 +112,12 @@ public extension Triangle {
     }
 
     public var signedArea: CGFloat {
-        let (a, b, c) = points
-//            let signedArea = 0.5 * (
-//                a.x * (b.y - c.y) +
-//                b.x * (c.y - a.y) +
-//                c.x * (a.y - b.y)
-//            )
-//            return signedArea
-        // TODO: Swift 1.2: Simplified for "expression was too complex to be solved in reasonable time; consider breaking up the expression into distinct sub-expressions"
-        let signedArea = (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)) * CGFloat(0.5)
+        let (a, b, c) = vertex
+        let signedArea = 0.5 * (
+            a.x * (b.y - c.y) +
+            b.x * (c.y - a.y) +
+            c.x * (a.y - b.y)
+        )
         return signedArea
     }
     
@@ -130,10 +125,9 @@ public extension Triangle {
 
     // https://en.wikipedia.org/wiki/Circumscribed_circle  
     public var circumcenter : CGPoint {
-        let (a, b, c) = points
-//            let D = 2 * (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y))
-        // TODO: Swift 1.2: Simplified for "expression was too complex to be solved in reasonable time; consider breaking up the expression into distinct sub-expressions"
-        let D = (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)) * CGFloat(2.0)
+        let (a, b, c) = vertex
+
+        let D = 2 * (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y))
         
         let a2 = a.x ** 2 + a.y ** 2
         let b2 = b.x ** 2 + b.y ** 2
@@ -158,34 +152,39 @@ public extension Triangle {
 }
 
 // Cartesian coordinates
-// TODO: Not quite working perfectly yet...
 public extension Triangle {
 
     public var incenter : CGPoint {
-        return toCartesian(alpha:1, beta:1, gamma:1)
+        let (oppositeC, oppositeA, oppositeB) = lengths
+        let (a, b, c) = vertex
+        
+        let x = (oppositeA * a.x + oppositeB * b.x + oppositeC * c.x) / (oppositeC + oppositeB + oppositeA)
+        let y = (oppositeA * a.y + oppositeB * b.y + oppositeC * c.y) / (oppositeC + oppositeB + oppositeA)
+
+        return CGPointMake(x, y)
     }
 
     // converts trilinear coordinates to Cartesian coordinates relative
     // to the incenter; thus, the incenter has coordinates (0.0, 0.0)
-    // TODO: THis seems broken!
-    public func toLocalCartesian(alpha  alpha:CGFloat, beta:CGFloat, gamma:CGFloat) -> CGPoint {
+    public func toLocalCartesian(alpha alpha:CGFloat, beta:CGFloat, gamma:CGFloat) -> CGPoint {
         let area = self.area
         let (a,b,c) = lengths
+
         let r = 2 * area / (a + b + c)
         let k = 2 * area / (a * alpha + b * beta + c * gamma)
-//        let C:CGFloat = DegreesToRadians(90)//angles.2
         let C = angles.2
-        // (Unnecessarily specify CGFloat to prevent compiler from complaining about complexity while inferring type)
-        let x:CGFloat = (k * beta - r + (k * alpha - r) * cos(C)) / sin(C)
+        
+        let x = (k * beta - r + (k * alpha - r) * cos(C)) / sin(C)
         let y = k * alpha - r
+        
         return CGPoint(x:x, y:y)
     }    
 
-    // TODO: This seems broken!
+    // TODO: This seems broken! --- validate that this is still needed..
     public func toCartesian(alpha  alpha:CGFloat, beta:CGFloat, gamma:CGFloat) -> CGPoint {
         let a = toLocalCartesian(alpha:alpha, beta:beta, gamma:gamma)
         let delta = toLocalCartesian(alpha:0,beta:0, gamma:1)
-        return points.0 + a - delta
+        return vertex.0 + a - delta
     }    
 }
 
@@ -208,6 +207,6 @@ func equalities <T> (e:(T, T, T), test:((T, T) -> Bool)) -> Int {
 extension Triangle: Geometry {
     public var frame:CGRect {
         // TODO faster to just do min/maxes
-        return CGRect.unionOfPoints([points.0, points.1, points.2])
+        return CGRect.unionOfPoints([vertex.0, vertex.1, vertex.2])
     }
 }

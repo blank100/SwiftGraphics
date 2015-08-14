@@ -183,6 +183,7 @@
 		45FA46521A7F3DBB000473B5 /* Rectangle+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FA46501A7F3DBB000473B5 /* Rectangle+Markup.swift */; };
 		45FA46541A7F3EA9000473B5 /* Circle+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FA46531A7F3EA9000473B5 /* Circle+Markup.swift */; };
 		45FA46551A7F3EA9000473B5 /* Circle+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FA46531A7F3EA9000473B5 /* Circle+Markup.swift */; };
+		93F42FF41B7E9C91005D2ADA /* TriangleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F42FF31B7E9C91005D2ADA /* TriangleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -387,6 +388,7 @@
 		45FA46501A7F3DBB000473B5 /* Rectangle+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rectangle+Markup.swift"; sourceTree = "<group>"; };
 		45FA46531A7F3EA9000473B5 /* Circle+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circle+Markup.swift"; sourceTree = "<group>"; };
 		45FAC0661A16C4CA00A3F1D3 /* Animations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Animations.playground; sourceTree = "<group>"; };
+		93F42FF31B7E9C91005D2ADA /* TriangleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -571,6 +573,7 @@
 				2E0F5BDE1A6A8FCA00221BB0 /* GrahamScanUnitTests.swift */,
 				45C4C35B1A7DA8EF0036EE2B /* ProjectTests.swift */,
 				453F7C091A7D7188002CE3A6 /* MatrixTests.swift */,
+				93F42FF31B7E9C91005D2ADA /* TriangleTests.swift */,
 				453F7C0B1A7D71AC002CE3A6 /* BezierPathTests.swift */,
 				454D551519AA5CE6000E3EB3 /* Info.plist */,
 			);
@@ -1154,6 +1157,7 @@
 				45C4C35C1A7DA8EF0036EE2B /* ProjectTests.swift in Sources */,
 				2E0F5BDF1A6A8FCA00221BB0 /* GrahamScanUnitTests.swift in Sources */,
 				2E0F5BD91A6986DA00221BB0 /* ColorTests.swift in Sources */,
+				93F42FF41B7E9C91005D2ADA /* TriangleTests.swift in Sources */,
 				4537991D19AA788B004DF99E /* CGSizeTests.swift in Sources */,
 				02C9D0261A724D9C00B9696E /* RegularPolygonTests.swift in Sources */,
 				450C7EC51A849326003A8AD2 /* CGPointSwiftDocTests.swift in Sources */,

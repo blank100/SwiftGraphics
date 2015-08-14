@@ -12,9 +12,9 @@ extension Triangle: Markupable {
     public var markup:[Markup] {
         var markup:[Markup] = []
 
-        markup.append(Marker(point: points.0, tag: "vertex"))
-        markup.append(Marker(point: points.1, tag: "vertex"))
-        markup.append(Marker(point: points.2, tag: "vertex"))
+        markup.append(Marker(point: vertex.0, tag: "vertex"))
+        markup.append(Marker(point: vertex.1, tag: "vertex"))
+        markup.append(Marker(point: vertex.2, tag: "vertex"))
         markup.append(Marker(point: circumcenter, tag: "circumcenter"))
 
 
