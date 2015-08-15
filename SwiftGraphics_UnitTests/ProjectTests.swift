@@ -12,9 +12,9 @@ class ProjectTests: XCTestCase {
     func testProjectConfiguration() {
 
 #if !DEBUG && RELEASE
-        XCTAssert(true)
-#else
         XCTAssert(false, "Unit tests not running in correct build configuration.")
+#else
+        XCTAssert(true)
 #endif
     }
 
