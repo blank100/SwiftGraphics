@@ -237,6 +237,14 @@ public func *= (inout lhs:CGRect, rhs:CGAffineTransform) {
     lhs = CGRectApplyAffineTransform(lhs, rhs)
 }
 
+// MARK: Transform a vector
+
+public extension CGAffineTransform {
+    func transformVector(vec:CGPoint) -> CGPoint {
+        return CGPoint(x:vec.x * a + vec.y * d, y:vec.x * c + vec.y * d);
+    }
+}
+
 // MARK: Converting transforms to/from arrays
 
 public extension CGAffineTransform {
