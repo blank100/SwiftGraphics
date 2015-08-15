@@ -17,9 +17,9 @@ public extension BezierCurve {
     /**
      Return a point along the curve.
 
-     :param: t A value from 0 to 1
+     - parameter t: A value from 0 to 1
 
-     :returns: A CGPoint corresponding to the point along the curve.
+     - returns: A CGPoint corresponding to the point along the curve.
      */
     func pointAlongCurve(t:CGFloat) -> CGPoint {
         return BezierCurve.pointAlongCurveMatrix(points, t:t)
@@ -28,9 +28,9 @@ public extension BezierCurve {
     /**
      Splits the curve into two component curves
 
-     :param: t A ratio along the curve
+     - parameter t: A ratio along the curve
 
-     :returns: Two sub-curves
+     - returns: Two sub-curves
      */
     func split(t:CGFloat) -> (BezierCurve, BezierCurve) {
         return splitCurveDeCasteljaus(t)
@@ -116,12 +116,12 @@ public extension BezierCurve {
 
 public extension BezierCurve {
 
-    public var simpleBounds: CGRect { get {
+    public var simpleBounds: CGRect {
         return CGRect.unionOfPoints(points)
-    }}
+    }
     
     //! Compute the bounding box based on the straightened curve, for best fit
-    public var boundingBox: CGRect { get {
+    public var boundingBox: CGRect { 
         if self.controls.count == 1 {
             return increasedOrder().boundingBox
         }
@@ -165,7 +165,7 @@ public extension BezierCurve {
         }
         
         return bbox
-    }}
+    }
     
     // compute the value for the cubic bezier function at time=t
     private func computeCubicBaseValue(t:CGFloat, a:CGFloat, b:CGFloat, c:CGFloat, d:CGFloat) -> CGFloat {
@@ -193,15 +193,15 @@ public extension BezierCurve {
     
 // MARK: isStraight and length
     
-    public var isStraight: Bool { get {
+    public var isStraight: Bool {
         let pts = points
         return collinear(pts[0], pts[2], pts[1])
             || (pts.count == 4 && collinear(pts[0], pts[2], pts[3]))
-        }}
+    }
     
     // Gauss quadrature for cubic Bezier curves http://processingjs.nihongoresources.com/bezierinfo/
     
-    public var length: CGFloat { get {
+    public var length: CGFloat {
         if self.isStraight {
             return self.start!.distanceTo(self.end)
         }
@@ -219,8 +219,8 @@ public extension BezierCurve {
         }
         
         return z2 * sum
-        }}
-    
+    }
+
     private func base3(t:CGFloat, _ p1:CGFloat, _ p2:CGFloat, _ p3:CGFloat, _ p4:CGFloat) -> CGFloat {
         let t1 = -3*p1 + 9*p2 - 9*p3 + 3*p4
         let t2 = t*t1 + 6*p1 - 12*p2 + 6*p3

@@ -8,10 +8,14 @@
 
 import CoreGraphics
 
+import SwiftUtilities
+
 // MARK: CGPoint
 
-extension CGPoint: Printable {
-    public var description: String { get { return "\(x), \(y)" } }
+extension CGPoint: CustomStringConvertible {
+    public var description: String {
+        return "\(x), \(y)"
+    }
 }
 
 // MARK: Convenience initializers
@@ -35,7 +39,9 @@ public extension CGPoint {
     init(_ v:(CGFloat, CGFloat)) {
         (x, y) = v
     }
-    var asTuple: (CGFloat, CGFloat) { get { return (x, y) } }
+    func toTuple() -> (CGFloat, CGFloat) {
+        return (x, y)
+    }
 }
 
 // MARK: Unary Operators
@@ -68,6 +74,10 @@ public func + (lhs:CGPoint, rhs:CGPoint) -> CGPoint {
  */
 public func - (lhs:CGPoint, rhs:CGPoint) -> CGPoint {
     return CGPoint(x:lhs.x - rhs.x, y:lhs.y - rhs.y)
+}
+
+public func * (lhs:CGPoint, rhs:CGPoint) -> CGPoint {
+    return CGPoint(x:lhs.x * rhs.x, y:lhs.y * rhs.y)
 }
 
 // MARK: Arithmetic (with scalar)
@@ -131,9 +141,7 @@ public extension CGPoint {
      :result: false
      */
     var isZero: Bool {
-        get {
-            return x == 0 && y == 0
-        }
+        return x == 0 && y == 0
     }
 
     /**
@@ -148,8 +156,8 @@ public extension CGPoint {
      */
     func clampedTo(rect:CGRect) -> CGPoint {
         return CGPoint(
-            x:clamp(x, rect.minX, rect.maxX),
-            y:clamp(y, rect.minY, rect.maxY)
+            x:clamp(x, lower: rect.minX, upper: rect.maxX),
+            y:clamp(y, lower: rect.minY, upper: rect.maxY)
         )
     }
 
@@ -196,7 +204,7 @@ public func round(value:CGPoint) -> CGPoint {
  :test:   floor(CGPoint(x:10.09, y:-10.95))
  :result: CGPoint(x:10, y:-11)
 */
-public func round(value:CGPoint, decimal:Int) -> CGPoint {
-    return value.map { round($0, decimal) }
+public func round(value:CGPoint, _ decimal:Int) -> CGPoint {
+    return value.map { round($0, decimal: decimal) }
 }
 

@@ -15,7 +15,7 @@ public struct Line {
     let b:CGFloat
 
     // TODO: Vertical lines!?
-    func lineSegment(# x0:CGFloat, x1:CGFloat) -> LineSegment {
+    func lineSegment(x0  x0:CGFloat, x1:CGFloat) -> LineSegment {
         let start = CGPoint(x:x0, y:m * x0 + b)
         let end = CGPoint(x:x1, y:m * x1 + b)
         return LineSegment(start, end)
@@ -35,18 +35,14 @@ public struct LineSegment {
     }
 
     public var slope:CGFloat? {
-        get {
-            if end.x == start.x {
-                return nil
-            }
-            return (end.y - start.y) / (end.x - start.x)
+        if end.x == start.x {
+            return nil
         }
+        return (end.y - start.y) / (end.x - start.x)
     }
 
     public var angle:CGFloat {
-        get {
-            return atan2(end - start)
-        }
+        return atan2(end - start)
     }
 
     public func isParallel(other:LineSegment) -> Bool {
@@ -94,7 +90,7 @@ public struct LineSegment {
             // TODO: What about negatives?
             return q >= p && q <= r || q <= p && q >= r
         }
-        return (collinear(a, b, c) && a.x != b.x) ? within(a.x, c.x, b.x) : within(a.y, c.y, b.y)
+        return (collinear(a, b, c) && a.x != b.x) ? within(a.x, q: c.x, r: b.x) : within(a.y, q: c.y, r: b.y)
     }
 }
 

@@ -75,7 +75,7 @@ public struct GenericPoint <T:ArithmeticType> {
 }
 
 extension GenericPoint: PointType {
-    typealias ScalarType = T
+    public typealias ScalarType = T
 }
 
 // MARK: Generic Sizes
@@ -91,7 +91,7 @@ public struct GenericSize <T:ArithmeticType> {
 }
 
 extension GenericSize: SizeType {
-    typealias ScalarType = T
+    public typealias ScalarType = T
 }
 
 // MARK: Generic Rects
@@ -107,8 +107,8 @@ public struct GenericRect <T:PointType, U:SizeType> {
 }
 
 extension GenericRect: RectType {
-    typealias OriginType = T
-    typealias SizeType = U
+    public typealias OriginType = T
+    public typealias SizeType = U
 }
 
 // MARK: Specialisations of Generic geometric types for Integers.

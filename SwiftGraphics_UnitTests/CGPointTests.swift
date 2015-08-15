@@ -8,6 +8,7 @@
 
 import XCTest
 import SwiftGraphics
+import SwiftUtilities
 
 class CGPointTests: XCTestCase {
 
@@ -20,11 +21,8 @@ class CGPointTests: XCTestCase {
 
         let pt = CGPoint((100, 200))
         XCTAssertEqual(pt, CGPoint(x:100, y:200))
-
-
-        let ptt = pt.asTuple
-        XCTAssertEqual(pt.asTuple.0, CGFloat(100))
-        XCTAssertEqual(pt.asTuple.1, CGFloat(200))
+        XCTAssertEqual(pt.toTuple.0, CGFloat(100))
+        XCTAssertEqual(pt.toTuple.1, CGFloat(200))
     }
 
     func testUnaryOperators() {
@@ -84,7 +82,7 @@ class CGPointTests: XCTestCase {
     func testCollinear() {
         XCTAssert( collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 0))))
         XCTAssert(!collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 1e-5))))
-        XCTAssert( collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 1e-5)), 1e-4))
+        XCTAssert( collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 1e-5)), tolerance: 1e-4))
     }
     
     func testAngle() {
@@ -96,7 +94,7 @@ class CGPointTests: XCTestCase {
 
     func testDotProduct() {
         let p = CGPoint(x:100, y:50)
-        XCTAssertEqualWithAccuracy(p.magnitude, CGFloat(111.803), 0.01)
+        XCTAssertEqualWithAccuracy(p.magnitude, CGFloat(111.803), accuracy: 0.01)
         XCTAssertEqual(dotProduct(p, p), p.magnitude ** 2)
     }
 
@@ -107,15 +105,15 @@ class CGPointTests: XCTestCase {
         let length = 100 as CGFloat
         
         let p = CGPoint(magnitude:length, direction:theta)
-        XCTAssertEqualWithAccuracy(p.x, CGFloat(86.6025403784439), 0.01)
-        XCTAssertEqualWithAccuracy(p.y, CGFloat(50), 0.01)
+        XCTAssertEqualWithAccuracy(p.x, CGFloat(86.6025403784439), accuracy: 0.01)
+        XCTAssertEqualWithAccuracy(p.y, CGFloat(50), accuracy: 0.01)
 
-        XCTAssertEqualWithAccuracy(atan2(p), theta, 0.01)
+        XCTAssertEqualWithAccuracy(atan2(p), theta, accuracy: 0.01)
 
-        XCTAssertEqualWithAccuracy(p.magnitude, length, 0.01)
+        XCTAssertEqualWithAccuracy(p.magnitude, length, accuracy: 0.01)
 
         let n = p.normalized
-        XCTAssertEqualWithAccuracy(n.x, CGFloat(0.866025403784439), 0.01)
-        XCTAssertEqualWithAccuracy(n.y, CGFloat(0.5), 0.01)
+        XCTAssertEqualWithAccuracy(n.x, CGFloat(0.866025403784439), accuracy: 0.01)
+        XCTAssertEqualWithAccuracy(n.y, CGFloat(0.5), accuracy: 0.01)
     }
 }

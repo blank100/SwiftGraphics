@@ -24,7 +24,7 @@ public struct RGB {
     }
 }
 
-extension RGB: Printable {
+extension RGB: CustomStringConvertible {
     public var description: String { return "RGB(\(r), \(g), \(b))" }
 }
 
@@ -57,14 +57,12 @@ public struct HSV {
         (self.h, self.s, self.v) = tuple
     }
 
-    public var asTuple:(CGFloat, CGFloat, CGFloat) {
-        get {
-            return (h,s,v)
-        }
+    public func toTuple() -> (CGFloat, CGFloat, CGFloat) {
+        return (h,s,v)
     }
 }
 
-extension HSV: Printable {
+extension HSV: CustomStringConvertible {
     public var description: String { return "HSV(\(h), \(s), \(v))" }
 }
 
@@ -85,7 +83,7 @@ public extension HSV {
 // MARK: Lerping HSV
 
 extension HSV: Lerpable {
-    typealias FactorType = CGFloat
+    public typealias FactorType = CGFloat
 }
 
 public func + (lhs:HSV, rhs:HSV) -> HSV {

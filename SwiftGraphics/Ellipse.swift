@@ -8,6 +8,8 @@
 
 import CoreGraphics
 
+import SwiftUtilities
+
 public struct Ellipse {
     public let center:CGPoint
     public let a:CGFloat // Semi major axis
@@ -42,22 +44,17 @@ public struct Ellipse {
     }
 
     public var foci:(CGPoint, CGPoint) {
-        get {
-            let t = CGAffineTransform(rotation: rotation)
-            return (
-                center + CGPoint(x:-F) * t,
-                center + CGPoint(x:+F) * t
-            )
-        }
+        let t = CGAffineTransform(rotation: rotation)
+        return (
+            center + CGPoint(x:-F) * t,
+            center + CGPoint(x:+F) * t
+        )
     }
-
 }
 
-extension Ellipse:Printable {
+extension Ellipse:CustomStringConvertible {
     public var description:String {
-        get {
-            return "Ellipse(center:\(center), semiMajorAxis:\(a) semiMinorAxis:\(b), eccentricity:\(e), rotation:\(rotation)"
-        }
+        return "Ellipse(center:\(center), semiMajorAxis:\(a) semiMinorAxis:\(b), eccentricity:\(e), rotation:\(rotation)"
     }
 }
 
@@ -83,65 +80,55 @@ public extension Ellipse {
 
     /// Size of ellipse if rotation were 0
     var unrotatedSize:CGSize {
-        get {
-            return CGSize(width:a * 2, height:b * 2)
-        }
+        return CGSize(width:a * 2, height:b * 2)
     }
 
     /// Frame of ellipse if rotation were 0. This is generally not very useful. See boundingBox.
     var unrotatedFrame:CGRect {
-        get {
-            let size = unrotatedSize
-            let origin = CGPoint(x:center.x - size.width * 0.5, y:center.y - size.height * 0.5)
-            return CGRect(origin:origin, size:size)
-        }
+        let size = unrotatedSize
+        let origin = CGPoint(x:center.x - size.width * 0.5, y:center.y - size.height * 0.5)
+        return CGRect(origin:origin, size:size)
     }
 
     /// Smallest rect that can contain the ellipse.
     var boundingBox:CGRect {
-        get {
-            let bezierCurves = asBezierCurves
-            let rects = [
-                bezierCurves.0.boundingBox,
-                bezierCurves.1.boundingBox,
-                bezierCurves.2.boundingBox,
-                bezierCurves.3.boundingBox
-                ]
+        let bezierCurves = toBezierCurves()
+        let rects = [
+            bezierCurves.0.boundingBox,
+            bezierCurves.1.boundingBox,
+            bezierCurves.2.boundingBox,
+            bezierCurves.3.boundingBox
+            ]
 
-            return CGRect.unionOfRects(rects)
+        return CGRect.unionOfRects(rects)
+    }
+}
+
+public extension Ellipse {
+    func toCircle() -> Circle? {
+        if e == 0.0 {
+            assert(a == b)
+            assert(F == 0.0)
+            return Circle(center: center, radius:a)
+        }
+        else {
+            return nil
         }
     }
 }
 
 public extension Ellipse {
-    var asCircle: Circle? {
-        get {
-            if e == 0.0 {
-                assert(a == b)
-                assert(F == 0.0)
-                return Circle(center: center, radius:a)
-            }
-            else {
-                return nil
-            }
-        }
-    }
-}
 
-public extension Ellipse {
-
-    var asBezierChain:(BezierCurveChain) {
-        get {
-            let curves = asBezierCurves()
-            let curvesArray = [curves.0, curves.1, curves.2, curves.3]
-            return BezierCurveChain(curves:curvesArray)
-        }
+    func toBezierChain() -> BezierCurveChain {
+        let curves = toBezierCurves()
+        let curvesArray = [curves.0, curves.1, curves.2, curves.3]
+        return BezierCurveChain(curves:curvesArray)
     }
 
     // From http://spencermortensen.com/articles/bezier-circle/ (via @iamdavidhart)
     static let c:CGFloat = 0.551915024494
 
-    func asBezierCurves(c:CGFloat = Ellipse.c) -> (BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
+    func toBezierCurves(c:CGFloat = Ellipse.c) -> (BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
             let t = CGAffineTransform(rotation: rotation)
 
             let da = a * c
@@ -173,13 +160,5 @@ public extension Ellipse {
             )
 
         return (curve0, curve1, curve2, curve3)
-    }
-
-    var asBezierCurves:(BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
-        get {
-//            let c:CGFloat = 0.551915024494
-//            let c:CGFloat = 4.0 * (sqrt(2.0) - 1.0) / 3.0 // 0.5522847498307936
-            return asBezierCurves()
-        }
     }
 }

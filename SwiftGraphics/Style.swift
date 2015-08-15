@@ -8,6 +8,8 @@
 
 import CoreGraphics
 
+import SwiftUtilities
+
 public struct Style {
     public var fillColor:CGColor?
     public var strokeColor:CGColor?
@@ -27,11 +29,10 @@ public struct Style {
 
 public extension Style {
     public static var defaultStyle:Style {
-        get {
-            var style = Style()
-            style.fillColor = nil
-            style.strokeColor = CGColor.blackColor()
-            style.lineWidth = 1.0
+        var style = Style()
+        style.fillColor = nil
+        style.strokeColor = CGColor.blackColor()
+        style.lineWidth = 1.0
 //            style.lineCap = kCGLineCapButt
 //            style.lineJoin = kCGLineJoinBevel
 //            style.miterLimit = 4.0
@@ -40,8 +41,7 @@ public extension Style {
 //            style.flatness = 4
 //            style.alpha = 1.0
 //            style.blendMode = kCGBlendModeNormal
-            return style
-        }
+        return style
     }
 }
 
@@ -64,18 +64,18 @@ var CGContext_Style_Key = 1
 public extension CGContext {
     var style: Style {
         get {
-            let style = getAssociatedWrappedObject(self, &CGContext_Style_Key) as! Style?
+            let style = getAssociatedWrappedObject(self, key: &CGContext_Style_Key) as! Style?
             if let style = style {
                 return style
             }
             else {
-                var style = Style.defaultStyle
-                setAssociatedWrappedObject(self, &CGContext_Style_Key, style)
+                let style = Style.defaultStyle
+                setAssociatedWrappedObject(self, key: &CGContext_Style_Key, value: style)
                 return style
             }
         }
         set {
-            setAssociatedWrappedObject(self, &CGContext_Style_Key, newValue)
+            setAssociatedWrappedObject(self, key: &CGContext_Style_Key, value: newValue)
             apply(newValue)
         }
     }
@@ -251,20 +251,15 @@ public extension Style {
                 lineDash = value
             case .lineDashPhase(let value):
                 lineDashPhase = value
-            case .miterLimit(let value):
-                miterLimit = value
-            case .lineDash(let value):
-                lineDash = value
-            case .lineDashPhase(let value):
-                lineDashPhase = value
             case .flatness(let value):
                 flatness = value
             case .alpha(let value):
                 alpha = value
             case .blendMode(let value):
                 blendMode = value
-            default:
-                assert(false)
+// TODO: add more styles here
+//            default:
+//                assert(false)
         }
     }
 

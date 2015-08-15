@@ -5,8 +5,6 @@ import CoreGraphics
 import SwiftGraphics
 
 let context = CGContextRef.bitmapContext(CGSize(w:201, h:201))
-context.setFillColor(CGColor.greenColor())
-CGContextFillRect(context, CGRect(w:201, h:201))
 
 var path = CGPathCreateMutable()
 
@@ -22,17 +20,17 @@ path.dump()
 //CGContextAddPath(context, path)
 path.enumerate() {
     (type:CGPathElementType, points:[CGPoint]) -> Void in
-    switch type.value {
-    case kCGPathElementMoveToPoint.value:
-        CGContextMoveToPoint(context, points[0].x, points[0].y)
-    case kCGPathElementAddLineToPoint.value:
-        CGContextAddLineToPoint(context, points[1].x, points[1].y)
-    case kCGPathElementAddCurveToPoint.value:
-        CGContextAddCurveToPoint(context, points[1].x, points[1].y, points[2].x, points[2].y, points[3].x, points[3].y)
-    case kCGPathElementCloseSubpath.value:
-        CGContextClosePath(context)
-    default:
-        println("default")
+    switch type {
+        case .MoveToPoint:
+            CGContextMoveToPoint(context, points[0].x, points[0].y)
+        case .AddLineToPoint:
+            CGContextAddLineToPoint(context, points[1].x, points[1].y)
+        case .AddCurveToPoint:
+            CGContextAddCurveToPoint(context, points[1].x, points[1].y, points[2].x, points[2].y, points[3].x, points[3].y)
+        case .CloseSubpath:
+            CGContextClosePath(context)
+        default:
+            print("default")
     }
 }
 

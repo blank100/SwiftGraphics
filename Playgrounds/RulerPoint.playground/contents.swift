@@ -2,9 +2,10 @@
 
 import Cocoa
 import CoreGraphics
+import SwiftUtilities
 import SwiftGraphics
 
-let size = CGSize(w:100, h:100)
+let size = CGSize(width:100, height:100)
 let context = CGContextRef.bitmapContext(size)
 context.setFillColor(CGColor.lightGrayColor())
 CGContextFillRect(context, CGRect(size:size))
@@ -25,3 +26,4 @@ let p6 = p4.rulerPoint(p5, dx:20, dy:20)
 context.strokeLine(p5, p6)
 
 context.nsimage
+

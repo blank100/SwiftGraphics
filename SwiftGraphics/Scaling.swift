@@ -28,53 +28,61 @@ public enum Alignment {
     case right
 }
 
-public func scaleAndAlignRectToRect(inner:CGRect, outer:CGRect, scaling:Scaling, align:Alignment) -> CGRect {
-    var resultRect = CGRectZero
+public func scaleAndAlignRectToRect(source source:CGRect, destination:CGRect, scaling:Scaling, alignment:Alignment) -> CGRect {
+    var result = CGRect()
+    var theScaledImageSize = source.size
 
     switch scaling {
-    case .toFit:
-        resultRect = outer
-    case .proportionally:
-        var theScaleFactor = CGFloat(1.0)
-        if (outer.size.width / inner.size.width < outer.size.height / inner.size.height) {
-            theScaleFactor = outer.size.width / inner.size.width
-        }
-        else {
-            theScaleFactor = outer.size.height / inner.size.height
-        }
-        resultRect.size = inner.size * theScaleFactor
-    case .none:
-        switch align {
-            //
-        case .center:
-            resultRect.origin.x = outer.origin.x + (outer.size.width - inner.size.width) * 0.5
-            resultRect.origin.y = outer.origin.y + (outer.size.height - inner.size.height) * 0.5
-        case .top:
-            resultRect.origin.x = outer.origin.x + (outer.size.width - inner.size.width) * 0.5
-            resultRect.origin.y = outer.origin.y + outer.size.height - inner.size.height
-        case .topLeft:
-            resultRect.origin.x = outer.origin.x
-            resultRect.origin.y = outer.origin.y + outer.size.height - inner.size.height
-        case .topRight:
-            resultRect.origin.x = outer.origin.x + outer.size.width - inner.size.width
-            resultRect.origin.y = outer.origin.y + outer.size.height - inner.size.height
-        case .left:
-            resultRect.origin.x = outer.origin.x
-            resultRect.origin.y = outer.origin.y + (outer.size.height - inner.size.height) * 0.5
-        case .bottom:
-            resultRect.origin.x = outer.origin.x + (outer.size.width - inner.size.width) * 0.5
-            resultRect.origin.y = outer.origin.y
-        case .bottomLeft:
-            resultRect.origin.x = outer.origin.x
-            resultRect.origin.y = outer.origin.y
-        case .bottomRight:
-            resultRect.origin.x = outer.origin.x + outer.size.width - inner.size.width
-            resultRect.origin.y = outer.origin.y
-        case .right:
-            resultRect.origin.x = outer.origin.x + outer.size.width - inner.size.width
-            resultRect.origin.y = outer.origin.y + (outer.size.height - inner.size.height) * 0.5
-        }
+        case .toFit:
+            return destination
+
+        case .proportionally:
+            var theScaleFactor:CGFloat = 1
+            if destination.size.width / source.size.width < destination.size.height / source.size.height {
+                theScaleFactor = destination.size.width / source.size.width
+            }
+            else {
+                theScaleFactor = destination.size.height / source.size.height
+            }
+            theScaledImageSize.width *= theScaleFactor
+            theScaledImageSize.height *= theScaleFactor
+
+            result.size = theScaledImageSize
+        case .none:
+            result.size.width = theScaledImageSize.width
+            result.size.height = theScaledImageSize.height
     }
 
-    return resultRect
+    switch alignment {
+        case .center:
+            result.origin.x = destination.origin.x + (destination.size.width - theScaledImageSize.width) / 2
+            result.origin.y = destination.origin.y + (destination.size.height - theScaledImageSize.height) / 2
+        case .top:
+            result.origin.x = destination.origin.x + (destination.size.width - theScaledImageSize.width) / 2
+            result.origin.y = destination.origin.y + destination.size.height - theScaledImageSize.height
+        case .topLeft:
+            result.origin.x = destination.origin.x
+            result.origin.y = destination.origin.y + destination.size.height - theScaledImageSize.height
+        case .topRight:
+            result.origin.x = destination.origin.x + destination.size.width - theScaledImageSize.width
+            result.origin.y = destination.origin.y + destination.size.height - theScaledImageSize.height
+        case .left:
+            result.origin.x = destination.origin.x
+            result.origin.y = destination.origin.y + (destination.size.height - theScaledImageSize.height) / 2
+        case .bottom:
+            result.origin.x = destination.origin.x + (destination.size.width - theScaledImageSize.width) / 2
+            result.origin.y = destination.origin.y
+        case .bottomLeft:
+            result.origin.x = destination.origin.x
+            result.origin.y = destination.origin.y
+        case .bottomRight:
+            result.origin.x = destination.origin.x + destination.size.width - theScaledImageSize.width
+            result.origin.y = destination.origin.y
+        case .right:
+            result.origin.x = destination.origin.x + destination.size.width - theScaledImageSize.width
+            result.origin.y = destination.origin.y + (destination.size.height - theScaledImageSize.height) / 2
+    }
+
+    return result
 }
+

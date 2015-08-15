@@ -8,6 +8,7 @@
 
 import XCTest
 import SwiftGraphics
+import SwiftUtilities
 
 class UtilitesTests: XCTestCase {
 
@@ -17,9 +18,9 @@ class UtilitesTests: XCTestCase {
     }
     
     func testClamp() {
-        XCTAssert(clamp(2, 0, 10) == 2)
-        XCTAssert(clamp(12, 0, 10) == 10)
-        XCTAssert(clamp(-1, 0, 10) == 0)
+        XCTAssert(clamp(2, lower: 0, upper: 10) == 2)
+        XCTAssert(clamp(12, lower: 0, upper: 10) == 10)
+        XCTAssert(clamp(-1, lower: 0, upper: 10) == 0)
     }
     
     func testLerpFloat() {

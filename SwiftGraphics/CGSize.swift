@@ -70,17 +70,12 @@ public extension CGSize {
         height = point.y
     }
 
-
     var area:CGFloat {
-        get {
-            return abs(width) * abs(height)
-        }
+        return abs(width) * abs(height)
     }
 
     var signedArea:CGFloat {
-        get {
-            return width * height
-        }
+        return width * height
     }
 }
 
@@ -93,9 +88,11 @@ public enum Orientation {
 }
 
 public extension CGSize {
-    var aspectRatio: CGFloat { get { return width / height } }
+    var aspectRatio: CGFloat {
+        return width / height
+    }
 
-    var orientation: Orientation { get {
+    var orientation: Orientation {
         if abs(width) > abs(height) {
             return .Landscape
         }
@@ -105,7 +102,11 @@ public extension CGSize {
         else {
             return .Portrait
         }
-    } }
+    }
+
+    func toRect() -> CGRect {
+        return CGRect(size: self)
+    }
 }
 
 
@@ -114,9 +115,16 @@ public extension CGSize {
         (width, height) = v
     }
 
-    var asTuple: (CGFloat, CGFloat) { get { return (width, height) } }
+    func toTuple() -> (CGFloat, CGFloat) {
+        return (width, height)
+    }
 }
 
-
-
-
+public extension CGSize {
+    var min:CGFloat {
+        return Swift.min(width, height)
+    }
+    var max:CGFloat {
+        return Swift.max(width, height)
+    }
+}
