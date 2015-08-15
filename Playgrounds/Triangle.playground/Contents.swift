@@ -8,7 +8,7 @@ import SwiftUtilities
 
 func dump(t:Triangle) -> String {
     var s = ""
-    s += "Points: \(t.points)\n"
+    s += "Points: \(t.vertex)\n"
     s += "Lengths: \(t.lengths)\n"
     s += "Angles: \(RadiansToDegrees(t.angles.0), RadiansToDegrees(t.angles.1), RadiansToDegrees(t.angles.2))\n"
     s += "isIsosceles: \(t.isIsosceles)\n"
@@ -39,3 +39,4 @@ let styles = stylesForMarkup(t1.markup)
 context.draw(t1.markup, styles:styles)
 
 context.nsimage
+

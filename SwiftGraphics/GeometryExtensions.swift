@@ -55,9 +55,9 @@ extension Ellipse: CGPathable {
 extension Triangle: CGPathable {
     public var cgpath:CGPath {
         let path = CGPathCreateMutable()
-        path.move(points.0)
-        path.addLine(points.1)
-        path.addLine(points.2)
+        path.move(vertex.0)
+        path.addLine(vertex.1)
+        path.addLine(vertex.2)
         path.close()
         return path
     }
@@ -163,9 +163,9 @@ extension Triangle: HitTestable {
         // http://totologic.blogspot.fr/2014/01/accurate-point-in-triangle-test.html
 
         // Compute vectors
-        let v0 = points.2 - points.0
-        let v1 = points.1 - points.0
-        let v2 = point - points.0
+        let v0 = vertex.2 - vertex.0
+        let v1 = vertex.1 - vertex.0
+        let v2 = point - vertex.0
 
         // Compute dot products
         let dot00 = dotProduct(v0, v0)
