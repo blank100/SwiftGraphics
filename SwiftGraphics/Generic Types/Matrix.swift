@@ -68,11 +68,13 @@ public func * (lhs:Matrix, rhs:Matrix) -> Matrix {
     let resultPointer = UnsafeMutablePointer <Double> (resultData.mutableBytes)
     vDSP_mmulD(UnsafePointer <Double> (lhs.pointer), lhs.stride, UnsafePointer <Double> (rhs.pointer), rhs.stride, resultPointer, 1, vDSP_Length(lhs.rows), vDSP_Length(rhs.columns), vDSP_Length(lhs.columns))
     return Matrix(data:resultData, columns:resultColumns, rows:resultRows, stride:1)
-#else
+#elseif arch(arm) || arch(i386)
     assert(sizeof(Float) == sizeof(CGFloat))
     let resultPointer = UnsafeMutablePointer <Float> (resultData.mutableBytes)
     vDSP_mmul(UnsafePointer <Float> (lhs.pointer), lhs.stride, UnsafePointer <Float> (rhs.pointer), rhs.stride, resultPointer, 1, vDSP_Length(lhs.rows), vDSP_Length(rhs.columns), vDSP_Length(lhs.columns))
     return Matrix(data:resultData, columns:resultColumns, rows:resultRows, stride:1)
+#else
+    preconditionFailure("vDSP_mmul not defined for current architecture")
 #endif
 }
 
