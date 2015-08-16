@@ -83,13 +83,9 @@ You can add SwiftGraphics to your project in one of the following ways:
 
 - Install with [Carthage][carthage_url] (Recommended):
 
-Note, Carthage does not currently seem to work with repositories that use submodules. To work-around that I've created a branch of SwiftGraphics that replaces submodules with full carthage support. You should use that branch when you declare your dependency on SwiftGraphics.
-
-  1. Add `github "schwa/SwiftGraphics" "carthage"` to your project Cartfile.
+  1. Add `github "schwa/SwiftGraphics"` to your project Cartfile (alternatively add `github "schwa/SwiftGraphics" develop` if you want latest bits).
   2. Run `carthage update` to download and build SwiftGraphics.
   3. Drag SwiftGraphics.framework to your project and link it.
-
-Note: The reason why SwiftGraphics uses git submodules and compiles SwiftUtilities' xcodeproj as part of SwiftGraphics is because Xcode Playgrounds currently do not support frameworks that link to other frameworks not built as part of the same build. Therefore you cannot use SwiftGraphics' playgrounds in the carthage branch.
 
 - Install with CocoaPods [v0.36.0+][CocoaPods beta] and add the following to your project Podfile:
 
