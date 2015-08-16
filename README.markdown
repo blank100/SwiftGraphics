@@ -13,10 +13,10 @@ Also note this project has moved to Swift 2.0 which requires Xcode 7.0 and Mac O
 
 ## Bringing Swift goodness to Quartz.
 
-[![Build Kite][buildkite_img]](buildkite)
-[![Version][podver_img]](podver_url)
-[![Platform][platform_img]](podver_url)
-[![Carthage][carthage_img]](carthage_url)
+[![Build Kite][buildkite_img]][buildkite]
+[![Version][podver_img]][podver_url]
+[![Platform][platform_img]][podver_url]
+[![Carthage][carthage_img]][carthage_url]
 
 [buildkite_img]: https://badge.buildkite.com/5b26ba56757aa298d41ffedc5a6071817be50df9418d46b8ec.svg
 [buildkite_img]: https://badge.buildkite.com/5b26ba56757aa298d41ffedc5a6071817be50df9418d46b8ec.svg
