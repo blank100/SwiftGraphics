@@ -64,7 +64,7 @@ extension BezierCurve: CustomStringConvertible {
             return "(\(x), \(y))"
         }
 
-        let controlsString = ", ".join(controls.map() { pointFormatter($0) })
+        let controlsString = controls.map() { pointFormatter($0) }.joinWithSeparator(", ")
         if let start = start {
             return "BezierCurve(start:\(pointFormatter(start)), controls:\(controlsString), end:\(pointFormatter(end))"
         }

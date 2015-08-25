@@ -138,26 +138,26 @@ public extension CGRect {
 
     func offsetBy(dx  dx:CGFloat, dy:CGFloat) -> CGRect {
         var copy = self
-        copy.offset(dx: dx, dy: dy)
+        copy.offsetInPlace(dx: dx, dy: dy)
         return copy
     }
 
     func offsetBy(delta:CGPoint) -> CGRect {
         var copy = self
-        copy.offset(dx: delta.x, dy: delta.y)
+        copy.offsetInPlace(dx: delta.x, dy: delta.y)
         return copy
     }
 
     func insetBy(dx  dx:CGFloat, dy:CGFloat) -> CGRect {
         var copy = self
-        copy.inset(dx:dx, dy:dy)
+        copy.insetInPlace(dx:dx, dy:dy)
         return copy
         }
 
     // TODO: Deprecate
     func insetted(dx  dx:CGFloat, dy:CGFloat) -> CGRect {
         var copy = self
-        copy.inset(dx:dx, dy:dy)
+        copy.insetInPlace(dx:dx, dy:dy)
         return copy
         }
 
@@ -169,14 +169,14 @@ public extension CGRect {
     static func unionOfRects(rects:[CGRect]) -> CGRect {
         var result = rects[0]
         for rect in rects[1..<rects.count] {
-            result.union(rect)
+            result.unionInPlace(rect)
         }
         return result
     }
     
     static func unionOfPoints(points:[CGPoint]) -> CGRect {
         if points.isEmpty {
-            return CGRect.nullRect
+            return CGRect.null
         }
         var result = CGRect(center:points[0], radius:0.0)
         for pt in points[1..<points.count] {
@@ -186,11 +186,11 @@ public extension CGRect {
     }
     
     func rectByUnion(point: CGPoint) -> CGRect {
-        return rectByUnion(CGRect(center:point, radius:0.0))
+        return union(CGRect(center:point, radius:0.0))
     }
     
     mutating func union(point: CGPoint) {
-        union(CGRect(center:point, radius:0.0))
+        unionInPlace(CGRect(center:point, radius:0.0))
     }
 
     func toTuple() -> (CGFloat, CGFloat, CGFloat, CGFloat) {

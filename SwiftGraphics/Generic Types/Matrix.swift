@@ -104,11 +104,11 @@ extension Matrix: CustomStringConvertible {
 
         let strings:[String] = (0..<rows).map() {
             let strings:[String] = self.row($0).map() { "\($0)" }
-            let string = ", ".join(strings)
+            let string = strings.joinWithSeparator(", ")
             return "[\(string)]"
         }
 
-        let string = "[" + ", ".join(strings) + "]"
+        let string = "[" + strings.joinWithSeparator(", ") + "]"
 
         return "Matrix(columns: \(columns), rows: \(rows), values: \(string))"
     }

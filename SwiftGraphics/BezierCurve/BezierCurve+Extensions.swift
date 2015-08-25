@@ -53,8 +53,8 @@ public extension BezierCurve {
         let m3x = Matrix(pointer:pointsPointer, columns:1, rows:points.count, stride:2)
         let m3y = Matrix(pointer:pointsPointer, columns:1, rows:points.count, stride:2, start:1)
 
-        var rx = m1 * m2 * m3x
-        var ry = m1 * m2 * m3y
+        let rx = m1 * m2 * m3x
+        let ry = m1 * m2 * m3y
 
         return CGPoint(x:CGFloat(rx.pointer[0]), y:CGFloat(ry.pointer[0]))
     }
