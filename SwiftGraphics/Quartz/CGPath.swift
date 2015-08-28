@@ -270,13 +270,13 @@ public extension CGPath {
         
         enumerate() { (type, points) -> Void in
             switch type.rawValue {
-            case CGPathElementType.MoveToPoint.rawValue:
-                ret.append(points[0])
-            case CGPathElementType.AddLineToPoint.rawValue:
-                ret.append(points[1])
-            case CGPathElementType.AddCurveToPoint.rawValue:
-                [1, 2, 3].map { ret.append(points[$0]) }
-            default: ()
+                case CGPathElementType.MoveToPoint.rawValue:
+                    ret.append(points[0])
+                case CGPathElementType.AddLineToPoint.rawValue:
+                    ret.append(points[1])
+                case CGPathElementType.AddCurveToPoint.rawValue:
+                    ret.appendContentsOf(points)
+                default: ()
             }
         }
         return ret
@@ -287,13 +287,13 @@ public extension CGPath {
         
         enumerate() { (type, points) -> Void in
             switch type.rawValue {
-            case CGPathElementType.MoveToPoint.rawValue:
-                ret = ret + 1
-            case CGPathElementType.AddLineToPoint.rawValue:
-                ret = ret + 1
-            case CGPathElementType.AddCurveToPoint.rawValue:
-                ret = ret + 3
-            default: ()
+                case CGPathElementType.MoveToPoint.rawValue:
+                    ret = ret + 1
+                case CGPathElementType.AddLineToPoint.rawValue:
+                    ret = ret + 1
+                case CGPathElementType.AddCurveToPoint.rawValue:
+                    ret = ret + 3
+                default: ()
             }
         }
         return ret
