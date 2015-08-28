@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45DA4AC319AA62A800133F32"
-               BuildableName = "SwiftGraphics.framework"
-               BlueprintName = "SwiftGraphics_iOS"
+               BlueprintIdentifier = "4563D30E1B90AD3B005412D1"
+               BuildableName = "All iOS"
+               BlueprintName = "All iOS"
                ReferencedContainer = "container:SwiftGraphics.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "451D29081A8A911F00209FE3"
-               BuildableName = "SwiftGraphics_iOS_UnitTests.xctest"
-               BlueprintName = "SwiftGraphics_iOS_UnitTests"
-               ReferencedContainer = "container:SwiftGraphics.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45DA4AC319AA62A800133F32"
-            BuildableName = "SwiftGraphics.framework"
-            BlueprintName = "SwiftGraphics_iOS"
-            ReferencedContainer = "container:SwiftGraphics.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45DA4AC319AA62A800133F32"
-            BuildableName = "SwiftGraphics.framework"
-            BlueprintName = "SwiftGraphics_iOS"
+            BlueprintIdentifier = "4563D30E1B90AD3B005412D1"
+            BuildableName = "All iOS"
+            BlueprintName = "All iOS"
             ReferencedContainer = "container:SwiftGraphics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45DA4AC319AA62A800133F32"
-            BuildableName = "SwiftGraphics.framework"
-            BlueprintName = "SwiftGraphics_iOS"
+            BlueprintIdentifier = "4563D30E1B90AD3B005412D1"
+            BuildableName = "All iOS"
+            BlueprintName = "All iOS"
             ReferencedContainer = "container:SwiftGraphics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

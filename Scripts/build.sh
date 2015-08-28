@@ -6,4 +6,6 @@ xcodebuild -version | grep "Xcode 7" > /dev/null || { echo 'Not running Xcode 7'
 
 cd `git rev-parse --show-toplevel`
 
-xctool -project SwiftGraphics.xcodeproj -scheme All build test || exit $!
+# Note we don't build iOS on device due to code signing requirements.
+xctool -project SwiftGraphics.xcodeproj -scheme "All iOS" -sdk iphonesimulator build test || exit $!
+xctool -project SwiftGraphics.xcodeproj -scheme "All Mac" -sdk macosx build test || exit $!

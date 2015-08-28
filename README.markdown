@@ -6,20 +6,17 @@ All development happens on the [develop][develop] branch. Code is merged back on
 
 [develop]: https://github.com/schwa/SwiftGraphics/tree/develop
 
-Also note this project has moved to Swift 2.0 which requires Xcode 7.0 and Mac OS X 10.10. This project will move to [BuildKite][buildkite]. A Swift 1.2 branch has been made available - but no development will be occurring on this branch.
-
-[issue58]: https://github.com/schwa/SwiftGraphics/issues/58
-[buildkite]: http://buildkite.com/
+Also note this project has moved to Swift 2.0 which requires Xcode 7.0 and Mac OS X 10.10. A Swift 1.2 branch has been made available - but no development will be occurring on this branch.
 
 ## Bringing Swift goodness to Quartz.
 
-[![Build Kite][buildkite_img]][buildkite]
-[![Version][podver_img]][podver_url]
-[![Platform][platform_img]][podver_url]
 [![Carthage][carthage_img]][carthage_url]
+[![Platform][platform_img]][podver_url]
+[![Travis][travis_img]][travis]
+[![Version][podver_img]][podver_url]
 
-[buildkite_img]: https://badge.buildkite.com/5b26ba56757aa298d41ffedc5a6071817be50df9418d46b8ec.svg
-[buildkite_img]: https://badge.buildkite.com/5b26ba56757aa298d41ffedc5a6071817be50df9418d46b8ec.svg
+[travis]: https://travis-ci.org/schwa/SwiftGraphics
+[travis_img]: https://travis-ci.org/schwa/SwiftGraphics.svg?branch=master
 [podver_url]: http://cocoadocs.org/docsets/SwiftGraphics
 [podver_img]: https://img.shields.io/cocoapods/v/SwiftGraphics.svg
 [platform_img]: https://img.shields.io/cocoapods/p/SwiftGraphics.svg

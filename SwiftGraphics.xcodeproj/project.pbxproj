@@ -7,15 +7,37 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		4563D30E1B90AD3B005412D1 /* All iOS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4563D3131B90AD3B005412D1 /* Build configuration list for PBXAggregateTarget "All iOS" */;
+			buildPhases = (
+			);
+			dependencies = (
+				4563D3151B90AD4D005412D1 /* PBXTargetDependency */,
+			);
+			name = "All iOS";
+			productName = "All iOS";
+		};
+		4563D3161B90AD56005412D1 /* All Mac */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4563D3171B90AD56005412D1 /* Build configuration list for PBXAggregateTarget "All Mac" */;
+			buildPhases = (
+			);
+			dependencies = (
+				4563D31B1B90AD61005412D1 /* PBXTargetDependency */,
+				4563D31D1B90AD61005412D1 /* PBXTargetDependency */,
+			);
+			name = "All Mac";
+			productName = "All Mac";
+		};
 		45B8AE8F19BCE56E00C61A3F /* All */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 45B8AE9019BCE56E00C61A3F /* Build configuration list for PBXAggregateTarget "All" */;
 			buildPhases = (
 			);
 			dependencies = (
-				45B8AE9419BCE57900C61A3F /* PBXTargetDependency */,
-				454FE67C19C77094002E4DEF /* PBXTargetDependency */,
-				45B8AE9619BCE57900C61A3F /* PBXTargetDependency */,
+				4563D31F1B90AD6A005412D1 /* PBXTargetDependency */,
+				4563D3211B90AD6A005412D1 /* PBXTargetDependency */,
 			);
 			name = All;
 			productName = All;
@@ -229,13 +251,6 @@
 			remoteGlobalIDString = 45E8EEC5199A8EA50035C722;
 			remoteInfo = SwiftUtilities_iOS;
 		};
-		454FE67B19C77094002E4DEF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 454FE66119C77031002E4DEF;
-			remoteInfo = SwiftGraphicsPlayground;
-		};
 		454FE68119C77993002E4DEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
@@ -243,26 +258,47 @@
 			remoteGlobalIDString = 454D550619AA5CE6000E3EB3;
 			remoteInfo = SwiftGraphics_OSX;
 		};
+		4563D3141B90AD4D005412D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45DA4AC319AA62A800133F32;
+			remoteInfo = SwiftGraphics_iOS;
+		};
+		4563D31A1B90AD61005412D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 454D550619AA5CE6000E3EB3;
+			remoteInfo = SwiftGraphics_OSX;
+		};
+		4563D31C1B90AD61005412D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 454FE66119C77031002E4DEF;
+			remoteInfo = SwiftGraphics_OSX_Playground;
+		};
+		4563D31E1B90AD6A005412D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4563D3161B90AD56005412D1;
+			remoteInfo = "All Mac";
+		};
+		4563D3201B90AD6A005412D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4563D30E1B90AD3B005412D1;
+			remoteInfo = "All iOS";
+		};
 		4582DB7819AA7A6700B7F5B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 454D550619AA5CE6000E3EB3;
 			remoteInfo = SwiftGraphics_OSX;
-		};
-		45B8AE9319BCE57900C61A3F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 454D550619AA5CE6000E3EB3;
-			remoteInfo = SwiftGraphics_OSX;
-		};
-		45B8AE9519BCE57900C61A3F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45DA4AC319AA62A800133F32;
-			remoteInfo = SwiftGraphics_iOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -963,6 +999,12 @@
 					454FE66119C77031002E4DEF = {
 						CreatedOnToolsVersion = 6.1;
 					};
+					4563D30E1B90AD3B005412D1 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					4563D3161B90AD56005412D1 = {
+						CreatedOnToolsVersion = 7.0;
+					};
 					45B8AE8F19BCE56E00C61A3F = {
 						CreatedOnToolsVersion = 6.0;
 					};
@@ -991,6 +1033,8 @@
 			projectRoot = "";
 			targets = (
 				45B8AE8F19BCE56E00C61A3F /* All */,
+				4563D3161B90AD56005412D1 /* All Mac */,
+				4563D30E1B90AD3B005412D1 /* All iOS */,
 				454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */,
 				45DA4AC319AA62A800133F32 /* SwiftGraphics_iOS */,
 				454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */,
@@ -1264,30 +1308,40 @@
 			name = SwiftUtilities_iOS;
 			targetProxy = 452034AB1B2B8606002CCCFA /* PBXContainerItemProxy */;
 		};
-		454FE67C19C77094002E4DEF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */;
-			targetProxy = 454FE67B19C77094002E4DEF /* PBXContainerItemProxy */;
-		};
 		454FE68219C77993002E4DEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */;
 			targetProxy = 454FE68119C77993002E4DEF /* PBXContainerItemProxy */;
 		};
+		4563D3151B90AD4D005412D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45DA4AC319AA62A800133F32 /* SwiftGraphics_iOS */;
+			targetProxy = 4563D3141B90AD4D005412D1 /* PBXContainerItemProxy */;
+		};
+		4563D31B1B90AD61005412D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */;
+			targetProxy = 4563D31A1B90AD61005412D1 /* PBXContainerItemProxy */;
+		};
+		4563D31D1B90AD61005412D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */;
+			targetProxy = 4563D31C1B90AD61005412D1 /* PBXContainerItemProxy */;
+		};
+		4563D31F1B90AD6A005412D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4563D3161B90AD56005412D1 /* All Mac */;
+			targetProxy = 4563D31E1B90AD6A005412D1 /* PBXContainerItemProxy */;
+		};
+		4563D3211B90AD6A005412D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4563D30E1B90AD3B005412D1 /* All iOS */;
+			targetProxy = 4563D3201B90AD6A005412D1 /* PBXContainerItemProxy */;
+		};
 		4582DB7919AA7A6700B7F5B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */;
 			targetProxy = 4582DB7819AA7A6700B7F5B4 /* PBXContainerItemProxy */;
-		};
-		45B8AE9419BCE57900C61A3F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */;
-			targetProxy = 45B8AE9319BCE57900C61A3F /* PBXContainerItemProxy */;
-		};
-		45B8AE9619BCE57900C61A3F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45DA4AC319AA62A800133F32 /* SwiftGraphics_iOS */;
-			targetProxy = 45B8AE9519BCE57900C61A3F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1545,6 +1599,34 @@
 			};
 			name = Release;
 		};
+		4563D30F1B90AD3B005412D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4563D3101B90AD3B005412D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4563D3181B90AD56005412D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4563D3191B90AD56005412D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		45B8AE9119BCE56E00C61A3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1654,6 +1736,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		4563D3131B90AD3B005412D1 /* Build configuration list for PBXAggregateTarget "All iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4563D30F1B90AD3B005412D1 /* Debug */,
+				4563D3101B90AD3B005412D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4563D3171B90AD56005412D1 /* Build configuration list for PBXAggregateTarget "All Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4563D3181B90AD56005412D1 /* Debug */,
+				4563D3191B90AD56005412D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		45B8AE9019BCE56E00C61A3F /* Build configuration list for PBXAggregateTarget "All" */ = {
 			isa = XCConfigurationList;
