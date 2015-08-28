@@ -1744,6 +1744,7 @@
 				4563D3101B90AD3B005412D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4563D3171B90AD56005412D1 /* Build configuration list for PBXAggregateTarget "All Mac" */ = {
 			isa = XCConfigurationList;
@@ -1752,6 +1753,7 @@
 				4563D3191B90AD56005412D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45B8AE9019BCE56E00C61A3F /* Build configuration list for PBXAggregateTarget "All" */ = {
 			isa = XCConfigurationList;
