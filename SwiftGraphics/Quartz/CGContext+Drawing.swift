@@ -11,42 +11,42 @@ import CoreGraphics
 // TODO: Deprecate. Most of this will be deprecated and replaced by the Drawable API. #deprecate #simplify
 public extension CGContext {
 
-    func strokePath(path:CGPath) {
+    func strokePath(path: CGPath) {
         CGContextAddPath(self, path)
         CGContextStrokePath(self)
     }
 
-    func fillPath(path:CGPath) {
+    func fillPath(path: CGPath) {
         CGContextAddPath(self, path)
         CGContextFillPath(self)
     }
 
-    func fillRect(rect:CGRect) {
+    func fillRect(rect: CGRect) {
         CGContextFillRect(self, rect)
     }
 
-    func strokeRect(rect:CGRect) {
+    func strokeRect(rect: CGRect) {
         CGContextStrokeRect(self, rect)
     }
 
-    func strokeEllipseInRect(rect:CGRect) {
+    func strokeEllipseInRect(rect: CGRect) {
         CGContextStrokeEllipseInRect(self, rect)
     }
 
-    func strokeLines(points:[CGPoint]) {
+    func strokeLines(points: [CGPoint]) {
         points.withUnsafeBufferPointer {
-            (p:UnsafeBufferPointer<CGPoint>) -> Void in
+            (p: UnsafeBufferPointer<CGPoint>) -> Void in
             CGContextStrokeLineSegments(self, p.baseAddress, points.count)
         }
     }
 
-    func strokeLine(p1:CGPoint, _ p2:CGPoint) {
+    func strokeLine(p1: CGPoint, _ p2: CGPoint) {
         strokeLines([p1, p2])
     }
 
     // TODO: Rename strokePolygon?
-    func strokeLine(points:[CGPoint], closed:Bool = false) {
-        var newPoints:[CGPoint] = []
+    func strokeLine(points: [CGPoint], closed: Bool = false) {
+        var newPoints: [CGPoint] = []
         for (first, second) in anyGenerator(SlidingWindow(points)) {
             if second == nil {
                 if (closed == true) {
@@ -63,38 +63,38 @@ public extension CGContext {
     }
 
     
-    func fillCircle(center center:CGPoint, radius:CGFloat) {
-        let rect = CGRect(center:center, size:CGSize(width:radius * 2, height:radius * 2))
+    func fillCircle(center center: CGPoint, radius: CGFloat) {
+        let rect = CGRect(center: center, size: CGSize(width: radius * 2, height: radius * 2))
         CGContextFillEllipseInRect(self, rect)
     }
     
-    func fillCircle(circle:Circle) {
+    func fillCircle(circle: Circle) {
         CGContextFillEllipseInRect(self, circle.frame)
     }
 
 // MARK: Convenience shapes
 
-    func strokeCross(rect:CGRect) {
+    func strokeCross(rect: CGRect) {
         let linePoints = [
-            CGPoint(x:rect.minX, y:rect.midY), CGPoint(x:rect.maxX, y:rect.midY),
-            CGPoint(x:rect.midX, y:rect.minY), CGPoint(x:rect.midX, y:rect.maxY),
+            CGPoint(x: rect.minX, y: rect.midY), CGPoint(x: rect.maxX, y: rect.midY),
+            CGPoint(x: rect.midX, y: rect.minY), CGPoint(x: rect.midX, y: rect.maxY),
         ]
         strokeLines(linePoints)
     }
 
-    func strokeSaltire(rect:CGRect) {    
+    func strokeSaltire(rect: CGRect) {    
         let linePoints = [
-            CGPoint(x:rect.minX, y:rect.minY), CGPoint(x:rect.maxX, y:rect.maxY),
-            CGPoint(x:rect.minX, y:rect.maxY), CGPoint(x:rect.maxX, y:rect.minY),
+            CGPoint(x: rect.minX, y: rect.minY), CGPoint(x: rect.maxX, y: rect.maxY),
+            CGPoint(x: rect.minX, y: rect.maxY), CGPoint(x: rect.maxX, y: rect.minY),
         ]
         strokeLines(linePoints)
     }
 
 
     // TODO: Rename/Deprecate
-    func plotPoints(points:[CGPoint]) {
+    func plotPoints(points: [CGPoint]) {
         for (_, point) in points.enumerate() {
-            self.strokeCross(CGRect(center:point, diameter:10))
+            self.strokeCross(CGRect(center: point, diameter: 10))
         }
     }
 }

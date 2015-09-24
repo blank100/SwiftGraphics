@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-// TODO - this is a "Point" quadtree - see http://www.codeproject.com/Articles/30535/A-Simple-QuadTree-Implementation-in-C for a discussion of point vs "region' quad tree
+// TODO - this is a "Point" quadtree - see http: //www.codeproject.com/Articles/30535/A-Simple-QuadTree-Implementation-in-C for a discussion of point vs "region' quad tree
 
 private struct QuadTreeConfig {
     let minimumNodeSize: CGSize
@@ -20,17 +20,17 @@ public class QuadTree <T> {
     public var rootNode: QuadTreeNode <T>!
     private let config: QuadTreeConfig
 
-    public required init(frame:CGRect, minimumNodeSize:CGSize = CGSize(w:1, h:1), maximumObjectsPerNode:Int = 8) {
-        self.config = QuadTreeConfig(minimumNodeSize:minimumNodeSize, maximumObjectsPerNode:maximumObjectsPerNode)
-        self.rootNode = QuadTreeNode(config:config, frame:frame)
+    public required init(frame: CGRect, minimumNodeSize: CGSize = CGSize(w: 1, h: 1), maximumObjectsPerNode: Int = 8) {
+        self.config = QuadTreeConfig(minimumNodeSize: minimumNodeSize, maximumObjectsPerNode: maximumObjectsPerNode)
+        self.rootNode = QuadTreeNode(config: config, frame: frame)
     }
     
-    public func addObject(object:T, point:CGPoint) {
+    public func addObject(object: T, point: CGPoint) {
         assert(frame.contains(point))
-        rootNode.addObject(object, point:point)
+        rootNode.addObject(object, point: point)
     }
     
-    public func objectsInRect(rect:CGRect) -> [T] {
+    public func objectsInRect(rect: CGRect) -> [T] {
         assert(frame.intersects(rect))
         return rootNode.objectsInRect(rect)
     }
@@ -38,7 +38,7 @@ public class QuadTree <T> {
 
 public class QuadTreeNode <T> {
 
-    public typealias Item = (point:CGPoint, object:T)
+    public typealias Item = (point: CGPoint, object: T)
 
     public let frame: CGRect
     private let config: QuadTreeConfig
@@ -63,12 +63,12 @@ public class QuadTreeNode <T> {
     internal var isLeaf: Bool { return subnodes == nil }
     internal var canExpand: Bool { return frame.size.width >= config.minimumNodeSize.width * 2.0 && frame.size.height >= config.minimumNodeSize.height * 2.0 }
 
-    private init(config:QuadTreeConfig, frame:CGRect) {
+    private init(config: QuadTreeConfig, frame: CGRect) {
         self.config = config
         self.frame = frame
     }
 
-    func addItem(item:Item) {
+    func addItem(item: Item) {
         if isLeaf {
             items!.append(item)
             if items!.count >= config.maximumObjectsPerNode && canExpand {
@@ -80,13 +80,13 @@ public class QuadTreeNode <T> {
         }
     }
 
-    func addObject(object:T, point:CGPoint) {
-        let item = Item(point:point, object:object)
+    func addObject(object: T, point: CGPoint) {
+        let item = Item(point: point, object: object)
         addItem(item)
     }
 
-    func itemsInRect(rect:CGRect) -> [Item] {
-        var foundItems:[Item] = []
+    func itemsInRect(rect: CGRect) -> [Item] {
+        var foundItems: [Item] = []
         if let items = items {
             for item in items {
                 if rect.contains(item.point) {
@@ -103,17 +103,17 @@ public class QuadTreeNode <T> {
         return foundItems
     }
 
-    func objectsInRect(rect:CGRect) -> [T] {
+    func objectsInRect(rect: CGRect) -> [T] {
         return itemsInRect(rect).map { return $0.object }
     }
     
     internal func expand() {
         assert(canExpand)
         subnodes = [
-            QuadTreeNode(config:config, frame:frame.quadrant(.minXMinY)),
-            QuadTreeNode(config:config, frame:frame.quadrant(.maxXMinY)),
-            QuadTreeNode(config:config, frame:frame.quadrant(.minXMaxY)),
-            QuadTreeNode(config:config, frame:frame.quadrant(.maxXMaxY)),
+            QuadTreeNode(config: config, frame: frame.quadrant(.minXMinY)),
+            QuadTreeNode(config: config, frame: frame.quadrant(.maxXMinY)),
+            QuadTreeNode(config: config, frame: frame.quadrant(.minXMaxY)),
+            QuadTreeNode(config: config, frame: frame.quadrant(.maxXMaxY)),
             ]
         for item in items! {
             let node = subnodeForPoint(item.point)
@@ -123,14 +123,14 @@ public class QuadTreeNode <T> {
         items = nil
     }
 
-    internal func subnodeForPoint(point:CGPoint) -> QuadTreeNode! {
+    internal func subnodeForPoint(point: CGPoint) -> QuadTreeNode! {
         assert(frame.contains(point))
-        let quadrant = Quadrant.fromPoint(point, rect:frame)
+        let quadrant = Quadrant.fromPoint(point, rect: frame)
         let subnode = subnodeForQuadrant(quadrant!)
         return subnode
     }
 
-    internal func subnodeForQuadrant(quadrant:Quadrant) -> QuadTreeNode! {
+    internal func subnodeForQuadrant(quadrant: Quadrant) -> QuadTreeNode! {
         if let subnodes = subnodes {
             switch (quadrant) {
                 case .minXMinY:

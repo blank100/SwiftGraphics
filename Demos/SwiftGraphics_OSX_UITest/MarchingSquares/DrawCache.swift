@@ -10,19 +10,19 @@ import Foundation
 import SwiftGraphics
 
 
-class Cache <Key, Value:AnyObject> {
+class Cache <Key, Value: AnyObject> {
 
     let cache = NSCache()
 
-    func get(key:Key) -> Value? {
+    func get(key: Key) -> Value? {
         return cache.objectForKey(key as! AnyObject) as? Value
     }
 
-    func set(key:Key, value:Value) {
-        return cache.setObject(value, forKey:key as! AnyObject)
+    func set(key: Key, value: Value) {
+        return cache.setObject(value, forKey: key as! AnyObject)
     }
 
-//    subscript (key:Key) -> Value? {
+//    subscript (key: Key) -> Value? {
 //        get {
 //            return cache.objectForKey(key as! AnyObject) as? Value
 //        }
@@ -37,7 +37,7 @@ class Cache <Key, Value:AnyObject> {
 
 let cache = Cache <String, CGImage> ()
 
-func drawCache(key:String, frame:CGRect, block:CGContext -> Void) -> CGImage? {
+func drawCache(key: String, frame: CGRect, block: CGContext -> Void) -> CGImage? {
 
     if let image = cache.get(key) {
         return image

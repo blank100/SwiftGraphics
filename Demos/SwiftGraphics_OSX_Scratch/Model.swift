@@ -11,10 +11,10 @@ import Foundation
 import SwiftGraphics
 
 class Model: NSObject {
-    @objc var objects:[Thing] = []
-    var selectedObjectIndices:NSMutableIndexSet = NSMutableIndexSet()
-    var selectedObjects:[Thing] {
-        var objects:[Thing] = []
+    @objc var objects: [Thing] = []
+    var selectedObjectIndices: NSMutableIndexSet = NSMutableIndexSet()
+    var selectedObjects: [Thing] {
+        var objects: [Thing] = []
         selectedObjectIndices.with(512) {
             for N in $0 {
                 objects.append(self.objects[N])
@@ -26,7 +26,7 @@ class Model: NSObject {
     override init() {
     }
 
-    func hitTest(location:CGPoint) -> (Int, Thing)? {
+    func hitTest(location: CGPoint) -> (Int, Thing)? {
         for (index, thing) in objects.enumerate() {
             if thing.contains(location) {
                 return (index, thing)
@@ -36,42 +36,42 @@ class Model: NSObject {
     }
 
 
-    func objectSelected(thing:Thing) -> Bool {
+    func objectSelected(thing: Thing) -> Bool {
         let index = objects.indexOf(thing)
         return selectedObjectIndices.containsIndex(index!)
     }
 
-    func selectObject(object:Thing) {
+    func selectObject(object: Thing) {
         let index = objects.indexOf(object)
         selectedObjectIndices.addIndex(index!)
     }
 
-    func unselectObject(object:Thing) {
+    func unselectObject(object: Thing) {
         let index = objects.indexOf(object)
         selectedObjectIndices.removeIndex(index!)
     }
 
 
-    func addObject(object:Thing) {
+    func addObject(object: Thing) {
         self.willChangeValueForKey("objects")
         self.objects.append(object)
         self.didChangeValueForKey("objects")
     }
 
-    func removeObject(object:Thing) {
+    func removeObject(object: Thing) {
         self.willChangeValueForKey("objects")
         let index = objects.indexOf(object)
         removeObjectAtIndex(index!)
         self.didChangeValueForKey("objects")
     }
 
-    func removeObjectAtIndex(index:Int) {
+    func removeObjectAtIndex(index: Int) {
         objects.removeAtIndex(index)
         selectedObjectIndices.removeIndex(index)
         selectedObjectIndices.shiftIndexesStartingAtIndex(index + 1, by: -1)
     }
 
-    func removeObjectsAtIndices(indices:NSIndexSet) {
+    func removeObjectsAtIndices(indices: NSIndexSet) {
         var index = indices.lastIndex
         while index != NSNotFound {
             removeObjectAtIndex(index)
@@ -86,26 +86,26 @@ class Thing: HitTestable, Drawable, Equatable {
 
     typealias ThingType = protocol <HitTestable, Drawable, Geometry, Markupable, CGPathable>
 
-    weak var model:Model?
-    let geometry:ThingType
+    weak var model: Model?
+    let geometry: ThingType
 
     var selected: Bool {
         return model!.objectSelected(self)
     }
 
-    init(model:Model, geometry:ThingType) {
+    init(model: Model, geometry: ThingType) {
         self.model = model
         self.geometry = geometry
         self.center = geometry.frame.mid
     }
 
-    var bounds:CGRect { return geometry.frame }
+    var bounds: CGRect { return geometry.frame }
 
-    var center:CGPoint = CGPointZero
+    var center: CGPoint = CGPointZero
 
-    var frame:CGRect { return CGRect(origin:center, size:bounds.size) }
+    var frame: CGRect { return CGRect(origin: center, size: bounds.size) }
 
-    func drawInContext(context:CGContextRef) {
+    func drawInContext(context: CGContextRef) {
         let localTransform = CGAffineTransform(translation: frame.origin)
 
         context.strokeColor = CGColor.redColor().withAlpha(0.1)
@@ -127,16 +127,16 @@ class Thing: HitTestable, Drawable, Equatable {
         }
     }
 
-    func contains(point:CGPoint) -> Bool {
+    func contains(point: CGPoint) -> Bool {
         let transformedPoint = point - frame.origin
         return self.geometry.contains(transformedPoint)
     }
 
-    func intersects(rect:CGRect) -> Bool {
+    func intersects(rect: CGRect) -> Bool {
         return geometry.intersects(rect.offsetBy(-frame.origin))
     }
 
-    func intersects(path:CGPath) -> Bool {
+    func intersects(path: CGPath) -> Bool {
 
         var transform = CGAffineTransform(translation: -frame.origin)
 //        let ptr = UnsafePointer <CGAffineTransform> (transform)

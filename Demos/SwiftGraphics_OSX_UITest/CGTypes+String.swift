@@ -10,36 +10,36 @@ import Foundation
 import SwiftUtilities
 
 public extension CGFloat {
-    init(string:String) {
+    init(string: String) {
         self = CGFloat(string._bridgeToObjectiveC().doubleValue)
     }
 }
 
-public func StringToPoint(s:String) throws -> CGPoint {
+public func StringToPoint(s: String) throws -> CGPoint {
     let f = "([0-9.Ee+-]+)"
     let pair = "\\{\(f), \(f)\\}"
     let match = try RegularExpression(pair).match(s)!
-    let x = CGFloat(string:match.strings[1])
-    let y = CGFloat(string:match.strings[2])
-    return CGPoint(x:x, y:y)
+    let x = CGFloat(string: match.strings[1])
+    let y = CGFloat(string: match.strings[2])
+    return CGPoint(x: x, y: y)
 }
 
-public func StringToSize(s:String) throws -> CGSize {
+public func StringToSize(s: String) throws -> CGSize {
     let f = "([0-9.Ee+-]+)"
     let pair = "\\{\(f), \(f)\\}"
     let match = try RegularExpression(pair).match(s)!
-    let w = CGFloat(string:match.strings[1])
-    let h = CGFloat(string:match.strings[2])
-    return CGSize(width:w, height:h)
+    let w = CGFloat(string: match.strings[1])
+    let h = CGFloat(string: match.strings[2])
+    return CGSize(width: w, height: h)
 }
 
-public func StringToRect(s:String) throws -> CGRect {
+public func StringToRect(s: String) throws -> CGRect {
     let f = "([0-9.Ee+-]+)"
     let pair = "\\{\(f), \(f)\\}"
     let match = try! RegularExpression("\\{\(pair), \(pair)\\}").match(s)!
-    let x = CGFloat(string:match.strings[1])
-    let y = CGFloat(string:match.strings[2])
-    let w = CGFloat(string:match.strings[3])
-    let h = CGFloat(string:match.strings[4])
-    return CGRect(x:x, y:y, width:w, height:h)
+    let x = CGFloat(string: match.strings[1])
+    let y = CGFloat(string: match.strings[2])
+    let w = CGFloat(string: match.strings[3])
+    let h = CGFloat(string: match.strings[4])
+    return CGRect(x: x, y: y, width: w, height: h)
 }

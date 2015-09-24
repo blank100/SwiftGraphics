@@ -13,15 +13,15 @@ extension NSGestureRecognizer {
 
     typealias Callback = Void -> Void
 
-    convenience init(callback:Callback?) {
-        self.init(target:callbackHelper, action:Selector("event:"))
+    convenience init(callback: Callback?) {
+        self.init(target: callbackHelper, action: Selector("event: "))
 
         if let callback = callback {
             addCallback(callback)
         }
     }
 
-    var callbacks:[Callback] {
+    var callbacks: [Callback] {
         get {
             let callbacks = getAssociatedWrappedObject(self, key: &callbackKey) as? [Callback]
             if let callbacks = callbacks {
@@ -36,9 +36,9 @@ extension NSGestureRecognizer {
         }
     }
 
-    func addCallback(callback:Callback) {
+    func addCallback(callback: Callback) {
 
-        if target !== callbackHelper && action != Selector("event:") {
+        if target !== callbackHelper && action != Selector("event: ") {
             convert()
         }
 
@@ -47,7 +47,7 @@ extension NSGestureRecognizer {
         self.callbacks = callbacks
     }
 
-//    func removeCallback(callback:Callback) {
+//    func removeCallback(callback: Callback) {
 //        var callbacks = self.callbacks
 //        callbacks.append(callback)
 //
@@ -60,7 +60,7 @@ extension NSGestureRecognizer {
         let savedAction = action
 
         target = callbackHelper
-        action = Selector("event:")
+        action = Selector("event: ")
 
         addCallback() {
             [unowned self] in
@@ -73,7 +73,7 @@ extension NSGestureRecognizer {
 
 class CallbackHelper: NSObject {
 
-    func event(gestureRecognizer:NSGestureRecognizer) {
+    func event(gestureRecognizer: NSGestureRecognizer) {
         for callback in gestureRecognizer.callbacks {
             callback()
         }

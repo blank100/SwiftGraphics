@@ -36,39 +36,39 @@ extension CGFloat: ArithmeticType {
 // MARK: Protocols with associated types
 
 /*
-    Due to a bug with Swift (http://openradar.appspot.com/myradars/edit?id=5241213351362560) we cannot make CG types conform to these protocols.
+    Due to a bug with Swift (http: //openradar.appspot.com/myradars/edit?id=5241213351362560) we cannot make CG types conform to these protocols.
     Ideally instead of using CGPoint and friends we could just use PointType and our code would work with all types.
 */
 
 public protocol PointType {
     typealias ScalarType
     
-    var x:ScalarType { get }
-    var y:ScalarType { get }
+    var x: ScalarType { get }
+    var y: ScalarType { get }
     }
 
 public protocol SizeType {
     typealias ScalarType
     
-    var width:ScalarType { get }
-    var height:ScalarType { get }
+    var width: ScalarType { get }
+    var height: ScalarType { get }
     }
 
 public protocol RectType {
     typealias OriginType
     typealias SizeType
 
-    var origin:OriginType { get }
-    var size:SizeType { get }
+    var origin: OriginType { get }
+    var size: SizeType { get }
     }
 
 // MARK: Generic Points
 
-public struct GenericPoint <T:ArithmeticType> {
-    public let x:T
-    public let y:T
+public struct GenericPoint <T: ArithmeticType> {
+    public let x: T
+    public let y: T
 
-    public init(x:T, y:T) {
+    public init(x: T, y: T) {
         self.x = x
         self.y = y
     }
@@ -80,11 +80,11 @@ extension GenericPoint: PointType {
 
 // MARK: Generic Sizes
 
-public struct GenericSize <T:ArithmeticType> {
-    public let width:T
-    public let height:T
+public struct GenericSize <T: ArithmeticType> {
+    public let width: T
+    public let height: T
 
-    public init(width:T, height:T) {
+    public init(width: T, height: T) {
         self.width = width
         self.height = height
     }
@@ -96,11 +96,11 @@ extension GenericSize: SizeType {
 
 // MARK: Generic Rects
 
-public struct GenericRect <T:PointType, U:SizeType> {
-    public let origin:T
-    public let size:U
+public struct GenericRect <T: PointType, U: SizeType> {
+    public let origin: T
+    public let size: U
 
-    public init(origin:T, size:U) {
+    public init(origin: T, size: U) {
         self.origin = origin
         self.size = size
     }
@@ -126,14 +126,14 @@ public typealias UIntRect = GenericRect<UIntPoint, UIntSize>
 extension GenericPoint: Equatable {
 }
 
-public func == <T> (lhs:GenericPoint <T>, rhs:GenericPoint <T>) -> Bool {
+public func == <T> (lhs: GenericPoint <T>, rhs: GenericPoint <T>) -> Bool {
     return lhs.x == rhs.x && lhs.y == rhs.y
 }
 
 extension GenericSize: Equatable {
 }
 
-public func == <T> (lhs:GenericSize <T>, rhs:GenericSize <T>) -> Bool {
+public func == <T> (lhs: GenericSize <T>, rhs: GenericSize <T>) -> Bool {
     return lhs.width == rhs.width && lhs.height == rhs.height
 }
 
@@ -142,7 +142,7 @@ public func == <T> (lhs:GenericSize <T>, rhs:GenericSize <T>) -> Bool {
 //extension GenericRect: Equatable {
 //}
 
-//public func == <T,U> (lhs:GenericRect <T,U>, rhs:GenericRect <T,U>) -> Bool {
+//public func == <T,U> (lhs: GenericRect <T,U>, rhs: GenericRect <T,U>) -> Bool {
 //    return lhs.origin == rhs.origin && lhs.size == rhs.size
 //}
 

@@ -13,7 +13,7 @@ import Cocoa
 extension UInt32 {
     func asHex() -> String {
         var s = ""
-        let characters:[Character] = [
+        let characters: [Character] = [
             "0","1","2","3","4","5","6","7","8","9",
             "A","B","C","D","E","F",
             ]
@@ -32,15 +32,15 @@ extension UInt32 {
 }
 
 struct IntegerPoint <T: IntegerType> {
-    var x:T
-    var y:T
+    var x: T
+    var y: T
 }
 
 typealias UIntPoint = IntegerPoint <UInt>
 
 struct IntegerSize <T: IntegerType> {
-    var width:T
-    var height:T
+    var width: T
+    var height: T
 }
 
 typealias UIntSize = IntegerSize <UInt>
@@ -53,7 +53,7 @@ struct Bitmap {
     let ptr: UnsafeMutablePointer<Void>
     var bytesPerPixel: UInt { get { return bitsPerPixel / 8 } }
 
-    subscript (index:UIntPoint) -> UInt32 {
+    subscript (index: UIntPoint) -> UInt32 {
         assert(index.x < size.width)
         assert(index.y < size.height)
         let offset = index.y * bytesPerRow + index.x * bytesPerPixel
@@ -63,18 +63,18 @@ struct Bitmap {
 }
 
 extension NSColor {
-    convenience init(rgba:UInt32, bgra:Bool = true) {
-        let (rs:UInt32, gs:UInt32, bs:UInt32) = bgra ? (8, 16, 24) : (24, 16, 8)
+    convenience init(rgba: UInt32, bgra: Bool = true) {
+        let (rs: UInt32, gs: UInt32, bs: UInt32) = bgra ? (8, 16, 24) : (24, 16, 8)
     
     
         let r = CGFloat((rgba >> rs) & 0xFF) / 255
         let g = CGFloat((rgba >> gs) & 0xFF) / 255
         let b = CGFloat((rgba >> bs) & 0xFF) / 255
         let a = CGFloat(rgba & 0b1111_1111) / 255
-        self.init(deviceRed:r, green:g, blue:b, alpha:a)
+        self.init(deviceRed: r, green: g, blue: b, alpha: a)
     }
     
-    var asUInt32:UInt32 {
+    var asUInt32: UInt32 {
         get {
             let r = UInt32(redComponent * 255)
             let g = UInt32(greenComponent * 255)
@@ -87,12 +87,12 @@ extension NSColor {
 
 
 extension NSData {
-    convenience init(contentsOfCompressedFile path:String) {
-        let data = NSData(contentsOfFile:path)
+    convenience init(contentsOfCompressedFile path: String) {
+        let data = NSData(contentsOfFile: path)
         let zipFile = gzopen(path, "rb")
-        let unzippedData = NSMutableData(length:0)!
+        let unzippedData = NSMutableData(length: 0)!
         while true {
-            let buffer = NSMutableData(length:4 * 1024 * 1024)!
+            let buffer = NSMutableData(length: 4 * 1024 * 1024)!
             let result = gzread(zipFile, buffer.mutableBytes, UInt32(buffer.length))
             if result > 0 {
                 buffer.length = Int(result)
@@ -103,44 +103,44 @@ extension NSData {
             }
         }
         gzclose(zipFile)
-        self.init(data:unzippedData)
+        self.init(data: unzippedData)
     }
 }
 
 
 extension CGFloat {
-    init(string:String) {
+    init(string: String) {
         self = CGFloat(string._bridgeToObjectiveC().doubleValue)
     }
 }
 
-func StringToPoint(s:String) -> CGPoint {
+func StringToPoint(s: String) -> CGPoint {
     let f = "([0-9.Ee+-]+)"
     let pair = "\\{\(f), \(f)\\}"
     let match = RegularExpression(pair).match(s)!
-    let x = CGFloat(string:match.groups[1].string)
-    let y = CGFloat(string:match.groups[2].string)
-    return CGPoint(x:x, y:y)
+    let x = CGFloat(string: match.groups[1].string)
+    let y = CGFloat(string: match.groups[2].string)
+    return CGPoint(x: x, y: y)
 }
 
-func StringToSize(s:String) -> CGSize {
+func StringToSize(s: String) -> CGSize {
     let f = "([0-9.Ee+-]+)"
     let pair = "\\{\(f), \(f)\\}"
     let match = RegularExpression(pair).match(s)!
-    let w = CGFloat(string:match.groups[1].string)
-    let h = CGFloat(string:match.groups[2].string)
-    return CGSize(w:w, h:h)
+    let w = CGFloat(string: match.groups[1].string)
+    let h = CGFloat(string: match.groups[2].string)
+    return CGSize(w: w, h: h)
 }
 
-func StringToRect(s:String) -> CGRect {
+func StringToRect(s: String) -> CGRect {
     let f = "([0-9.Ee+-]+)"
     let pair = "\\{\(f), \(f)\\}"
     let match = RegularExpression("\\{\(pair), \(pair)\\}").match(s)!
-    let x = CGFloat(string:match.groups[1].string)
-    let y = CGFloat(string:match.groups[2].string)
-    let w = CGFloat(string:match.groups[3].string)
-    let h = CGFloat(string:match.groups[4].string)
-    return CGRect(x:x, y:y, width:w, height:h)
+    let x = CGFloat(string: match.groups[1].string)
+    let y = CGFloat(string: match.groups[2].string)
+    let w = CGFloat(string: match.groups[3].string)
+    let h = CGFloat(string: match.groups[4].string)
+    return CGRect(x: x, y: y, width: w, height: h)
 }
 
 /**
@@ -149,7 +149,7 @@ func StringToRect(s:String) -> CGRect {
 struct BlockBackedCollection <T> : CollectionType, SequenceType {
     typealias Element = T
     typealias Index = Int
-    typealias Block = (index:Index) -> T
+    typealias Block = (index: Index) -> T
     typealias Generator = BlockBackedCollectionGenerator <T>
 
     var startIndex: Index { get { return 0 } }
@@ -157,18 +157,18 @@ struct BlockBackedCollection <T> : CollectionType, SequenceType {
     let count: Int
     let block: Block
 
-    init(count:Index, block:Block) {
+    init(count: Index, block: Block) {
         self.count = count
         self.block = block
     }
 
-    subscript (index:Index) -> T {
+    subscript (index: Index) -> T {
         assert(index > 0 && index < self.count)
         return block(index: index)
     }
 
     func generate() -> Generator {
-        return Generator(sequence:self)
+        return Generator(sequence: self)
     }
 }
 
@@ -184,7 +184,7 @@ struct BlockBackedCollectionGenerator <T> : GeneratorType {
     let block: Block
     var nextIndex: Index = 0
 
-    init(sequence:Sequence) {
+    init(sequence: Sequence) {
         self.count = sequence.count
         self.block = sequence.block
     }
@@ -194,7 +194,7 @@ struct BlockBackedCollectionGenerator <T> : GeneratorType {
             return nil
         }
         else if nextIndex < endIndex {
-            let element = block(index:nextIndex++)
+            let element = block(index: nextIndex++)
             return element
         }
         else {

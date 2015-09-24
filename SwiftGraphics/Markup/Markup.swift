@@ -10,12 +10,12 @@ import CoreGraphics
 
 // TODO: extend Drawable
 public protocol Markup {
-    var tag:String? { get }
-    func drawInContext(context:CGContext)
+    var tag: String? { get }
+    func drawInContext(context: CGContext)
 }
 
 public protocol Markupable {
-    var markup:[Markup] { get }
+    var markup: [Markup] { get }
 }
 
 
@@ -23,42 +23,42 @@ public protocol Markupable {
 
 public struct Guide: Markup {
 
-    public let drawable:Drawable
-    public let tag:String?
+    public let drawable: Drawable
+    public let tag: String?
 
-    public init(drawable:Drawable, tag:String? = nil) {
+    public init(drawable: Drawable, tag: String? = nil) {
         self.drawable = drawable
         self.tag = tag
     }
 
-    public func drawInContext(context:CGContext) {
+    public func drawInContext(context: CGContext) {
         drawable.drawInContext(context)
     }
 }
 
 public struct Marker: Markup {
-    public let point:CGPoint
-    public let tag:String?
+    public let point: CGPoint
+    public let tag: String?
 
-    public init(point:CGPoint, tag:String? = nil) {
+    public init(point: CGPoint, tag: String? = nil) {
         self.point = point
         self.tag = tag
     }
 
-    public func drawInContext(context:CGContext) {
-        context.strokeSaltire(CGRect(center:point, diameter:10))
+    public func drawInContext(context: CGContext) {
+        context.strokeSaltire(CGRect(center: point, diameter: 10))
     }
 
-    public static func markers(points:[CGPoint]) -> [Marker] {
+    public static func markers(points: [CGPoint]) -> [Marker] {
         return points.map() {
-            return Marker(point:$0)
+            return Marker(point: $0)
         }
     }
 }
 
 public extension CGContext {
 
-    func draw(markup:[Markup], styles:[String:Style]? = nil) {
+    func draw(markup: [Markup], styles: [String: Style]? = nil) {
         for item in markup {
 
             let style = styles?[item.tag!]

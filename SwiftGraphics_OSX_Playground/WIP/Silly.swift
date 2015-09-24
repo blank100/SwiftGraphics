@@ -10,22 +10,22 @@ import SwiftGraphics
 import SwiftUtilities
 
 // TODO: This needs a much better name.
-public func tiled(context:CGContext, tileSize:CGSize, dimension:IntSize, origin:CGPoint = CGPoint(x:0.5, y:0.5), @noescape block:CGContext -> Void) {
+public func tiled(context: CGContext, tileSize: CGSize, dimension: IntSize, origin: CGPoint = CGPoint(x: 0.5, y: 0.5), @noescape block: CGContext -> Void) {
 
     for y in 0..<dimension.height {
         for x in 0..<dimension.width {
 
             let frame = CGRect(
-                origin:CGPoint(x:CGFloat(x) * tileSize.width, y:CGFloat(y) * tileSize.height),
-                size:tileSize
+                origin: CGPoint(x: CGFloat(x) * tileSize.width, y: CGFloat(y) * tileSize.height),
+                size: tileSize
                 )
 
             CGContextSaveGState(context)
             CGContextClipToRect(context, frame)
 
             let translate = CGPoint(
-                x:frame.origin.x + origin.x * tileSize.width,
-                y:frame.origin.y + origin.y * tileSize.height
+                x: frame.origin.x + origin.x * tileSize.width,
+                y: frame.origin.y + origin.y * tileSize.height
             )
 
             CGContextTranslateCTM(context, translate.x, translate.y)
@@ -37,11 +37,11 @@ public func tiled(context:CGContext, tileSize:CGSize, dimension:IntSize, origin:
     }
 }
 
-public func stylesForMarkup(markup:[Markup]) -> [String:SwiftGraphics.Style] {
+public func stylesForMarkup(markup: [Markup]) -> [String: SwiftGraphics.Style] {
 
     let rng = SwiftUtilities.random
 
-    var styles:[String:SwiftGraphics.Style] = [:]
+    var styles: [String: SwiftGraphics.Style] = [:]
     for item in markup {
         if let tag = item.tag {
             if let _ = styles[tag] {
@@ -50,7 +50,7 @@ public func stylesForMarkup(markup:[Markup]) -> [String:SwiftGraphics.Style] {
             else {
                 var style = SwiftGraphics.Style()
 
-                let hue:CGFloat = rng.random()
+                let hue: CGFloat = rng.random()
                 style.strokeColor = HSV(h: hue, s: 1.0, v: 0.5).cgColor
                 styles[tag] = style
             }

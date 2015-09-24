@@ -11,15 +11,15 @@ import CoreGraphics
 // MARK: RGB
 
 public struct RGB {
-    public var r:CGFloat = 0.0
-    public var g:CGFloat = 0.0
-    public var b:CGFloat = 0.0
+    public var r: CGFloat = 0.0
+    public var g: CGFloat = 0.0
+    public var b: CGFloat = 0.0
 
-    public init(r:CGFloat = 0.0, g:CGFloat = 0.0, b:CGFloat = 0.0) {
+    public init(r: CGFloat = 0.0, g: CGFloat = 0.0, b: CGFloat = 0.0) {
         (self.r, self.g, self.b) = (r,g,b)
     }
 
-    public init(tuple:(r:CGFloat, g:CGFloat, b:CGFloat)) {
+    public init(tuple: (r: CGFloat, g: CGFloat, b: CGFloat)) {
         (self.r, self.g, self.b) = tuple
     }
 }
@@ -37,23 +37,23 @@ public func ==(lhs: RGB, rhs: RGB) -> Bool {
 }
 
 public extension RGB {
-    public var cgColor:CGColor {
-        return CGColor.color(red:r, green:g, blue:b)
+    public var cgColor: CGColor {
+        return CGColor.color(red: r, green: g, blue: b)
     }
 }
 
 // MARK: HSV
 
 public struct HSV {
-    public let h:CGFloat
-    public let s:CGFloat
-    public let v:CGFloat
+    public let h: CGFloat
+    public let s: CGFloat
+    public let v: CGFloat
 
-    public init(h:CGFloat = 0.0, s:CGFloat = 0.0, v:CGFloat = 0.0) {
+    public init(h: CGFloat = 0.0, s: CGFloat = 0.0, v: CGFloat = 0.0) {
         (self.h, self.s, self.v) = (h,s,v)
     }
 
-    public init(tuple:(h:CGFloat, s:CGFloat, v:CGFloat)) {
+    public init(tuple: (h: CGFloat, s: CGFloat, v: CGFloat)) {
         (self.h, self.s, self.v) = tuple
     }
 
@@ -74,7 +74,7 @@ public func ==(lhs: HSV, rhs: HSV) -> Bool {
 }
 
 public extension HSV {
-    public var cgColor:CGColor {
+    public var cgColor: CGColor {
         let rgb = convert(self)
         return rgb.cgColor
     }
@@ -86,29 +86,29 @@ extension HSV: Lerpable {
     public typealias FactorType = CGFloat
 }
 
-public func + (lhs:HSV, rhs:HSV) -> HSV {
-    return HSV(h:lhs.h + rhs.h, s:lhs.s + rhs.s, v:lhs.v + rhs.v)
+public func + (lhs: HSV, rhs: HSV) -> HSV {
+    return HSV(h: lhs.h + rhs.h, s: lhs.s + rhs.s, v: lhs.v + rhs.v)
 }
 
-public func * (lhs:HSV, rhs:CGFloat) -> HSV {
-    return HSV(h:lhs.h * rhs, s:lhs.s * rhs, v:lhs.v * rhs)
+public func * (lhs: HSV, rhs: CGFloat) -> HSV {
+    return HSV(h: lhs.h * rhs, s: lhs.s * rhs, v: lhs.v * rhs)
 }
 
 // TODO: One option? Or just add alpha to colors
 //struct HSVA {
-//    var hsv:HSV
-//    var a:CGFloat
+//    var hsv: HSV
+//    var a: CGFloat
 //}
 //
 //struct RGBA {
-//    var rgb:RGB
-//    var a:CGFloat
+//    var rgb: RGB
+//    var a: CGFloat
 //}
 
-public func convert(hsv:HSV) -> RGB {
+public func convert(hsv: HSV) -> RGB {
     var (h, s, v) = (hsv.h, hsv.s, hsv.v)
     if (s == 0) {
-        return RGB(tuple:(v,v,v))
+        return RGB(tuple: (v,v,v))
     }
     else {
         h *= 360.0;
@@ -126,29 +126,29 @@ public func convert(hsv:HSV) -> RGB {
 
         switch Int(i) {
             case 0:
-                return RGB(tuple:(v,t,p))
+                return RGB(tuple: (v,t,p))
             case 1:
-                return RGB(tuple:(q,v,p))
+                return RGB(tuple: (q,v,p))
             case 2:
-                return RGB(tuple:(p,v,t))
+                return RGB(tuple: (p,v,t))
             case 3:
-                return RGB(tuple:(p,q,v))
+                return RGB(tuple: (p,q,v))
             case 4:
-                return RGB(tuple:(t,p,v))
+                return RGB(tuple: (t,p,v))
             case 5:
-                return RGB(tuple:(v,p,q))
+                return RGB(tuple: (v,p,q))
             default:
                 fatalError("Cannot convert HSV to RGB")
         }
     }
 }
 
-public func convert(rgb:RGB) -> HSV {
+public func convert(rgb: RGB) -> HSV {
     let max_ = max(rgb.r, rgb.g, rgb.b)
     let min_ = min(rgb.r, rgb.g, rgb.b)
     let delta = max_ - min_
 
-    var h:CGFloat = 0.0
+    var h: CGFloat = 0.0
     let s = max_ != 0.0 ? delta / max_ : 0.0
     let v = max_
 
@@ -174,7 +174,7 @@ public func convert(rgb:RGB) -> HSV {
 
     h /= 360
 
-    return HSV(h:h, s:s, v:v)
+    return HSV(h: h, s: s, v: v)
 }
 
 

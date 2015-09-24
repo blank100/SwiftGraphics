@@ -54,62 +54,62 @@ var template = KVCGetterTemplate()
 
 class BlendModesViewController: NSViewController {
 
-    var blendModes:[CGBlendMode] = [ .Normal, .Multiply, .Screen, .Overlay, .Darken, .Lighten, .ColorDodge, .SoftLight, .HardLight, .Difference, .Exclusion, .Hue, .Saturation, .Color, .Luminosity, .Clear, .Copy, .SourceIn, .SourceOut, .SourceAtop, .DestinationOver, .DestinationIn, .DestinationOut, .DestinationAtop, .XOR, .PlusDarker, .PlusLighter ]
-    dynamic var lazyBlendModes:[KVCBox] = []
+    var blendModes: [CGBlendMode] = [ .Normal, .Multiply, .Screen, .Overlay, .Darken, .Lighten, .ColorDodge, .SoftLight, .HardLight, .Difference, .Exclusion, .Hue, .Saturation, .Color, .Luminosity, .Clear, .Copy, .SourceIn, .SourceOut, .SourceAtop, .DestinationOver, .DestinationIn, .DestinationOut, .DestinationAtop, .XOR, .PlusDarker, .PlusLighter ]
+    dynamic var lazyBlendModes: [KVCBox] = []
 
-    dynamic var selectedBlendModeIndex:Int = 0 {
+    dynamic var selectedBlendModeIndex: Int = 0 {
         didSet {
             selectedBlendeMode = blendModes[selectedBlendModeIndex]
         }
     }
 
-    var selectedBlendeMode:CGBlendMode = .Normal{
+    var selectedBlendeMode: CGBlendMode = .Normal{
         didSet {
             update()
         }
     }
 
-    dynamic var backgroundColor:NSColor = NSColor.clearColor() {
+    dynamic var backgroundColor: NSColor = NSColor.clearColor() {
         didSet {
             update()
         }
     }
-    dynamic var destinationImage:NSImage? {
+    dynamic var destinationImage: NSImage? {
         didSet {
             update()
         }
     }
-    dynamic var sourceImage:NSImage? {
+    dynamic var sourceImage: NSImage? {
         didSet {
             update()
         }
     }
-    dynamic var fillColor:NSColor = NSColor.clearColor() {
+    dynamic var fillColor: NSColor = NSColor.clearColor() {
         didSet {
             update()
         }
     }
-    dynamic var outputImage:NSImage?
+    dynamic var outputImage: NSImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         template.getters["name"] = { String($0.value) }
-        lazyBlendModes = self.blendModes.map() { return KVCBox(value:$0, template:template) }
+        lazyBlendModes = self.blendModes.map() { return KVCBox(value: $0, template: template) }
 
-        sourceImage = NSImage(size:CGSize(w:200, h:200)) {
-            (context:CGContext) in
-            let t1 = Triangle(CGPoint(x:100,y:0), CGPoint(x:200,y:0), CGPoint(x:100,y:150))
+        sourceImage = NSImage(size: CGSize(w: 200, h: 200)) {
+            (context: CGContext) in
+            let t1 = Triangle(CGPoint(x: 100,y: 0), CGPoint(x: 200,y: 0), CGPoint(x: 100,y: 150))
             let style = Style(elements: [StyleElement.fillColor(CGColor.blackColor())])
-            context.draw(t1, style:style)
+            context.draw(t1, style: style)
         }
 
-        destinationImage = NSImage(size:CGSize(w:200, h:200)) {
-            (context:CGContext) in
+        destinationImage = NSImage(size: CGSize(w: 200, h: 200)) {
+            (context: CGContext) in
 
-            let t1 = Triangle(CGPoint(x:100,y:200), CGPoint(x:200,y:200), CGPoint(x:100,y:0))
+            let t1 = Triangle(CGPoint(x: 100,y: 200), CGPoint(x: 200,y: 200), CGPoint(x: 100,y: 0))
             let style = Style(elements: [StyleElement.fillColor(CGColor.yellowColor())])
-            context.draw(t1, style:style)
+            context.draw(t1, style: style)
         }
 
         update()
@@ -119,7 +119,7 @@ class BlendModesViewController: NSViewController {
 
         if let sourceImage = sourceImage, let destinationImage = destinationImage {
 
-            let frame = CGRect(size: CGSize(w:200, h:200))
+            let frame = CGRect(size: CGSize(w: 200, h: 200))
 
             let context = CGContext.bitmapContext(frame)
             context.with() {
@@ -140,8 +140,8 @@ class BlendModesViewController: NSViewController {
 }
 
 extension NSImage {
-    convenience init(size:CGSize, block:CGContext -> Void) {
-        let context = CGContext.bitmapContext(size, color:CGColor.clearColor())
+    convenience init(size: CGSize, block: CGContext -> Void) {
+        let context = CGContext.bitmapContext(size, color: CGColor.clearColor())
         block(context)
         let cgImage = CGBitmapContextCreateImage(context)!
         self.init(CGImage: cgImage, size: size)
@@ -155,19 +155,19 @@ extension NSImage {
 }
 
 protocol KVCGetterTemplateProtocol {
-    var getters:[String:KVCBox -> AnyObject?] { get }
+    var getters: [String: KVCBox -> AnyObject?] { get }
 }
 
 struct KVCGetterTemplate: KVCGetterTemplateProtocol {
-    var getters:[String:KVCBox -> AnyObject?] = [:]
+    var getters: [String: KVCBox -> AnyObject?] = [:]
 }
 
 class KVCBox: NSObject {
     typealias ValueType = Any
-    let value:ValueType
-    let template:KVCGetterTemplateProtocol
+    let value: ValueType
+    let template: KVCGetterTemplateProtocol
 
-    init(value:ValueType, template:KVCGetterTemplateProtocol) {
+    init(value: ValueType, template: KVCGetterTemplateProtocol) {
         self.value = value
         self.template = template
         super.init()

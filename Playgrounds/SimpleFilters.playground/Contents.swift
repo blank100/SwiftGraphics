@@ -13,7 +13,7 @@ f1.inputSunRadius = 200
 f1.outputImage
 
 //: You can even define some or all initial values on filter creation.
-let f2 = Crystallize(inputImage:f1.outputImage, inputRadius:50)
+let f2 = Crystallize(inputImage: f1.outputImage, inputRadius: 50)
 f2.outputImage
 
 let f3 = TwirlDistortion(inputImage: f2.outputImage)

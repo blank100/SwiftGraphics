@@ -12,7 +12,7 @@ import SwiftGraphics
 
 class ScratchWindowController: NSWindowController {
 
-    var model:Model! {
+    var model: Model! {
         didSet {
             contentViewController?.representedObject = model
         }
@@ -24,9 +24,9 @@ class ScratchWindowController: NSWindowController {
         model = Model()
     }
 
-    @IBAction func insertShape(sender:AnyObject?) {
+    @IBAction func insertShape(sender: AnyObject?) {
 
-        var type:String!
+        var type: String!
         if let toolbarItem = sender as? NSToolbarItem {
             type = toolbarItem.userInfo as? String
         }
@@ -36,14 +36,14 @@ class ScratchWindowController: NSWindowController {
 
         assert(type != nil)
 
-        var geometry:Thing.ThingType!
+        var geometry: Thing.ThingType!
         switch type {
             case "rectangle":
-                geometry = Rectangle(frame:CGRect(size:CGSize(w:100, h:100)))
+                geometry = Rectangle(frame: CGRect(size: CGSize(w: 100, h: 100)))
             case "circle":
-                geometry = Circle(center:CGPoint(x:50, y:50), diameter:100)
+                geometry = Circle(center: CGPoint(x: 50, y: 50), diameter: 100)
             case "triangle":
-                geometry = Triangle(rect:CGRect(size:CGSize(w:100, h:100)))
+                geometry = Triangle(rect: CGRect(size: CGSize(w: 100, h: 100)))
             default:
                 break
         }
@@ -55,7 +55,7 @@ class ScratchWindowController: NSWindowController {
 
         mouseLocation = mouseLocation.clampedTo(view.bounds.insetted(dx: 50, dy: 50))
 
-        let thing = Thing(model:model, geometry:geometry)
+        let thing = Thing(model: model, geometry: geometry)
         thing.center = mouseLocation
 
         model.addObject(thing)

@@ -12,18 +12,18 @@ public struct BezierCurveChain {
 
     // TODO: This isn't really an accurate representaiton of what we want.
     // TODO: Control points should be shared (and mirrored) between neighbouring curves.
-    public let curves:[BezierCurve]
+    public let curves: [BezierCurve]
 
-    public init(curves:[BezierCurve]) {
+    public init(curves: [BezierCurve]) {
 
-        var previousCurve:BezierCurve?
+        var previousCurve: BezierCurve?
         self.curves = curves.map() {
-            (curve:BezierCurve) -> BezierCurve in
+            (curve: BezierCurve) -> BezierCurve in
 
             var newCurve = curve
             if let previousEndPoint = previousCurve?.end, let start = curve.start {
                 assert(previousEndPoint == start)
-                newCurve = BezierCurve(controls:curve.controls, end:curve.end)
+                newCurve = BezierCurve(controls: curve.controls, end: curve.end)
             }
 
             previousCurve = curve
@@ -41,7 +41,7 @@ extension BezierCurveChain: CustomStringConvertible {
 
 extension BezierCurveChain: Drawable {
 
-    public func drawInContext(context:CGContextRef) {
+    public func drawInContext(context: CGContextRef) {
 
         // Stroke all curves as a single path
         let start = curves[0].start
@@ -55,7 +55,7 @@ extension BezierCurveChain: Drawable {
 
 // TODO: Transformable protocol?
 
-public func * (lhs:BezierCurveChain, rhs:CGAffineTransform) -> BezierCurveChain {
+public func * (lhs: BezierCurveChain, rhs: CGAffineTransform) -> BezierCurveChain {
 
     let transformedCurves = lhs.curves.map() {
         return $0 * rhs

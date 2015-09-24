@@ -13,32 +13,32 @@ import SwiftUtilities
 // MARK: -
 
 public protocol CGPathable {
-    var cgpath:CGPath { get }
+    var cgpath: CGPath { get }
 }
 
 // TODO: Rename to Intersectionable? ICK
 public protocol HitTestable {
-    func contains(point:CGPoint) -> Bool
-    func intersects(rect:CGRect) -> Bool
-    func intersects(path:CGPath) -> Bool
+    func contains(point: CGPoint) -> Bool
+    func intersects(rect: CGRect) -> Bool
+    func intersects(path: CGPath) -> Bool
 }
 
 // MARK: -
 
 extension Rectangle: CGPathable {
-    public var cgpath:CGPath {
+    public var cgpath: CGPath {
         return CGPathCreateWithRect(frame, nil)
     }
 }
 
 extension Circle: CGPathable {
-    public var cgpath:CGPath {
+    public var cgpath: CGPath {
         return CGPathCreateWithEllipseInRect(frame, nil)
     }
 }
 
 extension Ellipse: CGPathable {
-    public var cgpath:CGPath {
+    public var cgpath: CGPath {
         let path = CGPathCreateMutable()
         let (b1, b2, b3, b4) = toBezierCurves()
         
@@ -53,7 +53,7 @@ extension Ellipse: CGPathable {
 }
 
 extension Triangle: CGPathable {
-    public var cgpath:CGPath {
+    public var cgpath: CGPath {
         let path = CGPathCreateMutable()
         path.move(vertex.0)
         path.addLine(vertex.1)
@@ -64,7 +64,7 @@ extension Triangle: CGPathable {
 }
 
 extension SwiftGraphics.Polygon: CGPathable {
-    public var cgpath:CGPath {
+    public var cgpath: CGPath {
         let path = CGPathCreateMutable()
         path.move(points[0])
         for point in points[1..<points.count] {
@@ -78,21 +78,21 @@ extension SwiftGraphics.Polygon: CGPathable {
 // MARK: -
 
 extension Rectangle: HitTestable {
-    public func contains(point:CGPoint) -> Bool {
+    public func contains(point: CGPoint) -> Bool {
         return frame.contains(point)
     }
 
-    public func intersects(rect:CGRect) -> Bool {
+    public func intersects(rect: CGRect) -> Bool {
         return frame.intersects(rect)
     }
 
-    public func intersects(path:CGPath) -> Bool {
+    public func intersects(path: CGPath) -> Bool {
         return path.intersects(frame)
     }
 }
 
 extension Circle: HitTestable {
-    public func contains(point:CGPoint) -> Bool {
+    public func contains(point: CGPoint) -> Bool {
         if self.frame.contains(point) {
             return (center - point).magnitudeSquared < radius ** 2
         }
@@ -101,10 +101,10 @@ extension Circle: HitTestable {
         }
     }
 
-    public func intersects(rect:CGRect) -> Bool {
+    public func intersects(rect: CGRect) -> Bool {
         // TODO: BROKEN!?
 
-        // http://stackoverflow.com/questions/401847/circle-rectangle-collision-detection-intersection
+        // http: //stackoverflow.com/questions/401847/circle-rectangle-collision-detection-intersection
         let circleDistance_x = abs(center.x - rect.origin.x);
         let circleDistance_y = abs(center.y - rect.origin.y);
 
@@ -130,11 +130,11 @@ extension Circle: HitTestable {
         return cornerDistance_sq <= (radius ** 2)
     }
 
-    public func intersects(path:CGPath) -> Bool {
+    public func intersects(path: CGPath) -> Bool {
         return cgpath.intersects(path)
     }
 
-    public func intersects(lineSegment:LineSegment) -> Bool {
+    public func intersects(lineSegment: LineSegment) -> Bool {
         let Ax = lineSegment.start.x
         let Ay = lineSegment.start.y
         let Bx = lineSegment.end.x
@@ -159,8 +159,8 @@ extension Circle: HitTestable {
 }
 
 extension Triangle: HitTestable {
-    public func contains(point:CGPoint) -> Bool {
-        // http://totologic.blogspot.fr/2014/01/accurate-point-in-triangle-test.html
+    public func contains(point: CGPoint) -> Bool {
+        // http: //totologic.blogspot.fr/2014/01/accurate-point-in-triangle-test.html
 
         // Compute vectors
         let v0 = vertex.2 - vertex.0
@@ -183,11 +183,11 @@ extension Triangle: HitTestable {
         return (u >= 0) && (v >= 0) && (u + v < 1)
     }
 
-    public func intersects(rect:CGRect) -> Bool {
+    public func intersects(rect: CGRect) -> Bool {
         return self.cgpath.intersects(rect)
     }
 
-    public func intersects(path:CGPath) -> Bool {
+    public func intersects(path: CGPath) -> Bool {
         return cgpath.intersects(path)
     }
 }

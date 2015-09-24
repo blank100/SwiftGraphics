@@ -15,20 +15,20 @@ protocol Draggable {
 }
 
 class Drag: NSObject, NSGestureRecognizerDelegate {
-    var draggedObject:Draggable!
-    var offset:CGPoint = CGPointZero
-    var panGestureRecogniser:NSPanGestureRecognizer!
-    var objectForPoint:((CGPoint) -> (Draggable?))!
-    var objectDidChange:((Draggable) -> (Void))!
-    var dragDidFinish:((Void) -> (Void))!
+    var draggedObject: Draggable!
+    var offset: CGPoint = CGPointZero
+    var panGestureRecogniser: NSPanGestureRecognizer!
+    var objectForPoint: ((CGPoint) -> (Draggable?))!
+    var objectDidChange: ((Draggable) -> (Void))!
+    var dragDidFinish: ((Void) -> (Void))!
     
     override init() {
         super.init()
-        panGestureRecogniser = NSPanGestureRecognizer(target: self, action:"pan:")
+        panGestureRecogniser = NSPanGestureRecognizer(target: self, action: "pan: ")
         panGestureRecogniser.delegate = self
     }
 
-    internal func pan(recognizer:NSPanGestureRecognizer) {
+    internal func pan(recognizer: NSPanGestureRecognizer) {
         switch recognizer.state {
             case .Began:
                 let location = recognizer.locationInView(recognizer.view)

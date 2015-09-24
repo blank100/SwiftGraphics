@@ -14,7 +14,7 @@ import CoreGraphics
  :example:
     let (a,b) = ordered(("B", "A"))
  */
-func ordered <T:Comparable> (tuple:(T, T)) -> (T, T) {
+func ordered <T: Comparable> (tuple: (T, T)) -> (T, T) {
     let (lhs, rhs) = tuple
     if lhs <= rhs {
         return (lhs, rhs)
@@ -26,14 +26,14 @@ func ordered <T:Comparable> (tuple:(T, T)) -> (T, T) {
 
 
 extension Array {
-    init(count:Int, @noescape block:(Void) -> Element) {
+    init(count: Int, @noescape block: (Void) -> Element) {
         self.init()
         for _ in 0..<count {
             self.append(block())
         }
     }
 
-    mutating func push(o:Element) {
+    mutating func push(o: Element) {
         append(o)
     }
     mutating func pop() -> Element? {
@@ -56,7 +56,7 @@ struct SlidingWindow <T>: GeneratorType {
     var g: Array<T>.Generator
     var e: T?
 
-    init(_ a:Array <T>) {
+    init(_ a: Array <T>) {
         g = a.generate()
         e = g.next()
     }
@@ -76,7 +76,7 @@ struct SlidingWindow <T>: GeneratorType {
 
 // MARK: Comparing
 
-func compare <T:Comparable> (lhs:T, rhs:T) -> Int {
+func compare <T: Comparable> (lhs: T, rhs: T) -> Int {
     return lhs == rhs ? 0 : (lhs > rhs ? 1 : -1)
 }
 

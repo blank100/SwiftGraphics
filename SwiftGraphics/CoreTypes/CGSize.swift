@@ -12,69 +12,69 @@ import CoreGraphics
 
 public extension CGSize {
 
-    init(w:CGFloat, h:CGFloat) {
+    init(w: CGFloat, h: CGFloat) {
         (width, height) = (w, h)
     }
 
-    init(width:CGFloat) {
+    init(width: CGFloat) {
         self.width = width
         self.height = 0
     }
 
-    init(height:CGFloat) {
+    init(height: CGFloat) {
         self.width = 0
         self.height = height
     }
 }
 
-public func + (lhs:CGSize, rhs:CGSize) -> CGSize {
-    return CGSize(width:lhs.width + rhs.width, height:lhs.height + rhs.height)
+public func + (lhs: CGSize, rhs: CGSize) -> CGSize {
+    return CGSize(width: lhs.width + rhs.width, height: lhs.height + rhs.height)
 }
 
-public func - (lhs:CGSize, rhs:CGSize) -> CGSize {
-    return CGSize(width:lhs.width - rhs.width, height:lhs.height - rhs.height)
+public func - (lhs: CGSize, rhs: CGSize) -> CGSize {
+    return CGSize(width: lhs.width - rhs.width, height: lhs.height - rhs.height)
 }
 
-public func * (lhs:CGSize, rhs:CGFloat) -> CGSize {
-    return CGSize(width:lhs.width * rhs, height:lhs.height * rhs)
+public func * (lhs: CGSize, rhs: CGFloat) -> CGSize {
+    return CGSize(width: lhs.width * rhs, height: lhs.height * rhs)
 }
 
-public func * (lhs:CGFloat, rhs:CGSize) -> CGSize {
-    return CGSize(width:lhs * rhs.width, height:lhs * rhs.height)
+public func * (lhs: CGFloat, rhs: CGSize) -> CGSize {
+    return CGSize(width: lhs * rhs.width, height: lhs * rhs.height)
 }
 
-public func / (lhs:CGSize, rhs:CGFloat) -> CGSize {
-    return CGSize(width:lhs.width / rhs, height:lhs.height / rhs)
+public func / (lhs: CGSize, rhs: CGFloat) -> CGSize {
+    return CGSize(width: lhs.width / rhs, height: lhs.height / rhs)
 }
 
-public func += (inout lhs:CGSize, rhs:CGSize) {
+public func += (inout lhs: CGSize, rhs: CGSize) {
     lhs = lhs + rhs
 }
 
-public func -= (inout lhs:CGSize, rhs:CGSize) {
+public func -= (inout lhs: CGSize, rhs: CGSize) {
     lhs = lhs - rhs
 }
 
-public func *= (inout lhs:CGSize, rhs:CGFloat) {
+public func *= (inout lhs: CGSize, rhs: CGFloat) {
     lhs = lhs * rhs
 }
 
-public func /= (inout lhs:CGSize, rhs:CGFloat) {
+public func /= (inout lhs: CGSize, rhs: CGFloat) {
     lhs = lhs / rhs
 }
 
 
 public extension CGSize {
-    init(point:CGPoint) {
+    init(point: CGPoint) {
         width = point.x
         height = point.y
     }
 
-    var area:CGFloat {
+    var area: CGFloat {
         return abs(width) * abs(height)
     }
 
-    var signedArea:CGFloat {
+    var signedArea: CGFloat {
         return width * height
     }
 }
@@ -111,7 +111,7 @@ public extension CGSize {
 
 
 public extension CGSize {
-    init(_ v:(CGFloat, CGFloat)) {
+    init(_ v: (CGFloat, CGFloat)) {
         (width, height) = v
     }
 
@@ -121,10 +121,10 @@ public extension CGSize {
 }
 
 public extension CGSize {
-    var min:CGFloat {
+    var min: CGFloat {
         return Swift.min(width, height)
     }
-    var max:CGFloat {
+    var max: CGFloat {
         return Swift.max(width, height)
     }
 }

@@ -28,7 +28,7 @@ public enum Alignment {
     case right
 }
 
-public func scaleAndAlignRectToRect(source source:CGRect, destination:CGRect, scaling:Scaling, alignment:Alignment) -> CGRect {
+public func scaleAndAlignRectToRect(source source: CGRect, destination: CGRect, scaling: Scaling, alignment: Alignment) -> CGRect {
     var result = CGRect()
     var theScaledImageSize = source.size
 
@@ -37,7 +37,7 @@ public func scaleAndAlignRectToRect(source source:CGRect, destination:CGRect, sc
             return destination
 
         case .proportionally:
-            var theScaleFactor:CGFloat = 1
+            var theScaleFactor: CGFloat = 1
             if destination.size.width / source.size.width < destination.size.height / source.size.height {
                 theScaleFactor = destination.size.width / source.size.width
             }

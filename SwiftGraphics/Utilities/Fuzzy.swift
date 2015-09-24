@@ -10,15 +10,15 @@ import CoreGraphics
 
 // MARK:
 
-public func equal(lhs:CGFloat, _ rhs:CGFloat, accuracy:CGFloat) -> Bool {
+public func equal(lhs: CGFloat, _ rhs: CGFloat, accuracy: CGFloat) -> Bool {
     return abs(rhs - lhs) <= accuracy
 }
 
-public func equal(lhs:Float, _ rhs:Float, accuracy:Float) -> Bool {
+public func equal(lhs: Float, _ rhs: Float, accuracy: Float) -> Bool {
     return abs(rhs - lhs) <= accuracy
 }
 
-public func equal(lhs:Double, _ rhs:Double, accuracy:Double) -> Bool {
+public func equal(lhs: Double, _ rhs: Double, accuracy: Double) -> Bool {
     return abs(rhs - lhs) <= accuracy
 }
 
@@ -35,7 +35,7 @@ infix operator ==% { associativity none precedence 130 }
 
 infix operator !=% { associativity none precedence 130 }
 
-public func !=% <T:FuzzyEquatable> (lhs:T, rhs:T) -> Bool {
+public func !=% <T: FuzzyEquatable> (lhs: T, rhs: T) -> Bool {
     return !(lhs ==% rhs)
 }
 
@@ -44,9 +44,9 @@ public func !=% <T:FuzzyEquatable> (lhs:T, rhs:T) -> Bool {
 extension Float: FuzzyEquatable {
 }
 
-public func ==% (lhs:Float, rhs:Float) -> Bool {
+public func ==% (lhs: Float, rhs: Float) -> Bool {
     let epsilon = Float(FLT_EPSILON) // TODO: FLT vs DBL
-    return equal(lhs, rhs, accuracy:epsilon)
+    return equal(lhs, rhs, accuracy: epsilon)
 }
 
 // MARK: Double
@@ -54,9 +54,9 @@ public func ==% (lhs:Float, rhs:Float) -> Bool {
 extension Double: FuzzyEquatable {
 }
 
-public func ==% (lhs:Double, rhs:Double) -> Bool {
+public func ==% (lhs: Double, rhs: Double) -> Bool {
     let epsilon = Double(FLT_EPSILON) // TODO: FLT vs DBL
-    return equal(lhs, rhs, accuracy:epsilon)
+    return equal(lhs, rhs, accuracy: epsilon)
 }
 
 // Mark: CGFloat
@@ -64,9 +64,9 @@ public func ==% (lhs:Double, rhs:Double) -> Bool {
 extension CGFloat: FuzzyEquatable {
 }
 
-public func ==% (lhs:CGFloat, rhs:CGFloat) -> Bool {
+public func ==% (lhs: CGFloat, rhs: CGFloat) -> Bool {
     let epsilon = CGFloat(FLT_EPSILON) // TODO: FLT vs DBL
-    return equal(lhs, rhs, accuracy:epsilon)
+    return equal(lhs, rhs, accuracy: epsilon)
 }
 
 // MARK: CGPoint
@@ -74,7 +74,7 @@ public func ==% (lhs:CGFloat, rhs:CGFloat) -> Bool {
 extension CGPoint: FuzzyEquatable {
 }
 
-public func ==% (lhs:CGPoint, rhs:CGPoint) -> Bool {
+public func ==% (lhs: CGPoint, rhs: CGPoint) -> Bool {
     return (lhs - rhs).isZero
 }
 

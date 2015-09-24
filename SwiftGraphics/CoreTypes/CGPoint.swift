@@ -22,12 +22,12 @@ extension CGPoint: CustomStringConvertible {
 
 public extension CGPoint {
     
-    init(x:CGFloat) {
+    init(x: CGFloat) {
         self.x = x
         self.y = 0
     }
 
-    init(y:CGFloat) {
+    init(y: CGFloat) {
         self.x = 0
         self.y = y
     }
@@ -36,7 +36,7 @@ public extension CGPoint {
 // MARK: Converting to/from tuples
 
 public extension CGPoint {
-    init(_ v:(CGFloat, CGFloat)) {
+    init(_ v: (CGFloat, CGFloat)) {
         (x, y) = v
     }
     func toTuple() -> (CGFloat, CGFloat) {
@@ -46,12 +46,12 @@ public extension CGPoint {
 
 // MARK: Unary Operators
 
-public prefix func + (p:CGPoint) -> CGPoint {
+public prefix func + (p: CGPoint) -> CGPoint {
     return p
 }
 
-public prefix func - (p:CGPoint) -> CGPoint {
-    return CGPoint(x:-p.x, y:-p.y)
+public prefix func - (p: CGPoint) -> CGPoint {
+    return CGPoint(x: -p.x, y: -p.y)
 }
 
 // MARK: Arthimetic Operators
@@ -59,74 +59,74 @@ public prefix func - (p:CGPoint) -> CGPoint {
 /**
  Addition operator (CGPoint + CGPoint)
 
- :test:   CGPoint(x:1, y:2) + CGPoint(x:10, y:20)
- :result: CGPoint(x:11, y:22)
+ :test:   CGPoint(x: 1, y: 2) + CGPoint(x: 10, y: 20)
+ :result: CGPoint(x: 11, y: 22)
  */
-public func + (lhs:CGPoint, rhs:CGPoint) -> CGPoint {
-    return CGPoint(x:lhs.x + rhs.x, y:lhs.y + rhs.y)
+public func + (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+    return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
 }
 
 /**
  Subtraction operator (CGPoint - CGPoint)
 
- :test:   CGPoint(x:11, y:22) - CGPoint(x:10, y:20)
- :result: CGPoint(x:1, y:2)
+ :test:   CGPoint(x: 11, y: 22) - CGPoint(x: 10, y: 20)
+ :result: CGPoint(x: 1, y: 2)
  */
-public func - (lhs:CGPoint, rhs:CGPoint) -> CGPoint {
-    return CGPoint(x:lhs.x - rhs.x, y:lhs.y - rhs.y)
+public func - (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+    return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
 }
 
-public func * (lhs:CGPoint, rhs:CGPoint) -> CGPoint {
-    return CGPoint(x:lhs.x * rhs.x, y:lhs.y * rhs.y)
+public func * (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+    return CGPoint(x: lhs.x * rhs.x, y: lhs.y * rhs.y)
 }
 
 // MARK: Arithmetic (with scalar)
 
-public func * (lhs:CGPoint, rhs:CGFloat) -> CGPoint {
-    return CGPoint(x:lhs.x * rhs, y:lhs.y * rhs)
+public func * (lhs: CGPoint, rhs: CGFloat) -> CGPoint {
+    return CGPoint(x: lhs.x * rhs, y: lhs.y * rhs)
 }
 
-public func * (lhs:CGFloat, rhs:CGPoint) -> CGPoint {
-    return CGPoint(x:lhs * rhs.x, y:lhs * rhs.y)
+public func * (lhs: CGFloat, rhs: CGPoint) -> CGPoint {
+    return CGPoint(x: lhs * rhs.x, y: lhs * rhs.y)
 }
 
-public func / (lhs:CGPoint, rhs:CGFloat) -> CGPoint {
-    return CGPoint(x:lhs.x / rhs, y:lhs.y / rhs)
+public func / (lhs: CGPoint, rhs: CGFloat) -> CGPoint {
+    return CGPoint(x: lhs.x / rhs, y: lhs.y / rhs)
 }
 
 // MARK: Arithmetic Assignment
 
-public func += (inout lhs:CGPoint, rhs:CGPoint) {
+public func += (inout lhs: CGPoint, rhs: CGPoint) {
     lhs = lhs + rhs
 }
 
-public func -= (inout lhs:CGPoint, rhs:CGPoint) {
+public func -= (inout lhs: CGPoint, rhs: CGPoint) {
     lhs = lhs - rhs
 }
 
-public func *= (inout lhs:CGPoint, rhs:CGFloat) {
+public func *= (inout lhs: CGPoint, rhs: CGFloat) {
     lhs = lhs * rhs
 }
 
-public func /= (inout lhs:CGPoint, rhs:CGFloat) {
+public func /= (inout lhs: CGPoint, rhs: CGFloat) {
     lhs = lhs / rhs
 }
 
 // MARK: Arithmetic (with CGSize)
 
-public func * (lhs:CGPoint, rhs:CGSize) -> CGPoint {
-    return CGPoint(x:lhs.x * rhs.width, y:lhs.y * rhs.height)
+public func * (lhs: CGPoint, rhs: CGSize) -> CGPoint {
+    return CGPoint(x: lhs.x * rhs.width, y: lhs.y * rhs.height)
 }
 
-public func / (lhs:CGPoint, rhs:CGSize) -> CGPoint {
-    return CGPoint(x:lhs.x / rhs.width, y:lhs.y / rhs.height)
+public func / (lhs: CGPoint, rhs: CGSize) -> CGPoint {
+    return CGPoint(x: lhs.x / rhs.width, y: lhs.y / rhs.height)
 }
 
-public func *= (inout lhs:CGPoint, rhs:CGSize) {
+public func *= (inout lhs: CGPoint, rhs: CGSize) {
     lhs = lhs * rhs
 }
 
-public func /= (inout lhs:CGPoint, rhs:CGSize) {
+public func /= (inout lhs: CGPoint, rhs: CGSize) {
     lhs = lhs / rhs
 }
 
@@ -135,9 +135,9 @@ public func /= (inout lhs:CGPoint, rhs:CGSize) {
 public extension CGPoint {
 
     /**
-     :test:   CGPoint(x:0, y:0).isZero
+     :test:   CGPoint(x: 0, y: 0).isZero
      :result: true
-     :test:   CGPoint(x:1, y:0).isZero
+     :test:   CGPoint(x: 1, y: 0).isZero
      :result: false
      */
     var isZero: Bool {
@@ -145,29 +145,29 @@ public extension CGPoint {
     }
 
     /**
-     :test:   CGPoint(x:50, y:50).clampedTo(CGRect(x:10, y:20, w:100, h:100))
-     :result: CGPoint(x:50, y:50)
-     :test:   CGPoint(x:150, y:50).clampedTo(CGRect(x:10, y:20, w:100, h:100))
-     :result: CGPoint(x:110, y:50)
-     :test:   CGPoint(x:0, y:50).clampedTo(CGRect(x:10, y:20, w:100, h:100))
-     :result: CGPoint(x:10, y:50)
-     :test:   CGPoint(x:50, y:00).clampedTo(CGRect(x:10, y:20, w:100, h:100))
-     :result: CGPoint(x:50, y:20)
+     :test:   CGPoint(x: 50, y: 50).clampedTo(CGRect(x: 10, y: 20, w: 100, h: 100))
+     :result: CGPoint(x: 50, y: 50)
+     :test:   CGPoint(x: 150, y: 50).clampedTo(CGRect(x: 10, y: 20, w: 100, h: 100))
+     :result: CGPoint(x: 110, y: 50)
+     :test:   CGPoint(x: 0, y: 50).clampedTo(CGRect(x: 10, y: 20, w: 100, h: 100))
+     :result: CGPoint(x: 10, y: 50)
+     :test:   CGPoint(x: 50, y: 00).clampedTo(CGRect(x: 10, y: 20, w: 100, h: 100))
+     :result: CGPoint(x: 50, y: 20)
      */
-    func clampedTo(rect:CGRect) -> CGPoint {
+    func clampedTo(rect: CGRect) -> CGPoint {
         return CGPoint(
-            x:clamp(x, lower: rect.minX, upper: rect.maxX),
-            y:clamp(y, lower: rect.minY, upper: rect.maxY)
+            x: clamp(x, lower: rect.minX, upper: rect.maxX),
+            y: clamp(y, lower: rect.minY, upper: rect.maxY)
         )
     }
 
     func map(transform: CGFloat -> CGFloat) -> CGPoint {
-        return CGPoint(x:transform(x), y:transform(y))
+        return CGPoint(x: transform(x), y: transform(y))
     }
 }
 
 public extension CGPoint {
-    init(size:CGSize) {
+    init(size: CGSize) {
         self.x = size.width
         self.y = size.height
     }
@@ -177,34 +177,34 @@ public extension CGPoint {
 // MARK: Rounding
 
 /**
- :test:   floor(CGPoint(x:10.9, y:-10.5))
- :result: CGPoint(x:10, y:-11)
+ :test:   floor(CGPoint(x: 10.9, y: -10.5))
+ :result: CGPoint(x: 10, y: -11)
 */
-public func floor(value:CGPoint) -> CGPoint {
+public func floor(value: CGPoint) -> CGPoint {
     return value.map(floor)
 }
 
 /**
- :test:   ceil(CGPoint(x:10.9, y:-10.5))
- :result: CGPoint(x:11, y:-10)
+ :test:   ceil(CGPoint(x: 10.9, y: -10.5))
+ :result: CGPoint(x: 11, y: -10)
 */
-public func ceil(value:CGPoint) -> CGPoint {
+public func ceil(value: CGPoint) -> CGPoint {
     return value.map(ceil)
 }
 
 /**
- :test:   round(CGPoint(x:10.9, y:-10.6))
- :result: CGPoint(x:11, y:-11)
+ :test:   round(CGPoint(x: 10.9, y: -10.6))
+ :result: CGPoint(x: 11, y: -11)
 */
-public func round(value:CGPoint) -> CGPoint {
+public func round(value: CGPoint) -> CGPoint {
     return value.map(round)
 }
 
 /**
- :test:   floor(CGPoint(x:10.09, y:-10.95))
- :result: CGPoint(x:10, y:-11)
+ :test:   floor(CGPoint(x: 10.09, y: -10.95))
+ :result: CGPoint(x: 10, y: -11)
 */
-public func round(value:CGPoint, _ decimal:Int) -> CGPoint {
+public func round(value: CGPoint, _ decimal: Int) -> CGPoint {
     return value.map { round($0, decimal: decimal) }
 }
 

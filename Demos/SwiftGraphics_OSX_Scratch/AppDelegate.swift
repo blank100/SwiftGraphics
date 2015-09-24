@@ -13,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     var magicConsoleWindowController: NSWindowController?
-    @IBAction func showHideMagicConsole(sender:AnyObject?) {
+    @IBAction func showHideMagicConsole(sender: AnyObject?) {
         if magicConsoleWindowController == nil {
             let storyboard = NSStoryboard(name: "MagicConsole", bundle: nil)
             magicConsoleWindowController = storyboard.instantiateInitialController() as? NSWindowController
@@ -23,11 +23,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
 
-    @IBAction func dumpResponderChain(sender:AnyObject?) {
+    @IBAction func dumpResponderChain(sender: AnyObject?) {
         let window = NSApplication.sharedApplication().mainWindow
         let firstResponder = window?.firstResponder
         let contentView = window?.contentViewController?.view
-        var responder:NSResponder? = contentView
+        var responder: NSResponder? = contentView
         while responder != nil {
             print(responder!)
             if responder === firstResponder {

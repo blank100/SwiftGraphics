@@ -47,23 +47,23 @@ public enum GraphicsOrigin {
 }
 
 public extension CGPoint {
-    func flipped(origin:GraphicsOrigin, insideRect:CGRect) -> CGPoint {
+    func flipped(origin: GraphicsOrigin, insideRect: CGRect) -> CGPoint {
         if origin.isNative {
             return self
         }
         else {
-            return self * CGAffineTransform(tx:0, ty:insideRect.size.height).scaled(sx:1, sy:-1)
+            return self * CGAffineTransform(tx: 0, ty: insideRect.size.height).scaled(sx: 1, sy: -1)
         }
     }
 }
 
 public extension CGRect {
-    func flipped(origin:GraphicsOrigin, insideRect:CGRect) -> CGRect {
+    func flipped(origin: GraphicsOrigin, insideRect: CGRect) -> CGRect {
         if origin.isNative {
             return self
         }
         else {
-            return self * CGAffineTransform(tx:0, ty:insideRect.size.height).scaled(sx:1, sy:-1)
+            return self * CGAffineTransform(tx: 0, ty: insideRect.size.height).scaled(sx: 1, sy: -1)
         }
     }
 }

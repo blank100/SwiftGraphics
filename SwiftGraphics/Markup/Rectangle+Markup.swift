@@ -9,8 +9,8 @@
 import CoreGraphics
 
 extension Rectangle: Markupable {
-    public var markup:[Markup] {
-        var markup:[Markup] = []
+    public var markup: [Markup] {
+        var markup: [Markup] = []
 
         markup.append(Marker(point: frame.minXMinY, tag: "vertex"))
         markup.append(Marker(point: frame.minXMaxY, tag: "vertex"))

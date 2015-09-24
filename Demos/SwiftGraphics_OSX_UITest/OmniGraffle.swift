@@ -14,7 +14,7 @@ class OmniGraffleDocumentModel {
     let path: String
     var frame: CGRect!
     var rootNode: OmniGraffleGroup!
-    var nodesByID: [Int:OmniGraffleNode] = [:]
+    var nodesByID: [Int: OmniGraffleNode] = [:]
     
     init(path: String) throws {
         self.path = path
@@ -25,7 +25,7 @@ class OmniGraffleDocumentModel {
 @objc class OmniGraffleNode: Node {
     weak var parent: Node?
     var dictionary: NSDictionary!
-    var ID:Int { return dictionary["ID"] as! Int }
+    var ID: Int { return dictionary["ID"] as! Int }
 
     init() {
     }
@@ -34,44 +34,44 @@ class OmniGraffleDocumentModel {
 @objc class OmniGraffleGroup: OmniGraffleNode, GroupNode {
     var children: [Node] = []
     
-    init(children:[Node]) {
+    init(children: [Node]) {
         self.children = children
     }
 }
 
 @objc class OmniGraffleShape: OmniGraffleNode {
-    var shape:String? { return dictionary["Shape"] as? String }
-    var bounds:CGRect { return try! StringToRect(dictionary["Bounds"] as! String) }
-    lazy var lines:[OmniGraffleLine] = []
+    var shape: String? { return dictionary["Shape"] as? String }
+    var bounds: CGRect { return try! StringToRect(dictionary["Bounds"] as! String) }
+    lazy var lines: [OmniGraffleLine] = []
 }
 
 @objc class OmniGraffleLine: OmniGraffleNode {
-    var start:CGPoint {
+    var start: CGPoint {
         let strings = dictionary["Points"] as! [String]
         return try! StringToPoint(strings[0])
     }
-    var end:CGPoint {
+    var end: CGPoint {
         let strings = dictionary["Points"] as! [String]
         return try! StringToPoint(strings[1])
     }
-    var head:OmniGraffleNode?
-    var tail:OmniGraffleNode?
+    var head: OmniGraffleNode?
+    var tail: OmniGraffleNode?
 }
 
 extension OmniGraffleDocumentModel {
 
     func load() throws {
-        let data = NSData(contentsOfCompressedFile:path)
+        let data = NSData(contentsOfCompressedFile: path)
         // TODO: Swift 2
-        if let d = try NSPropertyListSerialization.propertyListWithData(data, options:NSPropertyListReadOptions(), format: nil) as? NSDictionary {
+        if let d = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListReadOptions(), format: nil) as? NSDictionary {
             _processRoot(d)
             let origin = try! StringToPoint(d["CanvasOrigin"] as! String)
             let size = try! StringToSize(d["CanvasSize"] as! String)
-            frame = CGRect(origin:origin, size:size)
+            frame = CGRect(origin: origin, size: size)
 //            print(nodesByID)
             
             let nodes = nodesByID.values.filter {
-                (node:Node) -> Bool in
+                (node: Node) -> Bool in
                 return node is OmniGraffleLine
             }
             for node in nodes {
@@ -97,30 +97,30 @@ extension OmniGraffleDocumentModel {
         }
     }
     
-    func _processRoot(d:NSDictionary) {
+    func _processRoot(d: NSDictionary) {
         let graphicslist = d["GraphicsList"] as! [NSDictionary]
-        var children:[Node] = []
+        var children: [Node] = []
         for graphic in graphicslist {
             if let node = _processDictionary(graphic) {
                 children.append(node)
             }
         }
-        let group = OmniGraffleGroup(children:children)
+        let group = OmniGraffleGroup(children: children)
         rootNode = group
     }
     
-    func _processDictionary(d:NSDictionary) -> OmniGraffleNode! {
+    func _processDictionary(d: NSDictionary) -> OmniGraffleNode! {
         if let className = d["Class"] as? String {
             switch className {
                 case "Group":
-                    var children:[Node] = []
+                    var children: [Node] = []
                     if let graphics = d["Graphics"] as? [NSDictionary] {
                         children = graphics.map {
-                            (d:NSDictionary) -> OmniGraffleNode in
+                            (d: NSDictionary) -> OmniGraffleNode in
                             return self._processDictionary(d)
                         }
                     }
-                    let group = OmniGraffleGroup(children:children)
+                    let group = OmniGraffleGroup(children: children)
                     group.dictionary = d
                     nodesByID[group.ID] = group
                     return group

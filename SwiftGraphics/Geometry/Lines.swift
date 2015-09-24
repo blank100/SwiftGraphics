@@ -11,13 +11,13 @@ import CoreGraphics
 // MARK: Line
 
 public struct Line {
-    let m:CGFloat
-    let b:CGFloat
+    let m: CGFloat
+    let b: CGFloat
 
     // TODO: Vertical lines!?
-    func lineSegment(x0  x0:CGFloat, x1:CGFloat) -> LineSegment {
-        let start = CGPoint(x:x0, y:m * x0 + b)
-        let end = CGPoint(x:x1, y:m * x1 + b)
+    func lineSegment(x0  x0: CGFloat, x1: CGFloat) -> LineSegment {
+        let start = CGPoint(x: x0, y: m * x0 + b)
+        let end = CGPoint(x: x1, y: m * x1 + b)
         return LineSegment(start, end)
     }
 }
@@ -26,30 +26,30 @@ public struct Line {
 
 public struct LineSegment {
     // TODO: Convert to tuple
-    public let start:CGPoint
-    public let end:CGPoint
+    public let start: CGPoint
+    public let end: CGPoint
 
-    public init(_ start:CGPoint, _ end:CGPoint) {
+    public init(_ start: CGPoint, _ end: CGPoint) {
         self.start = start
         self.end = end
     }
 
-    public var slope:CGFloat? {
+    public var slope: CGFloat? {
         if end.x == start.x {
             return nil
         }
         return (end.y - start.y) / (end.x - start.x)
     }
 
-    public var angle:CGFloat {
+    public var angle: CGFloat {
         return atan2(end - start)
     }
 
-    public func isParallel(other:LineSegment) -> Bool {
+    public func isParallel(other: LineSegment) -> Bool {
         return slope == other.slope
     }
 
-    public func intersection(other:LineSegment, clamped:Bool = true) -> CGPoint? {
+    public func intersection(other: LineSegment, clamped: Bool = true) -> CGPoint? {
         let x_1 = start.x
         let y_1 = start.y
         let x_2 = end.x
@@ -70,7 +70,7 @@ public struct LineSegment {
         let x = (p1 * (x_3 - x_4) - (x_1 - x_2) * p2) / denom
         let y = (p1 * (y_3 - y_4) - (y_1 - y_2) * p2) / denom
 
-        let pt = CGPoint(x:x, y:y)
+        let pt = CGPoint(x: x, y: y)
 
         if clamped {
             if containsPoint(pt) == false || other.containsPoint(pt) == false {
@@ -81,12 +81,12 @@ public struct LineSegment {
         return pt
     }
 
-    public func containsPoint(point:CGPoint) -> Bool {
+    public func containsPoint(point: CGPoint) -> Bool {
         let a = start
         let b = end
         let c = point
 
-        func within(p:CGFloat, q:CGFloat, r:CGFloat) -> Bool {
+        func within(p: CGFloat, q: CGFloat, r: CGFloat) -> Bool {
             // TODO: What about negatives?
             return q >= p && q <= r || q <= p && q >= r
         }
@@ -98,9 +98,9 @@ public struct LineSegment {
 
 // TODO: Rename? Lines? Get rid of completely? #question #help-wanted
 public struct LineChain {
-    public let points:[CGPoint]
+    public let points: [CGPoint]
 
-    public init(points:[CGPoint]) {
+    public init(points: [CGPoint]) {
         self.points = points
     }
 }
@@ -108,9 +108,9 @@ public struct LineChain {
 // MARK: Polygon
 
 public struct Polygon {
-    public let points:[CGPoint]
+    public let points: [CGPoint]
 
-    public init(points:[CGPoint]) {
+    public init(points: [CGPoint]) {
         self.points = points
     }
 }

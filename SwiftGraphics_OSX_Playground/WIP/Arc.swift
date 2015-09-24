@@ -17,20 +17,20 @@ public enum CircularDirection {
     }
 
 public struct Arc {
-    public var center:CGPoint = CGPointZero
-    public var size:CGSize = CGSizeZero
-    public var startAngle:CGFloat = 0 // Currently degrees
-    public var endAngle:CGFloat = 360 // Currently degrees
-//    var direction:CircularDirection = .Clockwise
-    public var rotation:CGFloat = 0.0 // Currently degrees
+    public var center: CGPoint = CGPointZero
+    public var size: CGSize = CGSizeZero
+    public var startAngle: CGFloat = 0 // Currently degrees
+    public var endAngle: CGFloat = 360 // Currently degrees
+//    var direction: CircularDirection = .Clockwise
+    public var rotation: CGFloat = 0.0 // Currently degrees
 }
 
 extension CGContextRef {
-    public func stroke(arc:Arc) {
+    public func stroke(arc: Arc) {
         let radius = arc.size.width * 0.5
         let rotation = DegreesToRadians(arc.rotation)
-        let sx:CGFloat = 1.0
-        let sy:CGFloat = arc.size.height / arc.size.width
+        let sx: CGFloat = 1.0
+        let sy: CGFloat = arc.size.height / arc.size.width
 
         let transform = CGAffineTransform.identity.rotated(rotation).scaled(sx: sx,sy: sy)
     
@@ -44,23 +44,23 @@ extension CGContextRef {
     }
 }
 
-// http://svn.apache.org/repos/asf/xmlgraphics/batik/branches/svg11/sources/org/apache/batik/ext/awt/geom/ExtendedGeneralPath.java
+// http: //svn.apache.org/repos/asf/xmlgraphics/batik/branches/svg11/sources/org/apache/batik/ext/awt/geom/ExtendedGeneralPath.java
 
 // * AffineTransform.getRotateInstance
 //     *     (angle, arc.getX()+arc.getWidth()/2, arc.getY()+arc.getHeight()/2);
 
 public struct SVGArcParameters {
-    public var x0:CGFloat
-    public var y0:CGFloat
-    public var rx:CGFloat
-    public var ry:CGFloat
-    public var angle:CGFloat
-    public var largeArcFlag:Bool
-    public var sweepFlag:Bool
-    public var x:CGFloat
-    public var y:CGFloat
+    public var x0: CGFloat
+    public var y0: CGFloat
+    public var rx: CGFloat
+    public var ry: CGFloat
+    public var angle: CGFloat
+    public var largeArcFlag: Bool
+    public var sweepFlag: Bool
+    public var x: CGFloat
+    public var y: CGFloat
 
-    public init(x0:CGFloat, y0:CGFloat, rx:CGFloat, ry:CGFloat, angle:CGFloat, largeArcFlag:Bool, sweepFlag:Bool, x:CGFloat, y:CGFloat) {
+    public init(x0: CGFloat, y0: CGFloat, rx: CGFloat, ry: CGFloat, angle: CGFloat, largeArcFlag: Bool, sweepFlag: Bool, x: CGFloat, y: CGFloat) {
         self.x0 = x0
         self.y0 = y0
         self.rx = rx
@@ -76,14 +76,14 @@ public struct SVGArcParameters {
 
 extension Arc {
 
-    public static func arcWithSVGDefinition(definition:SVGArcParameters) -> Arc! {
+    public static func arcWithSVGDefinition(definition: SVGArcParameters) -> Arc! {
         return computeArc(definition.x0, y0: definition.y0, rx: definition.rx, ry: definition.ry, angle: definition.angle, largeArcFlag: definition.largeArcFlag, sweepFlag: definition.sweepFlag, x: definition.x, y: definition.y)
     }
 
 
 }
 
-public func computeArc(x0:CGFloat, y0:CGFloat, rx:CGFloat, ry:CGFloat, angle:CGFloat, largeArcFlag:Bool, sweepFlag:Bool, x:CGFloat, y:CGFloat) -> Arc
+public func computeArc(x0: CGFloat, y0: CGFloat, rx: CGFloat, ry: CGFloat, angle: CGFloat, largeArcFlag: Bool, sweepFlag: Bool, x: CGFloat, y: CGFloat) -> Arc
 {
 
     //
@@ -122,9 +122,9 @@ public func computeArc(x0:CGFloat, y0:CGFloat, rx:CGFloat, ry:CGFloat, angle:CGF
     //
     // Step 2 : Compute (cx1, cy1)
     //
-    var sign:CGFloat = (largeArcFlag == sweepFlag) ? -1 : 1
+    var sign: CGFloat = (largeArcFlag == sweepFlag) ? -1 : 1
     // (Unnecessarily specify CGFloat to prevent compiler from complaining about complexity while inferring type)
-    var sq:CGFloat = ((Prx*Pry)-(Prx*Py1)-(Pry*Px1)) / ((Prx*Py1)+(Pry*Px1))
+    var sq: CGFloat = ((Prx*Pry)-(Prx*Py1)-(Pry*Px1)) / ((Prx*Py1)+(Pry*Px1))
     sq = (sq < 0) ? 0 : sq
     let coef = sign * sqrt(sq)
     let cx1 = coef * ((rx * y1) / ry)
@@ -166,8 +166,8 @@ public func computeArc(x0:CGFloat, y0:CGFloat, rx:CGFloat, ry:CGFloat, angle:CGF
     angleStart %= 360
 
     var arc = Arc()
-    arc.center = CGPoint(x:cx, y:cy)
-    arc.size = CGSize(width:rx * 2, height:ry * 2)
+    arc.center = CGPoint(x: cx, y: cy)
+    arc.size = CGSize(width: rx * 2, height: ry * 2)
     arc.startAngle = DegreesToRadians(-angleStart)
     arc.endAngle = DegreesToRadians(-angleExtent)
     arc.rotation = angle

@@ -4,22 +4,22 @@ import Cocoa
 import CoreGraphics
 import SwiftGraphics
 
-let context = CGContextRef.bitmapContext(CGSize(w:201, h:201))
+let context = CGContextRef.bitmapContext(CGSize(w: 201, h: 201))
 
 var path = CGPathCreateMutable()
 
-path.move(CGPoint(x:5, y:5))
-path.addLine(CGPoint(x:100, y:0), relative:true)
-path.addLine(CGPoint(x:0, y:100), relative:true)
-path.addLine(CGPoint(x:-100, y:0), relative:true)
-path.addCubicCurveToPoint(CGPoint(x:100, y:100), control1:CGPoint(x:50, y:0), control2:CGPoint(x:150, y:0))
+path.move(CGPoint(x: 5, y: 5))
+path.addLine(CGPoint(x: 100, y: 0), relative: true)
+path.addLine(CGPoint(x: 0, y: 100), relative: true)
+path.addLine(CGPoint(x: -100, y: 0), relative: true)
+path.addCubicCurveToPoint(CGPoint(x: 100, y: 100), control1: CGPoint(x: 50, y: 0), control2: CGPoint(x: 150, y: 0))
 path.close()
 
 path.dump()
 
 //CGContextAddPath(context, path)
 path.enumerate() {
-    (type:CGPathElementType, points:[CGPoint]) -> Void in
+    (type: CGPathElementType, points: [CGPoint]) -> Void in
     switch type {
         case .MoveToPoint:
             CGContextMoveToPoint(context, points[0].x, points[0].y)

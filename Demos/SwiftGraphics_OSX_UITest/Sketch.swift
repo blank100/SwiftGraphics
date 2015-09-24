@@ -38,7 +38,7 @@ import SwiftGraphics
         let geometryChildren = children as! [GeometryNode]
         
         let rects = geometryChildren.map {
-            (child:GeometryNode) -> CGRect in
+            (child: GeometryNode) -> CGRect in
             return child.frame
         }
 
@@ -50,26 +50,26 @@ import SwiftGraphics
 }
 
 @objc public class CircleNode : Shape, Node, GeometryNode {
-    public var frame : CGRect { return CGRect(center:center, radius:radius) }
+    public var frame : CGRect { return CGRect(center: center, radius: radius) }
 
     public var center : CGPoint
     public var radius : CGFloat
     public var parent : Node?
     
-    public init(center:CGPoint, radius:CGFloat) {
+    public init(center: CGPoint, radius: CGFloat) {
         self.center = center
         self.radius = radius
     }
 }
 
 @objc public class LineSegmentNode : Shape, Node, GeometryNode {
-    public var frame : CGRect { return CGRect(p1:start, p2:end) }
+    public var frame : CGRect { return CGRect(p1: start, p2: end) }
 
     public var start : CGPoint
     public var end : CGPoint
     public var parent : Node?
     
-    public init(start:CGPoint, end:CGPoint) {
+    public init(start: CGPoint, end: CGPoint) {
         self.start = start
         self.end = end
     }
@@ -80,7 +80,7 @@ import SwiftGraphics
 
     public var parent : Node?
     
-    public init(frame:CGRect) {
+    public init(frame: CGRect) {
         self.frame = frame
     }
 }

@@ -14,7 +14,7 @@ import AppKit
 
 public extension CGContext {
 
-    class func bitmapContext(bounds:CGRect, color:CGColor = CGColor.clearColor()) -> CGContext! {
+    class func bitmapContext(bounds: CGRect, color: CGColor = CGColor.clearColor()) -> CGContext! {
 
         let colorspace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedFirst.rawValue)
@@ -31,7 +31,7 @@ public extension CGContext {
     }
 
 
-    class func bitmapContext(size:CGSize, origin:CGPoint = CGPointZero, color:CGColor = CGColor.clearColor()) -> CGContext! {
+    class func bitmapContext(size: CGSize, origin: CGPoint = CGPointZero, color: CGColor = CGColor.clearColor()) -> CGContext! {
 
         let colorspace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedFirst.rawValue)
@@ -39,7 +39,7 @@ public extension CGContext {
 
         context.with {
             context.setFillColor(color)
-            context.fillRect(CGRect(size:size))
+            context.fillRect(CGRect(size: size))
         }
         CGContextTranslateCTM(context, origin.x * size.width, origin.y * size.height)
 
@@ -47,18 +47,18 @@ public extension CGContext {
     }
 
     var size: CGSize {
-        return CGSize(w:CGFloat(CGBitmapContextGetWidth(self)), h:CGFloat(CGBitmapContextGetHeight(self)))
+        return CGSize(w: CGFloat(CGBitmapContextGetWidth(self)), h: CGFloat(CGBitmapContextGetHeight(self)))
     }
 }
 
 public extension CGImageRef {
     var size: CGSize {
-        return CGSize(width:CGFloat(CGImageGetWidth(self)), height:CGFloat(CGImageGetHeight(self)))
+        return CGSize(width: CGFloat(CGImageGetWidth(self)), height: CGFloat(CGImageGetHeight(self)))
     }
 }
 
 public extension CGContext {
-    class func imageWithBlock(size:CGSize, color:CGColor = CGColor.clearColor(), origin:CGPoint = CGPointZero, block:CGContext -> Void) -> CGImage! {
+    class func imageWithBlock(size: CGSize, color: CGColor = CGColor.clearColor(), origin: CGPoint = CGPointZero, block: CGContext -> Void) -> CGImage! {
         let context = bitmapContext(size, color: color, origin: origin)
         block(context)
         let cgimage = CGBitmapContextCreateImage(context)
@@ -77,8 +77,8 @@ public extension CGContext {
     var nsimage: NSImage {
         // This assumes the context is a bitmap context
         let cgimage = CGBitmapContextCreateImage(self)!
-        let size = CGSize(width:CGFloat(CGImageGetWidth(cgimage)), height:CGFloat(CGImageGetHeight(cgimage)))
-        let nsimage = NSImage(CGImage:cgimage, size:size)
+        let size = CGSize(width: CGFloat(CGImageGetWidth(cgimage)), height: CGFloat(CGImageGetHeight(cgimage)))
+        let nsimage = NSImage(CGImage: cgimage, size: size)
         return nsimage
     }
 #endif
@@ -86,11 +86,11 @@ public extension CGContext {
 
 
 #if os(OSX)
-public func validParametersForBitmapContext(colorSpace colorSpace:CGColorSpaceRef, bitsPerPixel:Int, bitsPerComponent:Int, alphaInfo:CGImageAlphaInfo, bitmapInfo:CGBitmapInfo) -> Bool {
+public func validParametersForBitmapContext(colorSpace colorSpace: CGColorSpaceRef, bitsPerPixel: Int, bitsPerComponent: Int, alphaInfo: CGImageAlphaInfo, bitmapInfo: CGBitmapInfo) -> Bool {
 
     // TODO: Do the right thing on OSX and iOS
 
-    // https://developer.apple.com/library/ios/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_context/dq_context.html#//apple_ref/doc/uid/TP30001066-CH203-TPXREF101
+    // https: //developer.apple.com/library/ios/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_context/dq_context.html#//apple_ref/doc/uid/TP30001066-CH203-TPXREF101
 
     let model = CGColorSpaceGetModel(colorSpace)
 

@@ -3,14 +3,14 @@ import CoreImage
 /**
 Transitions from one image to another of a differing dimensions by unfolding.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAccordionFoldTransition)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAccordionFoldTransition)
 */
 public class AccordionFoldTransition: Filter {
 
     let name = "CIAccordionFoldTransition"
 
     public init(inputImage: CIImage? = nil, inputTargetImage: CIImage? = nil, inputBottomHeight: CGFloat? = nil, inputNumberOfFolds: CGFloat? = nil, inputFoldShadowAmount: CGFloat? = nil, inputTime: CGFloat? = nil) {
-        super.init(name:"CIAccordionFoldTransition")
+        super.init(name: "CIAccordionFoldTransition")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -39,7 +39,7 @@ public class AccordionFoldTransition: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -49,7 +49,7 @@ public class AccordionFoldTransition: Filter {
             return valueForKey("inputTargetImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputTargetImage")
+            setValue(newValue, forKey: "inputTargetImage")
         }
     }
 
@@ -58,7 +58,7 @@ public class AccordionFoldTransition: Filter {
             return valueForKey("inputBottomHeight") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputBottomHeight")
+            setValue(newValue, forKey: "inputBottomHeight")
         }
     }
 
@@ -67,7 +67,7 @@ public class AccordionFoldTransition: Filter {
             return valueForKey("inputNumberOfFolds") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputNumberOfFolds")
+            setValue(newValue, forKey: "inputNumberOfFolds")
         }
     }
 
@@ -76,7 +76,7 @@ public class AccordionFoldTransition: Filter {
             return valueForKey("inputFoldShadowAmount") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputFoldShadowAmount")
+            setValue(newValue, forKey: "inputFoldShadowAmount")
         }
     }
 
@@ -86,7 +86,7 @@ public class AccordionFoldTransition: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 }
@@ -94,14 +94,14 @@ public class AccordionFoldTransition: Filter {
 /**
 Adds color components to achieve a brightening effect. This filter is typically used to add highlights and lens flare effects.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAdditionCompositing)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAdditionCompositing)
 */
 public class AdditionCompositing: Filter {
 
     let name = "CIAdditionCompositing"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIAdditionCompositing")
+        super.init(name: "CIAdditionCompositing")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -118,7 +118,7 @@ public class AdditionCompositing: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -128,7 +128,7 @@ public class AdditionCompositing: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -136,14 +136,14 @@ public class AdditionCompositing: Filter {
 /**
 Performs an affine transform on a source image and then clamps the pixels at the edge of the transformed image, extending them outwards. This filter performs similarly to the CIAffineTransform filter except that it produces an image with infinite extent. You can use this filter when you need to blur an image but you want to avoid a soft, black fringe along the edges.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAffineClamp)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAffineClamp)
 */
 public class AffineClamp: Filter {
 
     let name = "CIAffineClamp"
 
     public init(inputImage: CIImage? = nil, inputTransform: NSAffineTransform? = nil) {
-        super.init(name:"CIAffineClamp")
+        super.init(name: "CIAffineClamp")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -160,7 +160,7 @@ public class AffineClamp: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -170,7 +170,7 @@ public class AffineClamp: Filter {
             return valueForKey("inputTransform") as? NSAffineTransform
         }
         set {
-            setValue(newValue, forKey:"inputTransform")
+            setValue(newValue, forKey: "inputTransform")
         }
     }
 }
@@ -178,14 +178,14 @@ public class AffineClamp: Filter {
 /**
 Applies an affine transform to an image and then tiles the transformed image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAffineTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAffineTile)
 */
 public class AffineTile: Filter {
 
     let name = "CIAffineTile"
 
     public init(inputImage: CIImage? = nil, inputTransform: NSAffineTransform? = nil) {
-        super.init(name:"CIAffineTile")
+        super.init(name: "CIAffineTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -202,7 +202,7 @@ public class AffineTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -212,7 +212,7 @@ public class AffineTile: Filter {
             return valueForKey("inputTransform") as? NSAffineTransform
         }
         set {
-            setValue(newValue, forKey:"inputTransform")
+            setValue(newValue, forKey: "inputTransform")
         }
     }
 }
@@ -220,14 +220,14 @@ public class AffineTile: Filter {
 /**
 Applies an affine transform to an image. You can scale, translate, or rotate the input image. You can also apply a combination of these operations.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAffineTransform)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAffineTransform)
 */
 public class AffineTransform: Filter {
 
     let name = "CIAffineTransform"
 
     public init(inputImage: CIImage? = nil, inputTransform: NSAffineTransform? = nil) {
-        super.init(name:"CIAffineTransform")
+        super.init(name: "CIAffineTransform")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -244,7 +244,7 @@ public class AffineTransform: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -254,7 +254,7 @@ public class AffineTransform: Filter {
             return valueForKey("inputTransform") as? NSAffineTransform
         }
         set {
-            setValue(newValue, forKey:"inputTransform")
+            setValue(newValue, forKey: "inputTransform")
         }
     }
 }
@@ -262,14 +262,14 @@ public class AffineTransform: Filter {
 /**
 Calculates the average color for the specified area in an image, returning the result in a pixel.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAreaAverage)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAreaAverage)
 */
 public class AreaAverage: Filter {
 
     let name = "CIAreaAverage"
 
     public init(inputImage: CIImage? = nil, inputExtent: CIVector? = nil) {
-        super.init(name:"CIAreaAverage")
+        super.init(name: "CIAreaAverage")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -286,7 +286,7 @@ public class AreaAverage: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -296,7 +296,7 @@ public class AreaAverage: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 }
@@ -304,14 +304,14 @@ public class AreaAverage: Filter {
 /**
 Calculates a histogram for the specified area in an image, returning the result in a 1D image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAreaHistogram)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAreaHistogram)
 */
 public class AreaHistogram: Filter {
 
     let name = "CIAreaHistogram"
 
     public init(inputImage: CIImage? = nil, inputExtent: CIVector? = nil, inputScale: CGFloat? = nil, inputCount: CGFloat? = nil) {
-        super.init(name:"CIAreaHistogram")
+        super.init(name: "CIAreaHistogram")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -334,7 +334,7 @@ public class AreaHistogram: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -344,7 +344,7 @@ public class AreaHistogram: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 
@@ -354,7 +354,7 @@ public class AreaHistogram: Filter {
             return valueForKey("inputScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputScale")
+            setValue(newValue, forKey: "inputScale")
         }
     }
 
@@ -364,7 +364,7 @@ public class AreaHistogram: Filter {
             return valueForKey("inputCount") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCount")
+            setValue(newValue, forKey: "inputCount")
         }
     }
 }
@@ -372,14 +372,14 @@ public class AreaHistogram: Filter {
 /**
 Calculates the maximum component values for the specified area in an image, returning the result in a pixel.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAreaMaximum)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAreaMaximum)
 */
 public class AreaMaximum: Filter {
 
     let name = "CIAreaMaximum"
 
     public init(inputImage: CIImage? = nil, inputExtent: CIVector? = nil) {
-        super.init(name:"CIAreaMaximum")
+        super.init(name: "CIAreaMaximum")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -396,7 +396,7 @@ public class AreaMaximum: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -406,7 +406,7 @@ public class AreaMaximum: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 }
@@ -414,14 +414,14 @@ public class AreaMaximum: Filter {
 /**
 Finds and returns the pixel with the maximum alpha value.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAreaMaximumAlpha)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAreaMaximumAlpha)
 */
 public class AreaMaximumAlpha: Filter {
 
     let name = "CIAreaMaximumAlpha"
 
     public init(inputImage: CIImage? = nil, inputExtent: CIVector? = nil) {
-        super.init(name:"CIAreaMaximumAlpha")
+        super.init(name: "CIAreaMaximumAlpha")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -438,7 +438,7 @@ public class AreaMaximumAlpha: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -448,7 +448,7 @@ public class AreaMaximumAlpha: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 }
@@ -456,14 +456,14 @@ public class AreaMaximumAlpha: Filter {
 /**
 Calculates the minimum component values for the specified area in an image, returning the result in a pixel.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAreaMinimum)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAreaMinimum)
 */
 public class AreaMinimum: Filter {
 
     let name = "CIAreaMinimum"
 
     public init(inputImage: CIImage? = nil, inputExtent: CIVector? = nil) {
-        super.init(name:"CIAreaMinimum")
+        super.init(name: "CIAreaMinimum")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -480,7 +480,7 @@ public class AreaMinimum: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -490,7 +490,7 @@ public class AreaMinimum: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 }
@@ -498,14 +498,14 @@ public class AreaMinimum: Filter {
 /**
 Finds and returns the pixel with the minimum alpha value.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAreaMinimumAlpha)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAreaMinimumAlpha)
 */
 public class AreaMinimumAlpha: Filter {
 
     let name = "CIAreaMinimumAlpha"
 
     public init(inputImage: CIImage? = nil, inputExtent: CIVector? = nil) {
-        super.init(name:"CIAreaMinimumAlpha")
+        super.init(name: "CIAreaMinimumAlpha")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -522,7 +522,7 @@ public class AreaMinimumAlpha: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -532,7 +532,7 @@ public class AreaMinimumAlpha: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 }
@@ -540,14 +540,14 @@ public class AreaMinimumAlpha: Filter {
 /**
 Aztec Code Generator
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAztecCodeGenerator)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIAztecCodeGenerator)
 */
 public class AztecCodeGenerator: Filter {
 
     let name = "CIAztecCodeGenerator"
 
     public init(inputMessage: NSData? = nil, inputCorrectionLevel: CGFloat? = nil, inputLayers: CGFloat? = nil, inputCompactStyle: CGFloat? = nil) {
-        super.init(name:"CIAztecCodeGenerator")
+        super.init(name: "CIAztecCodeGenerator")
 
         if let inputMessage = inputMessage {
             self.inputMessage = inputMessage
@@ -569,7 +569,7 @@ public class AztecCodeGenerator: Filter {
             return valueForKey("inputMessage") as? NSData
         }
         set {
-            setValue(newValue, forKey:"inputMessage")
+            setValue(newValue, forKey: "inputMessage")
         }
     }
 
@@ -579,7 +579,7 @@ public class AztecCodeGenerator: Filter {
             return valueForKey("inputCorrectionLevel") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCorrectionLevel")
+            setValue(newValue, forKey: "inputCorrectionLevel")
         }
     }
 
@@ -589,7 +589,7 @@ public class AztecCodeGenerator: Filter {
             return valueForKey("inputLayers") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputLayers")
+            setValue(newValue, forKey: "inputLayers")
         }
     }
 
@@ -599,7 +599,7 @@ public class AztecCodeGenerator: Filter {
             return valueForKey("inputCompactStyle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCompactStyle")
+            setValue(newValue, forKey: "inputCompactStyle")
         }
     }
 }
@@ -607,14 +607,14 @@ public class AztecCodeGenerator: Filter {
 /**
 Transitions from one image to another by swiping rectangular portions of the foreground image to disclose the target image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBarsSwipeTransition)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBarsSwipeTransition)
 */
 public class BarsSwipeTransition: Filter {
 
     let name = "CIBarsSwipeTransition"
 
     public init(inputImage: CIImage? = nil, inputTargetImage: CIImage? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil, inputBarOffset: CGFloat? = nil, inputTime: CGFloat? = nil) {
-        super.init(name:"CIBarsSwipeTransition")
+        super.init(name: "CIBarsSwipeTransition")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -643,7 +643,7 @@ public class BarsSwipeTransition: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -653,7 +653,7 @@ public class BarsSwipeTransition: Filter {
             return valueForKey("inputTargetImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputTargetImage")
+            setValue(newValue, forKey: "inputTargetImage")
         }
     }
 
@@ -663,7 +663,7 @@ public class BarsSwipeTransition: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -673,7 +673,7 @@ public class BarsSwipeTransition: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -683,7 +683,7 @@ public class BarsSwipeTransition: Filter {
             return valueForKey("inputBarOffset") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputBarOffset")
+            setValue(newValue, forKey: "inputBarOffset")
         }
     }
 
@@ -693,7 +693,7 @@ public class BarsSwipeTransition: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 }
@@ -701,14 +701,14 @@ public class BarsSwipeTransition: Filter {
 /**
 Uses values from a grayscale mask to interpolate between an image and the background. When a mask alpha value is 0.0, the result is the background. When the mask alpha value is 1.0, the result is the image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBlendWithAlphaMask)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBlendWithAlphaMask)
 */
 public class BlendWithAlphaMask: Filter {
 
     let name = "CIBlendWithAlphaMask"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil, inputMaskImage: CIImage? = nil) {
-        super.init(name:"CIBlendWithAlphaMask")
+        super.init(name: "CIBlendWithAlphaMask")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -728,7 +728,7 @@ public class BlendWithAlphaMask: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -738,7 +738,7 @@ public class BlendWithAlphaMask: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 
@@ -748,7 +748,7 @@ public class BlendWithAlphaMask: Filter {
             return valueForKey("inputMaskImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputMaskImage")
+            setValue(newValue, forKey: "inputMaskImage")
         }
     }
 }
@@ -756,14 +756,14 @@ public class BlendWithAlphaMask: Filter {
 /**
 Uses values from a grayscale mask to interpolate between an image and the background. When a mask green value is 0.0, the result is the background. When the mask green value is 1.0, the result is the image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBlendWithMask)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBlendWithMask)
 */
 public class BlendWithMask: Filter {
 
     let name = "CIBlendWithMask"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil, inputMaskImage: CIImage? = nil) {
-        super.init(name:"CIBlendWithMask")
+        super.init(name: "CIBlendWithMask")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -783,7 +783,7 @@ public class BlendWithMask: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -793,7 +793,7 @@ public class BlendWithMask: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 
@@ -803,7 +803,7 @@ public class BlendWithMask: Filter {
             return valueForKey("inputMaskImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputMaskImage")
+            setValue(newValue, forKey: "inputMaskImage")
         }
     }
 }
@@ -811,14 +811,14 @@ public class BlendWithMask: Filter {
 /**
 Softens edges and applies a pleasant glow to an image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBloom)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBloom)
 */
 public class Bloom: Filter {
 
     let name = "CIBloom"
 
     public init(inputImage: CIImage? = nil, inputRadius: CGFloat? = nil, inputIntensity: CGFloat? = nil) {
-        super.init(name:"CIBloom")
+        super.init(name: "CIBloom")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -838,7 +838,7 @@ public class Bloom: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -848,7 +848,7 @@ public class Bloom: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -858,7 +858,7 @@ public class Bloom: Filter {
             return valueForKey("inputIntensity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputIntensity")
+            setValue(newValue, forKey: "inputIntensity")
         }
     }
 }
@@ -866,14 +866,14 @@ public class Bloom: Filter {
 /**
 Smooths or sharpens an image using a box-shaped convolution kernel.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBoxBlur)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBoxBlur)
 */
 public class BoxBlur: Filter {
 
     let name = "CIBoxBlur"
 
     public init(inputImage: CIImage? = nil, inputRadius: CGFloat? = nil) {
-        super.init(name:"CIBoxBlur")
+        super.init(name: "CIBoxBlur")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -890,7 +890,7 @@ public class BoxBlur: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -900,7 +900,7 @@ public class BoxBlur: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 }
@@ -908,14 +908,14 @@ public class BoxBlur: Filter {
 /**
 Creates a concave or convex bump that originates at a specified point in the image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBumpDistortion)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBumpDistortion)
 */
 public class BumpDistortion: Filter {
 
     let name = "CIBumpDistortion"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputRadius: CGFloat? = nil, inputScale: CGFloat? = nil) {
-        super.init(name:"CIBumpDistortion")
+        super.init(name: "CIBumpDistortion")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -938,7 +938,7 @@ public class BumpDistortion: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -948,7 +948,7 @@ public class BumpDistortion: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -958,7 +958,7 @@ public class BumpDistortion: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -968,7 +968,7 @@ public class BumpDistortion: Filter {
             return valueForKey("inputScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputScale")
+            setValue(newValue, forKey: "inputScale")
         }
     }
 }
@@ -976,14 +976,14 @@ public class BumpDistortion: Filter {
 /**
 Creates a bump that originates from a linear portion of the image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBumpDistortionLinear)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIBumpDistortionLinear)
 */
 public class BumpDistortionLinear: Filter {
 
     let name = "CIBumpDistortionLinear"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputRadius: CGFloat? = nil, inputAngle: CGFloat? = nil, inputScale: CGFloat? = nil) {
-        super.init(name:"CIBumpDistortionLinear")
+        super.init(name: "CIBumpDistortionLinear")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1009,7 +1009,7 @@ public class BumpDistortionLinear: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1019,7 +1019,7 @@ public class BumpDistortionLinear: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -1029,7 +1029,7 @@ public class BumpDistortionLinear: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -1039,7 +1039,7 @@ public class BumpDistortionLinear: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -1049,7 +1049,7 @@ public class BumpDistortionLinear: Filter {
             return valueForKey("inputScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputScale")
+            setValue(newValue, forKey: "inputScale")
         }
     }
 }
@@ -1057,14 +1057,14 @@ public class BumpDistortionLinear: Filter {
 /**
 Generates a checkerboard pattern. You can specify the checkerboard size and colors, and the sharpness of the pattern.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICheckerboardGenerator)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICheckerboardGenerator)
 */
 public class CheckerboardGenerator: Filter {
 
     let name = "CICheckerboardGenerator"
 
     public init(inputCenter: CIVector? = nil, inputColor0: CIColor? = nil, inputColor1: CIColor? = nil, inputWidth: CGFloat? = nil, inputSharpness: CGFloat? = nil) {
-        super.init(name:"CICheckerboardGenerator")
+        super.init(name: "CICheckerboardGenerator")
 
         if let inputCenter = inputCenter {
             self.inputCenter = inputCenter
@@ -1090,7 +1090,7 @@ public class CheckerboardGenerator: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -1100,7 +1100,7 @@ public class CheckerboardGenerator: Filter {
             return valueForKey("inputColor0") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor0")
+            setValue(newValue, forKey: "inputColor0")
         }
     }
 
@@ -1110,7 +1110,7 @@ public class CheckerboardGenerator: Filter {
             return valueForKey("inputColor1") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor1")
+            setValue(newValue, forKey: "inputColor1")
         }
     }
 
@@ -1120,7 +1120,7 @@ public class CheckerboardGenerator: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -1130,7 +1130,7 @@ public class CheckerboardGenerator: Filter {
             return valueForKey("inputSharpness") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSharpness")
+            setValue(newValue, forKey: "inputSharpness")
         }
     }
 }
@@ -1138,14 +1138,14 @@ public class CheckerboardGenerator: Filter {
 /**
 Distorts the pixels starting at the circumference of a circle and emanating outward.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICircleSplashDistortion)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICircleSplashDistortion)
 */
 public class CircleSplashDistortion: Filter {
 
     let name = "CICircleSplashDistortion"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputRadius: CGFloat? = nil) {
-        super.init(name:"CICircleSplashDistortion")
+        super.init(name: "CICircleSplashDistortion")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1165,7 +1165,7 @@ public class CircleSplashDistortion: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1175,7 +1175,7 @@ public class CircleSplashDistortion: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -1185,7 +1185,7 @@ public class CircleSplashDistortion: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 }
@@ -1193,14 +1193,14 @@ public class CircleSplashDistortion: Filter {
 /**
 Simulates a circular-shaped halftone screen.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICircularScreen)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICircularScreen)
 */
 public class CircularScreen: Filter {
 
     let name = "CICircularScreen"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputWidth: CGFloat? = nil, inputSharpness: CGFloat? = nil) {
-        super.init(name:"CICircularScreen")
+        super.init(name: "CICircularScreen")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1223,7 +1223,7 @@ public class CircularScreen: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1233,7 +1233,7 @@ public class CircularScreen: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -1243,7 +1243,7 @@ public class CircularScreen: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -1253,7 +1253,7 @@ public class CircularScreen: Filter {
             return valueForKey("inputSharpness") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSharpness")
+            setValue(newValue, forKey: "inputSharpness")
         }
     }
 }
@@ -1261,14 +1261,14 @@ public class CircularScreen: Filter {
 /**
 Wraps an image around a transparent circle. The distortion of the image increases with the distance from the center of the circle.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICircularWrap)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICircularWrap)
 */
 public class CircularWrap: Filter {
 
     let name = "CICircularWrap"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputRadius: CGFloat? = nil, inputAngle: CGFloat? = nil) {
-        super.init(name:"CICircularWrap")
+        super.init(name: "CICircularWrap")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1291,7 +1291,7 @@ public class CircularWrap: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1301,7 +1301,7 @@ public class CircularWrap: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -1311,7 +1311,7 @@ public class CircularWrap: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -1321,7 +1321,7 @@ public class CircularWrap: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 }
@@ -1329,14 +1329,14 @@ public class CircularWrap: Filter {
 /**
 Creates a color, halftoned rendition of the source image, using cyan, magenta, yellow, and black inks over a white page.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICMYKHalftone)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICMYKHalftone)
 */
 public class CMYKHalftone: Filter {
 
     let name = "CICMYKHalftone"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputWidth: CGFloat? = nil, inputAngle: CGFloat? = nil, inputSharpness: CGFloat? = nil, inputGCR: CGFloat? = nil, inputUCR: CGFloat? = nil) {
-        super.init(name:"CICMYKHalftone")
+        super.init(name: "CICMYKHalftone")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1368,7 +1368,7 @@ public class CMYKHalftone: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1378,7 +1378,7 @@ public class CMYKHalftone: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -1388,7 +1388,7 @@ public class CMYKHalftone: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -1398,7 +1398,7 @@ public class CMYKHalftone: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -1408,7 +1408,7 @@ public class CMYKHalftone: Filter {
             return valueForKey("inputSharpness") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSharpness")
+            setValue(newValue, forKey: "inputSharpness")
         }
     }
 
@@ -1418,7 +1418,7 @@ public class CMYKHalftone: Filter {
             return valueForKey("inputGCR") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputGCR")
+            setValue(newValue, forKey: "inputGCR")
         }
     }
 
@@ -1428,7 +1428,7 @@ public class CMYKHalftone: Filter {
             return valueForKey("inputUCR") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputUCR")
+            setValue(newValue, forKey: "inputUCR")
         }
     }
 }
@@ -1436,14 +1436,14 @@ public class CMYKHalftone: Filter {
 /**
 Code128 Barcode Generator
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICode128BarcodeGenerator)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICode128BarcodeGenerator)
 */
 public class Code128BarcodeGenerator: Filter {
 
     let name = "CICode128BarcodeGenerator"
 
     public init(inputMessage: NSData? = nil, inputQuietSpace: CGFloat? = nil) {
-        super.init(name:"CICode128BarcodeGenerator")
+        super.init(name: "CICode128BarcodeGenerator")
 
         if let inputMessage = inputMessage {
             self.inputMessage = inputMessage
@@ -1459,7 +1459,7 @@ public class Code128BarcodeGenerator: Filter {
             return valueForKey("inputMessage") as? NSData
         }
         set {
-            setValue(newValue, forKey:"inputMessage")
+            setValue(newValue, forKey: "inputMessage")
         }
     }
 
@@ -1468,7 +1468,7 @@ public class Code128BarcodeGenerator: Filter {
             return valueForKey("inputQuietSpace") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputQuietSpace")
+            setValue(newValue, forKey: "inputQuietSpace")
         }
     }
 }
@@ -1476,14 +1476,14 @@ public class Code128BarcodeGenerator: Filter {
 /**
 Uses the luminance values of the background with the hue and saturation values of the source image. This mode preserves the gray levels in the image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorBlendMode)
 */
 public class ColorBlendMode: Filter {
 
     let name = "CIColorBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIColorBlendMode")
+        super.init(name: "CIColorBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1500,7 +1500,7 @@ public class ColorBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1510,7 +1510,7 @@ public class ColorBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -1518,14 +1518,14 @@ public class ColorBlendMode: Filter {
 /**
 Darkens the background image samples to reflect the source image samples. Source image sample values that specify white do not produce a change.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorBurnBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorBurnBlendMode)
 */
 public class ColorBurnBlendMode: Filter {
 
     let name = "CIColorBurnBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIColorBurnBlendMode")
+        super.init(name: "CIColorBurnBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1542,7 +1542,7 @@ public class ColorBurnBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1552,7 +1552,7 @@ public class ColorBurnBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -1560,14 +1560,14 @@ public class ColorBurnBlendMode: Filter {
 /**
 Clamp color to a certain range.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorClamp)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorClamp)
 */
 public class ColorClamp: Filter {
 
     let name = "CIColorClamp"
 
     public init(inputImage: CIImage? = nil, inputMinComponents: CIVector? = nil, inputMaxComponents: CIVector? = nil) {
-        super.init(name:"CIColorClamp")
+        super.init(name: "CIColorClamp")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1587,7 +1587,7 @@ public class ColorClamp: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1597,7 +1597,7 @@ public class ColorClamp: Filter {
             return valueForKey("inputMinComponents") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputMinComponents")
+            setValue(newValue, forKey: "inputMinComponents")
         }
     }
 
@@ -1607,7 +1607,7 @@ public class ColorClamp: Filter {
             return valueForKey("inputMaxComponents") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputMaxComponents")
+            setValue(newValue, forKey: "inputMaxComponents")
         }
     }
 }
@@ -1615,14 +1615,14 @@ public class ColorClamp: Filter {
 /**
 Adjusts saturation, brightness, and contrast values.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorControls)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorControls)
 */
 public class ColorControls: Filter {
 
     let name = "CIColorControls"
 
     public init(inputImage: CIImage? = nil, inputSaturation: CGFloat? = nil, inputBrightness: CGFloat? = nil, inputContrast: CGFloat? = nil) {
-        super.init(name:"CIColorControls")
+        super.init(name: "CIColorControls")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1645,7 +1645,7 @@ public class ColorControls: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1655,7 +1655,7 @@ public class ColorControls: Filter {
             return valueForKey("inputSaturation") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSaturation")
+            setValue(newValue, forKey: "inputSaturation")
         }
     }
 
@@ -1665,7 +1665,7 @@ public class ColorControls: Filter {
             return valueForKey("inputBrightness") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputBrightness")
+            setValue(newValue, forKey: "inputBrightness")
         }
     }
 
@@ -1675,7 +1675,7 @@ public class ColorControls: Filter {
             return valueForKey("inputContrast") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputContrast")
+            setValue(newValue, forKey: "inputContrast")
         }
     }
 }
@@ -1683,14 +1683,14 @@ public class ColorControls: Filter {
 /**
 Adjusts the color of an image with polynomials.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorCrossPolynomial)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorCrossPolynomial)
 */
 public class ColorCrossPolynomial: Filter {
 
     let name = "CIColorCrossPolynomial"
 
     public init(inputImage: CIImage? = nil, inputRedCoefficients: CIVector? = nil, inputGreenCoefficients: CIVector? = nil, inputBlueCoefficients: CIVector? = nil) {
-        super.init(name:"CIColorCrossPolynomial")
+        super.init(name: "CIColorCrossPolynomial")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1713,7 +1713,7 @@ public class ColorCrossPolynomial: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1723,7 +1723,7 @@ public class ColorCrossPolynomial: Filter {
             return valueForKey("inputRedCoefficients") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputRedCoefficients")
+            setValue(newValue, forKey: "inputRedCoefficients")
         }
     }
 
@@ -1733,7 +1733,7 @@ public class ColorCrossPolynomial: Filter {
             return valueForKey("inputGreenCoefficients") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputGreenCoefficients")
+            setValue(newValue, forKey: "inputGreenCoefficients")
         }
     }
 
@@ -1743,7 +1743,7 @@ public class ColorCrossPolynomial: Filter {
             return valueForKey("inputBlueCoefficients") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputBlueCoefficients")
+            setValue(newValue, forKey: "inputBlueCoefficients")
         }
     }
 }
@@ -1751,14 +1751,14 @@ public class ColorCrossPolynomial: Filter {
 /**
 Uses a three-dimensional color table to transform the source image pixels. The color table must be  composed of floating-point RGBA cells that use premultiplied alpha. The cells are organized in a standard ordering. The columns and rows of the data are indexed by red and green, respectively. Each data plane is followed by the next higher plane in the data, with planes indexed by blue.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorCube)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorCube)
 */
 public class ColorCube: Filter {
 
     let name = "CIColorCube"
 
     public init(inputImage: CIImage? = nil, inputCubeDimension: CGFloat? = nil, inputCubeData: NSData? = nil) {
-        super.init(name:"CIColorCube")
+        super.init(name: "CIColorCube")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1778,7 +1778,7 @@ public class ColorCube: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1787,7 +1787,7 @@ public class ColorCube: Filter {
             return valueForKey("inputCubeDimension") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCubeDimension")
+            setValue(newValue, forKey: "inputCubeDimension")
         }
     }
 
@@ -1797,7 +1797,7 @@ public class ColorCube: Filter {
             return valueForKey("inputCubeData") as? NSData
         }
         set {
-            setValue(newValue, forKey:"inputCubeData")
+            setValue(newValue, forKey: "inputCubeData")
         }
     }
 }
@@ -1805,14 +1805,14 @@ public class ColorCube: Filter {
 /**
 Color Cube with ColorSpace
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorCubeWithColorSpace)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorCubeWithColorSpace)
 */
 public class ColorCubeWithColorSpace: Filter {
 
     let name = "CIColorCubeWithColorSpace"
 
     public init(inputImage: CIImage? = nil, inputCubeDimension: CGFloat? = nil, inputCubeData: NSData? = nil, inputColorSpace: NSObject? = nil) {
-        super.init(name:"CIColorCubeWithColorSpace")
+        super.init(name: "CIColorCubeWithColorSpace")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1835,7 +1835,7 @@ public class ColorCubeWithColorSpace: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1844,7 +1844,7 @@ public class ColorCubeWithColorSpace: Filter {
             return valueForKey("inputCubeDimension") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCubeDimension")
+            setValue(newValue, forKey: "inputCubeDimension")
         }
     }
 
@@ -1853,7 +1853,7 @@ public class ColorCubeWithColorSpace: Filter {
             return valueForKey("inputCubeData") as? NSData
         }
         set {
-            setValue(newValue, forKey:"inputCubeData")
+            setValue(newValue, forKey: "inputCubeData")
         }
     }
 
@@ -1862,7 +1862,7 @@ public class ColorCubeWithColorSpace: Filter {
             return valueForKey("inputColorSpace") as? NSObject
         }
         set {
-            setValue(newValue, forKey:"inputColorSpace")
+            setValue(newValue, forKey: "inputColorSpace")
         }
     }
 }
@@ -1870,14 +1870,14 @@ public class ColorCubeWithColorSpace: Filter {
 /**
 Brightens the background image samples to reflect the source image samples. Source image sample values that specify black do not produce a change.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorDodgeBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorDodgeBlendMode)
 */
 public class ColorDodgeBlendMode: Filter {
 
     let name = "CIColorDodgeBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIColorDodgeBlendMode")
+        super.init(name: "CIColorDodgeBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1894,7 +1894,7 @@ public class ColorDodgeBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1904,7 +1904,7 @@ public class ColorDodgeBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -1912,14 +1912,14 @@ public class ColorDodgeBlendMode: Filter {
 /**
 Inverts the colors in an image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorInvert)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorInvert)
 */
 public class ColorInvert: Filter {
 
     let name = "CIColorInvert"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIColorInvert")
+        super.init(name: "CIColorInvert")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1933,7 +1933,7 @@ public class ColorInvert: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -1941,14 +1941,14 @@ public class ColorInvert: Filter {
 /**
 Performs a nonlinear transformation of source color values using mapping values provided in a table.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorMap)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorMap)
 */
 public class ColorMap: Filter {
 
     let name = "CIColorMap"
 
     public init(inputImage: CIImage? = nil, inputGradientImage: CIImage? = nil) {
-        super.init(name:"CIColorMap")
+        super.init(name: "CIColorMap")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -1965,7 +1965,7 @@ public class ColorMap: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -1975,7 +1975,7 @@ public class ColorMap: Filter {
             return valueForKey("inputGradientImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputGradientImage")
+            setValue(newValue, forKey: "inputGradientImage")
         }
     }
 }
@@ -1983,14 +1983,14 @@ public class ColorMap: Filter {
 /**
 Multiplies source color values and adds a bias factor to each color component.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorMatrix)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorMatrix)
 */
 public class ColorMatrix: Filter {
 
     let name = "CIColorMatrix"
 
     public init(inputImage: CIImage? = nil, inputRVector: CIVector? = nil, inputGVector: CIVector? = nil, inputBVector: CIVector? = nil, inputAVector: CIVector? = nil, inputBiasVector: CIVector? = nil) {
-        super.init(name:"CIColorMatrix")
+        super.init(name: "CIColorMatrix")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2019,7 +2019,7 @@ public class ColorMatrix: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2029,7 +2029,7 @@ public class ColorMatrix: Filter {
             return valueForKey("inputRVector") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputRVector")
+            setValue(newValue, forKey: "inputRVector")
         }
     }
 
@@ -2039,7 +2039,7 @@ public class ColorMatrix: Filter {
             return valueForKey("inputGVector") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputGVector")
+            setValue(newValue, forKey: "inputGVector")
         }
     }
 
@@ -2049,7 +2049,7 @@ public class ColorMatrix: Filter {
             return valueForKey("inputBVector") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputBVector")
+            setValue(newValue, forKey: "inputBVector")
         }
     }
 
@@ -2059,7 +2059,7 @@ public class ColorMatrix: Filter {
             return valueForKey("inputAVector") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputAVector")
+            setValue(newValue, forKey: "inputAVector")
         }
     }
 
@@ -2069,7 +2069,7 @@ public class ColorMatrix: Filter {
             return valueForKey("inputBiasVector") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputBiasVector")
+            setValue(newValue, forKey: "inputBiasVector")
         }
     }
 }
@@ -2077,14 +2077,14 @@ public class ColorMatrix: Filter {
 /**
 Remaps colors so they fall within shades of a single color.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorMonochrome)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorMonochrome)
 */
 public class ColorMonochrome: Filter {
 
     let name = "CIColorMonochrome"
 
     public init(inputImage: CIImage? = nil, inputColor: CIColor? = nil, inputIntensity: CGFloat? = nil) {
-        super.init(name:"CIColorMonochrome")
+        super.init(name: "CIColorMonochrome")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2104,7 +2104,7 @@ public class ColorMonochrome: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2114,7 +2114,7 @@ public class ColorMonochrome: Filter {
             return valueForKey("inputColor") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor")
+            setValue(newValue, forKey: "inputColor")
         }
     }
 
@@ -2124,7 +2124,7 @@ public class ColorMonochrome: Filter {
             return valueForKey("inputIntensity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputIntensity")
+            setValue(newValue, forKey: "inputIntensity")
         }
     }
 }
@@ -2132,14 +2132,14 @@ public class ColorMonochrome: Filter {
 /**
 Adjusts the color of an image with polynomials.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorPolynomial)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorPolynomial)
 */
 public class ColorPolynomial: Filter {
 
     let name = "CIColorPolynomial"
 
     public init(inputImage: CIImage? = nil, inputRedCoefficients: CIVector? = nil, inputGreenCoefficients: CIVector? = nil, inputBlueCoefficients: CIVector? = nil, inputAlphaCoefficients: CIVector? = nil) {
-        super.init(name:"CIColorPolynomial")
+        super.init(name: "CIColorPolynomial")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2165,7 +2165,7 @@ public class ColorPolynomial: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2175,7 +2175,7 @@ public class ColorPolynomial: Filter {
             return valueForKey("inputRedCoefficients") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputRedCoefficients")
+            setValue(newValue, forKey: "inputRedCoefficients")
         }
     }
 
@@ -2185,7 +2185,7 @@ public class ColorPolynomial: Filter {
             return valueForKey("inputGreenCoefficients") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputGreenCoefficients")
+            setValue(newValue, forKey: "inputGreenCoefficients")
         }
     }
 
@@ -2195,7 +2195,7 @@ public class ColorPolynomial: Filter {
             return valueForKey("inputBlueCoefficients") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputBlueCoefficients")
+            setValue(newValue, forKey: "inputBlueCoefficients")
         }
     }
 
@@ -2205,7 +2205,7 @@ public class ColorPolynomial: Filter {
             return valueForKey("inputAlphaCoefficients") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputAlphaCoefficients")
+            setValue(newValue, forKey: "inputAlphaCoefficients")
         }
     }
 }
@@ -2213,14 +2213,14 @@ public class ColorPolynomial: Filter {
 /**
 Remaps red, green, and blue color components to the number of brightness values you specify for each color component. This filter flattens colors to achieve a look similar to that of a silk-screened poster.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorPosterize)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColorPosterize)
 */
 public class ColorPosterize: Filter {
 
     let name = "CIColorPosterize"
 
     public init(inputImage: CIImage? = nil, inputLevels: CGFloat? = nil) {
-        super.init(name:"CIColorPosterize")
+        super.init(name: "CIColorPosterize")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2237,7 +2237,7 @@ public class ColorPosterize: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2247,7 +2247,7 @@ public class ColorPosterize: Filter {
             return valueForKey("inputLevels") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputLevels")
+            setValue(newValue, forKey: "inputLevels")
         }
     }
 }
@@ -2255,14 +2255,14 @@ public class ColorPosterize: Filter {
 /**
 Calculates the average color for each column of the specified area in an image, returning the result in a 1D image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColumnAverage)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIColumnAverage)
 */
 public class ColumnAverage: Filter {
 
     let name = "CIColumnAverage"
 
     public init(inputImage: CIImage? = nil, inputExtent: CIVector? = nil) {
-        super.init(name:"CIColumnAverage")
+        super.init(name: "CIColumnAverage")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2279,7 +2279,7 @@ public class ColumnAverage: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2289,7 +2289,7 @@ public class ColumnAverage: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 }
@@ -2297,14 +2297,14 @@ public class ColumnAverage: Filter {
 /**
 Simulates a comic book drawing by outlining edges and applying a color halftone effect.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIComicEffect)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIComicEffect)
 */
 public class ComicEffect: Filter {
 
     let name = "CIComicEffect"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIComicEffect")
+        super.init(name: "CIComicEffect")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2318,7 +2318,7 @@ public class ComicEffect: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -2326,14 +2326,14 @@ public class ComicEffect: Filter {
 /**
 Generates a solid color. You typically use the output of this filter as the input to another filter.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIConstantColorGenerator)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIConstantColorGenerator)
 */
 public class ConstantColorGenerator: Filter {
 
     let name = "CIConstantColorGenerator"
 
     public init(inputColor: CIColor? = nil) {
-        super.init(name:"CIConstantColorGenerator")
+        super.init(name: "CIConstantColorGenerator")
 
         if let inputColor = inputColor {
             self.inputColor = inputColor
@@ -2347,7 +2347,7 @@ public class ConstantColorGenerator: Filter {
             return valueForKey("inputColor") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor")
+            setValue(newValue, forKey: "inputColor")
         }
     }
 }
@@ -2355,14 +2355,14 @@ public class ConstantColorGenerator: Filter {
 /**
 Convolution with 3 by 3 matrix
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIConvolution3X3)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIConvolution3X3)
 */
 public class Convolution3X3: Filter {
 
     let name = "CIConvolution3X3"
 
     public init(inputImage: CIImage? = nil, inputWeights: CIVector? = nil, inputBias: CGFloat? = nil) {
-        super.init(name:"CIConvolution3X3")
+        super.init(name: "CIConvolution3X3")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2382,7 +2382,7 @@ public class Convolution3X3: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2391,7 +2391,7 @@ public class Convolution3X3: Filter {
             return valueForKey("inputWeights") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputWeights")
+            setValue(newValue, forKey: "inputWeights")
         }
     }
 
@@ -2400,7 +2400,7 @@ public class Convolution3X3: Filter {
             return valueForKey("inputBias") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputBias")
+            setValue(newValue, forKey: "inputBias")
         }
     }
 }
@@ -2408,14 +2408,14 @@ public class Convolution3X3: Filter {
 /**
 Convolution with 5 by 5 matrix
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIConvolution5X5)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIConvolution5X5)
 */
 public class Convolution5X5: Filter {
 
     let name = "CIConvolution5X5"
 
     public init(inputImage: CIImage? = nil, inputWeights: CIVector? = nil, inputBias: CGFloat? = nil) {
-        super.init(name:"CIConvolution5X5")
+        super.init(name: "CIConvolution5X5")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2435,7 +2435,7 @@ public class Convolution5X5: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2444,7 +2444,7 @@ public class Convolution5X5: Filter {
             return valueForKey("inputWeights") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputWeights")
+            setValue(newValue, forKey: "inputWeights")
         }
     }
 
@@ -2453,7 +2453,7 @@ public class Convolution5X5: Filter {
             return valueForKey("inputBias") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputBias")
+            setValue(newValue, forKey: "inputBias")
         }
     }
 }
@@ -2461,14 +2461,14 @@ public class Convolution5X5: Filter {
 /**
 Convolution with 7 by 7 matrix
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIConvolution7X7)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIConvolution7X7)
 */
 public class Convolution7X7: Filter {
 
     let name = "CIConvolution7X7"
 
     public init(inputImage: CIImage? = nil, inputWeights: CIVector? = nil, inputBias: CGFloat? = nil) {
-        super.init(name:"CIConvolution7X7")
+        super.init(name: "CIConvolution7X7")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2488,7 +2488,7 @@ public class Convolution7X7: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2497,7 +2497,7 @@ public class Convolution7X7: Filter {
             return valueForKey("inputWeights") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputWeights")
+            setValue(newValue, forKey: "inputWeights")
         }
     }
 
@@ -2506,7 +2506,7 @@ public class Convolution7X7: Filter {
             return valueForKey("inputBias") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputBias")
+            setValue(newValue, forKey: "inputBias")
         }
     }
 }
@@ -2514,14 +2514,14 @@ public class Convolution7X7: Filter {
 /**
 Horizontal Convolution with 9 values
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIConvolution9Horizontal)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIConvolution9Horizontal)
 */
 public class Convolution9Horizontal: Filter {
 
     let name = "CIConvolution9Horizontal"
 
     public init(inputImage: CIImage? = nil, inputWeights: CIVector? = nil, inputBias: CGFloat? = nil) {
-        super.init(name:"CIConvolution9Horizontal")
+        super.init(name: "CIConvolution9Horizontal")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2541,7 +2541,7 @@ public class Convolution9Horizontal: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2550,7 +2550,7 @@ public class Convolution9Horizontal: Filter {
             return valueForKey("inputWeights") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputWeights")
+            setValue(newValue, forKey: "inputWeights")
         }
     }
 
@@ -2559,7 +2559,7 @@ public class Convolution9Horizontal: Filter {
             return valueForKey("inputBias") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputBias")
+            setValue(newValue, forKey: "inputBias")
         }
     }
 }
@@ -2567,14 +2567,14 @@ public class Convolution9Horizontal: Filter {
 /**
 Vertical Convolution with 9 values
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIConvolution9Vertical)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIConvolution9Vertical)
 */
 public class Convolution9Vertical: Filter {
 
     let name = "CIConvolution9Vertical"
 
     public init(inputImage: CIImage? = nil, inputWeights: CIVector? = nil, inputBias: CGFloat? = nil) {
-        super.init(name:"CIConvolution9Vertical")
+        super.init(name: "CIConvolution9Vertical")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2594,7 +2594,7 @@ public class Convolution9Vertical: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2603,7 +2603,7 @@ public class Convolution9Vertical: Filter {
             return valueForKey("inputWeights") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputWeights")
+            setValue(newValue, forKey: "inputWeights")
         }
     }
 
@@ -2612,7 +2612,7 @@ public class Convolution9Vertical: Filter {
             return valueForKey("inputBias") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputBias")
+            setValue(newValue, forKey: "inputBias")
         }
     }
 }
@@ -2620,14 +2620,14 @@ public class Convolution9Vertical: Filter {
 /**
 Transitions from one image to another by simulating the effect of a copy machine.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICopyMachineTransition)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICopyMachineTransition)
 */
 public class CopyMachineTransition: Filter {
 
     let name = "CICopyMachineTransition"
 
     public init(inputImage: CIImage? = nil, inputTargetImage: CIImage? = nil, inputExtent: CIVector? = nil, inputColor: CIColor? = nil, inputTime: CGFloat? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil, inputOpacity: CGFloat? = nil) {
-        super.init(name:"CICopyMachineTransition")
+        super.init(name: "CICopyMachineTransition")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2662,7 +2662,7 @@ public class CopyMachineTransition: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2672,7 +2672,7 @@ public class CopyMachineTransition: Filter {
             return valueForKey("inputTargetImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputTargetImage")
+            setValue(newValue, forKey: "inputTargetImage")
         }
     }
 
@@ -2682,7 +2682,7 @@ public class CopyMachineTransition: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 
@@ -2692,7 +2692,7 @@ public class CopyMachineTransition: Filter {
             return valueForKey("inputColor") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor")
+            setValue(newValue, forKey: "inputColor")
         }
     }
 
@@ -2702,7 +2702,7 @@ public class CopyMachineTransition: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 
@@ -2712,7 +2712,7 @@ public class CopyMachineTransition: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -2722,7 +2722,7 @@ public class CopyMachineTransition: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -2732,7 +2732,7 @@ public class CopyMachineTransition: Filter {
             return valueForKey("inputOpacity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputOpacity")
+            setValue(newValue, forKey: "inputOpacity")
         }
     }
 }
@@ -2740,14 +2740,14 @@ public class CopyMachineTransition: Filter {
 /**
 Applies a crop to an image. The size and shape of the cropped image depend on the rectangle you specify.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICrop)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICrop)
 */
 public class Crop: Filter {
 
     let name = "CICrop"
 
     public init(inputImage: CIImage? = nil, inputRectangle: CIVector? = nil) {
-        super.init(name:"CICrop")
+        super.init(name: "CICrop")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2764,7 +2764,7 @@ public class Crop: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2774,7 +2774,7 @@ public class Crop: Filter {
             return valueForKey("inputRectangle") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputRectangle")
+            setValue(newValue, forKey: "inputRectangle")
         }
     }
 }
@@ -2782,14 +2782,14 @@ public class Crop: Filter {
 /**
 Creates polygon-shaped color blocks by aggregating source pixel-color values.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICrystallize)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CICrystallize)
 */
 public class Crystallize: Filter {
 
     let name = "CICrystallize"
 
     public init(inputImage: CIImage? = nil, inputRadius: CGFloat? = nil, inputCenter: CIVector? = nil) {
-        super.init(name:"CICrystallize")
+        super.init(name: "CICrystallize")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2809,7 +2809,7 @@ public class Crystallize: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2819,7 +2819,7 @@ public class Crystallize: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -2829,7 +2829,7 @@ public class Crystallize: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 }
@@ -2837,14 +2837,14 @@ public class Crystallize: Filter {
 /**
 Creates composite image samples by choosing the darker samples (from either the source image or the background). The result is that the background image samples are replaced by any source image samples that are darker. Otherwise, the background image samples are left unchanged.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDarkenBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDarkenBlendMode)
 */
 public class DarkenBlendMode: Filter {
 
     let name = "CIDarkenBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIDarkenBlendMode")
+        super.init(name: "CIDarkenBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2861,7 +2861,7 @@ public class DarkenBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2871,7 +2871,7 @@ public class DarkenBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -2879,14 +2879,14 @@ public class DarkenBlendMode: Filter {
 /**
 Simulates miniaturization effect created by Tilt & Shift lens by performing depth of field effects.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDepthOfField)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDepthOfField)
 */
 public class DepthOfField: Filter {
 
     let name = "CIDepthOfField"
 
     public init(inputImage: CIImage? = nil, inputPoint0: CIVector? = nil, inputPoint1: CIVector? = nil, inputSaturation: CGFloat? = nil, inputUnsharpMaskRadius: CGFloat? = nil, inputUnsharpMaskIntensity: CGFloat? = nil, inputRadius: CGFloat? = nil) {
-        super.init(name:"CIDepthOfField")
+        super.init(name: "CIDepthOfField")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -2918,7 +2918,7 @@ public class DepthOfField: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -2927,7 +2927,7 @@ public class DepthOfField: Filter {
             return valueForKey("inputPoint0") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint0")
+            setValue(newValue, forKey: "inputPoint0")
         }
     }
 
@@ -2936,7 +2936,7 @@ public class DepthOfField: Filter {
             return valueForKey("inputPoint1") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint1")
+            setValue(newValue, forKey: "inputPoint1")
         }
     }
 
@@ -2946,7 +2946,7 @@ public class DepthOfField: Filter {
             return valueForKey("inputSaturation") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSaturation")
+            setValue(newValue, forKey: "inputSaturation")
         }
     }
 
@@ -2955,7 +2955,7 @@ public class DepthOfField: Filter {
             return valueForKey("inputUnsharpMaskRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputUnsharpMaskRadius")
+            setValue(newValue, forKey: "inputUnsharpMaskRadius")
         }
     }
 
@@ -2964,7 +2964,7 @@ public class DepthOfField: Filter {
             return valueForKey("inputUnsharpMaskIntensity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputUnsharpMaskIntensity")
+            setValue(newValue, forKey: "inputUnsharpMaskIntensity")
         }
     }
 
@@ -2974,7 +2974,7 @@ public class DepthOfField: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 }
@@ -2982,14 +2982,14 @@ public class DepthOfField: Filter {
 /**
 Subtracts either the source image sample color from the background image sample color, or the reverse, depending on which sample has the greater brightness value. Source image sample values that are black produce no change; white inverts the background color values.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDifferenceBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDifferenceBlendMode)
 */
 public class DifferenceBlendMode: Filter {
 
     let name = "CIDifferenceBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIDifferenceBlendMode")
+        super.init(name: "CIDifferenceBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3006,7 +3006,7 @@ public class DifferenceBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3016,7 +3016,7 @@ public class DifferenceBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -3024,14 +3024,14 @@ public class DifferenceBlendMode: Filter {
 /**
 Smooths or sharpens an image using a disc-shaped convolution kernel.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDiscBlur)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDiscBlur)
 */
 public class DiscBlur: Filter {
 
     let name = "CIDiscBlur"
 
     public init(inputImage: CIImage? = nil, inputRadius: CGFloat? = nil) {
-        super.init(name:"CIDiscBlur")
+        super.init(name: "CIDiscBlur")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3048,7 +3048,7 @@ public class DiscBlur: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3058,7 +3058,7 @@ public class DiscBlur: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 }
@@ -3066,14 +3066,14 @@ public class DiscBlur: Filter {
 /**
 Transitions from one image to another using the shape defined by a mask.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDisintegrateWithMaskTransition)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDisintegrateWithMaskTransition)
 */
 public class DisintegrateWithMaskTransition: Filter {
 
     let name = "CIDisintegrateWithMaskTransition"
 
     public init(inputImage: CIImage? = nil, inputTargetImage: CIImage? = nil, inputMaskImage: CIImage? = nil, inputTime: CGFloat? = nil, inputShadowRadius: CGFloat? = nil, inputShadowDensity: CGFloat? = nil, inputShadowOffset: CIVector? = nil) {
-        super.init(name:"CIDisintegrateWithMaskTransition")
+        super.init(name: "CIDisintegrateWithMaskTransition")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3105,7 +3105,7 @@ public class DisintegrateWithMaskTransition: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3115,7 +3115,7 @@ public class DisintegrateWithMaskTransition: Filter {
             return valueForKey("inputTargetImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputTargetImage")
+            setValue(newValue, forKey: "inputTargetImage")
         }
     }
 
@@ -3125,7 +3125,7 @@ public class DisintegrateWithMaskTransition: Filter {
             return valueForKey("inputMaskImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputMaskImage")
+            setValue(newValue, forKey: "inputMaskImage")
         }
     }
 
@@ -3135,7 +3135,7 @@ public class DisintegrateWithMaskTransition: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 
@@ -3145,7 +3145,7 @@ public class DisintegrateWithMaskTransition: Filter {
             return valueForKey("inputShadowRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputShadowRadius")
+            setValue(newValue, forKey: "inputShadowRadius")
         }
     }
 
@@ -3155,7 +3155,7 @@ public class DisintegrateWithMaskTransition: Filter {
             return valueForKey("inputShadowDensity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputShadowDensity")
+            setValue(newValue, forKey: "inputShadowDensity")
         }
     }
 
@@ -3165,7 +3165,7 @@ public class DisintegrateWithMaskTransition: Filter {
             return valueForKey("inputShadowOffset") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputShadowOffset")
+            setValue(newValue, forKey: "inputShadowOffset")
         }
     }
 }
@@ -3173,14 +3173,14 @@ public class DisintegrateWithMaskTransition: Filter {
 /**
 Applies the grayscale values of the second image to the first image. The output image has a texture defined by the grayscale values.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDisplacementDistortion)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDisplacementDistortion)
 */
 public class DisplacementDistortion: Filter {
 
     let name = "CIDisplacementDistortion"
 
     public init(inputImage: CIImage? = nil, inputDisplacementImage: CIImage? = nil, inputScale: CGFloat? = nil) {
-        super.init(name:"CIDisplacementDistortion")
+        super.init(name: "CIDisplacementDistortion")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3200,7 +3200,7 @@ public class DisplacementDistortion: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3210,7 +3210,7 @@ public class DisplacementDistortion: Filter {
             return valueForKey("inputDisplacementImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputDisplacementImage")
+            setValue(newValue, forKey: "inputDisplacementImage")
         }
     }
 
@@ -3220,7 +3220,7 @@ public class DisplacementDistortion: Filter {
             return valueForKey("inputScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputScale")
+            setValue(newValue, forKey: "inputScale")
         }
     }
 }
@@ -3228,14 +3228,14 @@ public class DisplacementDistortion: Filter {
 /**
 Uses a dissolve to transition from one image to another.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDissolveTransition)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDissolveTransition)
 */
 public class DissolveTransition: Filter {
 
     let name = "CIDissolveTransition"
 
     public init(inputImage: CIImage? = nil, inputTargetImage: CIImage? = nil, inputTime: CGFloat? = nil) {
-        super.init(name:"CIDissolveTransition")
+        super.init(name: "CIDissolveTransition")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3255,7 +3255,7 @@ public class DissolveTransition: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3265,7 +3265,7 @@ public class DissolveTransition: Filter {
             return valueForKey("inputTargetImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputTargetImage")
+            setValue(newValue, forKey: "inputTargetImage")
         }
     }
 
@@ -3275,7 +3275,7 @@ public class DissolveTransition: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 }
@@ -3283,14 +3283,14 @@ public class DissolveTransition: Filter {
 /**
 Divides the background image sample color from the source image sample color.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDivideBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDivideBlendMode)
 */
 public class DivideBlendMode: Filter {
 
     let name = "CIDivideBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIDivideBlendMode")
+        super.init(name: "CIDivideBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3307,7 +3307,7 @@ public class DivideBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3317,7 +3317,7 @@ public class DivideBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -3325,14 +3325,14 @@ public class DivideBlendMode: Filter {
 /**
 Simulates the dot patterns of a halftone screen.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDotScreen)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDotScreen)
 */
 public class DotScreen: Filter {
 
     let name = "CIDotScreen"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil, inputSharpness: CGFloat? = nil) {
-        super.init(name:"CIDotScreen")
+        super.init(name: "CIDotScreen")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3358,7 +3358,7 @@ public class DotScreen: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3368,7 +3368,7 @@ public class DotScreen: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -3378,7 +3378,7 @@ public class DotScreen: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -3388,7 +3388,7 @@ public class DotScreen: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -3398,7 +3398,7 @@ public class DotScreen: Filter {
             return valueForKey("inputSharpness") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSharpness")
+            setValue(newValue, forKey: "inputSharpness")
         }
     }
 }
@@ -3406,14 +3406,14 @@ public class DotScreen: Filter {
 /**
 Performs M.C. Escher Droste style deformation
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDroste)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIDroste)
 */
 public class Droste: Filter {
 
     let name = "CIDroste"
 
     public init(inputImage: CIImage? = nil, inputInsetPoint0: CIVector? = nil, inputInsetPoint1: CIVector? = nil, inputStrands: CGFloat? = nil, inputPeriodicity: CGFloat? = nil, inputRotation: CGFloat? = nil, inputZoom: CGFloat? = nil) {
-        super.init(name:"CIDroste")
+        super.init(name: "CIDroste")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3445,7 +3445,7 @@ public class Droste: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3454,7 +3454,7 @@ public class Droste: Filter {
             return valueForKey("inputInsetPoint0") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputInsetPoint0")
+            setValue(newValue, forKey: "inputInsetPoint0")
         }
     }
 
@@ -3463,7 +3463,7 @@ public class Droste: Filter {
             return valueForKey("inputInsetPoint1") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputInsetPoint1")
+            setValue(newValue, forKey: "inputInsetPoint1")
         }
     }
 
@@ -3472,7 +3472,7 @@ public class Droste: Filter {
             return valueForKey("inputStrands") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputStrands")
+            setValue(newValue, forKey: "inputStrands")
         }
     }
 
@@ -3481,7 +3481,7 @@ public class Droste: Filter {
             return valueForKey("inputPeriodicity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputPeriodicity")
+            setValue(newValue, forKey: "inputPeriodicity")
         }
     }
 
@@ -3490,7 +3490,7 @@ public class Droste: Filter {
             return valueForKey("inputRotation") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRotation")
+            setValue(newValue, forKey: "inputRotation")
         }
     }
 
@@ -3499,7 +3499,7 @@ public class Droste: Filter {
             return valueForKey("inputZoom") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputZoom")
+            setValue(newValue, forKey: "inputZoom")
         }
     }
 }
@@ -3507,14 +3507,14 @@ public class Droste: Filter {
 /**
 Finds all edges in an image and displays them in color.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIEdges)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIEdges)
 */
 public class Edges: Filter {
 
     let name = "CIEdges"
 
     public init(inputImage: CIImage? = nil, inputIntensity: CGFloat? = nil) {
-        super.init(name:"CIEdges")
+        super.init(name: "CIEdges")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3531,7 +3531,7 @@ public class Edges: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3541,7 +3541,7 @@ public class Edges: Filter {
             return valueForKey("inputIntensity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputIntensity")
+            setValue(newValue, forKey: "inputIntensity")
         }
     }
 }
@@ -3549,14 +3549,14 @@ public class Edges: Filter {
 /**
 Produces a stylized black-and-white rendition of an image that looks similar to a woodblock cutout.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIEdgeWork)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIEdgeWork)
 */
 public class EdgeWork: Filter {
 
     let name = "CIEdgeWork"
 
     public init(inputImage: CIImage? = nil, inputRadius: CGFloat? = nil) {
-        super.init(name:"CIEdgeWork")
+        super.init(name: "CIEdgeWork")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3573,7 +3573,7 @@ public class EdgeWork: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3583,7 +3583,7 @@ public class EdgeWork: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 }
@@ -3591,14 +3591,14 @@ public class EdgeWork: Filter {
 /**
 Produces a tiled image from a source image by applying an 8-way reflected symmetry.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIEightfoldReflectedTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIEightfoldReflectedTile)
 */
 public class EightfoldReflectedTile: Filter {
 
     let name = "CIEightfoldReflectedTile"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil) {
-        super.init(name:"CIEightfoldReflectedTile")
+        super.init(name: "CIEightfoldReflectedTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3621,7 +3621,7 @@ public class EightfoldReflectedTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3631,7 +3631,7 @@ public class EightfoldReflectedTile: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -3641,7 +3641,7 @@ public class EightfoldReflectedTile: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -3651,7 +3651,7 @@ public class EightfoldReflectedTile: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 }
@@ -3659,14 +3659,14 @@ public class EightfoldReflectedTile: Filter {
 /**
 Produces an effect similar to that produced by the CIDifferenceBlendMode filter but with lower contrast. Source image sample values that are black do not produce a change; white inverts the background color values.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIExclusionBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIExclusionBlendMode)
 */
 public class ExclusionBlendMode: Filter {
 
     let name = "CIExclusionBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIExclusionBlendMode")
+        super.init(name: "CIExclusionBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3683,7 +3683,7 @@ public class ExclusionBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3693,7 +3693,7 @@ public class ExclusionBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -3701,14 +3701,14 @@ public class ExclusionBlendMode: Filter {
 /**
 Adjusts the exposure setting for an image similar to the way you control exposure for a camera when you change the F-stop.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIExposureAdjust)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIExposureAdjust)
 */
 public class ExposureAdjust: Filter {
 
     let name = "CIExposureAdjust"
 
     public init(inputImage: CIImage? = nil, inputEV: CGFloat? = nil) {
-        super.init(name:"CIExposureAdjust")
+        super.init(name: "CIExposureAdjust")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3725,7 +3725,7 @@ public class ExposureAdjust: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3735,7 +3735,7 @@ public class ExposureAdjust: Filter {
             return valueForKey("inputEV") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputEV")
+            setValue(newValue, forKey: "inputEV")
         }
     }
 }
@@ -3743,14 +3743,14 @@ public class ExposureAdjust: Filter {
 /**
 Maps luminance to a color ramp of two colors. False color is often used to process astronomical and other scientific data, such as ultraviolet and x-ray images.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIFalseColor)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIFalseColor)
 */
 public class FalseColor: Filter {
 
     let name = "CIFalseColor"
 
     public init(inputImage: CIImage? = nil, inputColor0: CIColor? = nil, inputColor1: CIColor? = nil) {
-        super.init(name:"CIFalseColor")
+        super.init(name: "CIFalseColor")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3770,7 +3770,7 @@ public class FalseColor: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3780,7 +3780,7 @@ public class FalseColor: Filter {
             return valueForKey("inputColor0") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor0")
+            setValue(newValue, forKey: "inputColor0")
         }
     }
 
@@ -3790,7 +3790,7 @@ public class FalseColor: Filter {
             return valueForKey("inputColor1") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor1")
+            setValue(newValue, forKey: "inputColor1")
         }
     }
 }
@@ -3798,14 +3798,14 @@ public class FalseColor: Filter {
 /**
 Transitions from one image to another by creating a flash. The flash originates from a point you specify. Small at first, it rapidly expands until the image frame is completely filled with the flash color. As the color fades, the target image begins to appear.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIFlashTransition)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIFlashTransition)
 */
 public class FlashTransition: Filter {
 
     let name = "CIFlashTransition"
 
     public init(inputImage: CIImage? = nil, inputTargetImage: CIImage? = nil, inputCenter: CIVector? = nil, inputExtent: CIVector? = nil, inputColor: CIColor? = nil, inputTime: CGFloat? = nil, inputMaxStriationRadius: CGFloat? = nil, inputStriationStrength: CGFloat? = nil, inputStriationContrast: CGFloat? = nil, inputFadeThreshold: CGFloat? = nil) {
-        super.init(name:"CIFlashTransition")
+        super.init(name: "CIFlashTransition")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3846,7 +3846,7 @@ public class FlashTransition: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3856,7 +3856,7 @@ public class FlashTransition: Filter {
             return valueForKey("inputTargetImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputTargetImage")
+            setValue(newValue, forKey: "inputTargetImage")
         }
     }
 
@@ -3866,7 +3866,7 @@ public class FlashTransition: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -3876,7 +3876,7 @@ public class FlashTransition: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 
@@ -3886,7 +3886,7 @@ public class FlashTransition: Filter {
             return valueForKey("inputColor") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor")
+            setValue(newValue, forKey: "inputColor")
         }
     }
 
@@ -3896,7 +3896,7 @@ public class FlashTransition: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 
@@ -3906,7 +3906,7 @@ public class FlashTransition: Filter {
             return valueForKey("inputMaxStriationRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputMaxStriationRadius")
+            setValue(newValue, forKey: "inputMaxStriationRadius")
         }
     }
 
@@ -3916,7 +3916,7 @@ public class FlashTransition: Filter {
             return valueForKey("inputStriationStrength") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputStriationStrength")
+            setValue(newValue, forKey: "inputStriationStrength")
         }
     }
 
@@ -3926,7 +3926,7 @@ public class FlashTransition: Filter {
             return valueForKey("inputStriationContrast") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputStriationContrast")
+            setValue(newValue, forKey: "inputStriationContrast")
         }
     }
 
@@ -3936,7 +3936,7 @@ public class FlashTransition: Filter {
             return valueForKey("inputFadeThreshold") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputFadeThreshold")
+            setValue(newValue, forKey: "inputFadeThreshold")
         }
     }
 }
@@ -3944,14 +3944,14 @@ public class FlashTransition: Filter {
 /**
 Produces a tiled image from a source image by applying a 4-way reflected symmetry.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIFourfoldReflectedTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIFourfoldReflectedTile)
 */
 public class FourfoldReflectedTile: Filter {
 
     let name = "CIFourfoldReflectedTile"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil, inputAcuteAngle: CGFloat? = nil) {
-        super.init(name:"CIFourfoldReflectedTile")
+        super.init(name: "CIFourfoldReflectedTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -3977,7 +3977,7 @@ public class FourfoldReflectedTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -3987,7 +3987,7 @@ public class FourfoldReflectedTile: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -3997,7 +3997,7 @@ public class FourfoldReflectedTile: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -4007,7 +4007,7 @@ public class FourfoldReflectedTile: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -4017,7 +4017,7 @@ public class FourfoldReflectedTile: Filter {
             return valueForKey("inputAcuteAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAcuteAngle")
+            setValue(newValue, forKey: "inputAcuteAngle")
         }
     }
 }
@@ -4025,14 +4025,14 @@ public class FourfoldReflectedTile: Filter {
 /**
 Produces a tiled image from a source image by rotating the source at increments of 90 degrees.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIFourfoldRotatedTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIFourfoldRotatedTile)
 */
 public class FourfoldRotatedTile: Filter {
 
     let name = "CIFourfoldRotatedTile"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil) {
-        super.init(name:"CIFourfoldRotatedTile")
+        super.init(name: "CIFourfoldRotatedTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4055,7 +4055,7 @@ public class FourfoldRotatedTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4065,7 +4065,7 @@ public class FourfoldRotatedTile: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -4075,7 +4075,7 @@ public class FourfoldRotatedTile: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -4085,7 +4085,7 @@ public class FourfoldRotatedTile: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 }
@@ -4093,14 +4093,14 @@ public class FourfoldRotatedTile: Filter {
 /**
 Produces a tiled image from a source image by applying 4 translation operations.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIFourfoldTranslatedTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIFourfoldTranslatedTile)
 */
 public class FourfoldTranslatedTile: Filter {
 
     let name = "CIFourfoldTranslatedTile"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil, inputAcuteAngle: CGFloat? = nil) {
-        super.init(name:"CIFourfoldTranslatedTile")
+        super.init(name: "CIFourfoldTranslatedTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4126,7 +4126,7 @@ public class FourfoldTranslatedTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4136,7 +4136,7 @@ public class FourfoldTranslatedTile: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -4146,7 +4146,7 @@ public class FourfoldTranslatedTile: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -4156,7 +4156,7 @@ public class FourfoldTranslatedTile: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -4166,7 +4166,7 @@ public class FourfoldTranslatedTile: Filter {
             return valueForKey("inputAcuteAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAcuteAngle")
+            setValue(newValue, forKey: "inputAcuteAngle")
         }
     }
 }
@@ -4174,14 +4174,14 @@ public class FourfoldTranslatedTile: Filter {
 /**
 Adjusts midtone brightness. This filter is typically used to compensate for nonlinear effects of displays. Adjusting the gamma effectively changes the slope of the transition between black and white.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGammaAdjust)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGammaAdjust)
 */
 public class GammaAdjust: Filter {
 
     let name = "CIGammaAdjust"
 
     public init(inputImage: CIImage? = nil, inputPower: CGFloat? = nil) {
-        super.init(name:"CIGammaAdjust")
+        super.init(name: "CIGammaAdjust")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4198,7 +4198,7 @@ public class GammaAdjust: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4208,7 +4208,7 @@ public class GammaAdjust: Filter {
             return valueForKey("inputPower") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputPower")
+            setValue(newValue, forKey: "inputPower")
         }
     }
 }
@@ -4216,14 +4216,14 @@ public class GammaAdjust: Filter {
 /**
 Spreads source pixels by an amount specified by a Gaussian distribution.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGaussianBlur)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGaussianBlur)
 */
 public class GaussianBlur: Filter {
 
     let name = "CIGaussianBlur"
 
     public init(inputImage: CIImage? = nil, inputRadius: CGFloat? = nil) {
-        super.init(name:"CIGaussianBlur")
+        super.init(name: "CIGaussianBlur")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4240,7 +4240,7 @@ public class GaussianBlur: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4250,7 +4250,7 @@ public class GaussianBlur: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 }
@@ -4258,14 +4258,14 @@ public class GaussianBlur: Filter {
 /**
 Generates a gradient that varies from one color to another using a Gaussian distribution.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGaussianGradient)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGaussianGradient)
 */
 public class GaussianGradient: Filter {
 
     let name = "CIGaussianGradient"
 
     public init(inputCenter: CIVector? = nil, inputColor0: CIColor? = nil, inputColor1: CIColor? = nil, inputRadius: CGFloat? = nil) {
-        super.init(name:"CIGaussianGradient")
+        super.init(name: "CIGaussianGradient")
 
         if let inputCenter = inputCenter {
             self.inputCenter = inputCenter
@@ -4288,7 +4288,7 @@ public class GaussianGradient: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -4298,7 +4298,7 @@ public class GaussianGradient: Filter {
             return valueForKey("inputColor0") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor0")
+            setValue(newValue, forKey: "inputColor0")
         }
     }
 
@@ -4308,7 +4308,7 @@ public class GaussianGradient: Filter {
             return valueForKey("inputColor1") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor1")
+            setValue(newValue, forKey: "inputColor1")
         }
     }
 
@@ -4318,7 +4318,7 @@ public class GaussianGradient: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 }
@@ -4326,14 +4326,14 @@ public class GaussianGradient: Filter {
 /**
 Distorts an image by applying a glass-like texture. The raised portions of the output image are the result of applying a texture map.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGlassDistortion)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGlassDistortion)
 */
 public class GlassDistortion: Filter {
 
     let name = "CIGlassDistortion"
 
     public init(inputImage: CIImage? = nil, inputTexture: CIImage? = nil, inputCenter: CIVector? = nil, inputScale: CGFloat? = nil) {
-        super.init(name:"CIGlassDistortion")
+        super.init(name: "CIGlassDistortion")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4356,7 +4356,7 @@ public class GlassDistortion: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4366,7 +4366,7 @@ public class GlassDistortion: Filter {
             return valueForKey("inputTexture") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputTexture")
+            setValue(newValue, forKey: "inputTexture")
         }
     }
 
@@ -4376,7 +4376,7 @@ public class GlassDistortion: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -4386,7 +4386,7 @@ public class GlassDistortion: Filter {
             return valueForKey("inputScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputScale")
+            setValue(newValue, forKey: "inputScale")
         }
     }
 }
@@ -4394,14 +4394,14 @@ public class GlassDistortion: Filter {
 /**
 Creates a lozenge-shaped lens and distorts the portion of the image over which the lens is placed.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGlassLozenge)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGlassLozenge)
 */
 public class GlassLozenge: Filter {
 
     let name = "CIGlassLozenge"
 
     public init(inputImage: CIImage? = nil, inputPoint0: CIVector? = nil, inputPoint1: CIVector? = nil, inputRadius: CGFloat? = nil, inputRefraction: CGFloat? = nil) {
-        super.init(name:"CIGlassLozenge")
+        super.init(name: "CIGlassLozenge")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4427,7 +4427,7 @@ public class GlassLozenge: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4437,7 +4437,7 @@ public class GlassLozenge: Filter {
             return valueForKey("inputPoint0") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint0")
+            setValue(newValue, forKey: "inputPoint0")
         }
     }
 
@@ -4447,7 +4447,7 @@ public class GlassLozenge: Filter {
             return valueForKey("inputPoint1") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint1")
+            setValue(newValue, forKey: "inputPoint1")
         }
     }
 
@@ -4457,7 +4457,7 @@ public class GlassLozenge: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -4467,7 +4467,7 @@ public class GlassLozenge: Filter {
             return valueForKey("inputRefraction") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRefraction")
+            setValue(newValue, forKey: "inputRefraction")
         }
     }
 }
@@ -4475,14 +4475,14 @@ public class GlassLozenge: Filter {
 /**
 Produces a tiled image from a source image by translating and smearing the image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGlideReflectedTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGlideReflectedTile)
 */
 public class GlideReflectedTile: Filter {
 
     let name = "CIGlideReflectedTile"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil) {
-        super.init(name:"CIGlideReflectedTile")
+        super.init(name: "CIGlideReflectedTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4505,7 +4505,7 @@ public class GlideReflectedTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4515,7 +4515,7 @@ public class GlideReflectedTile: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -4525,7 +4525,7 @@ public class GlideReflectedTile: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -4535,7 +4535,7 @@ public class GlideReflectedTile: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 }
@@ -4543,14 +4543,14 @@ public class GlideReflectedTile: Filter {
 /**
 Dulls the highlights of an image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGloom)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIGloom)
 */
 public class Gloom: Filter {
 
     let name = "CIGloom"
 
     public init(inputImage: CIImage? = nil, inputRadius: CGFloat? = nil, inputIntensity: CGFloat? = nil) {
-        super.init(name:"CIGloom")
+        super.init(name: "CIGloom")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4570,7 +4570,7 @@ public class Gloom: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4580,7 +4580,7 @@ public class Gloom: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -4590,7 +4590,7 @@ public class Gloom: Filter {
             return valueForKey("inputIntensity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputIntensity")
+            setValue(newValue, forKey: "inputIntensity")
         }
     }
 }
@@ -4598,14 +4598,14 @@ public class Gloom: Filter {
 /**
 Either multiplies or screens colors, depending on the source image sample color. If the source image sample color is lighter than 50% gray, the background is lightened, similar to screening. If the source image sample color is darker than 50% gray, the background is darkened, similar to multiplying. If the source image sample color is equal to 50% gray, the source image is not changed. Image samples that are equal to pure black or pure white result in pure black or white. The overall effect is similar to what you would achieve by shining a harsh spotlight on the source image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHardLightBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHardLightBlendMode)
 */
 public class HardLightBlendMode: Filter {
 
     let name = "CIHardLightBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIHardLightBlendMode")
+        super.init(name: "CIHardLightBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4622,7 +4622,7 @@ public class HardLightBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4632,7 +4632,7 @@ public class HardLightBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -4640,14 +4640,14 @@ public class HardLightBlendMode: Filter {
 /**
 Simulates the hatched pattern of a halftone screen.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHatchedScreen)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHatchedScreen)
 */
 public class HatchedScreen: Filter {
 
     let name = "CIHatchedScreen"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil, inputSharpness: CGFloat? = nil) {
-        super.init(name:"CIHatchedScreen")
+        super.init(name: "CIHatchedScreen")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4673,7 +4673,7 @@ public class HatchedScreen: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4683,7 +4683,7 @@ public class HatchedScreen: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -4693,7 +4693,7 @@ public class HatchedScreen: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -4703,7 +4703,7 @@ public class HatchedScreen: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -4713,7 +4713,7 @@ public class HatchedScreen: Filter {
             return valueForKey("inputSharpness") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSharpness")
+            setValue(newValue, forKey: "inputSharpness")
         }
     }
 }
@@ -4721,14 +4721,14 @@ public class HatchedScreen: Filter {
 /**
 Produces a continuous three-dimensional, loft-shaped height field from a grayscale mask. The white values of the mask define those pixels that are inside the height field while the black values define those pixels that are outside. The field varies smoothly and continuously inside the mask, reaching the value 0 at the edge of the mask. You can use this filter with the CIShadedMaterial filter to produce extremely realistic shaded objects.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHeightFieldFromMask)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHeightFieldFromMask)
 */
 public class HeightFieldFromMask: Filter {
 
     let name = "CIHeightFieldFromMask"
 
     public init(inputImage: CIImage? = nil, inputRadius: CGFloat? = nil) {
-        super.init(name:"CIHeightFieldFromMask")
+        super.init(name: "CIHeightFieldFromMask")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4745,7 +4745,7 @@ public class HeightFieldFromMask: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4755,7 +4755,7 @@ public class HeightFieldFromMask: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 }
@@ -4763,14 +4763,14 @@ public class HeightFieldFromMask: Filter {
 /**
 Displays an image as colored hexagons whose color is an average of the pixels they replace.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHexagonalPixellate)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHexagonalPixellate)
 */
 public class HexagonalPixellate: Filter {
 
     let name = "CIHexagonalPixellate"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputScale: CGFloat? = nil) {
-        super.init(name:"CIHexagonalPixellate")
+        super.init(name: "CIHexagonalPixellate")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4790,7 +4790,7 @@ public class HexagonalPixellate: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4800,7 +4800,7 @@ public class HexagonalPixellate: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -4810,7 +4810,7 @@ public class HexagonalPixellate: Filter {
             return valueForKey("inputScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputScale")
+            setValue(newValue, forKey: "inputScale")
         }
     }
 }
@@ -4818,14 +4818,14 @@ public class HexagonalPixellate: Filter {
 /**
 Adjust the tonal mapping of an image while preserving spatial detail
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHighlightShadowAdjust)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHighlightShadowAdjust)
 */
 public class HighlightShadowAdjust: Filter {
 
     let name = "CIHighlightShadowAdjust"
 
     public init(inputImage: CIImage? = nil, inputRadius: CGFloat? = nil, inputShadowAmount: CGFloat? = nil, inputHighlightAmount: CGFloat? = nil) {
-        super.init(name:"CIHighlightShadowAdjust")
+        super.init(name: "CIHighlightShadowAdjust")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4848,7 +4848,7 @@ public class HighlightShadowAdjust: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4858,7 +4858,7 @@ public class HighlightShadowAdjust: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -4868,7 +4868,7 @@ public class HighlightShadowAdjust: Filter {
             return valueForKey("inputShadowAmount") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputShadowAmount")
+            setValue(newValue, forKey: "inputShadowAmount")
         }
     }
 
@@ -4878,7 +4878,7 @@ public class HighlightShadowAdjust: Filter {
             return valueForKey("inputHighlightAmount") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputHighlightAmount")
+            setValue(newValue, forKey: "inputHighlightAmount")
         }
     }
 }
@@ -4886,14 +4886,14 @@ public class HighlightShadowAdjust: Filter {
 /**
 Generates a displayable histogram image from the output of the CIAreaHistogram filter.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHistogramDisplayFilter)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHistogramDisplayFilter)
 */
 public class HistogramDisplayFilter: Filter {
 
     let name = "CIHistogramDisplayFilter"
 
     public init(inputImage: CIImage? = nil, inputHeight: CGFloat? = nil, inputHighLimit: CGFloat? = nil, inputLowLimit: CGFloat? = nil) {
-        super.init(name:"CIHistogramDisplayFilter")
+        super.init(name: "CIHistogramDisplayFilter")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4916,7 +4916,7 @@ public class HistogramDisplayFilter: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4926,7 +4926,7 @@ public class HistogramDisplayFilter: Filter {
             return valueForKey("inputHeight") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputHeight")
+            setValue(newValue, forKey: "inputHeight")
         }
     }
 
@@ -4936,7 +4936,7 @@ public class HistogramDisplayFilter: Filter {
             return valueForKey("inputHighLimit") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputHighLimit")
+            setValue(newValue, forKey: "inputHighLimit")
         }
     }
 
@@ -4946,7 +4946,7 @@ public class HistogramDisplayFilter: Filter {
             return valueForKey("inputLowLimit") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputLowLimit")
+            setValue(newValue, forKey: "inputLowLimit")
         }
     }
 }
@@ -4954,14 +4954,14 @@ public class HistogramDisplayFilter: Filter {
 /**
 Creates a circular area that pushes the image pixels outward, distorting those pixels closest to the circle the most.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHoleDistortion)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHoleDistortion)
 */
 public class HoleDistortion: Filter {
 
     let name = "CIHoleDistortion"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputRadius: CGFloat? = nil) {
-        super.init(name:"CIHoleDistortion")
+        super.init(name: "CIHoleDistortion")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -4981,7 +4981,7 @@ public class HoleDistortion: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -4991,7 +4991,7 @@ public class HoleDistortion: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -5001,7 +5001,7 @@ public class HoleDistortion: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 }
@@ -5009,14 +5009,14 @@ public class HoleDistortion: Filter {
 /**
 Changes the overall hue, or tint, of the source pixels.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHueAdjust)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHueAdjust)
 */
 public class HueAdjust: Filter {
 
     let name = "CIHueAdjust"
 
     public init(inputImage: CIImage? = nil, inputAngle: CGFloat? = nil) {
-        super.init(name:"CIHueAdjust")
+        super.init(name: "CIHueAdjust")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5033,7 +5033,7 @@ public class HueAdjust: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -5043,7 +5043,7 @@ public class HueAdjust: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 }
@@ -5051,14 +5051,14 @@ public class HueAdjust: Filter {
 /**
 Uses the luminance and saturation values of the background with the hue of the source image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHueBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIHueBlendMode)
 */
 public class HueBlendMode: Filter {
 
     let name = "CIHueBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIHueBlendMode")
+        super.init(name: "CIHueBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5075,7 +5075,7 @@ public class HueBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -5085,7 +5085,7 @@ public class HueBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -5093,14 +5093,14 @@ public class HueBlendMode: Filter {
 /**
 Produces a kaleidoscopic image from a source image by applying 12-way symmetry.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIKaleidoscope)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIKaleidoscope)
 */
 public class Kaleidoscope: Filter {
 
     let name = "CIKaleidoscope"
 
     public init(inputImage: CIImage? = nil, inputCount: CGFloat? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil) {
-        super.init(name:"CIKaleidoscope")
+        super.init(name: "CIKaleidoscope")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5123,7 +5123,7 @@ public class Kaleidoscope: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -5133,7 +5133,7 @@ public class Kaleidoscope: Filter {
             return valueForKey("inputCount") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCount")
+            setValue(newValue, forKey: "inputCount")
         }
     }
 
@@ -5143,7 +5143,7 @@ public class Kaleidoscope: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -5153,7 +5153,7 @@ public class Kaleidoscope: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 }
@@ -5161,14 +5161,14 @@ public class Kaleidoscope: Filter {
 /**
 Produces a high-quality, scaled version of a source image. You typically use this filter to scale down an image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILanczosScaleTransform)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILanczosScaleTransform)
 */
 public class LanczosScaleTransform: Filter {
 
     let name = "CILanczosScaleTransform"
 
     public init(inputImage: CIImage? = nil, inputScale: CGFloat? = nil, inputAspectRatio: CGFloat? = nil) {
-        super.init(name:"CILanczosScaleTransform")
+        super.init(name: "CILanczosScaleTransform")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5188,7 +5188,7 @@ public class LanczosScaleTransform: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -5198,7 +5198,7 @@ public class LanczosScaleTransform: Filter {
             return valueForKey("inputScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputScale")
+            setValue(newValue, forKey: "inputScale")
         }
     }
 
@@ -5208,7 +5208,7 @@ public class LanczosScaleTransform: Filter {
             return valueForKey("inputAspectRatio") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAspectRatio")
+            setValue(newValue, forKey: "inputAspectRatio")
         }
     }
 }
@@ -5216,14 +5216,14 @@ public class LanczosScaleTransform: Filter {
 /**
 Simulates a halo that is generated by the diffraction associated with the spread of a lens. This filter is typically applied to another image to simulate lens flares and similar effects.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILenticularHaloGenerator)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILenticularHaloGenerator)
 */
 public class LenticularHaloGenerator: Filter {
 
     let name = "CILenticularHaloGenerator"
 
     public init(inputCenter: CIVector? = nil, inputColor: CIColor? = nil, inputHaloRadius: CGFloat? = nil, inputHaloWidth: CGFloat? = nil, inputHaloOverlap: CGFloat? = nil, inputStriationStrength: CGFloat? = nil, inputStriationContrast: CGFloat? = nil, inputTime: CGFloat? = nil) {
-        super.init(name:"CILenticularHaloGenerator")
+        super.init(name: "CILenticularHaloGenerator")
 
         if let inputCenter = inputCenter {
             self.inputCenter = inputCenter
@@ -5258,7 +5258,7 @@ public class LenticularHaloGenerator: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -5268,7 +5268,7 @@ public class LenticularHaloGenerator: Filter {
             return valueForKey("inputColor") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor")
+            setValue(newValue, forKey: "inputColor")
         }
     }
 
@@ -5278,7 +5278,7 @@ public class LenticularHaloGenerator: Filter {
             return valueForKey("inputHaloRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputHaloRadius")
+            setValue(newValue, forKey: "inputHaloRadius")
         }
     }
 
@@ -5288,7 +5288,7 @@ public class LenticularHaloGenerator: Filter {
             return valueForKey("inputHaloWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputHaloWidth")
+            setValue(newValue, forKey: "inputHaloWidth")
         }
     }
 
@@ -5297,7 +5297,7 @@ public class LenticularHaloGenerator: Filter {
             return valueForKey("inputHaloOverlap") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputHaloOverlap")
+            setValue(newValue, forKey: "inputHaloOverlap")
         }
     }
 
@@ -5307,7 +5307,7 @@ public class LenticularHaloGenerator: Filter {
             return valueForKey("inputStriationStrength") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputStriationStrength")
+            setValue(newValue, forKey: "inputStriationStrength")
         }
     }
 
@@ -5317,7 +5317,7 @@ public class LenticularHaloGenerator: Filter {
             return valueForKey("inputStriationContrast") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputStriationContrast")
+            setValue(newValue, forKey: "inputStriationContrast")
         }
     }
 
@@ -5327,7 +5327,7 @@ public class LenticularHaloGenerator: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 }
@@ -5335,14 +5335,14 @@ public class LenticularHaloGenerator: Filter {
 /**
 Creates composite image samples by choosing the lighter samples (either from the source image or the background). The result is that the background image samples are replaced by any source image samples that are lighter. Otherwise, the background image samples are left unchanged.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILightenBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILightenBlendMode)
 */
 public class LightenBlendMode: Filter {
 
     let name = "CILightenBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CILightenBlendMode")
+        super.init(name: "CILightenBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5359,7 +5359,7 @@ public class LightenBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -5369,7 +5369,7 @@ public class LightenBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -5377,14 +5377,14 @@ public class LightenBlendMode: Filter {
 /**
 Light tunnel distortion.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILightTunnel)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILightTunnel)
 */
 public class LightTunnel: Filter {
 
     let name = "CILightTunnel"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputRotation: CGFloat? = nil, inputRadius: CGFloat? = nil) {
-        super.init(name:"CILightTunnel")
+        super.init(name: "CILightTunnel")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5407,7 +5407,7 @@ public class LightTunnel: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -5417,7 +5417,7 @@ public class LightTunnel: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -5427,7 +5427,7 @@ public class LightTunnel: Filter {
             return valueForKey("inputRotation") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRotation")
+            setValue(newValue, forKey: "inputRotation")
         }
     }
 
@@ -5437,7 +5437,7 @@ public class LightTunnel: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 }
@@ -5445,14 +5445,14 @@ public class LightTunnel: Filter {
 /**
 Linear Burn Blend Mode
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILinearBurnBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILinearBurnBlendMode)
 */
 public class LinearBurnBlendMode: Filter {
 
     let name = "CILinearBurnBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CILinearBurnBlendMode")
+        super.init(name: "CILinearBurnBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5469,7 +5469,7 @@ public class LinearBurnBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -5479,7 +5479,7 @@ public class LinearBurnBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -5487,14 +5487,14 @@ public class LinearBurnBlendMode: Filter {
 /**
 Linear Dodge Blend Mode
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILinearDodgeBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILinearDodgeBlendMode)
 */
 public class LinearDodgeBlendMode: Filter {
 
     let name = "CILinearDodgeBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CILinearDodgeBlendMode")
+        super.init(name: "CILinearDodgeBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5511,7 +5511,7 @@ public class LinearDodgeBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -5521,7 +5521,7 @@ public class LinearDodgeBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -5529,14 +5529,14 @@ public class LinearDodgeBlendMode: Filter {
 /**
 Generates a gradient that varies along a linear axis between two defined endpoints.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILinearGradient)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILinearGradient)
 */
 public class LinearGradient: Filter {
 
     let name = "CILinearGradient"
 
     public init(inputPoint0: CIVector? = nil, inputPoint1: CIVector? = nil, inputColor0: CIColor? = nil, inputColor1: CIColor? = nil) {
-        super.init(name:"CILinearGradient")
+        super.init(name: "CILinearGradient")
 
         if let inputPoint0 = inputPoint0 {
             self.inputPoint0 = inputPoint0
@@ -5559,7 +5559,7 @@ public class LinearGradient: Filter {
             return valueForKey("inputPoint0") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint0")
+            setValue(newValue, forKey: "inputPoint0")
         }
     }
 
@@ -5569,7 +5569,7 @@ public class LinearGradient: Filter {
             return valueForKey("inputPoint1") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint1")
+            setValue(newValue, forKey: "inputPoint1")
         }
     }
 
@@ -5579,7 +5579,7 @@ public class LinearGradient: Filter {
             return valueForKey("inputColor0") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor0")
+            setValue(newValue, forKey: "inputColor0")
         }
     }
 
@@ -5589,7 +5589,7 @@ public class LinearGradient: Filter {
             return valueForKey("inputColor1") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor1")
+            setValue(newValue, forKey: "inputColor1")
         }
     }
 }
@@ -5597,14 +5597,14 @@ public class LinearGradient: Filter {
 /**
 Converts an image in linear space to sRGB space.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILinearToSRGBToneCurve)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILinearToSRGBToneCurve)
 */
 public class LinearToSRGBToneCurve: Filter {
 
     let name = "CILinearToSRGBToneCurve"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CILinearToSRGBToneCurve")
+        super.init(name: "CILinearToSRGBToneCurve")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5618,7 +5618,7 @@ public class LinearToSRGBToneCurve: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -5626,14 +5626,14 @@ public class LinearToSRGBToneCurve: Filter {
 /**
 Creates a sketch that outlines the edges of an image in black, leaving the non-outlined portions of the image transparent. The result has alpha and is rendered in black, so it won't look like much until you render it over another image using source over compositing.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILineOverlay)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILineOverlay)
 */
 public class LineOverlay: Filter {
 
     let name = "CILineOverlay"
 
     public init(inputImage: CIImage? = nil, inputNRNoiseLevel: CGFloat? = nil, inputNRSharpness: CGFloat? = nil, inputEdgeIntensity: CGFloat? = nil, inputThreshold: CGFloat? = nil, inputContrast: CGFloat? = nil) {
-        super.init(name:"CILineOverlay")
+        super.init(name: "CILineOverlay")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5662,7 +5662,7 @@ public class LineOverlay: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -5672,7 +5672,7 @@ public class LineOverlay: Filter {
             return valueForKey("inputNRNoiseLevel") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputNRNoiseLevel")
+            setValue(newValue, forKey: "inputNRNoiseLevel")
         }
     }
 
@@ -5682,7 +5682,7 @@ public class LineOverlay: Filter {
             return valueForKey("inputNRSharpness") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputNRSharpness")
+            setValue(newValue, forKey: "inputNRSharpness")
         }
     }
 
@@ -5692,7 +5692,7 @@ public class LineOverlay: Filter {
             return valueForKey("inputEdgeIntensity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputEdgeIntensity")
+            setValue(newValue, forKey: "inputEdgeIntensity")
         }
     }
 
@@ -5702,7 +5702,7 @@ public class LineOverlay: Filter {
             return valueForKey("inputThreshold") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputThreshold")
+            setValue(newValue, forKey: "inputThreshold")
         }
     }
 
@@ -5712,7 +5712,7 @@ public class LineOverlay: Filter {
             return valueForKey("inputContrast") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputContrast")
+            setValue(newValue, forKey: "inputContrast")
         }
     }
 }
@@ -5720,14 +5720,14 @@ public class LineOverlay: Filter {
 /**
 Simulates the line pattern of a halftone screen.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILineScreen)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILineScreen)
 */
 public class LineScreen: Filter {
 
     let name = "CILineScreen"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil, inputSharpness: CGFloat? = nil) {
-        super.init(name:"CILineScreen")
+        super.init(name: "CILineScreen")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5753,7 +5753,7 @@ public class LineScreen: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -5763,7 +5763,7 @@ public class LineScreen: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -5773,7 +5773,7 @@ public class LineScreen: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -5783,7 +5783,7 @@ public class LineScreen: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -5793,7 +5793,7 @@ public class LineScreen: Filter {
             return valueForKey("inputSharpness") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSharpness")
+            setValue(newValue, forKey: "inputSharpness")
         }
     }
 }
@@ -5801,14 +5801,14 @@ public class LineScreen: Filter {
 /**
 Uses the hue and saturation of the background with the luminance of the source image. This mode creates an effect that is inverse to the effect created by the CIColorBlendMode filter.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILuminosityBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CILuminosityBlendMode)
 */
 public class LuminosityBlendMode: Filter {
 
     let name = "CILuminosityBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CILuminosityBlendMode")
+        super.init(name: "CILuminosityBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5825,7 +5825,7 @@ public class LuminosityBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -5835,7 +5835,7 @@ public class LuminosityBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -5843,14 +5843,14 @@ public class LuminosityBlendMode: Filter {
 /**
 Converts a grayscale image to a white image that is masked by alpha. The white values from the source image produce the inside of the mask; the black values become completely transparent.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMaskToAlpha)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMaskToAlpha)
 */
 public class MaskToAlpha: Filter {
 
     let name = "CIMaskToAlpha"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIMaskToAlpha")
+        super.init(name: "CIMaskToAlpha")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5864,7 +5864,7 @@ public class MaskToAlpha: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -5872,14 +5872,14 @@ public class MaskToAlpha: Filter {
 /**
 Converts an image to grayscale using the maximum of the three color components.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMaximumComponent)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMaximumComponent)
 */
 public class MaximumComponent: Filter {
 
     let name = "CIMaximumComponent"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIMaximumComponent")
+        super.init(name: "CIMaximumComponent")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5893,7 +5893,7 @@ public class MaximumComponent: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -5901,14 +5901,14 @@ public class MaximumComponent: Filter {
 /**
 Computes the maximum value, by color component, of two input images and creates an output image using the maximum values. This is similar to dodging.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMaximumCompositing)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMaximumCompositing)
 */
 public class MaximumCompositing: Filter {
 
     let name = "CIMaximumCompositing"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIMaximumCompositing")
+        super.init(name: "CIMaximumCompositing")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5925,7 +5925,7 @@ public class MaximumCompositing: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -5935,7 +5935,7 @@ public class MaximumCompositing: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -5943,14 +5943,14 @@ public class MaximumCompositing: Filter {
 /**
 Computes the median value for a group of neighboring pixels and replaces each pixel value with the median. The effect is to reduce noise.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMedianFilter)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMedianFilter)
 */
 public class MedianFilter: Filter {
 
     let name = "CIMedianFilter"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIMedianFilter")
+        super.init(name: "CIMedianFilter")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5964,7 +5964,7 @@ public class MedianFilter: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -5972,14 +5972,14 @@ public class MedianFilter: Filter {
 /**
 Converts an image to grayscale using the minimum of the three color components.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMinimumComponent)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMinimumComponent)
 */
 public class MinimumComponent: Filter {
 
     let name = "CIMinimumComponent"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIMinimumComponent")
+        super.init(name: "CIMinimumComponent")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -5993,7 +5993,7 @@ public class MinimumComponent: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -6001,14 +6001,14 @@ public class MinimumComponent: Filter {
 /**
 Computes the minimum value, by color component, of two input images and creates an output image using the minimum values. This is similar to burning.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMinimumCompositing)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMinimumCompositing)
 */
 public class MinimumCompositing: Filter {
 
     let name = "CIMinimumCompositing"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIMinimumCompositing")
+        super.init(name: "CIMinimumCompositing")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -6025,7 +6025,7 @@ public class MinimumCompositing: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -6035,7 +6035,7 @@ public class MinimumCompositing: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -6043,14 +6043,14 @@ public class MinimumCompositing: Filter {
 /**
 Transitions from one image to another by revealing the target image through irregularly shaped holes.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIModTransition)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIModTransition)
 */
 public class ModTransition: Filter {
 
     let name = "CIModTransition"
 
     public init(inputImage: CIImage? = nil, inputTargetImage: CIImage? = nil, inputCenter: CIVector? = nil, inputTime: CGFloat? = nil, inputAngle: CGFloat? = nil, inputRadius: CGFloat? = nil, inputCompression: CGFloat? = nil) {
-        super.init(name:"CIModTransition")
+        super.init(name: "CIModTransition")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -6082,7 +6082,7 @@ public class ModTransition: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -6092,7 +6092,7 @@ public class ModTransition: Filter {
             return valueForKey("inputTargetImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputTargetImage")
+            setValue(newValue, forKey: "inputTargetImage")
         }
     }
 
@@ -6102,7 +6102,7 @@ public class ModTransition: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -6112,7 +6112,7 @@ public class ModTransition: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 
@@ -6122,7 +6122,7 @@ public class ModTransition: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -6132,7 +6132,7 @@ public class ModTransition: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -6142,7 +6142,7 @@ public class ModTransition: Filter {
             return valueForKey("inputCompression") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCompression")
+            setValue(newValue, forKey: "inputCompression")
         }
     }
 }
@@ -6150,14 +6150,14 @@ public class ModTransition: Filter {
 /**
 Blurs an image to simulate the effect of using a camera that moves a specified angle and distance while capturing the image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMotionBlur)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMotionBlur)
 */
 public class MotionBlur: Filter {
 
     let name = "CIMotionBlur"
 
     public init(inputImage: CIImage? = nil, inputRadius: CGFloat? = nil, inputAngle: CGFloat? = nil) {
-        super.init(name:"CIMotionBlur")
+        super.init(name: "CIMotionBlur")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -6177,7 +6177,7 @@ public class MotionBlur: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -6187,7 +6187,7 @@ public class MotionBlur: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -6197,7 +6197,7 @@ public class MotionBlur: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 }
@@ -6205,14 +6205,14 @@ public class MotionBlur: Filter {
 /**
 Multiplies the source image samples with the background image samples. This results in colors that are at least as dark as either of the two contributing sample colors.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMultiplyBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMultiplyBlendMode)
 */
 public class MultiplyBlendMode: Filter {
 
     let name = "CIMultiplyBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIMultiplyBlendMode")
+        super.init(name: "CIMultiplyBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -6229,7 +6229,7 @@ public class MultiplyBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -6239,7 +6239,7 @@ public class MultiplyBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -6247,14 +6247,14 @@ public class MultiplyBlendMode: Filter {
 /**
 Multiplies the color component of two input images and creates an output image using the multiplied values. This filter is typically used to add a spotlight or similar lighting effect to an image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMultiplyCompositing)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIMultiplyCompositing)
 */
 public class MultiplyCompositing: Filter {
 
     let name = "CIMultiplyCompositing"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIMultiplyCompositing")
+        super.init(name: "CIMultiplyCompositing")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -6271,7 +6271,7 @@ public class MultiplyCompositing: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -6281,7 +6281,7 @@ public class MultiplyCompositing: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -6289,14 +6289,14 @@ public class MultiplyCompositing: Filter {
 /**
 Reduces noise using a threshold value to define what is considered noise. Small changes in luminance below that value are considered noise and get a noise reduction treatment, which is a local blur. Changes above the threshold value are considered edges, so they are sharpened.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CINoiseReduction)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CINoiseReduction)
 */
 public class NoiseReduction: Filter {
 
     let name = "CINoiseReduction"
 
     public init(inputImage: CIImage? = nil, inputNoiseLevel: CGFloat? = nil, inputSharpness: CGFloat? = nil) {
-        super.init(name:"CINoiseReduction")
+        super.init(name: "CINoiseReduction")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -6316,7 +6316,7 @@ public class NoiseReduction: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -6326,7 +6326,7 @@ public class NoiseReduction: Filter {
             return valueForKey("inputNoiseLevel") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputNoiseLevel")
+            setValue(newValue, forKey: "inputNoiseLevel")
         }
     }
 
@@ -6336,7 +6336,7 @@ public class NoiseReduction: Filter {
             return valueForKey("inputSharpness") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSharpness")
+            setValue(newValue, forKey: "inputSharpness")
         }
     }
 }
@@ -6344,14 +6344,14 @@ public class NoiseReduction: Filter {
 /**
 Segments an image, applying any specified scaling and rotation, and then assembles the image again to give an op art appearance.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIOpTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIOpTile)
 */
 public class OpTile: Filter {
 
     let name = "CIOpTile"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputScale: CGFloat? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil) {
-        super.init(name:"CIOpTile")
+        super.init(name: "CIOpTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -6377,7 +6377,7 @@ public class OpTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -6387,7 +6387,7 @@ public class OpTile: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -6397,7 +6397,7 @@ public class OpTile: Filter {
             return valueForKey("inputScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputScale")
+            setValue(newValue, forKey: "inputScale")
         }
     }
 
@@ -6407,7 +6407,7 @@ public class OpTile: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -6417,7 +6417,7 @@ public class OpTile: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 }
@@ -6425,14 +6425,14 @@ public class OpTile: Filter {
 /**
 Either multiplies or screens the source image samples with the background image samples, depending on the background color. The result is to overlay the existing image samples while preserving the highlights and shadows of the background. The background color mixes with the source image to reflect the lightness or darkness of the background.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIOverlayBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIOverlayBlendMode)
 */
 public class OverlayBlendMode: Filter {
 
     let name = "CIOverlayBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIOverlayBlendMode")
+        super.init(name: "CIOverlayBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -6449,7 +6449,7 @@ public class OverlayBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -6459,7 +6459,7 @@ public class OverlayBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -6467,14 +6467,14 @@ public class OverlayBlendMode: Filter {
 /**
 Transitions from one image to another by simulating a curling page, revealing the new image as the page curls.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPageCurlTransition)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPageCurlTransition)
 */
 public class PageCurlTransition: Filter {
 
     let name = "CIPageCurlTransition"
 
     public init(inputImage: CIImage? = nil, inputTargetImage: CIImage? = nil, inputBacksideImage: CIImage? = nil, inputShadingImage: CIImage? = nil, inputExtent: CIVector? = nil, inputTime: CGFloat? = nil, inputAngle: CGFloat? = nil, inputRadius: CGFloat? = nil) {
-        super.init(name:"CIPageCurlTransition")
+        super.init(name: "CIPageCurlTransition")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -6509,7 +6509,7 @@ public class PageCurlTransition: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -6519,7 +6519,7 @@ public class PageCurlTransition: Filter {
             return valueForKey("inputTargetImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputTargetImage")
+            setValue(newValue, forKey: "inputTargetImage")
         }
     }
 
@@ -6529,7 +6529,7 @@ public class PageCurlTransition: Filter {
             return valueForKey("inputBacksideImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBacksideImage")
+            setValue(newValue, forKey: "inputBacksideImage")
         }
     }
 
@@ -6539,7 +6539,7 @@ public class PageCurlTransition: Filter {
             return valueForKey("inputShadingImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputShadingImage")
+            setValue(newValue, forKey: "inputShadingImage")
         }
     }
 
@@ -6549,7 +6549,7 @@ public class PageCurlTransition: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 
@@ -6559,7 +6559,7 @@ public class PageCurlTransition: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 
@@ -6569,7 +6569,7 @@ public class PageCurlTransition: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -6579,7 +6579,7 @@ public class PageCurlTransition: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 }
@@ -6587,14 +6587,14 @@ public class PageCurlTransition: Filter {
 /**
 Transitions from one image to another by simulating a curling page, revealing the new image as the page curls.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPageCurlWithShadowTransition)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPageCurlWithShadowTransition)
 */
 public class PageCurlWithShadowTransition: Filter {
 
     let name = "CIPageCurlWithShadowTransition"
 
     public init(inputImage: CIImage? = nil, inputTargetImage: CIImage? = nil, inputBacksideImage: CIImage? = nil, inputExtent: CIVector? = nil, inputTime: CGFloat? = nil, inputAngle: CGFloat? = nil, inputRadius: CGFloat? = nil, inputShadowSize: CGFloat? = nil, inputShadowAmount: CGFloat? = nil, inputShadowExtent: CIVector? = nil) {
-        super.init(name:"CIPageCurlWithShadowTransition")
+        super.init(name: "CIPageCurlWithShadowTransition")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -6635,7 +6635,7 @@ public class PageCurlWithShadowTransition: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -6645,7 +6645,7 @@ public class PageCurlWithShadowTransition: Filter {
             return valueForKey("inputTargetImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputTargetImage")
+            setValue(newValue, forKey: "inputTargetImage")
         }
     }
 
@@ -6655,7 +6655,7 @@ public class PageCurlWithShadowTransition: Filter {
             return valueForKey("inputBacksideImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBacksideImage")
+            setValue(newValue, forKey: "inputBacksideImage")
         }
     }
 
@@ -6665,7 +6665,7 @@ public class PageCurlWithShadowTransition: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 
@@ -6675,7 +6675,7 @@ public class PageCurlWithShadowTransition: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 
@@ -6685,7 +6685,7 @@ public class PageCurlWithShadowTransition: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -6695,7 +6695,7 @@ public class PageCurlWithShadowTransition: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -6704,7 +6704,7 @@ public class PageCurlWithShadowTransition: Filter {
             return valueForKey("inputShadowSize") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputShadowSize")
+            setValue(newValue, forKey: "inputShadowSize")
         }
     }
 
@@ -6713,7 +6713,7 @@ public class PageCurlWithShadowTransition: Filter {
             return valueForKey("inputShadowAmount") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputShadowAmount")
+            setValue(newValue, forKey: "inputShadowAmount")
         }
     }
 
@@ -6722,7 +6722,7 @@ public class PageCurlWithShadowTransition: Filter {
             return valueForKey("inputShadowExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputShadowExtent")
+            setValue(newValue, forKey: "inputShadowExtent")
         }
     }
 }
@@ -6730,14 +6730,14 @@ public class PageCurlWithShadowTransition: Filter {
 /**
 Warps an image by reflecting it in a parallelogram, and then tiles the result.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIParallelogramTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIParallelogramTile)
 */
 public class ParallelogramTile: Filter {
 
     let name = "CIParallelogramTile"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputAcuteAngle: CGFloat? = nil, inputWidth: CGFloat? = nil) {
-        super.init(name:"CIParallelogramTile")
+        super.init(name: "CIParallelogramTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -6763,7 +6763,7 @@ public class ParallelogramTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -6773,7 +6773,7 @@ public class ParallelogramTile: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -6783,7 +6783,7 @@ public class ParallelogramTile: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -6793,7 +6793,7 @@ public class ParallelogramTile: Filter {
             return valueForKey("inputAcuteAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAcuteAngle")
+            setValue(newValue, forKey: "inputAcuteAngle")
         }
     }
 
@@ -6803,7 +6803,7 @@ public class ParallelogramTile: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 }
@@ -6811,14 +6811,14 @@ public class ParallelogramTile: Filter {
 /**
 PDF417 Barcode Generator
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPDF417BarcodeGenerator)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPDF417BarcodeGenerator)
 */
 public class PDF417BarcodeGenerator: Filter {
 
     let name = "CIPDF417BarcodeGenerator"
 
     public init(inputMessage: NSData? = nil, inputMinWidth: CGFloat? = nil, inputMaxWidth: CGFloat? = nil, inputMinHeight: CGFloat? = nil, inputMaxHeight: CGFloat? = nil, inputDataColumns: CGFloat? = nil, inputRows: CGFloat? = nil, inputPreferredAspectRatio: CGFloat? = nil, inputCompactionMode: CGFloat? = nil, inputCompactStyle: CGFloat? = nil, inputCorrectionLevel: CGFloat? = nil, inputAlwaysSpecifyCompaction: CGFloat? = nil) {
-        super.init(name:"CIPDF417BarcodeGenerator")
+        super.init(name: "CIPDF417BarcodeGenerator")
 
         if let inputMessage = inputMessage {
             self.inputMessage = inputMessage
@@ -6864,7 +6864,7 @@ public class PDF417BarcodeGenerator: Filter {
             return valueForKey("inputMessage") as? NSData
         }
         set {
-            setValue(newValue, forKey:"inputMessage")
+            setValue(newValue, forKey: "inputMessage")
         }
     }
 
@@ -6873,7 +6873,7 @@ public class PDF417BarcodeGenerator: Filter {
             return valueForKey("inputMinWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputMinWidth")
+            setValue(newValue, forKey: "inputMinWidth")
         }
     }
 
@@ -6882,7 +6882,7 @@ public class PDF417BarcodeGenerator: Filter {
             return valueForKey("inputMaxWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputMaxWidth")
+            setValue(newValue, forKey: "inputMaxWidth")
         }
     }
 
@@ -6891,7 +6891,7 @@ public class PDF417BarcodeGenerator: Filter {
             return valueForKey("inputMinHeight") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputMinHeight")
+            setValue(newValue, forKey: "inputMinHeight")
         }
     }
 
@@ -6900,7 +6900,7 @@ public class PDF417BarcodeGenerator: Filter {
             return valueForKey("inputMaxHeight") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputMaxHeight")
+            setValue(newValue, forKey: "inputMaxHeight")
         }
     }
 
@@ -6909,7 +6909,7 @@ public class PDF417BarcodeGenerator: Filter {
             return valueForKey("inputDataColumns") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputDataColumns")
+            setValue(newValue, forKey: "inputDataColumns")
         }
     }
 
@@ -6918,7 +6918,7 @@ public class PDF417BarcodeGenerator: Filter {
             return valueForKey("inputRows") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRows")
+            setValue(newValue, forKey: "inputRows")
         }
     }
 
@@ -6927,7 +6927,7 @@ public class PDF417BarcodeGenerator: Filter {
             return valueForKey("inputPreferredAspectRatio") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputPreferredAspectRatio")
+            setValue(newValue, forKey: "inputPreferredAspectRatio")
         }
     }
 
@@ -6936,7 +6936,7 @@ public class PDF417BarcodeGenerator: Filter {
             return valueForKey("inputCompactionMode") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCompactionMode")
+            setValue(newValue, forKey: "inputCompactionMode")
         }
     }
 
@@ -6945,7 +6945,7 @@ public class PDF417BarcodeGenerator: Filter {
             return valueForKey("inputCompactStyle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCompactStyle")
+            setValue(newValue, forKey: "inputCompactStyle")
         }
     }
 
@@ -6954,7 +6954,7 @@ public class PDF417BarcodeGenerator: Filter {
             return valueForKey("inputCorrectionLevel") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCorrectionLevel")
+            setValue(newValue, forKey: "inputCorrectionLevel")
         }
     }
 
@@ -6963,7 +6963,7 @@ public class PDF417BarcodeGenerator: Filter {
             return valueForKey("inputAlwaysSpecifyCompaction") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAlwaysSpecifyCompaction")
+            setValue(newValue, forKey: "inputAlwaysSpecifyCompaction")
         }
     }
 }
@@ -6971,14 +6971,14 @@ public class PDF417BarcodeGenerator: Filter {
 /**
 Apply a perspective correction to an image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPerspectiveCorrection)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPerspectiveCorrection)
 */
 public class PerspectiveCorrection: Filter {
 
     let name = "CIPerspectiveCorrection"
 
     public init(inputImage: CIImage? = nil, inputTopLeft: CIVector? = nil, inputTopRight: CIVector? = nil, inputBottomRight: CIVector? = nil, inputBottomLeft: CIVector? = nil) {
-        super.init(name:"CIPerspectiveCorrection")
+        super.init(name: "CIPerspectiveCorrection")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7004,7 +7004,7 @@ public class PerspectiveCorrection: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -7014,7 +7014,7 @@ public class PerspectiveCorrection: Filter {
             return valueForKey("inputTopLeft") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputTopLeft")
+            setValue(newValue, forKey: "inputTopLeft")
         }
     }
 
@@ -7024,7 +7024,7 @@ public class PerspectiveCorrection: Filter {
             return valueForKey("inputTopRight") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputTopRight")
+            setValue(newValue, forKey: "inputTopRight")
         }
     }
 
@@ -7034,7 +7034,7 @@ public class PerspectiveCorrection: Filter {
             return valueForKey("inputBottomRight") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputBottomRight")
+            setValue(newValue, forKey: "inputBottomRight")
         }
     }
 
@@ -7044,7 +7044,7 @@ public class PerspectiveCorrection: Filter {
             return valueForKey("inputBottomLeft") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputBottomLeft")
+            setValue(newValue, forKey: "inputBottomLeft")
         }
     }
 }
@@ -7052,14 +7052,14 @@ public class PerspectiveCorrection: Filter {
 /**
 Applies a perspective transform to an image and then tiles the result.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPerspectiveTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPerspectiveTile)
 */
 public class PerspectiveTile: Filter {
 
     let name = "CIPerspectiveTile"
 
     public init(inputImage: CIImage? = nil, inputTopLeft: CIVector? = nil, inputTopRight: CIVector? = nil, inputBottomRight: CIVector? = nil, inputBottomLeft: CIVector? = nil) {
-        super.init(name:"CIPerspectiveTile")
+        super.init(name: "CIPerspectiveTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7085,7 +7085,7 @@ public class PerspectiveTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -7095,7 +7095,7 @@ public class PerspectiveTile: Filter {
             return valueForKey("inputTopLeft") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputTopLeft")
+            setValue(newValue, forKey: "inputTopLeft")
         }
     }
 
@@ -7105,7 +7105,7 @@ public class PerspectiveTile: Filter {
             return valueForKey("inputTopRight") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputTopRight")
+            setValue(newValue, forKey: "inputTopRight")
         }
     }
 
@@ -7115,7 +7115,7 @@ public class PerspectiveTile: Filter {
             return valueForKey("inputBottomRight") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputBottomRight")
+            setValue(newValue, forKey: "inputBottomRight")
         }
     }
 
@@ -7125,7 +7125,7 @@ public class PerspectiveTile: Filter {
             return valueForKey("inputBottomLeft") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputBottomLeft")
+            setValue(newValue, forKey: "inputBottomLeft")
         }
     }
 }
@@ -7133,14 +7133,14 @@ public class PerspectiveTile: Filter {
 /**
 Alters the geometry of an image to simulate the observer changing viewing position. You can use the perspective filter to skew an image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPerspectiveTransform)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPerspectiveTransform)
 */
 public class PerspectiveTransform: Filter {
 
     let name = "CIPerspectiveTransform"
 
     public init(inputImage: CIImage? = nil, inputTopLeft: CIVector? = nil, inputTopRight: CIVector? = nil, inputBottomRight: CIVector? = nil, inputBottomLeft: CIVector? = nil) {
-        super.init(name:"CIPerspectiveTransform")
+        super.init(name: "CIPerspectiveTransform")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7166,7 +7166,7 @@ public class PerspectiveTransform: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -7176,7 +7176,7 @@ public class PerspectiveTransform: Filter {
             return valueForKey("inputTopLeft") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputTopLeft")
+            setValue(newValue, forKey: "inputTopLeft")
         }
     }
 
@@ -7186,7 +7186,7 @@ public class PerspectiveTransform: Filter {
             return valueForKey("inputTopRight") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputTopRight")
+            setValue(newValue, forKey: "inputTopRight")
         }
     }
 
@@ -7196,7 +7196,7 @@ public class PerspectiveTransform: Filter {
             return valueForKey("inputBottomRight") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputBottomRight")
+            setValue(newValue, forKey: "inputBottomRight")
         }
     }
 
@@ -7206,7 +7206,7 @@ public class PerspectiveTransform: Filter {
             return valueForKey("inputBottomLeft") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputBottomLeft")
+            setValue(newValue, forKey: "inputBottomLeft")
         }
     }
 }
@@ -7214,14 +7214,14 @@ public class PerspectiveTransform: Filter {
 /**
 Perspective Transform with Extent
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPerspectiveTransformWithExtent)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPerspectiveTransformWithExtent)
 */
 public class PerspectiveTransformWithExtent: Filter {
 
     let name = "CIPerspectiveTransformWithExtent"
 
     public init(inputImage: CIImage? = nil, inputExtent: CIVector? = nil, inputTopLeft: CIVector? = nil, inputTopRight: CIVector? = nil, inputBottomRight: CIVector? = nil, inputBottomLeft: CIVector? = nil) {
-        super.init(name:"CIPerspectiveTransformWithExtent")
+        super.init(name: "CIPerspectiveTransformWithExtent")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7250,7 +7250,7 @@ public class PerspectiveTransformWithExtent: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -7260,7 +7260,7 @@ public class PerspectiveTransformWithExtent: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 
@@ -7269,7 +7269,7 @@ public class PerspectiveTransformWithExtent: Filter {
             return valueForKey("inputTopLeft") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputTopLeft")
+            setValue(newValue, forKey: "inputTopLeft")
         }
     }
 
@@ -7278,7 +7278,7 @@ public class PerspectiveTransformWithExtent: Filter {
             return valueForKey("inputTopRight") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputTopRight")
+            setValue(newValue, forKey: "inputTopRight")
         }
     }
 
@@ -7287,7 +7287,7 @@ public class PerspectiveTransformWithExtent: Filter {
             return valueForKey("inputBottomRight") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputBottomRight")
+            setValue(newValue, forKey: "inputBottomRight")
         }
     }
 
@@ -7296,7 +7296,7 @@ public class PerspectiveTransformWithExtent: Filter {
             return valueForKey("inputBottomLeft") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputBottomLeft")
+            setValue(newValue, forKey: "inputBottomLeft")
         }
     }
 }
@@ -7304,14 +7304,14 @@ public class PerspectiveTransformWithExtent: Filter {
 /**
 Photo Effect Chrome
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectChrome)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectChrome)
 */
 public class PhotoEffectChrome: Filter {
 
     let name = "CIPhotoEffectChrome"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIPhotoEffectChrome")
+        super.init(name: "CIPhotoEffectChrome")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7325,7 +7325,7 @@ public class PhotoEffectChrome: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -7333,14 +7333,14 @@ public class PhotoEffectChrome: Filter {
 /**
 Photo Effect Fade
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectFade)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectFade)
 */
 public class PhotoEffectFade: Filter {
 
     let name = "CIPhotoEffectFade"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIPhotoEffectFade")
+        super.init(name: "CIPhotoEffectFade")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7354,7 +7354,7 @@ public class PhotoEffectFade: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -7362,14 +7362,14 @@ public class PhotoEffectFade: Filter {
 /**
 Photo Effect Instant
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectInstant)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectInstant)
 */
 public class PhotoEffectInstant: Filter {
 
     let name = "CIPhotoEffectInstant"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIPhotoEffectInstant")
+        super.init(name: "CIPhotoEffectInstant")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7383,7 +7383,7 @@ public class PhotoEffectInstant: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -7391,14 +7391,14 @@ public class PhotoEffectInstant: Filter {
 /**
 Photo Effect Mono
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectMono)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectMono)
 */
 public class PhotoEffectMono: Filter {
 
     let name = "CIPhotoEffectMono"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIPhotoEffectMono")
+        super.init(name: "CIPhotoEffectMono")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7412,7 +7412,7 @@ public class PhotoEffectMono: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -7420,14 +7420,14 @@ public class PhotoEffectMono: Filter {
 /**
 Photo Effect Noir
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectNoir)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectNoir)
 */
 public class PhotoEffectNoir: Filter {
 
     let name = "CIPhotoEffectNoir"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIPhotoEffectNoir")
+        super.init(name: "CIPhotoEffectNoir")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7441,7 +7441,7 @@ public class PhotoEffectNoir: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -7449,14 +7449,14 @@ public class PhotoEffectNoir: Filter {
 /**
 Photo Effect Process
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectProcess)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectProcess)
 */
 public class PhotoEffectProcess: Filter {
 
     let name = "CIPhotoEffectProcess"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIPhotoEffectProcess")
+        super.init(name: "CIPhotoEffectProcess")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7470,7 +7470,7 @@ public class PhotoEffectProcess: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -7478,14 +7478,14 @@ public class PhotoEffectProcess: Filter {
 /**
 Photo Effect Tonal
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectTonal)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectTonal)
 */
 public class PhotoEffectTonal: Filter {
 
     let name = "CIPhotoEffectTonal"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIPhotoEffectTonal")
+        super.init(name: "CIPhotoEffectTonal")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7499,7 +7499,7 @@ public class PhotoEffectTonal: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -7507,14 +7507,14 @@ public class PhotoEffectTonal: Filter {
 /**
 Photo Effect Transfer
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectTransfer)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPhotoEffectTransfer)
 */
 public class PhotoEffectTransfer: Filter {
 
     let name = "CIPhotoEffectTransfer"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CIPhotoEffectTransfer")
+        super.init(name: "CIPhotoEffectTransfer")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7528,7 +7528,7 @@ public class PhotoEffectTransfer: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -7536,14 +7536,14 @@ public class PhotoEffectTransfer: Filter {
 /**
 Creates a rectangular-shaped area that pinches source pixels inward, distorting those pixels closest to the rectangle the most.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPinchDistortion)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPinchDistortion)
 */
 public class PinchDistortion: Filter {
 
     let name = "CIPinchDistortion"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputRadius: CGFloat? = nil, inputScale: CGFloat? = nil) {
-        super.init(name:"CIPinchDistortion")
+        super.init(name: "CIPinchDistortion")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7566,7 +7566,7 @@ public class PinchDistortion: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -7576,7 +7576,7 @@ public class PinchDistortion: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -7586,7 +7586,7 @@ public class PinchDistortion: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -7596,7 +7596,7 @@ public class PinchDistortion: Filter {
             return valueForKey("inputScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputScale")
+            setValue(newValue, forKey: "inputScale")
         }
     }
 }
@@ -7604,14 +7604,14 @@ public class PinchDistortion: Filter {
 /**
 Pin Light Blend Mode
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPinLightBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPinLightBlendMode)
 */
 public class PinLightBlendMode: Filter {
 
     let name = "CIPinLightBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIPinLightBlendMode")
+        super.init(name: "CIPinLightBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7628,7 +7628,7 @@ public class PinLightBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -7638,7 +7638,7 @@ public class PinLightBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -7646,14 +7646,14 @@ public class PinLightBlendMode: Filter {
 /**
 Makes an image blocky.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPixellate)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPixellate)
 */
 public class Pixellate: Filter {
 
     let name = "CIPixellate"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputScale: CGFloat? = nil) {
-        super.init(name:"CIPixellate")
+        super.init(name: "CIPixellate")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7673,7 +7673,7 @@ public class Pixellate: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -7683,7 +7683,7 @@ public class Pixellate: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -7693,7 +7693,7 @@ public class Pixellate: Filter {
             return valueForKey("inputScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputScale")
+            setValue(newValue, forKey: "inputScale")
         }
     }
 }
@@ -7701,14 +7701,14 @@ public class Pixellate: Filter {
 /**
 Renders the source image in a pointillistic style.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPointillize)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIPointillize)
 */
 public class Pointillize: Filter {
 
     let name = "CIPointillize"
 
     public init(inputImage: CIImage? = nil, inputRadius: CGFloat? = nil, inputCenter: CIVector? = nil) {
-        super.init(name:"CIPointillize")
+        super.init(name: "CIPointillize")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7728,7 +7728,7 @@ public class Pointillize: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -7738,7 +7738,7 @@ public class Pointillize: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -7748,7 +7748,7 @@ public class Pointillize: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 }
@@ -7756,14 +7756,14 @@ public class Pointillize: Filter {
 /**
 QRCode Generator
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIQRCodeGenerator)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIQRCodeGenerator)
 */
 public class QRCodeGenerator: Filter {
 
     let name = "CIQRCodeGenerator"
 
     public init(inputMessage: NSData? = nil, inputCorrectionLevel: NSString? = nil) {
-        super.init(name:"CIQRCodeGenerator")
+        super.init(name: "CIQRCodeGenerator")
 
         if let inputMessage = inputMessage {
             self.inputMessage = inputMessage
@@ -7779,7 +7779,7 @@ public class QRCodeGenerator: Filter {
             return valueForKey("inputMessage") as? NSData
         }
         set {
-            setValue(newValue, forKey:"inputMessage")
+            setValue(newValue, forKey: "inputMessage")
         }
     }
 
@@ -7789,7 +7789,7 @@ public class QRCodeGenerator: Filter {
             return valueForKey("inputCorrectionLevel") as? NSString
         }
         set {
-            setValue(newValue, forKey:"inputCorrectionLevel")
+            setValue(newValue, forKey: "inputCorrectionLevel")
         }
     }
 }
@@ -7797,14 +7797,14 @@ public class QRCodeGenerator: Filter {
 /**
 Generates a gradient that varies radially between two circles having the same center. It is valid for one of the two circles to have a radius of 0.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIRadialGradient)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIRadialGradient)
 */
 public class RadialGradient: Filter {
 
     let name = "CIRadialGradient"
 
     public init(inputCenter: CIVector? = nil, inputRadius0: CGFloat? = nil, inputRadius1: CGFloat? = nil, inputColor0: CIColor? = nil, inputColor1: CIColor? = nil) {
-        super.init(name:"CIRadialGradient")
+        super.init(name: "CIRadialGradient")
 
         if let inputCenter = inputCenter {
             self.inputCenter = inputCenter
@@ -7830,7 +7830,7 @@ public class RadialGradient: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -7840,7 +7840,7 @@ public class RadialGradient: Filter {
             return valueForKey("inputRadius0") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius0")
+            setValue(newValue, forKey: "inputRadius0")
         }
     }
 
@@ -7850,7 +7850,7 @@ public class RadialGradient: Filter {
             return valueForKey("inputRadius1") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius1")
+            setValue(newValue, forKey: "inputRadius1")
         }
     }
 
@@ -7860,7 +7860,7 @@ public class RadialGradient: Filter {
             return valueForKey("inputColor0") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor0")
+            setValue(newValue, forKey: "inputColor0")
         }
     }
 
@@ -7870,7 +7870,7 @@ public class RadialGradient: Filter {
             return valueForKey("inputColor1") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor1")
+            setValue(newValue, forKey: "inputColor1")
         }
     }
 }
@@ -7878,14 +7878,14 @@ public class RadialGradient: Filter {
 /**
 Generates an image of infinite extent whose pixel values are made up of four independent, uniformly-distributed random numbers in the 0 to 1 range.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIRandomGenerator)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIRandomGenerator)
 */
 public class RandomGenerator: Filter {
 
     let name = "CIRandomGenerator"
 
     public init() {
-        super.init(name:"CIRandomGenerator")
+        super.init(name: "CIRandomGenerator")
 
     }
 
@@ -7894,14 +7894,14 @@ public class RandomGenerator: Filter {
 /**
 Transitions from one image to another by creating a circular wave that expands from the center point, revealing the new image in the wake of the wave.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIRippleTransition)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIRippleTransition)
 */
 public class RippleTransition: Filter {
 
     let name = "CIRippleTransition"
 
     public init(inputImage: CIImage? = nil, inputTargetImage: CIImage? = nil, inputShadingImage: CIImage? = nil, inputCenter: CIVector? = nil, inputExtent: CIVector? = nil, inputTime: CGFloat? = nil, inputWidth: CGFloat? = nil, inputScale: CGFloat? = nil) {
-        super.init(name:"CIRippleTransition")
+        super.init(name: "CIRippleTransition")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -7936,7 +7936,7 @@ public class RippleTransition: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -7946,7 +7946,7 @@ public class RippleTransition: Filter {
             return valueForKey("inputTargetImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputTargetImage")
+            setValue(newValue, forKey: "inputTargetImage")
         }
     }
 
@@ -7956,7 +7956,7 @@ public class RippleTransition: Filter {
             return valueForKey("inputShadingImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputShadingImage")
+            setValue(newValue, forKey: "inputShadingImage")
         }
     }
 
@@ -7966,7 +7966,7 @@ public class RippleTransition: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -7976,7 +7976,7 @@ public class RippleTransition: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 
@@ -7986,7 +7986,7 @@ public class RippleTransition: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 
@@ -7996,7 +7996,7 @@ public class RippleTransition: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -8006,7 +8006,7 @@ public class RippleTransition: Filter {
             return valueForKey("inputScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputScale")
+            setValue(newValue, forKey: "inputScale")
         }
     }
 }
@@ -8014,14 +8014,14 @@ public class RippleTransition: Filter {
 /**
 Calculates the average color for each row of the specified area in an image, returning the result in a 1D image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIRowAverage)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIRowAverage)
 */
 public class RowAverage: Filter {
 
     let name = "CIRowAverage"
 
     public init(inputImage: CIImage? = nil, inputExtent: CIVector? = nil) {
-        super.init(name:"CIRowAverage")
+        super.init(name: "CIRowAverage")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8038,7 +8038,7 @@ public class RowAverage: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8048,7 +8048,7 @@ public class RowAverage: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 }
@@ -8056,14 +8056,14 @@ public class RowAverage: Filter {
 /**
 Uses the luminance and hue values of the background with the saturation of the source image. Areas of the background that have no saturation (that is, pure gray areas) do not produce a change.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISaturationBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISaturationBlendMode)
 */
 public class SaturationBlendMode: Filter {
 
     let name = "CISaturationBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CISaturationBlendMode")
+        super.init(name: "CISaturationBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8080,7 +8080,7 @@ public class SaturationBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8090,7 +8090,7 @@ public class SaturationBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -8098,14 +8098,14 @@ public class SaturationBlendMode: Filter {
 /**
 Multiplies the inverse of the source image samples with the inverse of the background image samples. This results in colors that are at least as light as either of the two contributing sample colors.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIScreenBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIScreenBlendMode)
 */
 public class ScreenBlendMode: Filter {
 
     let name = "CIScreenBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CIScreenBlendMode")
+        super.init(name: "CIScreenBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8122,7 +8122,7 @@ public class ScreenBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8132,7 +8132,7 @@ public class ScreenBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -8140,14 +8140,14 @@ public class ScreenBlendMode: Filter {
 /**
 Maps the colors of an image to various shades of brown.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISepiaTone)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISepiaTone)
 */
 public class SepiaTone: Filter {
 
     let name = "CISepiaTone"
 
     public init(inputImage: CIImage? = nil, inputIntensity: CGFloat? = nil) {
-        super.init(name:"CISepiaTone")
+        super.init(name: "CISepiaTone")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8164,7 +8164,7 @@ public class SepiaTone: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8174,7 +8174,7 @@ public class SepiaTone: Filter {
             return valueForKey("inputIntensity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputIntensity")
+            setValue(newValue, forKey: "inputIntensity")
         }
     }
 }
@@ -8182,14 +8182,14 @@ public class SepiaTone: Filter {
 /**
 Produces a shaded image from a height field. The height field is defined to have greater heights with lighter shades, and lesser heights (lower areas) with darker shades. You can combine this filter with the CIHeightFieldFromMask filter to produce quick shadings of masks, such as text.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIShadedMaterial)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIShadedMaterial)
 */
 public class ShadedMaterial: Filter {
 
     let name = "CIShadedMaterial"
 
     public init(inputImage: CIImage? = nil, inputShadingImage: CIImage? = nil, inputScale: CGFloat? = nil) {
-        super.init(name:"CIShadedMaterial")
+        super.init(name: "CIShadedMaterial")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8209,7 +8209,7 @@ public class ShadedMaterial: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8219,7 +8219,7 @@ public class ShadedMaterial: Filter {
             return valueForKey("inputShadingImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputShadingImage")
+            setValue(newValue, forKey: "inputShadingImage")
         }
     }
 
@@ -8229,7 +8229,7 @@ public class ShadedMaterial: Filter {
             return valueForKey("inputScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputScale")
+            setValue(newValue, forKey: "inputScale")
         }
     }
 }
@@ -8237,14 +8237,14 @@ public class ShadedMaterial: Filter {
 /**
 Increases image detail by sharpening. It operates on the luminance of the image; the chrominance of the pixels remains unaffected.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISharpenLuminance)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISharpenLuminance)
 */
 public class SharpenLuminance: Filter {
 
     let name = "CISharpenLuminance"
 
     public init(inputImage: CIImage? = nil, inputSharpness: CGFloat? = nil) {
-        super.init(name:"CISharpenLuminance")
+        super.init(name: "CISharpenLuminance")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8261,7 +8261,7 @@ public class SharpenLuminance: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8271,7 +8271,7 @@ public class SharpenLuminance: Filter {
             return valueForKey("inputSharpness") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSharpness")
+            setValue(newValue, forKey: "inputSharpness")
         }
     }
 }
@@ -8279,14 +8279,14 @@ public class SharpenLuminance: Filter {
 /**
 Produces a tiled image from a source image by applying a 6-way reflected symmetry.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISixfoldReflectedTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISixfoldReflectedTile)
 */
 public class SixfoldReflectedTile: Filter {
 
     let name = "CISixfoldReflectedTile"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil) {
-        super.init(name:"CISixfoldReflectedTile")
+        super.init(name: "CISixfoldReflectedTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8309,7 +8309,7 @@ public class SixfoldReflectedTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8319,7 +8319,7 @@ public class SixfoldReflectedTile: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -8329,7 +8329,7 @@ public class SixfoldReflectedTile: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -8339,7 +8339,7 @@ public class SixfoldReflectedTile: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 }
@@ -8347,14 +8347,14 @@ public class SixfoldReflectedTile: Filter {
 /**
 Produces a tiled image from a source image by rotating the source at increments of 60 degrees.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISixfoldRotatedTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISixfoldRotatedTile)
 */
 public class SixfoldRotatedTile: Filter {
 
     let name = "CISixfoldRotatedTile"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil) {
-        super.init(name:"CISixfoldRotatedTile")
+        super.init(name: "CISixfoldRotatedTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8377,7 +8377,7 @@ public class SixfoldRotatedTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8387,7 +8387,7 @@ public class SixfoldRotatedTile: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -8397,7 +8397,7 @@ public class SixfoldRotatedTile: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -8407,7 +8407,7 @@ public class SixfoldRotatedTile: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 }
@@ -8415,14 +8415,14 @@ public class SixfoldRotatedTile: Filter {
 /**
 CISmoothLinearGradient
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISmoothLinearGradient)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISmoothLinearGradient)
 */
 public class SmoothLinearGradient: Filter {
 
     let name = "CISmoothLinearGradient"
 
     public init(inputPoint0: CIVector? = nil, inputPoint1: CIVector? = nil, inputColor0: CIColor? = nil, inputColor1: CIColor? = nil) {
-        super.init(name:"CISmoothLinearGradient")
+        super.init(name: "CISmoothLinearGradient")
 
         if let inputPoint0 = inputPoint0 {
             self.inputPoint0 = inputPoint0
@@ -8444,7 +8444,7 @@ public class SmoothLinearGradient: Filter {
             return valueForKey("inputPoint0") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint0")
+            setValue(newValue, forKey: "inputPoint0")
         }
     }
 
@@ -8453,7 +8453,7 @@ public class SmoothLinearGradient: Filter {
             return valueForKey("inputPoint1") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint1")
+            setValue(newValue, forKey: "inputPoint1")
         }
     }
 
@@ -8462,7 +8462,7 @@ public class SmoothLinearGradient: Filter {
             return valueForKey("inputColor0") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor0")
+            setValue(newValue, forKey: "inputColor0")
         }
     }
 
@@ -8471,7 +8471,7 @@ public class SmoothLinearGradient: Filter {
             return valueForKey("inputColor1") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor1")
+            setValue(newValue, forKey: "inputColor1")
         }
     }
 }
@@ -8479,14 +8479,14 @@ public class SmoothLinearGradient: Filter {
 /**
 Either darkens or lightens colors, depending on the source image sample color. If the source image sample color is lighter than 50% gray, the background is lightened, similar to dodging. If the source image sample color is darker than 50% gray, the background is darkened, similar to burning. If the source image sample color is equal to 50% gray, the background is not changed. Image samples that are equal to pure black or pure white produce darker or lighter areas, but do not result in pure black or white. The overall effect is similar to what you would achieve by shining a diffuse spotlight on the source image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISoftLightBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISoftLightBlendMode)
 */
 public class SoftLightBlendMode: Filter {
 
     let name = "CISoftLightBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CISoftLightBlendMode")
+        super.init(name: "CISoftLightBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8503,7 +8503,7 @@ public class SoftLightBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8513,7 +8513,7 @@ public class SoftLightBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -8521,14 +8521,14 @@ public class SoftLightBlendMode: Filter {
 /**
 Places the source image over the background image, then uses the luminance of the background image to determine what to show. The composite shows the background image and only those portions of the source image that are over visible parts of the background.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISourceAtopCompositing)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISourceAtopCompositing)
 */
 public class SourceAtopCompositing: Filter {
 
     let name = "CISourceAtopCompositing"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CISourceAtopCompositing")
+        super.init(name: "CISourceAtopCompositing")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8545,7 +8545,7 @@ public class SourceAtopCompositing: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8555,7 +8555,7 @@ public class SourceAtopCompositing: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -8563,14 +8563,14 @@ public class SourceAtopCompositing: Filter {
 /**
 Uses the second image to define what to leave in the source image, effectively cropping the image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISourceInCompositing)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISourceInCompositing)
 */
 public class SourceInCompositing: Filter {
 
     let name = "CISourceInCompositing"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CISourceInCompositing")
+        super.init(name: "CISourceInCompositing")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8587,7 +8587,7 @@ public class SourceInCompositing: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8597,7 +8597,7 @@ public class SourceInCompositing: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -8605,14 +8605,14 @@ public class SourceInCompositing: Filter {
 /**
 Uses the second image to define what to take out of the first image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISourceOutCompositing)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISourceOutCompositing)
 */
 public class SourceOutCompositing: Filter {
 
     let name = "CISourceOutCompositing"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CISourceOutCompositing")
+        super.init(name: "CISourceOutCompositing")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8629,7 +8629,7 @@ public class SourceOutCompositing: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8639,7 +8639,7 @@ public class SourceOutCompositing: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -8647,14 +8647,14 @@ public class SourceOutCompositing: Filter {
 /**
 Places the second image over the first.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISourceOverCompositing)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISourceOverCompositing)
 */
 public class SourceOverCompositing: Filter {
 
     let name = "CISourceOverCompositing"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CISourceOverCompositing")
+        super.init(name: "CISourceOverCompositing")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8671,7 +8671,7 @@ public class SourceOverCompositing: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8681,7 +8681,7 @@ public class SourceOverCompositing: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -8689,14 +8689,14 @@ public class SourceOverCompositing: Filter {
 /**
 Replaces one or more color ranges with spot colors.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISpotColor)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISpotColor)
 */
 public class SpotColor: Filter {
 
     let name = "CISpotColor"
 
     public init(inputImage: CIImage? = nil, inputCenterColor1: CIColor? = nil, inputReplacementColor1: CIColor? = nil, inputCloseness1: CGFloat? = nil, inputContrast1: CGFloat? = nil, inputCenterColor2: CIColor? = nil, inputReplacementColor2: CIColor? = nil, inputCloseness2: CGFloat? = nil, inputContrast2: CGFloat? = nil, inputCenterColor3: CIColor? = nil, inputReplacementColor3: CIColor? = nil, inputCloseness3: CGFloat? = nil, inputContrast3: CGFloat? = nil) {
-        super.init(name:"CISpotColor")
+        super.init(name: "CISpotColor")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8746,7 +8746,7 @@ public class SpotColor: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8756,7 +8756,7 @@ public class SpotColor: Filter {
             return valueForKey("inputCenterColor1") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputCenterColor1")
+            setValue(newValue, forKey: "inputCenterColor1")
         }
     }
 
@@ -8766,7 +8766,7 @@ public class SpotColor: Filter {
             return valueForKey("inputReplacementColor1") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputReplacementColor1")
+            setValue(newValue, forKey: "inputReplacementColor1")
         }
     }
 
@@ -8776,7 +8776,7 @@ public class SpotColor: Filter {
             return valueForKey("inputCloseness1") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCloseness1")
+            setValue(newValue, forKey: "inputCloseness1")
         }
     }
 
@@ -8786,7 +8786,7 @@ public class SpotColor: Filter {
             return valueForKey("inputContrast1") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputContrast1")
+            setValue(newValue, forKey: "inputContrast1")
         }
     }
 
@@ -8796,7 +8796,7 @@ public class SpotColor: Filter {
             return valueForKey("inputCenterColor2") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputCenterColor2")
+            setValue(newValue, forKey: "inputCenterColor2")
         }
     }
 
@@ -8806,7 +8806,7 @@ public class SpotColor: Filter {
             return valueForKey("inputReplacementColor2") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputReplacementColor2")
+            setValue(newValue, forKey: "inputReplacementColor2")
         }
     }
 
@@ -8816,7 +8816,7 @@ public class SpotColor: Filter {
             return valueForKey("inputCloseness2") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCloseness2")
+            setValue(newValue, forKey: "inputCloseness2")
         }
     }
 
@@ -8826,7 +8826,7 @@ public class SpotColor: Filter {
             return valueForKey("inputContrast2") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputContrast2")
+            setValue(newValue, forKey: "inputContrast2")
         }
     }
 
@@ -8836,7 +8836,7 @@ public class SpotColor: Filter {
             return valueForKey("inputCenterColor3") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputCenterColor3")
+            setValue(newValue, forKey: "inputCenterColor3")
         }
     }
 
@@ -8846,7 +8846,7 @@ public class SpotColor: Filter {
             return valueForKey("inputReplacementColor3") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputReplacementColor3")
+            setValue(newValue, forKey: "inputReplacementColor3")
         }
     }
 
@@ -8856,7 +8856,7 @@ public class SpotColor: Filter {
             return valueForKey("inputCloseness3") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCloseness3")
+            setValue(newValue, forKey: "inputCloseness3")
         }
     }
 
@@ -8866,7 +8866,7 @@ public class SpotColor: Filter {
             return valueForKey("inputContrast3") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputContrast3")
+            setValue(newValue, forKey: "inputContrast3")
         }
     }
 }
@@ -8874,14 +8874,14 @@ public class SpotColor: Filter {
 /**
 Applies a directional spotlight effect to an image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISpotLight)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISpotLight)
 */
 public class SpotLight: Filter {
 
     let name = "CISpotLight"
 
     public init(inputImage: CIImage? = nil, inputLightPosition: CIVector? = nil, inputLightPointsAt: CIVector? = nil, inputBrightness: CGFloat? = nil, inputConcentration: CGFloat? = nil, inputColor: CIColor? = nil) {
-        super.init(name:"CISpotLight")
+        super.init(name: "CISpotLight")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8910,7 +8910,7 @@ public class SpotLight: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -8920,7 +8920,7 @@ public class SpotLight: Filter {
             return valueForKey("inputLightPosition") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputLightPosition")
+            setValue(newValue, forKey: "inputLightPosition")
         }
     }
 
@@ -8930,7 +8930,7 @@ public class SpotLight: Filter {
             return valueForKey("inputLightPointsAt") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputLightPointsAt")
+            setValue(newValue, forKey: "inputLightPointsAt")
         }
     }
 
@@ -8940,7 +8940,7 @@ public class SpotLight: Filter {
             return valueForKey("inputBrightness") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputBrightness")
+            setValue(newValue, forKey: "inputBrightness")
         }
     }
 
@@ -8950,7 +8950,7 @@ public class SpotLight: Filter {
             return valueForKey("inputConcentration") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputConcentration")
+            setValue(newValue, forKey: "inputConcentration")
         }
     }
 
@@ -8960,7 +8960,7 @@ public class SpotLight: Filter {
             return valueForKey("inputColor") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor")
+            setValue(newValue, forKey: "inputColor")
         }
     }
 }
@@ -8968,14 +8968,14 @@ public class SpotLight: Filter {
 /**
 Converts an image in sRGB space to linear space.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISRGBToneCurveToLinear)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISRGBToneCurveToLinear)
 */
 public class SRGBToneCurveToLinear: Filter {
 
     let name = "CISRGBToneCurveToLinear"
 
     public init(inputImage: CIImage? = nil) {
-        super.init(name:"CISRGBToneCurveToLinear")
+        super.init(name: "CISRGBToneCurveToLinear")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -8989,7 +8989,7 @@ public class SRGBToneCurveToLinear: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 }
@@ -8997,14 +8997,14 @@ public class SRGBToneCurveToLinear: Filter {
 /**
 Generates a starburst pattern. The output image is typically used as input to another filter
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIStarShineGenerator)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIStarShineGenerator)
 */
 public class StarShineGenerator: Filter {
 
     let name = "CIStarShineGenerator"
 
     public init(inputCenter: CIVector? = nil, inputColor: CIColor? = nil, inputRadius: CGFloat? = nil, inputCrossScale: CGFloat? = nil, inputCrossAngle: CGFloat? = nil, inputCrossOpacity: CGFloat? = nil, inputCrossWidth: CGFloat? = nil, inputEpsilon: CGFloat? = nil) {
-        super.init(name:"CIStarShineGenerator")
+        super.init(name: "CIStarShineGenerator")
 
         if let inputCenter = inputCenter {
             self.inputCenter = inputCenter
@@ -9039,7 +9039,7 @@ public class StarShineGenerator: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -9049,7 +9049,7 @@ public class StarShineGenerator: Filter {
             return valueForKey("inputColor") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor")
+            setValue(newValue, forKey: "inputColor")
         }
     }
 
@@ -9059,7 +9059,7 @@ public class StarShineGenerator: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -9069,7 +9069,7 @@ public class StarShineGenerator: Filter {
             return valueForKey("inputCrossScale") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCrossScale")
+            setValue(newValue, forKey: "inputCrossScale")
         }
     }
 
@@ -9079,7 +9079,7 @@ public class StarShineGenerator: Filter {
             return valueForKey("inputCrossAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCrossAngle")
+            setValue(newValue, forKey: "inputCrossAngle")
         }
     }
 
@@ -9089,7 +9089,7 @@ public class StarShineGenerator: Filter {
             return valueForKey("inputCrossOpacity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCrossOpacity")
+            setValue(newValue, forKey: "inputCrossOpacity")
         }
     }
 
@@ -9099,7 +9099,7 @@ public class StarShineGenerator: Filter {
             return valueForKey("inputCrossWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCrossWidth")
+            setValue(newValue, forKey: "inputCrossWidth")
         }
     }
 
@@ -9109,7 +9109,7 @@ public class StarShineGenerator: Filter {
             return valueForKey("inputEpsilon") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputEpsilon")
+            setValue(newValue, forKey: "inputEpsilon")
         }
     }
 }
@@ -9117,14 +9117,14 @@ public class StarShineGenerator: Filter {
 /**
 Rotates a source image by the specified angle in radians. The image is then scaled and cropped so that the rotated image fits the extent of the input image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIStraightenFilter)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIStraightenFilter)
 */
 public class StraightenFilter: Filter {
 
     let name = "CIStraightenFilter"
 
     public init(inputImage: CIImage? = nil, inputAngle: CGFloat? = nil) {
-        super.init(name:"CIStraightenFilter")
+        super.init(name: "CIStraightenFilter")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -9141,7 +9141,7 @@ public class StraightenFilter: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -9151,7 +9151,7 @@ public class StraightenFilter: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 }
@@ -9159,14 +9159,14 @@ public class StraightenFilter: Filter {
 /**
 Distorts an image by stretching and or cropping to fit a target size.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIStretchCrop)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIStretchCrop)
 */
 public class StretchCrop: Filter {
 
     let name = "CIStretchCrop"
 
     public init(inputImage: CIImage? = nil, inputSize: CIVector? = nil, inputCropAmount: CGFloat? = nil, inputCenterStretchAmount: CGFloat? = nil) {
-        super.init(name:"CIStretchCrop")
+        super.init(name: "CIStretchCrop")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -9189,7 +9189,7 @@ public class StretchCrop: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -9199,7 +9199,7 @@ public class StretchCrop: Filter {
             return valueForKey("inputSize") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputSize")
+            setValue(newValue, forKey: "inputSize")
         }
     }
 
@@ -9209,7 +9209,7 @@ public class StretchCrop: Filter {
             return valueForKey("inputCropAmount") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCropAmount")
+            setValue(newValue, forKey: "inputCropAmount")
         }
     }
 
@@ -9219,7 +9219,7 @@ public class StretchCrop: Filter {
             return valueForKey("inputCenterStretchAmount") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputCenterStretchAmount")
+            setValue(newValue, forKey: "inputCenterStretchAmount")
         }
     }
 }
@@ -9227,14 +9227,14 @@ public class StretchCrop: Filter {
 /**
 Generates a stripe pattern. You can control the color of the stripes, the spacing, and the contrast.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIStripesGenerator)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIStripesGenerator)
 */
 public class StripesGenerator: Filter {
 
     let name = "CIStripesGenerator"
 
     public init(inputCenter: CIVector? = nil, inputColor0: CIColor? = nil, inputColor1: CIColor? = nil, inputWidth: CGFloat? = nil, inputSharpness: CGFloat? = nil) {
-        super.init(name:"CIStripesGenerator")
+        super.init(name: "CIStripesGenerator")
 
         if let inputCenter = inputCenter {
             self.inputCenter = inputCenter
@@ -9260,7 +9260,7 @@ public class StripesGenerator: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -9270,7 +9270,7 @@ public class StripesGenerator: Filter {
             return valueForKey("inputColor0") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor0")
+            setValue(newValue, forKey: "inputColor0")
         }
     }
 
@@ -9280,7 +9280,7 @@ public class StripesGenerator: Filter {
             return valueForKey("inputColor1") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor1")
+            setValue(newValue, forKey: "inputColor1")
         }
     }
 
@@ -9290,7 +9290,7 @@ public class StripesGenerator: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -9300,7 +9300,7 @@ public class StripesGenerator: Filter {
             return valueForKey("inputSharpness") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSharpness")
+            setValue(newValue, forKey: "inputSharpness")
         }
     }
 }
@@ -9308,14 +9308,14 @@ public class StripesGenerator: Filter {
 /**
 Subtract Blend Mode
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISubtractBlendMode)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISubtractBlendMode)
 */
 public class SubtractBlendMode: Filter {
 
     let name = "CISubtractBlendMode"
 
     public init(inputImage: CIImage? = nil, inputBackgroundImage: CIImage? = nil) {
-        super.init(name:"CISubtractBlendMode")
+        super.init(name: "CISubtractBlendMode")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -9332,7 +9332,7 @@ public class SubtractBlendMode: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -9342,7 +9342,7 @@ public class SubtractBlendMode: Filter {
             return valueForKey("inputBackgroundImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputBackgroundImage")
+            setValue(newValue, forKey: "inputBackgroundImage")
         }
     }
 }
@@ -9350,14 +9350,14 @@ public class SubtractBlendMode: Filter {
 /**
 Generates a sun effect. You typically use the output of the sunbeams filter as input to a composite filter.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISunbeamsGenerator)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISunbeamsGenerator)
 */
 public class SunbeamsGenerator: Filter {
 
     let name = "CISunbeamsGenerator"
 
     public init(inputCenter: CIVector? = nil, inputColor: CIColor? = nil, inputSunRadius: CGFloat? = nil, inputMaxStriationRadius: CGFloat? = nil, inputStriationStrength: CGFloat? = nil, inputStriationContrast: CGFloat? = nil, inputTime: CGFloat? = nil) {
-        super.init(name:"CISunbeamsGenerator")
+        super.init(name: "CISunbeamsGenerator")
 
         if let inputCenter = inputCenter {
             self.inputCenter = inputCenter
@@ -9389,7 +9389,7 @@ public class SunbeamsGenerator: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -9399,7 +9399,7 @@ public class SunbeamsGenerator: Filter {
             return valueForKey("inputColor") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor")
+            setValue(newValue, forKey: "inputColor")
         }
     }
 
@@ -9409,7 +9409,7 @@ public class SunbeamsGenerator: Filter {
             return valueForKey("inputSunRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSunRadius")
+            setValue(newValue, forKey: "inputSunRadius")
         }
     }
 
@@ -9419,7 +9419,7 @@ public class SunbeamsGenerator: Filter {
             return valueForKey("inputMaxStriationRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputMaxStriationRadius")
+            setValue(newValue, forKey: "inputMaxStriationRadius")
         }
     }
 
@@ -9429,7 +9429,7 @@ public class SunbeamsGenerator: Filter {
             return valueForKey("inputStriationStrength") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputStriationStrength")
+            setValue(newValue, forKey: "inputStriationStrength")
         }
     }
 
@@ -9439,7 +9439,7 @@ public class SunbeamsGenerator: Filter {
             return valueForKey("inputStriationContrast") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputStriationContrast")
+            setValue(newValue, forKey: "inputStriationContrast")
         }
     }
 
@@ -9449,7 +9449,7 @@ public class SunbeamsGenerator: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 }
@@ -9457,14 +9457,14 @@ public class SunbeamsGenerator: Filter {
 /**
 Transitions from one image to another by simulating a swiping action.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISwipeTransition)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CISwipeTransition)
 */
 public class SwipeTransition: Filter {
 
     let name = "CISwipeTransition"
 
     public init(inputImage: CIImage? = nil, inputTargetImage: CIImage? = nil, inputExtent: CIVector? = nil, inputColor: CIColor? = nil, inputTime: CGFloat? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil, inputOpacity: CGFloat? = nil) {
-        super.init(name:"CISwipeTransition")
+        super.init(name: "CISwipeTransition")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -9499,7 +9499,7 @@ public class SwipeTransition: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -9509,7 +9509,7 @@ public class SwipeTransition: Filter {
             return valueForKey("inputTargetImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputTargetImage")
+            setValue(newValue, forKey: "inputTargetImage")
         }
     }
 
@@ -9519,7 +9519,7 @@ public class SwipeTransition: Filter {
             return valueForKey("inputExtent") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputExtent")
+            setValue(newValue, forKey: "inputExtent")
         }
     }
 
@@ -9529,7 +9529,7 @@ public class SwipeTransition: Filter {
             return valueForKey("inputColor") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor")
+            setValue(newValue, forKey: "inputColor")
         }
     }
 
@@ -9539,7 +9539,7 @@ public class SwipeTransition: Filter {
             return valueForKey("inputTime") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputTime")
+            setValue(newValue, forKey: "inputTime")
         }
     }
 
@@ -9549,7 +9549,7 @@ public class SwipeTransition: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -9559,7 +9559,7 @@ public class SwipeTransition: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -9569,7 +9569,7 @@ public class SwipeTransition: Filter {
             return valueForKey("inputOpacity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputOpacity")
+            setValue(newValue, forKey: "inputOpacity")
         }
     }
 }
@@ -9577,14 +9577,14 @@ public class SwipeTransition: Filter {
 /**
 Adapt the reference white point for an image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CITemperatureAndTint)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CITemperatureAndTint)
 */
 public class TemperatureAndTint: Filter {
 
     let name = "CITemperatureAndTint"
 
     public init(inputImage: CIImage? = nil, inputNeutral: CIVector? = nil, inputTargetNeutral: CIVector? = nil) {
-        super.init(name:"CITemperatureAndTint")
+        super.init(name: "CITemperatureAndTint")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -9604,7 +9604,7 @@ public class TemperatureAndTint: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -9613,7 +9613,7 @@ public class TemperatureAndTint: Filter {
             return valueForKey("inputNeutral") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputNeutral")
+            setValue(newValue, forKey: "inputNeutral")
         }
     }
 
@@ -9622,7 +9622,7 @@ public class TemperatureAndTint: Filter {
             return valueForKey("inputTargetNeutral") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputTargetNeutral")
+            setValue(newValue, forKey: "inputTargetNeutral")
         }
     }
 }
@@ -9630,14 +9630,14 @@ public class TemperatureAndTint: Filter {
 /**
 Adjusts tone response of the R, G, and B channels of an image. The input points are five x,y values that are interpolated using a spline curve.  The curve is applied in a perceptual (gamma 2) version of the working space.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIToneCurve)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIToneCurve)
 */
 public class ToneCurve: Filter {
 
     let name = "CIToneCurve"
 
     public init(inputImage: CIImage? = nil, inputPoint0: CIVector? = nil, inputPoint1: CIVector? = nil, inputPoint2: CIVector? = nil, inputPoint3: CIVector? = nil, inputPoint4: CIVector? = nil) {
-        super.init(name:"CIToneCurve")
+        super.init(name: "CIToneCurve")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -9666,7 +9666,7 @@ public class ToneCurve: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -9675,7 +9675,7 @@ public class ToneCurve: Filter {
             return valueForKey("inputPoint0") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint0")
+            setValue(newValue, forKey: "inputPoint0")
         }
     }
 
@@ -9684,7 +9684,7 @@ public class ToneCurve: Filter {
             return valueForKey("inputPoint1") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint1")
+            setValue(newValue, forKey: "inputPoint1")
         }
     }
 
@@ -9693,7 +9693,7 @@ public class ToneCurve: Filter {
             return valueForKey("inputPoint2") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint2")
+            setValue(newValue, forKey: "inputPoint2")
         }
     }
 
@@ -9702,7 +9702,7 @@ public class ToneCurve: Filter {
             return valueForKey("inputPoint3") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint3")
+            setValue(newValue, forKey: "inputPoint3")
         }
     }
 
@@ -9711,7 +9711,7 @@ public class ToneCurve: Filter {
             return valueForKey("inputPoint4") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint4")
+            setValue(newValue, forKey: "inputPoint4")
         }
     }
 }
@@ -9719,14 +9719,14 @@ public class ToneCurve: Filter {
 /**
 Creates a torus-shaped lens and distorts the portion of the image over which the lens is placed.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CITorusLensDistortion)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CITorusLensDistortion)
 */
 public class TorusLensDistortion: Filter {
 
     let name = "CITorusLensDistortion"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputRadius: CGFloat? = nil, inputWidth: CGFloat? = nil, inputRefraction: CGFloat? = nil) {
-        super.init(name:"CITorusLensDistortion")
+        super.init(name: "CITorusLensDistortion")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -9752,7 +9752,7 @@ public class TorusLensDistortion: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -9762,7 +9762,7 @@ public class TorusLensDistortion: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -9772,7 +9772,7 @@ public class TorusLensDistortion: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -9782,7 +9782,7 @@ public class TorusLensDistortion: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 
@@ -9792,7 +9792,7 @@ public class TorusLensDistortion: Filter {
             return valueForKey("inputRefraction") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRefraction")
+            setValue(newValue, forKey: "inputRefraction")
         }
     }
 }
@@ -9800,14 +9800,14 @@ public class TorusLensDistortion: Filter {
 /**
 Triangle Kaleidoscope
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CITriangleKaleidoscope)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CITriangleKaleidoscope)
 */
 public class TriangleKaleidoscope: Filter {
 
     let name = "CITriangleKaleidoscope"
 
     public init(inputImage: CIImage? = nil, inputPoint: CIVector? = nil, inputSize: CGFloat? = nil, inputRotation: CGFloat? = nil, inputDecay: CGFloat? = nil) {
-        super.init(name:"CITriangleKaleidoscope")
+        super.init(name: "CITriangleKaleidoscope")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -9833,7 +9833,7 @@ public class TriangleKaleidoscope: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -9842,7 +9842,7 @@ public class TriangleKaleidoscope: Filter {
             return valueForKey("inputPoint") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputPoint")
+            setValue(newValue, forKey: "inputPoint")
         }
     }
 
@@ -9851,7 +9851,7 @@ public class TriangleKaleidoscope: Filter {
             return valueForKey("inputSize") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputSize")
+            setValue(newValue, forKey: "inputSize")
         }
     }
 
@@ -9860,7 +9860,7 @@ public class TriangleKaleidoscope: Filter {
             return valueForKey("inputRotation") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRotation")
+            setValue(newValue, forKey: "inputRotation")
         }
     }
 
@@ -9869,7 +9869,7 @@ public class TriangleKaleidoscope: Filter {
             return valueForKey("inputDecay") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputDecay")
+            setValue(newValue, forKey: "inputDecay")
         }
     }
 }
@@ -9877,14 +9877,14 @@ public class TriangleKaleidoscope: Filter {
 /**
 Maps a triangular portion of image to a triangular area and then tiles the result.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CITriangleTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CITriangleTile)
 */
 public class TriangleTile: Filter {
 
     let name = "CITriangleTile"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil) {
-        super.init(name:"CITriangleTile")
+        super.init(name: "CITriangleTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -9907,7 +9907,7 @@ public class TriangleTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -9917,7 +9917,7 @@ public class TriangleTile: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -9927,7 +9927,7 @@ public class TriangleTile: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -9937,7 +9937,7 @@ public class TriangleTile: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 }
@@ -9945,14 +9945,14 @@ public class TriangleTile: Filter {
 /**
 Produces a tiled image from a source image by applying a 12-way reflected symmetry.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CITwelvefoldReflectedTile)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CITwelvefoldReflectedTile)
 */
 public class TwelvefoldReflectedTile: Filter {
 
     let name = "CITwelvefoldReflectedTile"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAngle: CGFloat? = nil, inputWidth: CGFloat? = nil) {
-        super.init(name:"CITwelvefoldReflectedTile")
+        super.init(name: "CITwelvefoldReflectedTile")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -9975,7 +9975,7 @@ public class TwelvefoldReflectedTile: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -9985,7 +9985,7 @@ public class TwelvefoldReflectedTile: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -9995,7 +9995,7 @@ public class TwelvefoldReflectedTile: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 
@@ -10005,7 +10005,7 @@ public class TwelvefoldReflectedTile: Filter {
             return valueForKey("inputWidth") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputWidth")
+            setValue(newValue, forKey: "inputWidth")
         }
     }
 }
@@ -10013,14 +10013,14 @@ public class TwelvefoldReflectedTile: Filter {
 /**
 Rotates pixels around a point to give a twirling effect. You can specify the number of rotations as well as the center and radius of the effect.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CITwirlDistortion)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CITwirlDistortion)
 */
 public class TwirlDistortion: Filter {
 
     let name = "CITwirlDistortion"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputRadius: CGFloat? = nil, inputAngle: CGFloat? = nil) {
-        super.init(name:"CITwirlDistortion")
+        super.init(name: "CITwirlDistortion")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -10043,7 +10043,7 @@ public class TwirlDistortion: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -10053,7 +10053,7 @@ public class TwirlDistortion: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -10063,7 +10063,7 @@ public class TwirlDistortion: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -10073,7 +10073,7 @@ public class TwirlDistortion: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 }
@@ -10081,14 +10081,14 @@ public class TwirlDistortion: Filter {
 /**
 Increases the contrast of the edges between pixels of different colors in an image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIUnsharpMask)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIUnsharpMask)
 */
 public class UnsharpMask: Filter {
 
     let name = "CIUnsharpMask"
 
     public init(inputImage: CIImage? = nil, inputRadius: CGFloat? = nil, inputIntensity: CGFloat? = nil) {
-        super.init(name:"CIUnsharpMask")
+        super.init(name: "CIUnsharpMask")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -10108,7 +10108,7 @@ public class UnsharpMask: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -10118,7 +10118,7 @@ public class UnsharpMask: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -10128,7 +10128,7 @@ public class UnsharpMask: Filter {
             return valueForKey("inputIntensity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputIntensity")
+            setValue(newValue, forKey: "inputIntensity")
         }
     }
 }
@@ -10136,14 +10136,14 @@ public class UnsharpMask: Filter {
 /**
 Adjusts the saturation of an image while keeping pleasing skin tones.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIVibrance)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIVibrance)
 */
 public class Vibrance: Filter {
 
     let name = "CIVibrance"
 
     public init(inputImage: CIImage? = nil, inputAmount: CGFloat? = nil) {
-        super.init(name:"CIVibrance")
+        super.init(name: "CIVibrance")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -10160,7 +10160,7 @@ public class Vibrance: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -10170,7 +10170,7 @@ public class Vibrance: Filter {
             return valueForKey("inputAmount") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAmount")
+            setValue(newValue, forKey: "inputAmount")
         }
     }
 }
@@ -10178,14 +10178,14 @@ public class Vibrance: Filter {
 /**
 Applies a vignette shading to the corners of an image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIVignette)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIVignette)
 */
 public class Vignette: Filter {
 
     let name = "CIVignette"
 
     public init(inputImage: CIImage? = nil, inputIntensity: CGFloat? = nil, inputRadius: CGFloat? = nil) {
-        super.init(name:"CIVignette")
+        super.init(name: "CIVignette")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -10205,7 +10205,7 @@ public class Vignette: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -10215,7 +10215,7 @@ public class Vignette: Filter {
             return valueForKey("inputIntensity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputIntensity")
+            setValue(newValue, forKey: "inputIntensity")
         }
     }
 
@@ -10225,7 +10225,7 @@ public class Vignette: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 }
@@ -10233,14 +10233,14 @@ public class Vignette: Filter {
 /**
 Applies a vignette shading to the corners of an image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIVignetteEffect)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIVignetteEffect)
 */
 public class VignetteEffect: Filter {
 
     let name = "CIVignetteEffect"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputRadius: CGFloat? = nil, inputIntensity: CGFloat? = nil, inputFalloff: CGFloat? = nil) {
-        super.init(name:"CIVignetteEffect")
+        super.init(name: "CIVignetteEffect")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -10266,7 +10266,7 @@ public class VignetteEffect: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -10276,7 +10276,7 @@ public class VignetteEffect: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -10286,7 +10286,7 @@ public class VignetteEffect: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -10296,7 +10296,7 @@ public class VignetteEffect: Filter {
             return valueForKey("inputIntensity") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputIntensity")
+            setValue(newValue, forKey: "inputIntensity")
         }
     }
 
@@ -10305,7 +10305,7 @@ public class VignetteEffect: Filter {
             return valueForKey("inputFalloff") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputFalloff")
+            setValue(newValue, forKey: "inputFalloff")
         }
     }
 }
@@ -10313,14 +10313,14 @@ public class VignetteEffect: Filter {
 /**
 Rotates pixels around a point to simulate a vortex. You can specify the number of rotations as well the center and radius of the effect. 
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIVortexDistortion)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIVortexDistortion)
 */
 public class VortexDistortion: Filter {
 
     let name = "CIVortexDistortion"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputRadius: CGFloat? = nil, inputAngle: CGFloat? = nil) {
-        super.init(name:"CIVortexDistortion")
+        super.init(name: "CIVortexDistortion")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -10343,7 +10343,7 @@ public class VortexDistortion: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -10353,7 +10353,7 @@ public class VortexDistortion: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -10363,7 +10363,7 @@ public class VortexDistortion: Filter {
             return valueForKey("inputRadius") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputRadius")
+            setValue(newValue, forKey: "inputRadius")
         }
     }
 
@@ -10373,7 +10373,7 @@ public class VortexDistortion: Filter {
             return valueForKey("inputAngle") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAngle")
+            setValue(newValue, forKey: "inputAngle")
         }
     }
 }
@@ -10381,14 +10381,14 @@ public class VortexDistortion: Filter {
 /**
 Adjusts the reference white point for an image and maps all colors in the source using the new reference.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIWhitePointAdjust)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIWhitePointAdjust)
 */
 public class WhitePointAdjust: Filter {
 
     let name = "CIWhitePointAdjust"
 
     public init(inputImage: CIImage? = nil, inputColor: CIColor? = nil) {
-        super.init(name:"CIWhitePointAdjust")
+        super.init(name: "CIWhitePointAdjust")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -10405,7 +10405,7 @@ public class WhitePointAdjust: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -10415,7 +10415,7 @@ public class WhitePointAdjust: Filter {
             return valueForKey("inputColor") as? CIColor
         }
         set {
-            setValue(newValue, forKey:"inputColor")
+            setValue(newValue, forKey: "inputColor")
         }
     }
 }
@@ -10423,14 +10423,14 @@ public class WhitePointAdjust: Filter {
 /**
 Simulates the effect of zooming the camera while capturing the image.
 
-[More Information](http://developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIZoomBlur)
+[More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIZoomBlur)
 */
 public class ZoomBlur: Filter {
 
     let name = "CIZoomBlur"
 
     public init(inputImage: CIImage? = nil, inputCenter: CIVector? = nil, inputAmount: CGFloat? = nil) {
-        super.init(name:"CIZoomBlur")
+        super.init(name: "CIZoomBlur")
 
         if let inputImage = inputImage {
             self.inputImage = inputImage
@@ -10450,7 +10450,7 @@ public class ZoomBlur: Filter {
             return valueForKey("inputImage") as? CIImage
         }
         set {
-            setValue(newValue, forKey:"inputImage")
+            setValue(newValue, forKey: "inputImage")
         }
     }
 
@@ -10460,7 +10460,7 @@ public class ZoomBlur: Filter {
             return valueForKey("inputCenter") as? CIVector
         }
         set {
-            setValue(newValue, forKey:"inputCenter")
+            setValue(newValue, forKey: "inputCenter")
         }
     }
 
@@ -10470,7 +10470,7 @@ public class ZoomBlur: Filter {
             return valueForKey("inputAmount") as? CGFloat
         }
         set {
-            setValue(newValue, forKey:"inputAmount")
+            setValue(newValue, forKey: "inputAmount")
         }
     }
 }

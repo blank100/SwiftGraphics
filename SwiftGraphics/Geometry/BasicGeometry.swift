@@ -12,10 +12,10 @@ import CoreGraphics
 
 // TODO: Why not just make a typealias for CGRect? #question #help-wanted
 public struct Rectangle {
-    public var origin:CGPoint
-    public var size:CGSize
+    public var origin: CGPoint
+    public var size: CGSize
 
-    public init(frame:CGRect) {
+    public init(frame: CGRect) {
         origin = frame.origin
         size = frame.size
     }
@@ -24,7 +24,7 @@ public struct Rectangle {
 extension Rectangle: Geometry {
     public var frame: CGRect {
         get {
-            return CGRect(origin:origin, size:size)
+            return CGRect(origin: origin, size: size)
         }
         set {
             origin = newValue.origin
@@ -35,7 +35,7 @@ extension Rectangle: Geometry {
 
 // TODO: This cannot live in other file due to swiftc problems.
 extension Rectangle: Drawable {
-   public func drawInContext(context:CGContext) {
+   public func drawInContext(context: CGContext) {
         context.strokeRect(self.frame)
     }
 }
@@ -44,9 +44,9 @@ extension Rectangle: Drawable {
 // MARK: Saltire
 
 public struct Saltire {
-    public let frame:CGRect
+    public let frame: CGRect
 
-    public init(frame:CGRect) {
+    public init(frame: CGRect) {
         self.frame = frame
     }
 }

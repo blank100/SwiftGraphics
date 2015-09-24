@@ -10,8 +10,8 @@ import CoreGraphics
 
 extension Circle: Markupable {
 
-    public var markup:[Markup] {
-        var markup:[Markup] = []
+    public var markup: [Markup] {
+        var markup: [Markup] = []
 
         // Center and foci already include rotation...
         markup.append(Marker(point: center, tag: "center"))

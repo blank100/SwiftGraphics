@@ -11,24 +11,24 @@ import CoreGraphics
 import SwiftUtilities
 
 public struct Style {
-    public var fillColor:CGColor?
-    public var strokeColor:CGColor?
-    public var lineWidth:CGFloat?
-    public var lineCap:CGLineCap?
-    public var lineJoin:CGLineJoin?
-    public var miterLimit:CGFloat?
-    public var lineDash:[CGFloat]?
-    public var lineDashPhase:CGFloat?
-    public var flatness:CGFloat?
-    public var alpha:CGFloat?
-    public var blendMode:CGBlendMode?
+    public var fillColor: CGColor?
+    public var strokeColor: CGColor?
+    public var lineWidth: CGFloat?
+    public var lineCap: CGLineCap?
+    public var lineJoin: CGLineJoin?
+    public var miterLimit: CGFloat?
+    public var lineDash: [CGFloat]?
+    public var lineDashPhase: CGFloat?
+    public var flatness: CGFloat?
+    public var alpha: CGFloat?
+    public var blendMode: CGBlendMode?
 
     public init() {
     }
 }
 
 public extension Style {
-    public static var defaultStyle:Style {
+    public static var defaultStyle: Style {
         var style = Style()
         style.fillColor = nil
         style.strokeColor = CGColor.blackColor()
@@ -80,7 +80,7 @@ public extension CGContext {
         }
     }
 
-    func apply(newStyle:Style) {
+    func apply(newStyle: Style) {
         if let fillColor = newStyle.fillColor {
             setFillColor(fillColor)
         }
@@ -120,7 +120,7 @@ public extension CGContext {
 
 public extension CGContext {
 
-    var fillColor:CGColor? {
+    var fillColor: CGColor? {
         get {
             return style.fillColor
         }
@@ -131,7 +131,7 @@ public extension CGContext {
         }
     }
 
-    var strokeColor:CGColor? {
+    var strokeColor: CGColor? {
         get {
             return style.strokeColor
         }
@@ -142,7 +142,7 @@ public extension CGContext {
         }
     }
 
-    var lineWidth:CGFloat? {
+    var lineWidth: CGFloat? {
         get {
             return style.lineWidth
         }
@@ -153,7 +153,7 @@ public extension CGContext {
         }
     }
 
-    var lineCap:CGLineCap? {
+    var lineCap: CGLineCap? {
         get {
             return style.lineCap
         }
@@ -164,7 +164,7 @@ public extension CGContext {
         }
     }
 
-    var lineJoin:CGLineJoin? {
+    var lineJoin: CGLineJoin? {
         get {
             return style.lineJoin
         }
@@ -175,7 +175,7 @@ public extension CGContext {
         }
     }
 
-    var lineDash:[CGFloat]? {
+    var lineDash: [CGFloat]? {
         get {
             return style.lineDash
         }
@@ -186,7 +186,7 @@ public extension CGContext {
         }
     }
 
-    var lineDashPhase:CGFloat? {
+    var lineDashPhase: CGFloat? {
         get {
             return style.lineDashPhase
         }
@@ -197,7 +197,7 @@ public extension CGContext {
         }
     }
 
-    var flatness:CGFloat? {
+    var flatness: CGFloat? {
         get {
             return style.flatness
         }
@@ -208,7 +208,7 @@ public extension CGContext {
         }
     }
 
-    var alpha:CGFloat? {
+    var alpha: CGFloat? {
         get {
             return style.alpha
         }
@@ -219,7 +219,7 @@ public extension CGContext {
         }
     }
 
-    var blendMode:CGBlendMode? {
+    var blendMode: CGBlendMode? {
         get {
             return style.blendMode
         }
@@ -233,7 +233,7 @@ public extension CGContext {
 }
 
 public extension Style {
-    mutating func add(element:StyleElement) {
+    mutating func add(element: StyleElement) {
         switch element {
             case .fillColor(let value):
                 fillColor = value
@@ -263,25 +263,25 @@ public extension Style {
         }
     }
 
-    mutating func add(elements:[StyleElement]) {
+    mutating func add(elements: [StyleElement]) {
         for element in elements {
             add(element)
         }
     }
 
-    init(elements:[StyleElement]) {
+    init(elements: [StyleElement]) {
         add(elements)
     }
 }
 
 public extension CGContext {
 
-    func with(elements:[StyleElement], @noescape block:() -> Void) {
+    func with(elements: [StyleElement], @noescape block: () -> Void) {
         let style = Style(elements: elements)
         with(style, block: block)
     }
 
-    func with(style:Style, @noescape block:() -> Void) {
+    func with(style: Style, @noescape block: () -> Void) {
         let savedStyle = self.style
         self.style = style
         with() {

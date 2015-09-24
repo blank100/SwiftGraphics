@@ -8,6 +8,6 @@
 
 import CoreGraphics
 
-public func convexHull(points:[CGPoint], sorted:Bool = false) -> [CGPoint] {
-    return monotoneChain(points, sorted:sorted)
+public func convexHull(points: [CGPoint], sorted: Bool = false) -> [CGPoint] {
+    return monotoneChain(points, sorted: sorted)
 }

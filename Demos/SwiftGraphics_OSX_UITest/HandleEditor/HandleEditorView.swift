@@ -13,27 +13,27 @@ import SwiftGraphics
 // MARK: -
 
 class Marker {
-    var position:CGPoint
-    var size:CGSize
-    var visible:Bool = true
+    var position: CGPoint
+    var size: CGSize
+    var visible: Bool = true
 
-    init(position:CGPoint) {
+    init(position: CGPoint) {
         self.position = position
-        self.size = CGSize(width:10, height:10)
+        self.size = CGSize(width: 10, height: 10)
     }
 
-    var frame:CGRect {
-        return CGRect(center:position, size:size)
+    var frame: CGRect {
+        return CGRect(center: position, size: size)
     }
 }
 
 // TODO: Swift 2.0 crasher
 class Handle: Marker, Equatable /*, Draggable */ {
-    var didMove: ((position:CGPoint) -> Void)?
+    var didMove: ((position: CGPoint) -> Void)?
 
 }
 
-func ==(lhs:Handle, rhs:Handle) -> Bool {
+func ==(lhs: Handle, rhs: Handle) -> Bool {
 //    return lhs.position == rhs.position
     return lhs.position.x == rhs.position.x && lhs.position.y == rhs.position.y
     }
@@ -61,7 +61,7 @@ class HandleEditor {
         drag.objectDidChange = {
             draggable in
             let handle = draggable as! Handle
-            handle.didMove?(position:handle.position)
+            handle.didMove?(position: handle.position)
             self.handleDidUpdate?()
             return
             }
@@ -71,11 +71,11 @@ class HandleEditor {
             }
     }
     
-    func addHandle(handle:Handle) {
+    func addHandle(handle: Handle) {
         handles.append(handle)
     }
 
-    func addInteractive(let interactive:Interactive) {
+    func addInteractive(let interactive: Interactive) {
         let handles = interactive.makeHandles()
         for handle in handles {
             self.addHandle(handle)
@@ -93,15 +93,15 @@ protocol Interactive {
 // MARK: -
 
 class BoxObject {
-    var frame:CGRect
+    var frame: CGRect
 
-    init(frame:CGRect) {
+    init(frame: CGRect) {
         self.frame = frame
     }
 }
 
 extension BoxObject : Drawable {
-    func draw(context:CGContext) {
+    func draw(context: CGContext) {
 //        self.draw(context)
     }
 }
@@ -109,40 +109,40 @@ extension BoxObject : Drawable {
 extension BoxObject : Interactive {
     func makeHandles() -> [Handle] {
         let handles = [
-            Handle(position: CGPoint(x:frame.minX, y:frame.minY)),
-            Handle(position: CGPoint(x:frame.minX, y:frame.maxY)),
-            Handle(position: CGPoint(x:frame.maxX, y:frame.maxY)),
-            Handle(position: CGPoint(x:frame.maxX, y:frame.minY)),
+            Handle(position: CGPoint(x: frame.minX, y: frame.minY)),
+            Handle(position: CGPoint(x: frame.minX, y: frame.maxY)),
+            Handle(position: CGPoint(x: frame.maxX, y: frame.maxY)),
+            Handle(position: CGPoint(x: frame.maxX, y: frame.minY)),
             ]
 
         for (index, handle) in handles.enumerate() {
             handle.didMove = {
                 position in
-                self.updateFromHandles(handles, activeHandleIndex:index)
+                self.updateFromHandles(handles, activeHandleIndex: index)
             }
         }
 
         return handles
     }
 
-    internal func updateFromHandles(handles:[Handle], activeHandleIndex:Int) {
+    internal func updateFromHandles(handles: [Handle], activeHandleIndex: Int) {
         switch activeHandleIndex {
             case 0:
-                self.frame = CGRect(p1:handles[0].position, p2:handles[2].position);
-                handles[1].position = CGPoint(x:handles[0].position.x, y:handles[2].position.y)
-                handles[3].position = CGPoint(x:handles[2].position.x, y:handles[0].position.y)
+                self.frame = CGRect(p1: handles[0].position, p2: handles[2].position);
+                handles[1].position = CGPoint(x: handles[0].position.x, y: handles[2].position.y)
+                handles[3].position = CGPoint(x: handles[2].position.x, y: handles[0].position.y)
             case 1:
-                self.frame = CGRect(p1:handles[1].position, p2:handles[3].position);
-                handles[0].position = CGPoint(x:handles[1].position.x, y:handles[3].position.y)
-                handles[2].position = CGPoint(x:handles[3].position.x, y:handles[1].position.y)
+                self.frame = CGRect(p1: handles[1].position, p2: handles[3].position);
+                handles[0].position = CGPoint(x: handles[1].position.x, y: handles[3].position.y)
+                handles[2].position = CGPoint(x: handles[3].position.x, y: handles[1].position.y)
             case 2:
-                self.frame = CGRect(p1:handles[2].position, p2:handles[0].position);
-                handles[1].position = CGPoint(x:handles[0].position.x, y:handles[2].position.y)
-                handles[3].position = CGPoint(x:handles[2].position.x, y:handles[0].position.y)
+                self.frame = CGRect(p1: handles[2].position, p2: handles[0].position);
+                handles[1].position = CGPoint(x: handles[0].position.x, y: handles[2].position.y)
+                handles[3].position = CGPoint(x: handles[2].position.x, y: handles[0].position.y)
             case 3:
-                self.frame = CGRect(p1:handles[3].position, p2:handles[1].position);
-                handles[0].position = CGPoint(x:handles[1].position.x, y:handles[3].position.y)
-                handles[2].position = CGPoint(x:handles[3].position.x, y:handles[1].position.y)
+                self.frame = CGRect(p1: handles[3].position, p2: handles[1].position);
+                handles[0].position = CGPoint(x: handles[1].position.x, y: handles[3].position.y)
+                handles[2].position = CGPoint(x: handles[3].position.x, y: handles[1].position.y)
             default:
                 break
         }
@@ -153,9 +153,9 @@ extension BoxObject : Interactive {
 // MARK: -
 
 class LineSegmentObject {
-    var lineSegment:LineSegment
+    var lineSegment: LineSegment
 
-    init(start:CGPoint, end:CGPoint) {
+    init(start: CGPoint, end: CGPoint) {
         lineSegment = LineSegment(start, end)
     }
 }
@@ -177,7 +177,7 @@ extension LineSegmentObject : Interactive {
 }
 
 extension LineSegmentObject : Drawable {
-    func draw(context:CGContext) {
+    func draw(context: CGContext) {
         self.lineSegment.draw(context)
     }
 }
@@ -188,14 +188,14 @@ class HandleEditorView: NSView, NSGestureRecognizerDelegate {
     var handleEditor = HandleEditor()
     var intersection = Marker(position: CGPointZero)
 
-    var interactives:[Drawable] = []
+    var interactives: [Drawable] = []
 
     override func awakeFromNib() {
-        let LSO1 = LineSegmentObject(start: CGPoint(x:100, y:100), end: CGPoint(x:100, y:200))
+        let LSO1 = LineSegmentObject(start: CGPoint(x: 100, y: 100), end: CGPoint(x: 100, y: 200))
         interactives.append(LSO1)
         handleEditor.addInteractive(LSO1)
 
-        let box = BoxObject(frame: CGRect(center: CGPoint(x:150, y:150), diameter:50))
+        let box = BoxObject(frame: CGRect(center: CGPoint(x: 150, y: 150), diameter: 50))
         interactives.append(box)
         handleEditor.addInteractive(box)
 

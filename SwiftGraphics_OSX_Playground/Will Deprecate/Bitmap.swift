@@ -18,7 +18,7 @@ public struct Bitmap {
         return bitsPerPixel / 8
     }
 
-    public init(size:UIntSize, bitsPerComponent:UInt, bitsPerPixel:UInt, bytesPerRow:UInt, ptr:UnsafeMutablePointer <Void>) {
+    public init(size: UIntSize, bitsPerComponent: UInt, bitsPerPixel: UInt, bytesPerRow: UInt, ptr: UnsafeMutablePointer <Void>) {
         self.size = size
         self.bitsPerComponent = bitsPerComponent
         self.bitsPerPixel = bitsPerPixel
@@ -26,7 +26,7 @@ public struct Bitmap {
         self.ptr = ptr
     }
 
-    public subscript (index:UIntPoint) -> UInt32 {
+    public subscript (index: UIntPoint) -> UInt32 {
         assert(index.x < size.width)
         assert(index.y < size.height)
         let offset = index.y * bytesPerRow + index.x * bytesPerPixel

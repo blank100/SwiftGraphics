@@ -11,22 +11,22 @@ import SwiftGraphics
 // MARK: -
 
 protocol Drawable {
-    func draw(context:CGContext)
+    func draw(context: CGContext)
 }
 
 extension Rectangle: Drawable {
-    func draw(context:CGContext) {
+    func draw(context: CGContext) {
         context.strokeRect(self.frame)
     }
 }
 
 extension Line: Drawable {
-    func draw(context:CGContext) {
+    func draw(context: CGContext) {
     }
 }
 
 extension LineSegment: Drawable {
-    func draw(context:CGContext) {
+    func draw(context: CGContext) {
         context.strokeLine(start, end)
     }
 }

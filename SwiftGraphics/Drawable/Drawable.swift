@@ -9,13 +9,13 @@
 import CoreGraphics
 
 public protocol Drawable {
-    func drawInContext(context:CGContextRef)
+    func drawInContext(context: CGContextRef)
 }
 
 // MARK: CGContext+Drawable
 
 public extension CGContext {
-    func draw(drawable:Drawable, style:Style? = nil) {
+    func draw(drawable: Drawable, style: Style? = nil) {
 
         // TODO: Saving and restoring the graphics state each draw() seems very expensive. #performance #optimisation
         if let style = style {
@@ -30,8 +30,8 @@ public extension CGContext {
         }
     }
 
-    func draw(drawables:Array <Drawable>, style:Style? = nil) {
-        let block:Void -> Void = {
+    func draw(drawables: Array <Drawable>, style: Style? = nil) {
+        let block: Void -> Void = {
             for drawable in drawables {
                 self.draw(drawable)
             }
@@ -49,9 +49,9 @@ public extension CGContext {
 
 
 public extension Drawable {
-    func toCGImage(size:CGSize, style:Style? = nil) -> CGImage {
+    func toCGImage(size: CGSize, style: Style? = nil) -> CGImage {
         let context = CGContext.bitmapContext(size)
-        context.draw(self, style:style)
+        context.draw(self, style: style)
         return CGBitmapContextCreateImage(context)!
     }
 }

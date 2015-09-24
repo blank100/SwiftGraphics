@@ -10,8 +10,8 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    var model:Model!
-    var scratchView:ScratchView? {
+    var model: Model!
+    var scratchView: ScratchView? {
         return view as? ScratchView
     }
 

@@ -11,10 +11,10 @@ import SwiftUtilities
 
 // MARK: -
 
-var kUserInfoKey:Int = 0
+var kUserInfoKey: Int = 0
 
 extension NSToolbarItem {
-    var userInfo:AnyObject? {
+    var userInfo: AnyObject? {
         get {
             return getAssociatedObject(self, key: &kUserInfoKey)
         }
@@ -26,7 +26,7 @@ extension NSToolbarItem {
 }
 
 extension NSMenuItem {
-    var userInfo:AnyObject? {
+    var userInfo: AnyObject? {
         get {
             return getAssociatedObject(self, key: &kUserInfoKey)
         }
@@ -40,7 +40,7 @@ extension NSMenuItem {
 // MARK: -
 
 extension NSGestureRecognizerState: CustomStringConvertible {
-    public var description:String {
+    public var description: String {
         switch self {
             case .Possible:
                 return "Possible"
@@ -83,7 +83,7 @@ extension Array {
 }
 
 //extension Array {
-//    mutating func removeObjectsAtIndices(indices:NSIndexSet) {
+//    mutating func removeObjectsAtIndices(indices: NSIndexSet) {
 //        var index = indices.lastIndex
 //
 //        while index != NSNotFound {
@@ -97,10 +97,10 @@ extension Array {
 
 extension NSIndexSet {
 
-    func with <T>(array:Array <T>, maxCount:Int = 512, block:Array <T> -> Void) {
+    func with <T>(array: Array <T>, maxCount: Int = 512, block: Array <T> -> Void) {
         with(maxCount) {
-            (buffer:UnsafeBufferPointer<Int>) -> Void in
-            var items:Array <T> = []
+            (buffer: UnsafeBufferPointer<Int>) -> Void in
+            var items: Array <T> = []
             for index in buffer {
                 items.append(array[index])
             }
@@ -108,12 +108,12 @@ extension NSIndexSet {
         }
     }
 
-    func with(maxCount:Int = 512, block:UnsafeBufferPointer <Int> -> Void) {
+    func with(maxCount: Int = 512, block: UnsafeBufferPointer <Int> -> Void) {
 
         var range = NSMakeRange(0, count)
-        var indices = Array <Int> (count:maxCount, repeatedValue: NSNotFound)
+        var indices = Array <Int> (count: maxCount, repeatedValue: NSNotFound)
         indices.withUnsafeMutableBufferPointer() {
-            (inout buffer:UnsafeMutableBufferPointer<Int>) -> Void in
+            (inout buffer: UnsafeMutableBufferPointer<Int>) -> Void in
 
             var count = 0
             repeat  {

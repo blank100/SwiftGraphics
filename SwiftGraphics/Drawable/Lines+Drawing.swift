@@ -10,7 +10,7 @@ import CoreGraphics
 
 extension Line: Geometry {
 
-    public var frame:CGRect {
+    public var frame: CGRect {
         return CGRectInfinite
     }
 
@@ -22,8 +22,8 @@ extension Line: Geometry {
 }
 
 extension LineSegment: Geometry, Drawable {
-    public var frame:CGRect {
-        return CGRect(points:(start, end))
+    public var frame: CGRect {
+        return CGRect(points: (start, end))
     }
 
     public func drawInContext(context: CGContextRef) {
@@ -32,21 +32,21 @@ extension LineSegment: Geometry, Drawable {
 }
 
 extension LineChain: Geometry, Drawable {
-    public var frame:CGRect {
+    public var frame: CGRect {
         return CGRect.unionOfPoints(points)
     }
 
     public func drawInContext(context: CGContextRef) {
-        context.strokeLine(points, closed:false)
+        context.strokeLine(points, closed: false)
     }
 }
 
 extension Polygon: Geometry, Drawable {
-    public var frame:CGRect {
+    public var frame: CGRect {
         return CGRect.unionOfPoints(points)
     }
 
     public func drawInContext(context: CGContextRef) {
-        context.strokeLine(points, closed:true)
+        context.strokeLine(points, closed: true)
     }
 }

@@ -13,8 +13,8 @@ import SwiftUtilities
 public extension Random {
 
     /// Generate random points within the range.
-    func arrayOfRandomPoints(count:Int, range:CGRect) -> [CGPoint] {
-        return Array <CGPoint> (count:count) {
+    func arrayOfRandomPoints(count: Int, range: CGRect) -> [CGPoint] {
+        return Array <CGPoint> (count: count) {
             return random(range)
         }
     }

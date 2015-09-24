@@ -11,12 +11,12 @@ public extension Dictionary {
     }
 }
 
-public func filterDictionary(d:[String:AnyObject]) -> [String:AnyObject] {
-    let items:[(String, AnyObject)?] = d.map() {
+public func filterDictionary(d: [String: AnyObject]) -> [String: AnyObject] {
+    let items: [(String, AnyObject)?] = d.map() {
         switch $1 {
             case let value as String:
                 return ($0, value)
-            case let value as [String:AnyObject]:
+            case let value as [String: AnyObject]:
                 return ($0, filterDictionary(value))
             case let value as [String]:
                 return ($0, value)

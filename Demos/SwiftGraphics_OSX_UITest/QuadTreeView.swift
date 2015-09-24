@@ -15,9 +15,9 @@ class QuadTreeView: NSView {
     var quadTree: SwiftGraphics.QuadTree <CGPoint>!
     
     required init?(coder: NSCoder) {
-        super.init(coder:coder)
+        super.init(coder: coder)
         
-        quadTree = QuadTree <CGPoint> (frame:bounds)
+        quadTree = QuadTree <CGPoint> (frame: bounds)
     }
 
     override func drawRect(dirtyRect: NSRect) {
@@ -33,23 +33,23 @@ class QuadTreeView: NSView {
             self.quadTree.render(context)
         }
 
-        for point in quadTree.objectsInRect(dirtyRect.insetted(dx:-5, dy:-5)) {
-            context.strokeCross(CGRect(center:point, diameter:10))
+        for point in quadTree.objectsInRect(dirtyRect.insetted(dx: -5, dy: -5)) {
+            context.strokeCross(CGRect(center: point, diameter: 10))
         }
     }
 
     override func mouseDown(theEvent: NSEvent) {
-        let location = convertPoint(theEvent.locationInWindow, fromView:nil)
+        let location = convertPoint(theEvent.locationInWindow, fromView: nil)
         if quadTree.frame.contains(location) {
-            quadTree.addObject(location, point:location)
+            quadTree.addObject(location, point: location)
             needsDisplay = true
         }
     }
 
     override func mouseDragged(theEvent: NSEvent) {
-        let location = self.convertPoint(theEvent.locationInWindow, fromView:nil)
+        let location = self.convertPoint(theEvent.locationInWindow, fromView: nil)
         if quadTree.frame.contains(location) {
-            self.quadTree.addObject(location, point:location)
+            self.quadTree.addObject(location, point: location)
             self.needsDisplay = true
         }
     }
@@ -57,13 +57,13 @@ class QuadTreeView: NSView {
 }
 
 extension QuadTree {
-    func render(context:CGContext) {
+    func render(context: CGContext) {
         self.rootNode.render(context)
     }
 }
 
 extension QuadTreeNode {
-    func render(context:CGContext) {
+    func render(context: CGContext) {
         context.strokeRect(self.frame)
         
         if let subnodes = self.subnodes {

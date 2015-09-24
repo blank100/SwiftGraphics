@@ -13,21 +13,21 @@ import SwiftUtilities
 
 class ScratchView: NSView {
 
-    var model:Model! {
+    var model: Model! {
         didSet {
             model.addObserver(self, forKeyPath: "objects", options: NSKeyValueObservingOptions(), context: nil)
-            dragging = Dragging(model:model)
+            dragging = Dragging(model: model)
             dragging.view = self
         }
     }
-    var dragging:Dragging!
+    var dragging: Dragging!
 
     required init?(coder: NSCoder) {
-        super.init(coder:coder)
+        super.init(coder: coder)
         wantsLayer = true
     }
 
-    override var acceptsFirstResponder:Bool {
+    override var acceptsFirstResponder: Bool {
         return true
     }
 
@@ -61,9 +61,9 @@ class ScratchView: NSView {
         }
     }
 
-    var locations:[CGPoint] = []
-    var startLocation:CGPoint?
-    var currentLocation:CGPoint?
+    var locations: [CGPoint] = []
+    var startLocation: CGPoint?
+    var currentLocation: CGPoint?
 
 
     override func addGestureRecognizer(gestureRecognizer: NSGestureRecognizer) {

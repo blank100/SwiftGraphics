@@ -14,7 +14,7 @@ public extension CGRect {
 
 let names = CIFilter.filterNamesInCategory(nil)
 let allAttributes = names.map() {
-    (name:String) -> [String:AnyObject] in
+    (name: String) -> [String: AnyObject] in
     let filter = CIFilter(name: name)!
     var attributes = filter.attributes
     attributes["description"] = CIFilter.localizedDescriptionForFilterName(name)

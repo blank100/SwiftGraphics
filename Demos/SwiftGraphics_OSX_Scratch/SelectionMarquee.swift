@@ -19,7 +19,7 @@ class SelectionMarquee {
         case rect(CGRect)
         case polygon(SwiftGraphics.Polygon)
 
-        var polygon:SwiftGraphics.Polygon? {
+        var polygon: SwiftGraphics.Polygon? {
             switch self {
                 case .polygon(let polygon):
                     return polygon
@@ -32,7 +32,7 @@ class SelectionMarquee {
     var mode = Mode.polygonal
     var value = Value.empty
 
-    var layer:CAShapeLayer
+    var layer: CAShapeLayer
 
     init() {
         active = false
@@ -42,7 +42,7 @@ class SelectionMarquee {
         layer.lineWidth = 1.0
     }
 
-    var active:Bool {
+    var active: Bool {
         didSet {
             if active == false {
                 panBeganLocation = nil
@@ -53,8 +53,8 @@ class SelectionMarquee {
         }
     }
 
-    var panBeganLocation:CGPoint!
-    var panLocation:CGPoint! {
+    var panBeganLocation: CGPoint!
+    var panLocation: CGPoint! {
         didSet {
             if active == false {
                 return
@@ -64,10 +64,10 @@ class SelectionMarquee {
                 panBeganLocation = panLocation
             }
 
-            let selectionFrame = CGRect(p1:panBeganLocation, p2:panLocation)
+            let selectionFrame = CGRect(p1: panBeganLocation, p2: panLocation)
 
-            var newPath:CGPath!
-            var newFrame:CGRect!
+            var newPath: CGPath!
+            var newFrame: CGRect!
 
             switch mode {
                 case .rectangular:
@@ -79,12 +79,12 @@ class SelectionMarquee {
                     var points = polygon?.points ?? []
 
                     points.append(panLocation)
-                    points = monotoneChain(points, sorted:false)
+                    points = monotoneChain(points, sorted: false)
 
-                    let new_polygon = SwiftGraphics.Polygon(points:points)
+                    let new_polygon = SwiftGraphics.Polygon(points: points)
                     value = Value.polygon(new_polygon)
                     newPath = new_polygon.cgpath
-                    newFrame = CGRect(x:0, y:0, width:1000, height:1000) // TODO: Total hack
+                    newFrame = CGRect(x: 0, y: 0, width: 1000, height: 1000) // TODO: Total hack
             }
 
             CATransaction.begin()

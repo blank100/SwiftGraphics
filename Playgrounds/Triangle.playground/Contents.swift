@@ -6,7 +6,7 @@ import SwiftGraphicsPlayground
 import XCPlayground
 import SwiftUtilities
 
-func dump(t:Triangle) -> String {
+func dump(t: Triangle) -> String {
     var s = ""
     s += "Points: \(t.vertex)\n"
     s += "Lengths: \(t.lengths)\n"
@@ -23,11 +23,11 @@ func dump(t:Triangle) -> String {
     return s    
 }
 
-func pt(x:CGFloat, _ y:CGFloat) -> CGPoint {
-    return CGPoint(x:x, y:y)
+func pt(x: CGFloat, _ y: CGFloat) -> CGPoint {
+    return CGPoint(x: x, y: y)
 }
 
-let context = CGContextRef.bitmapContext(CGSize(w:480, h:320), origin:CGPoint(x:0.5, y:0.5))
+let context = CGContextRef.bitmapContext(CGSize(w: 480, h: 320), origin: CGPoint(x: 0.5, y: 0.5))
 
 let t1 = Triangle(pt(100,0), pt(200,0), pt(100,150))
 
@@ -36,7 +36,7 @@ CGContextTranslateCTM(context, -t1.circumcenter.x, -t1.circumcenter.y)
 
 context.draw(t1)
 let styles = stylesForMarkup(t1.markup)
-context.draw(t1.markup, styles:styles)
+context.draw(t1.markup, styles: styles)
 
 context.nsimage
 

@@ -21,7 +21,7 @@ extension CGAffineTransform: CustomStringConvertible {
 extension CGAffineTransform: Equatable {
 }
 
-public func == (lhs:CGAffineTransform, rhs:CGAffineTransform) -> Bool {
+public func == (lhs: CGAffineTransform, rhs: CGAffineTransform) -> Bool {
     return CGAffineTransformEqualToTransform(lhs, rhs)
 }
 
@@ -30,7 +30,7 @@ public func == (lhs:CGAffineTransform, rhs:CGAffineTransform) -> Bool {
 
 public extension CGAffineTransform {
 
-    static var identity:CGAffineTransform = CGAffineTransformIdentity
+    static var identity: CGAffineTransform = CGAffineTransformIdentity
     
     /**
      Identity.
@@ -79,7 +79,7 @@ public extension CGAffineTransform {
         self = CGAffineTransformMakeScale(scale, scale)
     }
     
-    init(scale: CGFloat, origin:CGPoint) {
+    init(scale: CGFloat, origin: CGPoint) {
         self = CGAffineTransformMake(scale, 0, 0, scale, (1 - scale) * origin.x, (1 - scale) * origin.y)
     }
 
@@ -95,8 +95,8 @@ public extension CGAffineTransform {
     /**
      Rotation around a point.
      */
-    init(rotation: CGFloat, origin:CGPoint) {
-        self = CGAffineTransform(translation:-origin) + CGAffineTransform(rotation:rotation) + CGAffineTransform(translation:origin)
+    init(rotation: CGFloat, origin: CGPoint) {
+        self = CGAffineTransform(translation: -origin) + CGAffineTransform(rotation: rotation) + CGAffineTransform(translation: origin)
     }
 
     var isIdentity: Bool {
@@ -106,39 +106,39 @@ public extension CGAffineTransform {
 
 public extension CGAffineTransform {
 
-    func translated(translation translation:CGPoint) -> CGAffineTransform {
+    func translated(translation translation: CGPoint) -> CGAffineTransform {
         return CGAffineTransformTranslate(self, translation.x, translation.y)
     }
 
-    func translated(tx tx:CGFloat, ty:CGFloat) -> CGAffineTransform {
+    func translated(tx tx: CGFloat, ty: CGFloat) -> CGAffineTransform {
         return CGAffineTransformTranslate(self, tx, ty)
     }
 
-    func scaled(scale:CGSize) -> CGAffineTransform  {
+    func scaled(scale: CGSize) -> CGAffineTransform  {
         return CGAffineTransformScale(self, scale.width, scale.height)
     }
 
-    func scaled(sx sx:CGFloat, sy:CGFloat) -> CGAffineTransform  {
+    func scaled(sx sx: CGFloat, sy: CGFloat) -> CGAffineTransform  {
         return CGAffineTransformScale(self, sx, sy)
     }
 
-    func scaled(scale:CGFloat) -> CGAffineTransform  {
+    func scaled(scale: CGFloat) -> CGAffineTransform  {
         return CGAffineTransformScale(self, scale, scale)
     }
     
-    func scaled(scale:CGFloat, origin:CGPoint) -> CGAffineTransform  {
-        return self + CGAffineTransform(scale:scale, origin:origin)
+    func scaled(scale: CGFloat, origin: CGPoint) -> CGAffineTransform  {
+        return self + CGAffineTransform(scale: scale, origin: origin)
     }
 
-    func rotated(angle:CGFloat) -> CGAffineTransform  {
+    func rotated(angle: CGFloat) -> CGAffineTransform  {
         return CGAffineTransformRotate(self, angle)
     }
 
-    func rotated(rotation:CGFloat, origin:CGPoint) -> CGAffineTransform  {
+    func rotated(rotation: CGFloat, origin: CGPoint) -> CGAffineTransform  {
         return CGAffineTransform(rotation: rotation, origin: origin)
     }
 
-    func concated(other:CGAffineTransform) -> CGAffineTransform {
+    func concated(other: CGAffineTransform) -> CGAffineTransform {
         return CGAffineTransformConcat(self, other)
     }
 
@@ -150,47 +150,47 @@ public extension CGAffineTransform {
 
 public extension CGAffineTransform {
 
-    mutating func translate(translation:CGPoint) -> CGAffineTransform {
-        self = translated(tx:translation.x, ty:translation.y)
+    mutating func translate(translation: CGPoint) -> CGAffineTransform {
+        self = translated(tx: translation.x, ty: translation.y)
         return self
     }
 
-    mutating func translate(tx:CGFloat, _ ty:CGFloat) -> CGAffineTransform {
-        self = translated(tx:tx, ty:ty)
+    mutating func translate(tx: CGFloat, _ ty: CGFloat) -> CGAffineTransform {
+        self = translated(tx: tx, ty: ty)
         return self
     }
 
-    mutating func scale(scale:CGSize) -> CGAffineTransform  {
-        self = scaled(sx:scale.width, sy:scale.height)
+    mutating func scale(scale: CGSize) -> CGAffineTransform  {
+        self = scaled(sx: scale.width, sy: scale.height)
         return self
     }
 
-    mutating func scale(sx:CGFloat, _ sy:CGFloat) -> CGAffineTransform  {
-        self = scaled(sx:sx, sy:sy)
+    mutating func scale(sx: CGFloat, _ sy: CGFloat) -> CGAffineTransform  {
+        self = scaled(sx: sx, sy: sy)
         return self
     }
 
-    mutating func scale(scale:CGFloat) -> CGAffineTransform  {
-        self = scaled(sx:scale, sy:scale)
+    mutating func scale(scale: CGFloat) -> CGAffineTransform  {
+        self = scaled(sx: scale, sy: scale)
         return self
     }
     
-    mutating func scale(scale:CGFloat, origin:CGPoint) -> CGAffineTransform  {
-        self = scaled(scale, origin:origin)
+    mutating func scale(scale: CGFloat, origin: CGPoint) -> CGAffineTransform  {
+        self = scaled(scale, origin: origin)
         return self
     }
 
-    mutating func rotate(angle:CGFloat) -> CGAffineTransform  {
+    mutating func rotate(angle: CGFloat) -> CGAffineTransform  {
         self = rotated(angle)
         return self
     }
 
-    mutating func rotate(angle:CGFloat, origin:CGPoint) -> CGAffineTransform  {
-        self = rotated(angle, origin:origin)
+    mutating func rotate(angle: CGFloat, origin: CGPoint) -> CGAffineTransform  {
+        self = rotated(angle, origin: origin)
         return self
     }
 
-    mutating func concat(other:CGAffineTransform) -> CGAffineTransform {
+    mutating func concat(other: CGAffineTransform) -> CGAffineTransform {
         self = concated(other)
         return self
     }
@@ -203,57 +203,57 @@ public extension CGAffineTransform {
 
 // MARK: Concatination via the + and += operators
 
-public func + (lhs:CGAffineTransform, rhs:CGAffineTransform) -> CGAffineTransform {
+public func + (lhs: CGAffineTransform, rhs: CGAffineTransform) -> CGAffineTransform {
     return lhs.concated(rhs)
 }
 
-public func += (inout lhs:CGAffineTransform, rhs:CGAffineTransform) {
+public func += (inout lhs: CGAffineTransform, rhs: CGAffineTransform) {
     lhs.concat(rhs)
 }
 
 // MARK: Applying transforms to CG types
 
-public func * (lhs:CGPoint, rhs:CGAffineTransform) -> CGPoint {
+public func * (lhs: CGPoint, rhs: CGAffineTransform) -> CGPoint {
     return CGPointApplyAffineTransform(lhs, rhs)
 }
 
-public func *= (inout lhs:CGPoint, rhs:CGAffineTransform) {
+public func *= (inout lhs: CGPoint, rhs: CGAffineTransform) {
     lhs = CGPointApplyAffineTransform(lhs, rhs)
 }
 
-public func * (lhs:CGSize, rhs:CGAffineTransform) -> CGSize {
+public func * (lhs: CGSize, rhs: CGAffineTransform) -> CGSize {
     return CGSizeApplyAffineTransform(lhs, rhs)
 }
 
-public func *= (inout lhs:CGSize, rhs:CGAffineTransform) {
+public func *= (inout lhs: CGSize, rhs: CGAffineTransform) {
     lhs = CGSizeApplyAffineTransform(lhs, rhs)
 }
 
-public func * (lhs:CGRect, rhs:CGAffineTransform) -> CGRect {
+public func * (lhs: CGRect, rhs: CGAffineTransform) -> CGRect {
     return CGRectApplyAffineTransform(lhs, rhs)
 }
 
-public func *= (inout lhs:CGRect, rhs:CGAffineTransform) {
+public func *= (inout lhs: CGRect, rhs: CGAffineTransform) {
     lhs = CGRectApplyAffineTransform(lhs, rhs)
 }
 
 // MARK: Transform a vector
 
 public extension CGAffineTransform {
-    func transformVector(vec:CGPoint) -> CGPoint {
-        return CGPoint(x:vec.x * a + vec.y * d, y:vec.x * c + vec.y * d);
+    func transformVector(vec: CGPoint) -> CGPoint {
+        return CGPoint(x: vec.x * a + vec.y * d, y: vec.x * c + vec.y * d);
     }
 }
 
 // MARK: Converting transforms to/from arrays
 
 public extension CGAffineTransform {
-    init(v:[CGFloat]) {
+    init(v: [CGFloat]) {
         assert(v.count == 6)
         self = CGAffineTransformMake(v[0], v[1], v[2], v[3], v[4], v[5])
     }
     
-    var values:[CGFloat] {
+    var values: [CGFloat] {
         get {
             return [a,b,c,d,tx,ty]
         }
@@ -268,7 +268,7 @@ public extension CGAffineTransform {
 
 public extension CGAffineTransform {
 
-    init(transforms:[CGAffineTransform]) {
+    init(transforms: [CGAffineTransform]) {
         var current = CGAffineTransform.identity
         for transform in transforms {
             current.concat(transform)
@@ -277,15 +277,15 @@ public extension CGAffineTransform {
     }
     
     // Constructor with two fingers' positions while moving fingers.
-    init(from1:CGPoint, from2:CGPoint, to1:CGPoint, to2:CGPoint) {
+    init(from1: CGPoint, from2: CGPoint, to1: CGPoint, to2: CGPoint) {
         if (from1 == from2 || to1 == to2) {
             self = CGAffineTransform.identity
         } else {
             let scale = to2.distanceTo(to1) / from2.distanceTo(from1)
             let angle1 = (to2 - to1).direction, angle2 = (from2 - from1).direction
-            self = CGAffineTransform(translation:to1 - from1)
-                + CGAffineTransform(scale:scale, origin:to1)
-                + CGAffineTransform(rotation:angle1 - angle2, origin:to1)
+            self = CGAffineTransform(translation: to1 - from1)
+                + CGAffineTransform(scale: scale, origin: to1)
+                + CGAffineTransform(rotation: angle1 - angle2, origin: to1)
         }
     }
 }

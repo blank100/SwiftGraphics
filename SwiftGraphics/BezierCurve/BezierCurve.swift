@@ -20,12 +20,12 @@ public struct BezierCurve {
     public var controls: [CGPoint]
     public var end: CGPoint
 
-    public init(controls:[CGPoint], end:CGPoint) {
+    public init(controls: [CGPoint], end: CGPoint) {
         self.controls = controls
         self.end = end
     }
 
-    public init(start:CGPoint, controls:[CGPoint], end:CGPoint) {
+    public init(start: CGPoint, controls: [CGPoint], end: CGPoint) {
         self.start = start
         self.controls = controls
         self.end = end
@@ -58,7 +58,7 @@ extension BezierCurve: CustomStringConvertible {
         let formatter = NSNumberFormatter()
 
         let pointFormatter = {
-            (p:CGPoint) -> String in
+            (p: CGPoint) -> String in
             let x = formatter.stringFromNumber(p.x)!
             let y = formatter.stringFromNumber(p.y)!
             return "(\(x), \(y))"
@@ -66,10 +66,10 @@ extension BezierCurve: CustomStringConvertible {
 
         let controlsString = controls.map() { pointFormatter($0) }.joinWithSeparator(", ")
         if let start = start {
-            return "BezierCurve(start:\(pointFormatter(start)), controls:\(controlsString), end:\(pointFormatter(end))"
+            return "BezierCurve(start: \(pointFormatter(start)), controls: \(controlsString), end: \(pointFormatter(end))"
         }
         else {
-            return "BezierCurve(controls:\(controlsString), end:\(pointFormatter(end))"
+            return "BezierCurve(controls: \(controlsString), end: \(pointFormatter(end))"
         }
     }
 }
@@ -77,35 +77,35 @@ extension BezierCurve: CustomStringConvertible {
 // MARK: Convenience initializers
 
 public extension BezierCurve {
-    public init(control1:CGPoint, end:CGPoint) {
+    public init(control1: CGPoint, end: CGPoint) {
         self.controls = [control1]
         self.end = end
     }
 
-    public init(control1:CGPoint, control2:CGPoint, end:CGPoint) {
+    public init(control1: CGPoint, control2: CGPoint, end: CGPoint) {
         self.controls = [control1, control2]
         self.end = end
     }
 
-    public init(start:CGPoint, control1:CGPoint, end:CGPoint) {
+    public init(start: CGPoint, control1: CGPoint, end: CGPoint) {
         self.start = start
         self.controls = [control1]
         self.end = end
     }
 
-    public init(start:CGPoint, control1:CGPoint, control2:CGPoint, end:CGPoint) {
+    public init(start: CGPoint, control1: CGPoint, control2: CGPoint, end: CGPoint) {
         self.start = start
         self.controls = [control1, control2]
         self.end = end
     }
 
-    public init(points:[CGPoint]) {
+    public init(points: [CGPoint]) {
         self.start = points[0]
         self.controls = Array(points[1..<points.count - 1])
         self.end = points[points.count - 1]
     }
 
-    public init(start:CGPoint, end:CGPoint) {
+    public init(start: CGPoint, end: CGPoint) {
         self.start = start
         self.controls = [(start + end) / 2]
         self.end = end
@@ -120,11 +120,11 @@ public extension BezierCurve {
             case 1:
                 let CP1 = points[0] + ((2.0 / 3.0) * (points[1] - points[0]))
                 let CP2 = points[2] + ((2.0 / 3.0) * (points[1] - points[2]))
-                return BezierCurve(start:start!, controls:[CP1, CP2], end:end)
+                return BezierCurve(start: start!, controls: [CP1, CP2], end: end)
             case 2:
                 return self
             default:
-                return BezierCurve(start:start!, end:end).increasedOrder()
+                return BezierCurve(start: start!, end: end).increasedOrder()
         }
     }
 }
@@ -132,7 +132,7 @@ public extension BezierCurve {
 // MARK: Converting from tuples
 
 public extension BezierCurve {
-    init(_ v:[(CGFloat, CGFloat)]) {
+    init(_ v: [(CGFloat, CGFloat)]) {
         self.start = CGPoint(v[0])
         self.controls = v.count==2 ? [CGPoint(v[1]), CGPoint(v[2])] : v.count==1 ? [CGPoint(v[1])] : []
         self.end = CGPoint(v[v.count - 1])
@@ -144,7 +144,7 @@ public extension BezierCurve {
 
 public extension CGContextRef {
 
-    func addToPath(curve:BezierCurve) {
+    func addToPath(curve: BezierCurve) {
         switch curve.order {
             case .Quadratic:
                 CGContextAddQuadCurveToPoint(self, curve.controls[0].x, curve.controls[0].y, curve.end.x, curve.end.y)
@@ -155,7 +155,7 @@ public extension CGContextRef {
         }
     }
 
-    func stroke(curve:BezierCurve) {
+    func stroke(curve: BezierCurve) {
         if let start = curve.start {
             CGContextMoveToPoint(self, start.x, start.y)
         }

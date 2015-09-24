@@ -9,8 +9,8 @@
 import CoreGraphics
 
 extension BezierCurve: Markupable {
-    public var markup:[Markup] {
-        var markup:[Markup] = []
+    public var markup: [Markup] {
+        var markup: [Markup] = []
 
         markup.append(Marker(point: start!, tag: "start"))
         markup.append(Marker(point: end, tag: "end"))
@@ -19,14 +19,14 @@ extension BezierCurve: Markupable {
         }
 
         let A = LineSegment(start!, controls[0])
-        markup.append(Guide(drawable:A, tag: "controlLine"))
+        markup.append(Guide(drawable: A, tag: "controlLine"))
 
         let B = LineSegment(end, controls[1])
-        markup.append(Guide(drawable:B, tag: "controlLine"))
+        markup.append(Guide(drawable: B, tag: "controlLine"))
 
-        markup.append(Guide(drawable:Rectangle(frame: boundingBox), tag: "boundingBox"))
+        markup.append(Guide(drawable: Rectangle(frame: boundingBox), tag: "boundingBox"))
 
-        markup.append(Guide(drawable:Rectangle(frame: boundingBox), tag: "simpleBounds"))
+        markup.append(Guide(drawable: Rectangle(frame: boundingBox), tag: "simpleBounds"))
         return markup
     }
 }

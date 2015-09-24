@@ -9,6 +9,6 @@
 import CoreGraphics
 
 public protocol Geometry {
-    var frame:CGRect { get }
+    var frame: CGRect { get }
 }
 

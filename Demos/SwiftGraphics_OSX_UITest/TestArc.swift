@@ -32,7 +32,7 @@ class ARCHandle : NSObject {
         set { position.y = newValue }
     }
     
-    init(position:CGPoint) {
+    init(position: CGPoint) {
         super.init()
         self.position = position;
     }
@@ -41,8 +41,8 @@ class ARCHandle : NSObject {
 class TestArc : NSObject {
     // TODO remove this
     dynamic var handles : [ARCHandle] = [
-        ARCHandle(position:CGPoint(x:100, y:100)),
-        ARCHandle(position:CGPoint(x:200, y:200)),
+        ARCHandle(position: CGPoint(x: 100, y: 100)),
+        ARCHandle(position: CGPoint(x: 200, y: 200)),
         ]
     
     dynamic var start : CGPoint { return handles[0].position }
@@ -62,7 +62,7 @@ class TestArc : NSObject {
         let c = radius
         let b = sqrt(c ** 2 - a ** 2)
         let theta = atan2(end - start) + DegreesToRadians(90)
-        let center = CGPoint(magnitude: b, direction:theta) + midPoint
+        let center = CGPoint(magnitude: b, direction: theta) + midPoint
         return center
     }
 }

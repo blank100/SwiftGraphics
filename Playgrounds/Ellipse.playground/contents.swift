@@ -7,31 +7,31 @@ import SwiftGraphicsPlayground
 
 var ellipses = [
     Ellipse(
-        center:CGPointZero,
-        semiMajorAxis:300.0,
-        eccentricity:0.9,
-        rotation:DegreesToRadians(45)
+        center: CGPointZero,
+        semiMajorAxis: 300.0,
+        eccentricity: 0.9,
+        rotation: DegreesToRadians(45)
     ),
     Ellipse(
-        center:CGPointZero,
-        semiMajorAxis:300.0,
-        semiMinorAxis:65.3834841531101 * 2,
-        rotation:DegreesToRadians(0)
+        center: CGPointZero,
+        semiMajorAxis: 300.0,
+        semiMinorAxis: 65.3834841531101 * 2,
+        rotation: DegreesToRadians(0)
         ),
-    Ellipse(frame:CGRect(center:CGPointZero, size:CGSize(w:600, h:65.3834841531101 * 4))),
-    Ellipse(frame:CGRect(center:CGPointZero, size:CGSize(w:400, h:400))),
+    Ellipse(frame: CGRect(center: CGPointZero, size: CGSize(w: 600, h: 65.3834841531101 * 4))),
+    Ellipse(frame: CGRect(center: CGPointZero, size: CGSize(w: 400, h: 400))),
 ]
 
 let s = Int(ceil(sqrt(Double(ellipses.count))))
 
-let style1 = SwiftGraphics.Style(elements:[
+let style1 = SwiftGraphics.Style(elements: [
     .strokeColor(CGColor.redColor()),
     ])
-let style2 = SwiftGraphics.Style(elements:[
+let style2 = SwiftGraphics.Style(elements: [
     .strokeColor(CGColor.blueColor()),
     .lineDash([5,5]),
     ])
-let style3 = SwiftGraphics.Style(elements:[
+let style3 = SwiftGraphics.Style(elements: [
     .strokeColor(CGColor.purpleColor()),
     .lineDash([2,2]),
     ])
@@ -51,25 +51,25 @@ let styles = [
     ]
 
 
-let cgpath = CGPathCreateWithEllipseInRect(CGRect(center:CGPointZero, radius:1.0), nil)
+let cgpath = CGPathCreateWithEllipseInRect(CGRect(center: CGPointZero, radius: 1.0), nil)
 cgpath.dump()
 
 var generator = ellipses.generate()
 
-let tileSize = CGSize(width:800, height:800)
+let tileSize = CGSize(width: 800, height: 800)
 let bitmapSize = tileSize * CGFloat(s)
 
-let cgimage = CGContextRef.imageWithBlock(bitmapSize, color:CGColor.lightGrayColor(), origin:CGPointZero) {
-    (context:CGContext) -> Void in
+let cgimage = CGContextRef.imageWithBlock(bitmapSize, color: CGColor.lightGrayColor(), origin: CGPointZero) {
+    (context: CGContext) -> Void in
 
     CGContextSetShouldAntialias(context, false)
 
-    tiled(context, tileSize: tileSize, dimension: IntSize(width:s, height:s), origin:CGPoint(x:0.5, y:0.5)) {
-        (context:CGContext) -> Void in
+    tiled(context, tileSize: tileSize, dimension: IntSize(width: s, height: s), origin: CGPoint(x: 0.5, y: 0.5)) {
+        (context: CGContext) -> Void in
 
         if let ellipse = generator.next() {
 
-            var c:CGFloat = 0.551915024494
+            var c: CGFloat = 0.551915024494
 
             context.strokeColor = CGColor.greenColor()
 
@@ -89,7 +89,7 @@ let cgimage = CGContextRef.imageWithBlock(bitmapSize, color:CGColor.lightGrayCol
             context.stroke(curves.3)
 
             let markup = ellipse.markup
-            context.draw(markup, styles:styles)
+            context.draw(markup, styles: styles)
         }
     }
 }

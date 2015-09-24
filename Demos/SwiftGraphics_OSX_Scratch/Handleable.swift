@@ -9,11 +9,11 @@
 import SwiftGraphics
 
 public protocol Handleable {
-    var handles:[Handle] { get }
+    var handles: [Handle] { get }
 }
 
 public struct Handle {
-    var position:CGPoint {
+    var position: CGPoint {
         get {
             return positionGetter()
         }
@@ -21,15 +21,15 @@ public struct Handle {
             positionSetter(newValue)
         }
     }
-    var positionGetter:Void -> CGPoint
-    var positionSetter:CGPoint -> Void
+    var positionGetter: Void -> CGPoint
+    var positionSetter: CGPoint -> Void
 
 }
 
 // MARK: -
 
 extension Rectangle: Handleable {
-    public var handles:[Handle] {
+    public var handles: [Handle] {
         return [
 //                Handle(
 //                    positionGetter: { return frame.minXMinY },
@@ -45,7 +45,7 @@ extension Rectangle: Handleable {
 // MARK: -
 
 //extension Circle: Handleable {
-//    public var handles:[Handle] {
+//    public var handles: [Handle] {
 //        get {
 //            return []
 //        }
@@ -55,7 +55,7 @@ extension Rectangle: Handleable {
 //// MARK: -
 //
 //extension Triangle: Handleable {
-//    public var handles:[Handle] {
+//    public var handles: [Handle] {
 //        get {
 //            return []
 //        }

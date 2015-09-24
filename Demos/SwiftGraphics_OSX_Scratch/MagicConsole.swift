@@ -9,7 +9,7 @@
 import Cocoa
 
 extension NSMutableArray {
-    func append(anObject:AnyObject) {
+    func append(anObject: AnyObject) {
         addObject(anObject)
     }
 }
@@ -17,18 +17,18 @@ extension NSMutableArray {
 class MagicConsole: NSObject {
 
     class Row: NSObject {
-        @objc var name:NSString?
-        @objc var stringValue:NSString?
+        @objc var name: NSString?
+        @objc var stringValue: NSString?
     }
 
     @objc var rows = NSMutableArray()
-    var rowsForKey:[String:Row] = [:]
+    var rowsForKey: [String: Row] = [:]
 
     override init() {
         super.init()
     }
 
-    func logValue(key:String, value:CustomStringConvertible) {
+    func logValue(key: String, value: CustomStringConvertible) {
         if let row = rowsForKey[key] {
             row.willChangeValueForKey("stringValue")
             row.stringValue = value.description as NSString
@@ -46,7 +46,7 @@ class MagicConsole: NSObject {
     }
 }
 
-func MagicLog(name:String, _ value:CustomStringConvertible) {
+func MagicLog(name: String, _ value: CustomStringConvertible) {
     sharedMagicConsole.logValue(name, value: value)
 }
 
@@ -54,6 +54,6 @@ let sharedMagicConsole = MagicConsole()
 
 class MagicConsoleViewController: NSViewController {
 
-    var magicConsole:MagicConsole? = sharedMagicConsole
+    var magicConsole: MagicConsole? = sharedMagicConsole
 
 }

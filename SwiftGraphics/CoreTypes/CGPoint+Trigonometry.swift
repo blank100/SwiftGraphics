@@ -3,23 +3,23 @@
 //  SwiftGraphics
 //
 //  Created by Jonathan Wight on 2/5/15.
-//  Contibutions by Zhang Yungui <https://github.com/rhcad> on 15/1/14.
+//  Contibutions by Zhang Yungui <https: //github.com/rhcad> on 15/1/14.
 //  Copyright (c) 2015 schwa.io. All rights reserved.
 //
 
 import CoreGraphics
 
-public func dotProduct(lhs:CGPoint, _ rhs:CGPoint) -> CGFloat {
+public func dotProduct(lhs: CGPoint, _ rhs: CGPoint) -> CGFloat {
     return lhs.x * rhs.x + lhs.y * rhs.y
 }
 
-public func crossProduct(lhs:CGPoint, _ rhs:CGPoint) -> CGFloat {
+public func crossProduct(lhs: CGPoint, _ rhs: CGPoint) -> CGFloat {
     return lhs.x * rhs.y - lhs.y * rhs.x
 }
 
 public extension CGPoint {
 
-    init(magnitude:CGFloat, direction:CGFloat) {
+    init(magnitude: CGFloat, direction: CGFloat) {
         x = cos(direction) * magnitude
         y = sin(direction) * magnitude
     }
@@ -29,7 +29,7 @@ public extension CGPoint {
             return sqrt(x * x + y * y)
         }
         set(v) {
-            self = CGPoint(magnitude:v, direction:direction)
+            self = CGPoint(magnitude: v, direction: direction)
         }
     }
 
@@ -42,26 +42,26 @@ public extension CGPoint {
             return atan2(self)
         }
         set(v) {
-            self = CGPoint(magnitude:magnitude, direction:v)
+            self = CGPoint(magnitude: magnitude, direction: v)
         }
     }
 
     var normalized: CGPoint {
         let len = magnitude
-        return len ==% 0 ? self : CGPoint(x:x / len, y:y / len)
+        return len ==% 0 ? self : CGPoint(x: x / len, y: y / len)
     }
 
     var orthogonal: CGPoint {
-        return CGPoint(x:-y, y:x)
+        return CGPoint(x: -y, y: x)
     }
 
     var transposed: CGPoint {
-        return CGPoint(x:y, y:x)
+        return CGPoint(x: y, y: x)
     }
 
 }
 
-public func atan2(point:CGPoint) -> CGFloat {   // (-M_PI, M_PI]
+public func atan2(point: CGPoint) -> CGFloat {   // (-M_PI, M_PI]
     return atan2(point.y, point.x)
 }
 
@@ -74,19 +74,19 @@ public extension CGPoint {
     }
     
     func distanceTo(p1: CGPoint, p2: CGPoint) -> CGFloat {
-        return distanceToBeeline(p1, p2:p2).0
+        return distanceToBeeline(p1, p2: p2).0
     }
 
     // TODO: What is a beeline????
-    func distanceToBeeline(p1:CGPoint, p2:CGPoint) -> (CGFloat, CGPoint) {
+    func distanceToBeeline(p1: CGPoint, p2: CGPoint) -> (CGFloat, CGPoint) {
         if p1 == p2 {
             return (distanceTo(p1), p1)
         }
         if p1.x == p2.x {
-            return (abs(p1.x - self.x), CGPoint(x:p1.x, y:self.y))
+            return (abs(p1.x - self.x), CGPoint(x: p1.x, y: self.y))
         }
         if p1.y == p2.y {
-            return (abs(p1.y - self.y), CGPoint(x:self.x, y:p1.y))
+            return (abs(p1.y - self.y), CGPoint(x: self.x, y: p1.y))
         }
         
         let t1 = (p2.y - p1.y) / (p2.x - p1.x)
@@ -100,7 +100,7 @@ public extension CGPoint {
 
     // Returns the angle between this vector and another vector 'vec'.
     // The result sign indicates the rotation direction from this vector to 'vec': positive for counter-clockwise, negative for clockwise.
-    func angleTo(vec:CGPoint) -> CGFloat {       // [-M_PI, M_PI)
+    func angleTo(vec: CGPoint) -> CGFloat {       // [-M_PI, M_PI)
         return atan2(crossProduct(self, vec), dotProduct(self, vec))
     }
 }
@@ -108,21 +108,21 @@ public extension CGPoint {
 /**
  Return true if a, b, and c all lie on the same line.
  */
-public func collinear(a:CGPoint, _ b:CGPoint, _ c:CGPoint) -> Bool {
+public func collinear(a: CGPoint, _ b: CGPoint, _ c: CGPoint) -> Bool {
     return (b.x - a.x) * (c.y - a.y) ==% (c.x - a.x) * (b.y - a.y)
 }
 
 /**
  Return true if c is near to the beeline a b.
  */
-public func collinear(a:CGPoint, _ b:CGPoint, _ c:CGPoint, tolerance:CGFloat) -> Bool {
-    return c.distanceTo(a, p2:b) <= tolerance
+public func collinear(a: CGPoint, _ b: CGPoint, _ c: CGPoint, tolerance: CGFloat) -> Bool {
+    return c.distanceTo(a, p2: b) <= tolerance
 }
 
 /**
  Return the angle between vertex-p1 and vertex-vertex.
  */
-public func angle(vertex:CGPoint, _ p1:CGPoint, _ p2:CGPoint) -> CGFloat {
+public func angle(vertex: CGPoint, _ p1: CGPoint, _ p2: CGPoint) -> CGFloat {
     return abs((p1 - vertex).angleTo(p2 - vertex))
 }
 
@@ -138,7 +138,7 @@ public extension CGPoint {
      
      - returns: the point relative to this point.
      */
-    func polarPoint(angle:CGFloat, radius:CGFloat) -> CGPoint {
+    func polarPoint(angle: CGFloat, radius: CGFloat) -> CGPoint {
         return CGPoint(x: x + radius * cos(angle), y: y + radius * sin(angle));
     }
     
@@ -151,13 +151,13 @@ public extension CGPoint {
      
      - returns: the point relative to this point.
      */
-    func rulerPoint(dir:CGPoint, dx:CGFloat) -> CGPoint {
+    func rulerPoint(dir: CGPoint, dx: CGFloat) -> CGPoint {
         let len = distanceTo(dir)
         if len == 0 {
-            return CGPoint(x:x + dx, y:y)
+            return CGPoint(x: x + dx, y: y)
         }
         let d = dx / len
-        return CGPoint(x:x + (dir.x - x) * d, y:y + (dir.y - y) * d)
+        return CGPoint(x: x + (dir.x - x) * d, y: y + (dir.y - y) * d)
     }
     
     /**
@@ -170,14 +170,14 @@ public extension CGPoint {
      
      - returns: the point relative to this point.
      */
-    func rulerPoint(dir:CGPoint, dx:CGFloat, dy:CGFloat) -> CGPoint {
+    func rulerPoint(dir: CGPoint, dx: CGFloat, dy: CGFloat) -> CGPoint {
         let len = distanceTo(dir)
         if len == 0 {
-            return CGPoint(x:x + dx, y:y + dy)
+            return CGPoint(x: x + dx, y: y + dy)
         }
         let dcos = (dir.x - x) / len
         let dsin = (dir.y - y) / len
-        return CGPoint(x:x + dx * dcos - dy * dsin, y:y + dx * dsin + dy * dcos)
+        return CGPoint(x: x + dx * dcos - dy * dsin, y: y + dx * dsin + dy * dcos)
     }
 }
 
@@ -185,10 +185,10 @@ public extension CGPoint {
 
 public extension CGPoint {
     
-    public static var vectorTolerance:CGFloat = 1e-4
+    public static var vectorTolerance: CGFloat = 1e-4
     
     //! Returns whether this vector is perpendicular to another vector.
-    func isPerpendicularTo(vec:CGPoint) -> Bool {
+    func isPerpendicularTo(vec: CGPoint) -> Bool {
         let sinfz = abs(crossProduct(self, vec))
         if sinfz == 0 {
             return false
@@ -203,26 +203,26 @@ public extension CGPoint {
      - parameter   xAxis: projection target vector.
      - returns: perpendicular distance which is positive if this vector is in the CCW direction of xAxis and negative if clockwise.
      */
-    func distanceToVector(xAxis:CGPoint) -> CGFloat {
+    func distanceToVector(xAxis: CGPoint) -> CGFloat {
         let len = xAxis.magnitude
         return len == 0 ? magnitude : crossProduct(xAxis, self) / len
     }
     
     //! Returns the proportion of the projection vector onto xAxis, projection==xAxis * proportion
-    func projectScaleToVector(xAxis:CGPoint) -> CGFloat {
+    func projectScaleToVector(xAxis: CGPoint) -> CGFloat {
         let d2 = xAxis.magnitudeSquared
         return d2 == 0 ? 0.0 : dotProduct(self, xAxis) / d2
     }
     
     //! Returns the projection vector and perpendicular vector, self==proj+perp
-    func projectResolveVector(xAxis:CGPoint) -> (CGPoint, CGPoint) {
+    func projectResolveVector(xAxis: CGPoint) -> (CGPoint, CGPoint) {
         let s = projectScaleToVector(xAxis)
         let proj = xAxis * s, perp = self - proj
         return (proj, perp)
     }
     
     //! Vector decomposition onto two vectors: self==u*uAxis + v*vAxis
-    func resolveVector(uAxis:CGPoint, vAxis:CGPoint) -> (CGFloat, CGFloat) {
+    func resolveVector(uAxis: CGPoint, vAxis: CGPoint) -> (CGFloat, CGFloat) {
         let denom = crossProduct(uAxis, vAxis)
         if denom == 0 {
             return (0, 0)

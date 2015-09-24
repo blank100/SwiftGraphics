@@ -18,26 +18,26 @@ public enum PathElement {
 
 public struct Path {
 
-    public var elements:[PathElement] = []
+    public var elements: [PathElement] = []
     
     public var currentPoint: CGPoint = CGPointZero
 
     public init() {
     }
 
-    public mutating func move(point:CGPoint) -> Path {
+    public mutating func move(point: CGPoint) -> Path {
         currentPoint = point
         elements.append(.move(point))
         return self
     }
     
-    public mutating func addLine(point:CGPoint) -> Path {
+    public mutating func addLine(point: CGPoint) -> Path {
         currentPoint = point
         elements.append(.addLine(point))
         return self
     }
 
-    public mutating func addCurve(curve:BezierCurve) -> Path {
+    public mutating func addCurve(curve: BezierCurve) -> Path {
         currentPoint = curve.end
         elements.append(.addCurve(curve))
         return self
@@ -50,7 +50,7 @@ public struct Path {
 }
 
 public extension Path {
-    init(vertices:[CGPoint], closed:Bool = false) {
+    init(vertices: [CGPoint], closed: Bool = false) {
         self.init()
 
         move(vertices[0])
@@ -65,7 +65,7 @@ public extension Path {
 
 
 public extension Path {
-    var cgPath:CGPath {
+    var cgPath: CGPath {
         let CGPath = CGPathCreateMutable()
 
         for element in elements {

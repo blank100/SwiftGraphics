@@ -9,16 +9,16 @@
 import CoreGraphics
 
 public extension CGPoint {
-    static func compareXY(lhs:CGPoint, rhs:CGPoint) -> Bool {
+    static func compareXY(lhs: CGPoint, rhs: CGPoint) -> Bool {
         return lhs.x < rhs.x ? true : (lhs.x == rhs.x ? (lhs.y < rhs.y ? true : false) : false)
     }
-    static func compareYX(lhs:CGPoint, rhs:CGPoint) -> Bool {
+    static func compareYX(lhs: CGPoint, rhs: CGPoint) -> Bool {
         return lhs.y < rhs.y ? true : (lhs.y == rhs.y ? (lhs.x < rhs.x ? true : false) : false)
     }
 }
 
-// https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain
-public func monotoneChain(var points:[CGPoint], sorted:Bool = false) -> [CGPoint] {
+// https: //en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain
+public func monotoneChain(var points: [CGPoint], sorted: Bool = false) -> [CGPoint] {
 
     if points.count <= 3 {
         return points
@@ -28,7 +28,7 @@ public func monotoneChain(var points:[CGPoint], sorted:Bool = false) -> [CGPoint
         points.sortInPlace(CGPoint.compareXY)
     }
 
-    var lower:[CGPoint] = []
+    var lower: [CGPoint] = []
     for var i = 0; i < points.count; i++ {
         while lower.count >= 2 && Turn(lower[lower.count - 2], lower[lower.count - 1], points[i])! != .Right {
             lower.removeLast()
@@ -36,7 +36,7 @@ public func monotoneChain(var points:[CGPoint], sorted:Bool = false) -> [CGPoint
         lower.append(points[i])
     }
        
-    var upper:[CGPoint] = []
+    var upper: [CGPoint] = []
     for var i = points.count - 1; i >= 0; i-- {
         while upper.count >= 2 && Turn(upper[upper.count - 2], upper[upper.count - 1], points[i])! != .Right {
             upper.removeLast()

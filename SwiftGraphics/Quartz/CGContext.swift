@@ -10,45 +10,45 @@ import CoreGraphics
 
 public extension CGContext {
 
-    func setFillColor(color:CGColor) {
+    func setFillColor(color: CGColor) {
         CGContextSetFillColorWithColor(self, color)
     }
-    func setStrokeColor(color:CGColor) {
+    func setStrokeColor(color: CGColor) {
         CGContextSetStrokeColorWithColor(self, color)
     }
 
-    func setLineWidth(width:CGFloat) {
+    func setLineWidth(width: CGFloat) {
         CGContextSetLineWidth(self, width)
     }
 
-    func setLineCap(lineCap:CGLineCap) {
+    func setLineCap(lineCap: CGLineCap) {
         CGContextSetLineCap(self, lineCap)
     }
 
-    func setLineJoin(lineJoin:CGLineJoin) {
+    func setLineJoin(lineJoin: CGLineJoin) {
         CGContextSetLineJoin(self, lineJoin)
     }
 
-    func setMiterLimit(miterLimit:CGFloat) {
+    func setMiterLimit(miterLimit: CGFloat) {
         CGContextSetMiterLimit(self, miterLimit)
     }
 
-    func setLineDash(lengths:[CGFloat], phase:CGFloat = 0.0) {
+    func setLineDash(lengths: [CGFloat], phase: CGFloat = 0.0) {
         lengths.withUnsafeBufferPointer {
-            (buffer:UnsafeBufferPointer<CGFloat>) -> Void in
+            (buffer: UnsafeBufferPointer<CGFloat>) -> Void in
             CGContextSetLineDash(self, phase, buffer.baseAddress, lengths.count)
         }
     }
 
-    func setFlatness(flatness:CGFloat) {
+    func setFlatness(flatness: CGFloat) {
         CGContextSetFlatness(self, flatness)
     }
 
-    func setAlpha(alpha:CGFloat) {
+    func setAlpha(alpha: CGFloat) {
         CGContextSetAlpha(self, alpha)
     }
 
-    func setBlendMode(blendMode:CGBlendMode) {
+    func setBlendMode(blendMode: CGBlendMode) {
         CGContextSetBlendMode(self, blendMode)
     }
 }
@@ -57,13 +57,13 @@ public extension CGContext {
 
 public extension CGContext {
 
-    func with(@noescape block:() -> Void) {
+    func with(@noescape block: () -> Void) {
         CGContextSaveGState(self)
         block()
         CGContextRestoreGState(self)
     }
 
-    func with(transform:CGAffineTransform, @noescape block:() -> Void) {
+    func with(transform: CGAffineTransform, @noescape block: () -> Void) {
         with() {
             CGContextConcatCTM(self, transform)
             block()
@@ -71,7 +71,7 @@ public extension CGContext {
     }
 
     // TODO: Deprecate
-    func withColor(color:CGColor, @noescape block:() -> Void) {
+    func withColor(color: CGColor, @noescape block: () -> Void) {
         with {
             self.setStrokeColor(color)
             self.setFillColor(color)

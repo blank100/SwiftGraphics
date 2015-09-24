@@ -14,20 +14,20 @@ import SwiftGraphics
 
 class Dragging: NSObject {
 
-    var model:Model!
-    var clickGestureRecogniser:NSClickGestureRecognizer!
-    var panGestureRecognizer:NSPanGestureRecognizer!
+    var model: Model!
+    var clickGestureRecogniser: NSClickGestureRecognizer!
+    var panGestureRecognizer: NSPanGestureRecognizer!
 
-    init(model:Model) {
+    init(model: Model) {
         super.init()
 
         self.model = model
 
-        clickGestureRecogniser = NSClickGestureRecognizer(target: self, action: Selector("click:"))
-        panGestureRecognizer = NSPanGestureRecognizer(target: self, action: Selector("pan:"))
+        clickGestureRecogniser = NSClickGestureRecognizer(target: self, action: Selector("click: "))
+        panGestureRecognizer = NSPanGestureRecognizer(target: self, action: Selector("pan: "))
     }
 
-    var view:NSView! {
+    var view: NSView! {
         willSet {
             if let view = view {
                 view.removeGestureRecognizer(clickGestureRecogniser)
@@ -42,7 +42,7 @@ class Dragging: NSObject {
         }
     }
 
-    func click(gestureRecognizer:NSClickGestureRecognizer) {
+    func click(gestureRecognizer: NSClickGestureRecognizer) {
         switch gestureRecognizer.state {
             case .Began:
                 let location = gestureRecognizer.locationInView(view)
@@ -61,13 +61,13 @@ class Dragging: NSObject {
         }
     }
 
-    var draggedObject:Thing? = nil
-    var dragBeganLocation:CGPoint?
-    var offset:CGPoint = CGPointZero
-    var selectionMarquee:SelectionMarquee = SelectionMarquee()
+    var draggedObject: Thing? = nil
+    var dragBeganLocation: CGPoint?
+    var offset: CGPoint = CGPointZero
+    var selectionMarquee: SelectionMarquee = SelectionMarquee()
 
 
-    func pan(gestureRecognizer:NSPanGestureRecognizer) {
+    func pan(gestureRecognizer: NSPanGestureRecognizer) {
         let location = gestureRecognizer.locationInView(view)
 
         switch gestureRecognizer.state {
@@ -129,11 +129,11 @@ class Dragging: NSObject {
     }
 
 
-    func selectObject(object:Thing) {
+    func selectObject(object: Thing) {
         model.selectObject(object)
     }
 
-    func unselectObject(object:Thing) {
+    func unselectObject(object: Thing) {
         model.unselectObject(object)
     }
 
@@ -141,11 +141,11 @@ class Dragging: NSObject {
         model.selectedObjectIndices.removeAllIndexes()
     }
 
-    func hitTest(location:CGPoint) -> (Int,Thing)? {
+    func hitTest(location: CGPoint) -> (Int,Thing)? {
         return model.hitTest(location)
     }
 
-    var needsDisplay:Bool {
+    var needsDisplay: Bool {
         get {
             return view.needsDisplay
         }

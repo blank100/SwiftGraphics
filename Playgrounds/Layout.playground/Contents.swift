@@ -10,37 +10,37 @@ public struct DrawableClosure: Drawable {
 
     let closure: Closure
 
-    init(closure:Closure) {
+    init(closure: Closure) {
         self.closure = closure
     }
 
-    public func drawInContext(context:CGContext) {
+    public func drawInContext(context: CGContext) {
         closure(context)
     }
 }
 
 protocol Sizeable {
-    var size:CGSize { get }
+    var size: CGSize { get }
 }
 
 protocol Frameable: Sizeable {
-    var frame:CGRect { get }
+    var frame: CGRect { get }
 }
 
 extension Frameable {
-    var size:CGSize {
+    var size: CGSize {
         return frame.size
     }
 }
 
 extension Circle: Frameable {
-    var frame:CGRect {
+    var frame: CGRect {
         return CGRect(center: center, radius: radius)
     }
 }
 
 extension CGContext {
-    func with(transform:CGAffineTransform, block:Void -> Void) {
+    func with(transform: CGAffineTransform, block: Void -> Void) {
         with() {
             CGContextConcatCTM(self, transform)
             block()
@@ -51,10 +51,10 @@ extension CGContext {
 extension SequenceType where Self.Generator.Element : Drawable, Self.Generator.Element : Frameable {
     func row() -> Drawable {
         return DrawableClosure() {
-            (context:CGContext) in
+            (context: CGContext) in
             var offset = CGPointZero
             for object in GeneratorSequence(self.generate()) {
-                context.with(CGAffineTransform(translation:offset - object.frame.origin)) {
+                context.with(CGAffineTransform(translation: offset - object.frame.origin)) {
                     context.draw(object)
                     offset.x += object.size.width
                 }
@@ -63,12 +63,12 @@ extension SequenceType where Self.Generator.Element : Drawable, Self.Generator.E
     }
 }
 
-func row <T:Drawable where T:Frameable> (objects:[T]) -> Drawable {
+func row <T: Drawable where T: Frameable> (objects: [T]) -> Drawable {
     return DrawableClosure() {
-        (context:CGContext) in
+        (context: CGContext) in
         var offset = CGPointZero
         for object in objects {
-            context.with(CGAffineTransform(translation:offset - object.frame.origin)) {
+            context.with(CGAffineTransform(translation: offset - object.frame.origin)) {
                 context.draw(object)
                 offset.x += object.size.width
             }
@@ -86,7 +86,7 @@ let circles = [
 let drawable = circles.row()
 
 var frame = circles.reduce(CGRectZero) {
-    return $0.rectByUnion(CGRect(origin:$0.maxXMinY, size:$1.frame.size))
+    return $0.rectByUnion(CGRect(origin: $0.maxXMinY, size: $1.frame.size))
 }
 let context = CGContextRef.bitmapContext(frame)
 
