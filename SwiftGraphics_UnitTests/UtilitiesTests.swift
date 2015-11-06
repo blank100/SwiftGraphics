@@ -42,16 +42,16 @@ class UtilitesTests: XCTestCase {
         XCTAssertEqual(result, CGRectMake(1, 1, 3, 3))
     }
     
-    func testDegreesToRadians() {
+    func testdegreesToRadians() {
         let rad30 = 0.52359877559829882
-        XCTAssert(DegreesToRadians(30.0) == rad30)
-        XCTAssert(DegreesToRadians(CGFloat(30)) == CGFloat(rad30))
+        XCTAssert(degreesToRadians(30.0) == rad30)
+        XCTAssert(degreesToRadians(CGFloat(30)) == CGFloat(rad30))
     }
     
-    func testRadiansToDegrees() {
+    func testradiansToDegrees() {
         let rad30 = 0.52359877559829882
-        XCTAssert(RadiansToDegrees(rad30) ==% 30)
-        XCTAssert(RadiansToDegrees(CGFloat(rad30)) ==% CGFloat(30))
+        XCTAssert(radiansToDegrees(rad30) ==% 30)
+        XCTAssert(radiansToDegrees(CGFloat(rad30)) ==% CGFloat(30))
     }
 
 }

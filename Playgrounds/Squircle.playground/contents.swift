@@ -56,13 +56,13 @@ chain = chain * CGAffineTransform(tx: -512, ty: -512)
 context.draw(chain)
 
 
-//chain = chain * CGAffineTransform(rotation: DegreesToRadians(90))
+//chain = chain * CGAffineTransform(rotation: degreesToRadians(90))
 //context.draw(chain)
 //
-//chain = chain * CGAffineTransform(rotation: DegreesToRadians(90))
+//chain = chain * CGAffineTransform(rotation: degreesToRadians(90))
 //context.draw(chain)
 //
-//chain = chain * CGAffineTransform(rotation: DegreesToRadians(90))
+//chain = chain * CGAffineTransform(rotation: degreesToRadians(90))
 //context.draw(chain)
 
 

@@ -148,11 +148,11 @@ public extension CGRect {
         return copy
     }
 
-    func insetBy(dx  dx: CGFloat, dy: CGFloat) -> CGRect {
-        var copy = self
-        copy.insetInPlace(dx: dx, dy: dy)
-        return copy
-        }
+//    func insetBy(dx  dx: CGFloat, dy: CGFloat) -> CGRect {
+//        var copy = self
+//        copy.insetInPlace(dx: dx, dy: dy)
+//        return copy
+//        }
 
     // TODO: Deprecate
     func insetted(dx  dx: CGFloat, dy: CGFloat) -> CGRect {

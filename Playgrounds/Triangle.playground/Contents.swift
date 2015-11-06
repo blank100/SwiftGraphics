@@ -10,7 +10,7 @@ func dump(t: Triangle) -> String {
     var s = ""
     s += "Points: \(t.vertex)\n"
     s += "Lengths: \(t.lengths)\n"
-    s += "Angles: \(RadiansToDegrees(t.angles.0), RadiansToDegrees(t.angles.1), RadiansToDegrees(t.angles.2))\n"
+    s += "Angles: \(radiansToDegrees(t.angles.0), radiansToDegrees(t.angles.1), radiansToDegrees(t.angles.2))\n"
     s += "isIsosceles: \(t.isIsosceles)\n"
     s += "isEquilateral: \(t.isEquilateral)\n"
     s += "isScalene: \(t.isScalene)\n"

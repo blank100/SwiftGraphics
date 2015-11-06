@@ -10,13 +10,13 @@ var ellipses = [
         center: CGPointZero,
         semiMajorAxis: 300.0,
         eccentricity: 0.9,
-        rotation: DegreesToRadians(45)
+        rotation: degreesToRadians(45)
     ),
     Ellipse(
         center: CGPointZero,
         semiMajorAxis: 300.0,
         semiMinorAxis: 65.3834841531101 * 2,
-        rotation: DegreesToRadians(0)
+        rotation: degreesToRadians(0)
         ),
     Ellipse(frame: CGRect(center: CGPointZero, size: CGSize(w: 600, h: 65.3834841531101 * 4))),
     Ellipse(frame: CGRect(center: CGPointZero, size: CGSize(w: 400, h: 400))),

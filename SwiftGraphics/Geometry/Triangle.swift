@@ -67,7 +67,7 @@ public extension Triangle {
     public var angles: (CGFloat, CGFloat, CGFloat) {
         let a1 = angle(vertex.0, vertex.1, vertex.2)
         let a2 = angle(vertex.1, vertex.2, vertex.0)
-        let a3 = DegreesToRadians(180) - a1 - a2
+        let a3 = degreesToRadians(180) - a1 - a2
         return (a1,a2,a3)
     }
     

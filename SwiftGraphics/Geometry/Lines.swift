@@ -33,23 +33,26 @@ public struct LineSegment {
         self.start = start
         self.end = end
     }
+}
 
-    public var slope: CGFloat? {
+public extension LineSegment {
+
+    var slope: CGFloat? {
         if end.x == start.x {
             return nil
         }
         return (end.y - start.y) / (end.x - start.x)
     }
 
-    public var angle: CGFloat {
+    var angle: CGFloat {
         return atan2(end - start)
     }
 
-    public func isParallel(other: LineSegment) -> Bool {
+    func isParallel(other: LineSegment) -> Bool {
         return slope == other.slope
     }
 
-    public func intersection(other: LineSegment, clamped: Bool = true) -> CGPoint? {
+    func intersection(other: LineSegment, clamped: Bool = true) -> CGPoint? {
         let x_1 = start.x
         let y_1 = start.y
         let x_2 = end.x
@@ -81,7 +84,7 @@ public struct LineSegment {
         return pt
     }
 
-    public func containsPoint(point: CGPoint) -> Bool {
+    func containsPoint(point: CGPoint) -> Bool {
         let a = start
         let b = end
         let c = point
@@ -92,18 +95,48 @@ public struct LineSegment {
         }
         return (collinear(a, b, c) && a.x != b.x) ? within(a.x, q: c.x, r: b.x) : within(a.y, q: c.y, r: b.y)
     }
+
+    var midpoint: CGPoint {
+        return (start + end) * 0.5
+    }
+
 }
 
-// MARK: Line Chain
+// MARK: Line String
 
-// TODO: Rename? Lines? Get rid of completely? #question #help-wanted
-public struct LineChain {
+public struct LineString {
     public let points: [CGPoint]
 
     public init(points: [CGPoint]) {
         self.points = points
     }
 }
+
+extension LineString {
+    func toLineSegments() -> [LineSegment] {
+        let pairs = slidingWindow(points, count: 2)
+        return pairs.map() {
+            return LineSegment($0[0], $0[1])
+        }
+    }
+}
+
+private func slidingWindow <T> (items: Array <T>, count: Int) -> Array <Array <T>> {
+    var output = Array <Array <T>> ()
+    var temp = Array <T> ()
+    for item in items {
+        if temp.count == count {
+            output.append(temp)
+            temp.removeFirst()
+        }
+        temp.append(item)
+    }
+    if temp.count > 0 {
+        output.append(temp)
+    }
+    return output
+}
+
 
 // MARK: Polygon
 

@@ -21,6 +21,8 @@ extension Line: Geometry {
     }
 }
 
+// MARK: -
+
 extension LineSegment: Geometry, Drawable {
     public var frame: CGRect {
         return CGRect(points: (start, end))
@@ -31,7 +33,9 @@ extension LineSegment: Geometry, Drawable {
     }
 }
 
-extension LineChain: Geometry, Drawable {
+// MARK: -
+
+extension LineString: Geometry, Drawable {
     public var frame: CGRect {
         return CGRect.unionOfPoints(points)
     }
@@ -40,6 +44,8 @@ extension LineChain: Geometry, Drawable {
         context.strokeLine(points, closed: false)
     }
 }
+
+// MARK: -
 
 extension Polygon: Geometry, Drawable {
     public var frame: CGRect {
