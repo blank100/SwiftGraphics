@@ -127,6 +127,8 @@
 		456C315D19C65B0E003AA1DF /* Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456C315B19C65B0E003AA1DF /* Ellipse.swift */; };
 		457309E51C2DFB8E000D8A1C /* DebugDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457309E41C2DFB8E000D8A1C /* DebugDrawable.swift */; };
 		457309E61C2DFB8E000D8A1C /* DebugDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457309E41C2DFB8E000D8A1C /* DebugDrawable.swift */; };
+		457309EE1C2FB7DE000D8A1C /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457309ED1C2FB7DE000D8A1C /* Arc.swift */; };
+		457309EF1C2FB7DE000D8A1C /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457309ED1C2FB7DE000D8A1C /* Arc.swift */; };
 		4574C0251A64604900454DE5 /* CGContext_OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4574C0241A64604900454DE5 /* CGContext_OSX.swift */; };
 		4574C0271A64613A00454DE5 /* CGContext+BitmapContexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4574C0261A64613A00454DE5 /* CGContext+BitmapContexts.swift */; };
 		4574C0281A64613A00454DE5 /* CGContext+BitmapContexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4574C0261A64613A00454DE5 /* CGContext+BitmapContexts.swift */; };
@@ -372,6 +374,8 @@
 		457309E11C2C9C44000D8A1C /* Arc.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Arc.playground; sourceTree = "<group>"; };
 		457309E41C2DFB8E000D8A1C /* DebugDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugDrawable.swift; sourceTree = "<group>"; };
 		457309E71C2E0065000D8A1C /* NativePath.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = NativePath.playground; sourceTree = "<group>"; };
+		457309EA1C2F3512000D8A1C /* Circle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Circle.playground; sourceTree = "<group>"; };
+		457309ED1C2FB7DE000D8A1C /* Arc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
 		4574C0241A64604900454DE5 /* CGContext_OSX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGContext_OSX.swift; sourceTree = "<group>"; };
 		4574C0261A64613A00454DE5 /* CGContext+BitmapContexts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+BitmapContexts.swift"; sourceTree = "<group>"; };
 		457B6E751ABE07D6007083C0 /* Squircle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Squircle.playground; sourceTree = "<group>"; };
@@ -524,9 +528,9 @@
 		4520349B1B2B8518002CCCFA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				452034A21B2B8518002CCCFA /* SwiftUtilities.framework */,
 				452034A41B2B8518002CCCFA /* SwiftUtilities.framework */,
-				452034A61B2B8518002CCCFA /* SwiftUtilities Tests.xctest */,
+				452034A21B2B8518002CCCFA /* SwiftUtilities.framework */,
+				452034A61B2B8518002CCCFA /* SwiftUtilities_OSX_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -642,6 +646,7 @@
 				452129871BEC500900A00DD9 /* Points.playground */,
 				458610541BF5210F00F407B7 /* PatternTest.playground */,
 				457309E71C2E0065000D8A1C /* NativePath.playground */,
+				457309EA1C2F3512000D8A1C /* Circle.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
@@ -795,6 +800,7 @@
 				456C315B19C65B0E003AA1DF /* Ellipse.swift */,
 				02C9D0111A71D12F00B9696E /* RegularPolygon.swift */,
 				45C11B5A1A69751B0029A61C /* Triangle.swift */,
+				457309ED1C2FB7DE000D8A1C /* Arc.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -1071,10 +1077,10 @@
 			remoteRef = 452034A31B2B8518002CCCFA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		452034A61B2B8518002CCCFA /* SwiftUtilities Tests.xctest */ = {
+		452034A61B2B8518002CCCFA /* SwiftUtilities_OSX_Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "SwiftUtilities Tests.xctest";
+			path = SwiftUtilities_OSX_Tests.xctest;
 			remoteRef = 452034A51B2B8518002CCCFA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1189,6 +1195,7 @@
 				458C590E1A74136000E993A6 /* Insidedness.swift in Sources */,
 				459EE5ED19AEC5130012E023 /* CGPath.swift in Sources */,
 				45E38D251A74235800EC672A /* Style.swift in Sources */,
+				457309EE1C2FB7DE000D8A1C /* Arc.swift in Sources */,
 				02DABB641A8F110F000C8D9F /* CGPathFromSVGPath.m in Sources */,
 				456877E219B6857B004BEFD6 /* CoordinateSystems.swift in Sources */,
 				45E38D2E1A74242E00EC672A /* Markup.swift in Sources */,
@@ -1250,6 +1257,7 @@
 				459128C31AE8B93C007C52BC /* (null) in Sources */,
 				026F21041A5FB23E00A52D0E /* Fuzzy.swift in Sources */,
 				45CFDC6D1A61CB6800053F96 /* ConvexHull.swift in Sources */,
+				457309EF1C2FB7DE000D8A1C /* Arc.swift in Sources */,
 				459EE5EC19AEC5130012E023 /* CGContext.swift in Sources */,
 				4594B08C19AEDC2100101EB4 /* SwiftGraphicsHelper.m in Sources */,
 				45E38D261A74235800EC672A /* Style.swift in Sources */,
