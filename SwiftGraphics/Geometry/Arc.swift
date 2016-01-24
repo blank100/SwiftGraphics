@@ -22,6 +22,28 @@ public struct Arc {
     }
 }
 
+// TODO: all geometry should be equatable/fuzzy equatable
+
+extension Arc: Equatable {
+}
+
+public func == (lhs: Arc, rhs: Arc) -> Bool {
+    return lhs.center == rhs.center
+        && lhs.radius == rhs.radius
+        && lhs.theta == rhs.theta
+        && lhs.phi == rhs.phi
+}
+
+extension Arc: FuzzyEquatable {
+}
+
+public func ==% (lhs: Arc, rhs: Arc) -> Bool {
+    return lhs.center ==% rhs.center
+        && lhs.radius ==% rhs.radius
+        && lhs.theta ==% rhs.theta
+        && lhs.phi ==% rhs.phi
+}
+
 public extension Arc {
 
     static func arcToBezierCurves(center: CGPoint, radius: CGFloat, alpha: CGFloat, beta: CGFloat, maximumArcs: Int = 4) -> [BezierCurve] {

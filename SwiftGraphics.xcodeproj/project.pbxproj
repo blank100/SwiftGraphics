@@ -430,6 +430,7 @@
 		45E38D281A74242E00EC672A /* Ellipse+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ellipse+Markup.swift"; sourceTree = "<group>"; };
 		45E38D291A74242E00EC672A /* Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markup.swift; sourceTree = "<group>"; };
 		45ECEC301A6561D60018F7C6 /* BezierPath.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BezierPath.playground; sourceTree = "<group>"; };
+		45EFDCBE1C528F27005FE15B /* Spiral.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Spiral.playground; sourceTree = "<group>"; };
 		45F32C711A6455BB00E3DA68 /* CGColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGColor.swift; sourceTree = "<group>"; };
 		45F32C741A64590E00E3DA68 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		45FA46501A7F3DBB000473B5 /* Rectangle+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rectangle+Markup.swift"; sourceTree = "<group>"; };
@@ -647,6 +648,7 @@
 				458610541BF5210F00F407B7 /* PatternTest.playground */,
 				457309E71C2E0065000D8A1C /* NativePath.playground */,
 				457309EA1C2F3512000D8A1C /* Circle.playground */,
+				45EFDCBE1C528F27005FE15B /* Spiral.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";

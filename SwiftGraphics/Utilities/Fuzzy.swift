@@ -55,18 +55,25 @@ extension Double: FuzzyEquatable {
 }
 
 public func ==% (lhs: Double, rhs: Double) -> Bool {
-    let epsilon = Double(FLT_EPSILON) // TODO: FLT vs DBL
+    let epsilon = Double(DBL_EPSILON) // TODO: FLT vs DBL
     return equal(lhs, rhs, accuracy: epsilon)
 }
 
 // Mark: CGFloat
 
+public extension CGFloat {
+#if arch(arm64) || arch(x86_64)
+    static let epsilon = CGFloat(DBL_EPSILON)
+#else
+    static let epsilon = CGFloat(FLT_EPSILON)
+#endif
+}
+
 extension CGFloat: FuzzyEquatable {
 }
 
 public func ==% (lhs: CGFloat, rhs: CGFloat) -> Bool {
-    let epsilon = CGFloat(FLT_EPSILON) // TODO: FLT vs DBL
-    return equal(lhs, rhs, accuracy: epsilon)
+    return equal(lhs, rhs, accuracy: CGFloat.epsilon)
 }
 
 // MARK: CGPoint
