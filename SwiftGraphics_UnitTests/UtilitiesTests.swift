@@ -48,10 +48,10 @@ class UtilitesTests: XCTestCase {
         XCTAssert(degreesToRadians(CGFloat(30)) == CGFloat(rad30))
     }
     
-    func testradiansToDegrees() {
-        let rad30 = 0.52359877559829882
-        XCTAssert(radiansToDegrees(rad30) ==% 30)
-        XCTAssert(radiansToDegrees(CGFloat(rad30)) ==% CGFloat(30))
-    }
+//    func testradiansToDegrees() {
+//        let rad30 = 0.52359877559829882
+//        XCTAssert(radiansToDegrees(rad30) ==% 30)
+//        XCTAssert(radiansToDegrees(CGFloat(rad30)) ==% CGFloat(30))
+//    }
 
 }
