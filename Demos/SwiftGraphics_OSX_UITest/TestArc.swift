@@ -23,6 +23,7 @@ class ARCHandle: NSObject {
             }
     }
 
+    // swiftlint:disable variable_name
     dynamic var position_x: CGFloat {
         get { return position.x }
         set { position.x = newValue }
@@ -31,6 +32,7 @@ class ARCHandle: NSObject {
         get { return position.y }
         set { position.y = newValue }
     }
+    // swiftlint:enable variable_name
 
     init(position: CGPoint) {
         super.init()

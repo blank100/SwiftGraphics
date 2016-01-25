@@ -59,7 +59,9 @@ public enum StyleElement {
     case BlendMode(CGBlendMode)
 }
 
+// swiftlint:disable variable_name
 var CGContext_Style_Key = 1
+// swiftlint:disable variable_name
 
 public extension CGContext {
     var style: Style {
