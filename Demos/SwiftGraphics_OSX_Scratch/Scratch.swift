@@ -118,12 +118,12 @@ extension NSIndexSet {
             var count = 0
             repeat {
                 count = self.getIndexes(buffer.baseAddress, maxCount: maxCount, inIndexRange: &range)
-                if count > 0 {
+                if isEmpty == false {
                     let constrained_buffer = UnsafeBufferPointer<Int> (start: buffer.baseAddress, count: count)
                     block(constrained_buffer)
                 }
             }
-            while count > 0
+            while isEmpty == false
         }
     }
 }

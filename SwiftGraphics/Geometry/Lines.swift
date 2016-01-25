@@ -131,7 +131,7 @@ private func slidingWindow <T> (items: Array <T>, count: Int) -> Array <Array <T
         }
         temp.append(item)
     }
-    if temp.count > 0 {
+    if temp.isEmpty == false {
         output.append(temp)
     }
     return output
