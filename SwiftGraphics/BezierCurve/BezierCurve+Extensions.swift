@@ -119,21 +119,21 @@ public extension BezierCurve {
     public var simpleBounds: CGRect {
         return CGRect.unionOfPoints(points)
     }
-    
+
     //! Compute the bounding box based on the straightened curve, for best fit
-    public var boundingBox: CGRect { 
+    public var boundingBox: CGRect {
         if self.controls.count == 1 {
             return increasedOrder().boundingBox
         }
-        
+
         let pt1 = start!
         let pt2 = controls[0]
         let pt3 = controls[1]
         let pt4 = end
-    
+
         var bbox = CGRect(points: (pt1, pt4))   // compute linear bounds first
         var flag = 0
-        
+
         // Recompute bounds projected on the x-axis, if the control points lie outside the bounding box x-bounds
         if pt2.x < bbox.minX || pt2.x > bbox.maxX || pt3.x < bbox.minX || pt3.x > bbox.maxX {
             let (t1, t2) = computeCubicFirstDerivativeRoots(pt1.x, b: pt2.x, c: pt3.x, d: pt4.x)
@@ -148,7 +148,7 @@ public extension BezierCurve {
                 flag |= 2
             }
         }
-        
+
         // Recompute on the y-axis, if the control points lie outside the bounding box y-bounds
         if pt2.y < bbox.minY || pt2.y > bbox.maxY || pt3.y < bbox.minY || pt3.y > bbox.maxY {
             let (t1, t2) = computeCubicFirstDerivativeRoots(pt1.y, b: pt2.y, c: pt3.y, d: pt4.y)
@@ -163,10 +163,10 @@ public extension BezierCurve {
                 flag |= 8
             }
         }
-        
+
         return bbox
     }
-    
+
     // compute the value for the cubic bezier function at time=t
     private func computeCubicBaseValue(t: CGFloat, a: CGFloat, b: CGFloat, c: CGFloat, d: CGFloat) -> CGFloat {
         let v  = 1-t
@@ -174,33 +174,33 @@ public extension BezierCurve {
         let t2 = t*t
         return v2*v*a + 3*v2*t*b + 3*v*t2*c + t2*t*d
     }
-    
+
     // compute the value for the first derivative of the cubic bezier function at time=t
     private func computeCubicFirstDerivativeRoots(a: CGFloat, b: CGFloat, c: CGFloat, d: CGFloat) -> (CGFloat,CGFloat) {
         let u = b - a, vt = c - b, w = d - c
         let v = abs(u+w - 2*vt)<0.001 ? vt + 0.01 : vt
-        
+
         let denominator = 2*(u - 2*v + w)
         let numerator   = 2*(u - v)
         let uv2         = 2*v-2*u
         let quadroot    = uv2*uv2 - 2*u*denominator
         let root        = sqrt(quadroot)
-        
+
         // there are two possible values for 't' that yield inflection points,
         // and each of these inflection points might be outside the linear bounds
         return ((numerator + root) / denominator, (numerator - root) / denominator)
     }
-    
+
 // MARK: isStraight and length
-    
+
     public var isStraight: Bool {
         let pts = points
         return collinear(pts[0], pts[2], pts[1])
             || (pts.count == 4 && collinear(pts[0], pts[2], pts[3]))
     }
-    
+
     // Gauss quadrature for cubic Bezier curves http: //processingjs.nihongoresources.com/bezierinfo/
-    
+
     public var length: CGFloat {
         if self.isStraight {
             return self.start!.distanceTo(self.end)
@@ -208,16 +208,16 @@ public extension BezierCurve {
         if self.controls.count == 1 {
             return increasedOrder().length
         }
-        
+
         let pts = points
         let z2: CGFloat = 0.5
         var sum: CGFloat = 0.0
-        
+
         for i in 0..<24 {
             let corrected_t = z2 * BezierCurve.Tvalues[i] + z2
             sum += BezierCurve.Cvalues[i] * cubicF(corrected_t, pts)
         }
-        
+
         return z2 * sum
     }
 
@@ -226,7 +226,7 @@ public extension BezierCurve {
         let t2 = t*t1 + 6*p1 - 12*p2 + 6*p3
         return t*t2 - 3*p1 + 3*p2
     }
-    
+
     private func cubicF(t: CGFloat, _ pts: [CGPoint]) -> CGFloat {
         let xbase = base3(t, pts[0].x, pts[1].x, pts[2].x, pts[3].x)
         let ybase = base3(t, pts[0].y, pts[1].y, pts[2].y, pts[3].y)

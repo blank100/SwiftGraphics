@@ -21,7 +21,7 @@ extension CGPoint: CustomStringConvertible {
 // MARK: Convenience initializers
 
 public extension CGPoint {
-    
+
     init(x: CGFloat) {
         self.x = x
         self.y = 0
@@ -207,4 +207,3 @@ public func round(value: CGPoint) -> CGPoint {
 public func round(value: CGPoint, _ decimal: Int) -> CGPoint {
     return value.map { round($0, decimal: decimal) }
 }
-

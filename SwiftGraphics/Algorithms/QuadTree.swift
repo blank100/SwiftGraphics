@@ -24,12 +24,12 @@ public class QuadTree <T> {
         self.config = QuadTreeConfig(minimumNodeSize: minimumNodeSize, maximumObjectsPerNode: maximumObjectsPerNode)
         self.rootNode = QuadTreeNode(config: config, frame: frame)
     }
-    
+
     public func addObject(object: T, point: CGPoint) {
         assert(frame.contains(point))
         rootNode.addObject(object, point: point)
     }
-    
+
     public func objectsInRect(rect: CGRect) -> [T] {
         assert(frame.intersects(rect))
         return rootNode.objectsInRect(rect)
@@ -106,7 +106,7 @@ public class QuadTreeNode <T> {
     func objectsInRect(rect: CGRect) -> [T] {
         return itemsInRect(rect).map { return $0.object }
     }
-    
+
     internal func expand() {
         assert(canExpand)
         subnodes = [
@@ -119,7 +119,7 @@ public class QuadTreeNode <T> {
             let node = subnodeForPoint(item.point)
             node.addItem(item)
         }
-        
+
         items = nil
     }
 

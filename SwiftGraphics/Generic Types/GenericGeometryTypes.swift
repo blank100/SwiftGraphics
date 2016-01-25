@@ -42,14 +42,14 @@ extension CGFloat: ArithmeticType {
 
 public protocol PointType {
     typealias ScalarType
-    
+
     var x: ScalarType { get }
     var y: ScalarType { get }
     }
 
 public protocol SizeType {
     typealias ScalarType
-    
+
     var width: ScalarType { get }
     var height: ScalarType { get }
     }
@@ -145,4 +145,3 @@ public func == <T> (lhs: GenericSize <T>, rhs: GenericSize <T>) -> Bool {
 //public func == <T,U> (lhs: GenericRect <T,U>, rhs: GenericRect <T,U>) -> Bool {
 //    return lhs.origin == rhs.origin && lhs.size == rhs.size
 //}
-

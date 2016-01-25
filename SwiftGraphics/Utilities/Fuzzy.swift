@@ -84,4 +84,3 @@ extension CGPoint: FuzzyEquatable {
 public func ==% (lhs: CGPoint, rhs: CGPoint) -> Bool {
     return (lhs - rhs).isZero
 }
-

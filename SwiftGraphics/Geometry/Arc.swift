@@ -54,9 +54,9 @@ public extension Arc {
 
         //If[Abs[\[Beta] - \[Alpha]] > limit,
         //  		Return[{
-        //    			BezierArcConstruction[{xc, yc}, 
+        //    			BezierArcConstruction[{xc, yc},
         //     r, {\[Alpha], \[Alpha] + limit}],
-        //    			BezierArcConstruction[{xc, yc}, 
+        //    			BezierArcConstruction[{xc, yc},
         //     r, {\[Alpha] + limit, \[Beta]}]
         //    		}]
         //  	];
@@ -99,4 +99,3 @@ public extension Arc {
         return Arc.arcToBezierCurves(center, radius: radius, alpha: phi, beta: phi + theta, maximumArcs: maximumArcs)
     }
 }
-

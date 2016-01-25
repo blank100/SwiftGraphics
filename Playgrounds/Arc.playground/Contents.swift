@@ -72,4 +72,3 @@ context.strokeColor = CGColor.blueColor()
 context.draw(arc2)
 
 context.nsimage
-

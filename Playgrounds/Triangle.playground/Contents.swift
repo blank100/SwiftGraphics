@@ -20,7 +20,7 @@ func dump(t: Triangle) -> String {
     s += "isObtuse: \(t.isObtuse)\n"
     s += "isDegenerate: \(t.isDegenerate)\n"
     s += "signedArea: \(t.signedArea)\n"
-    return s    
+    return s
 }
 
 func pt(x: CGFloat, _ y: CGFloat) -> CGPoint {
@@ -39,4 +39,3 @@ let styles = stylesForMarkup(t1.markup)
 context.draw(t1.markup, styles: styles)
 
 context.nsimage
-

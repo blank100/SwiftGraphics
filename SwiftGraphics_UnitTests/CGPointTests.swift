@@ -29,7 +29,7 @@ class CGPointTests: XCTestCase {
         XCTAssertEqual(-CGPoint(x: 10, y: 20), CGPoint(x: -10, y: -20))
     }
 
-    func testArithmeticOperators() {        
+    func testArithmeticOperators() {
         XCTAssertEqual(CGPoint(x: 10, y: 20) + CGPoint(x: 1, y: 2), CGPoint(x: 11, y: 22))
         XCTAssertEqual(CGPoint(x: 10, y: 20) - CGPoint(x: 1, y: 2), CGPoint(x: 9, y: 18))
     }
@@ -69,20 +69,20 @@ class CGPointTests: XCTestCase {
         XCTAssertEqual(CGPoint(x: 50, y: -50).clampedTo(r), CGPoint(x: 50, y: 0))
         XCTAssertEqual(CGPoint(x: 50, y: 250).clampedTo(r), CGPoint(x: 50, y: 200))
     }
-    
+
     func testRound() {
         XCTAssertEqual(round(CGPoint((100.1, 100.5)), 0), CGPoint(x: 100, y: 101))
         XCTAssertEqual(round(CGPoint((-10.1, -10.5)), 0), CGPoint(x: -10, y: -10))
         XCTAssertEqual(round(CGPoint((14.49, 15.44999)), 1), CGPoint(x: 14.5, y: 15.4))
         XCTAssertEqual(round(CGPoint((14.99999, 15.0)), -1), CGPoint(x: 10, y: 20))
     }
-    
+
     func testCollinear() {
         XCTAssert( collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 0))))
         XCTAssert(!collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 1e-5))))
         XCTAssert( collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 1e-5)), tolerance: 1e-4))
     }
-    
+
     func testAngle() {
         XCTAssertEqualWithAccuracy(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 0))), CGFloat(0), accuracy: 0.0001)
         XCTAssertEqualWithAccuracy(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((-5, 0))), CGFloat(M_PI), accuracy: 0.0001)
@@ -101,7 +101,7 @@ class CGPointTests: XCTestCase {
     func testTrig() {
         let theta: CGFloat = degreesToRadians(30)
         let length = 100 as CGFloat
-        
+
         let p = CGPoint(magnitude: length, direction: theta)
         XCTAssertEqualWithAccuracy(p.x, CGFloat(86.6025403784439), accuracy: 0.01)
         XCTAssertEqualWithAccuracy(p.y, CGFloat(50), accuracy: 0.01)

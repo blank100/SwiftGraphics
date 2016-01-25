@@ -116,7 +116,7 @@ extension NSIndexSet {
             (inout buffer: UnsafeMutableBufferPointer<Int>) -> Void in
 
             var count = 0
-            repeat  {
+            repeat {
                 count = self.getIndexes(buffer.baseAddress, maxCount: maxCount, inIndexRange: &range)
                 if count > 0 {
                     let constrained_buffer = UnsafeBufferPointer<Int> (start: buffer.baseAddress, count: count)

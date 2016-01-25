@@ -11,7 +11,7 @@ import CoreGraphics
 extension Line: Geometry {
 
     public var frame: CGRect {
-        return CGRectInfinite
+        return CGRect.infinite
     }
 
     public func drawInContext(context: CGContextRef) {

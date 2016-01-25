@@ -19,8 +19,8 @@ public enum PathElement {
 public struct Path {
 
     public var elements: [PathElement] = []
-    
-    public var currentPoint: CGPoint = CGPointZero
+
+    public var currentPoint: CGPoint = CGPoint.zero
 
     public init() {
     }
@@ -30,7 +30,7 @@ public struct Path {
         elements.append(.move(point))
         return self
     }
-    
+
     public mutating func addLine(point: CGPoint) -> Path {
         currentPoint = point
         elements.append(.addLine(point))

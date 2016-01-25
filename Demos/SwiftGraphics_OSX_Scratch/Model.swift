@@ -101,7 +101,7 @@ class Thing: HitTestable, Drawable, Equatable {
 
     var bounds: CGRect { return geometry.frame }
 
-    var center: CGPoint = CGPointZero
+    var center: CGPoint = CGPoint.zero
 
     var frame: CGRect { return CGRect(origin: center, size: bounds.size) }
 

@@ -118,4 +118,3 @@ for N in 0..<100 {
     context.strokeCross(CGRect(center: point, radius: 5))
 }
 context.nsimage
-

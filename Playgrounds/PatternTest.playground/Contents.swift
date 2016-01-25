@@ -29,7 +29,7 @@ var image = NSImage(named: "Stripes")!.cgImage
 
 let size = image.size
 
-let pattern = CGPatternCreate(&image, CGRect(origin: CGPointZero, size: size), CGAffineTransformIdentity, size.width, size.height, .ConstantSpacing, true, &callbacks)!
+let pattern = CGPatternCreate(&image, CGRect(origin: CGPoint.zero, size: size), CGAffineTransformIdentity, size.width, size.height, .ConstantSpacing, true, &callbacks)!
 
 let patternSpace = CGColorSpaceCreatePattern(nil)
 CGContextSetFillColorSpace(context, patternSpace)

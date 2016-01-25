@@ -85,4 +85,3 @@ public func scaleAndAlignRectToRect(source source: CGRect, destination: CGRect, 
 
     return result
 }
-

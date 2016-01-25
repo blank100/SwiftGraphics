@@ -80,5 +80,3 @@ public extension CGRect {
         }
     }
 }
-
-

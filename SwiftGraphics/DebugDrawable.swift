@@ -30,13 +30,13 @@ extension BezierCurve: CustomDebugDrawable {
         let string = LineString(points: points)
         context.draw(string)
 
-        let string2 = LineString(points: string.toLineSegments().map{
+        let string2 = LineString(points: string.toLineSegments().map {
             return $0.midpoint
         })
         context.strokeColor = CGColor.greenColor()
         context.draw(string2)
 
-        let string3 = LineString(points: string2.toLineSegments().map{
+        let string3 = LineString(points: string2.toLineSegments().map {
             return $0.midpoint
         })
         context.strokeColor = CGColor.blueColor()

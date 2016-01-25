@@ -17,8 +17,8 @@ public enum CircularDirection {
     }
 
 public struct Arc {
-    public var center: CGPoint = CGPointZero
-    public var size: CGSize = CGSizeZero
+    public var center: CGPoint = CGPoint.zero
+    public var size: CGSize = CGSize.zero
     public var startAngle: CGFloat = 0 // Currently degrees
     public var endAngle: CGFloat = 360 // Currently degrees
 //    var direction: CircularDirection = .Clockwise
@@ -32,8 +32,8 @@ extension CGContextRef {
         let sx: CGFloat = 1.0
         let sy: CGFloat = arc.size.height / arc.size.width
 
-        let transform = CGAffineTransform.identity.rotated(rotation).scaled(sx: sx,sy: sy)
-    
+        let transform = CGAffineTransform.identity.rotated(rotation).scaled(sx: sx, sy: sy)
+
         CGContextConcatCTM(self, transform)
 
 //        print("\(arc.startAngle), \(arc.endAngle)")
@@ -83,8 +83,7 @@ extension Arc {
 
 }
 
-public func computeArc(x0: CGFloat, y0: CGFloat, rx: CGFloat, ry: CGFloat, angle: CGFloat, largeArcFlag: Bool, sweepFlag: Bool, x: CGFloat, y: CGFloat) -> Arc
-{
+public func computeArc(x0: CGFloat, y0: CGFloat, rx: CGFloat, ry: CGFloat, angle: CGFloat, largeArcFlag: Bool, sweepFlag: Bool, x: CGFloat, y: CGFloat) -> Arc {
 
     //
     // Elliptical arc implementation based on the SVG specification notes

@@ -11,7 +11,7 @@ let c = CGPoint(x: 150, y: 150)
 
 let circle = try Circle(points: (a, b, c))
 
-let points = [a,b,c, circle.center]
+let points = [a, b, c, circle.center]
 
 let context = CGContextRef.bitmapContext(CGRect(x: 0, y: 0, w: 300, h: 300))
 

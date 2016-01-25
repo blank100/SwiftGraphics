@@ -10,10 +10,7 @@ CGContextTranslateCTM(context, 20, 20)
 
 let curves = [
     BezierCurve(
-        start: CGPoint(x: 10,y: 0),
-        control1: CGPoint(x: -10,y: 180),
-        control2: CGPoint(x: 150,y: 200),
-        end: CGPoint(x: 200,y: 0)),
+        start: CGPoint(x: 10, y: 0), control1: CGPoint(x: -10, y: 180), control2: CGPoint(x: 150, y: 200), end: CGPoint(x: 200, y: 0)),
     ]
 
 let styles = [
@@ -47,4 +44,3 @@ for curve in curves {
 }
 
 context.nsimage
-
