@@ -84,10 +84,10 @@ class CGPointTests: XCTestCase {
     }
     
     func testAngle() {
-        XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 0))), CGFloat(0))
-        XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((-5, 0))), CGFloat(M_PI))
-        XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((10, 10))), CGFloat(M_PI_4))
-        XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((10, -10))), CGFloat(M_PI_4))
+        XCTAssertEqualWithAccuracy(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 0))), CGFloat(0), accuracy: 0.0001)
+        XCTAssertEqualWithAccuracy(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((-5, 0))), CGFloat(M_PI), accuracy: 0.0001)
+        XCTAssertEqualWithAccuracy(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((10, 10))), CGFloat(M_PI_4), accuracy: 0.0001)
+        XCTAssertEqualWithAccuracy(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((10, -10))), CGFloat(M_PI_4), accuracy: 0.0001)
     }
 
     func testDotProduct() {
