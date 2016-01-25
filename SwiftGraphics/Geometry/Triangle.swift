@@ -161,7 +161,7 @@ public extension Triangle {
         let x = (oppositeA * a.x + oppositeB * b.x + oppositeC * c.x) / (oppositeC + oppositeB + oppositeA)
         let y = (oppositeA * a.y + oppositeB * b.y + oppositeC * c.y) / (oppositeC + oppositeB + oppositeA)
 
-        return CGPointMake(x, y)
+        return CGPoint(x: x, y: y)
     }
 
     // converts trilinear coordinates to Cartesian coordinates relative

@@ -146,7 +146,7 @@ class Thing: HitTestable, Drawable, Equatable {
 
 }
 
-func ==(lhs: Thing, rhs: Thing) -> Bool {
+func == (lhs: Thing, rhs: Thing) -> Bool {
     // TOTO hack
     return lhs === rhs
 }

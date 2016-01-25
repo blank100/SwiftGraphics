@@ -141,7 +141,7 @@ class Dragging: NSObject {
         model.selectedObjectIndices.removeAllIndexes()
     }
 
-    func hitTest(location: CGPoint) -> (Int,Thing)? {
+    func hitTest(location: CGPoint) -> (Int, Thing)? {
         return model.hitTest(location)
     }
 

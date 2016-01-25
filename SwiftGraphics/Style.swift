@@ -46,17 +46,17 @@ public extension Style {
 }
 
 public enum StyleElement {
-    case fillColor(CGColor)
-    case strokeColor(CGColor)
-    case lineWidth(CGFloat)
-    case lineCap(CGLineCap)
-    case lineJoin(CGLineJoin)
-    case miterLimit(CGFloat)
-    case lineDash([CGFloat])
-    case lineDashPhase(CGFloat)
-    case flatness(CGFloat)
-    case alpha(CGFloat)
-    case blendMode(CGBlendMode)
+    case FillColor(CGColor)
+    case StrokeColor(CGColor)
+    case LineWidth(CGFloat)
+    case LineCap(CGLineCap)
+    case LineJoin(CGLineJoin)
+    case MiterLimit(CGFloat)
+    case LineDash([CGFloat])
+    case LineDashPhase(CGFloat)
+    case Flatness(CGFloat)
+    case Alpha(CGFloat)
+    case BlendMode(CGBlendMode)
 }
 
 var CGContext_Style_Key = 1
@@ -235,27 +235,27 @@ public extension CGContext {
 public extension Style {
     mutating func add(element: StyleElement) {
         switch element {
-            case .fillColor(let value):
+            case .FillColor(let value):
                 fillColor = value
-            case .strokeColor(let value):
+            case .StrokeColor(let value):
                 strokeColor = value
-            case .lineWidth(let value):
+            case .LineWidth(let value):
                 lineWidth = value
-            case .lineCap(let value):
+            case .LineCap(let value):
                 lineCap = value
-            case .lineJoin(let value):
+            case .LineJoin(let value):
                 lineJoin = value
-            case .miterLimit(let value):
+            case .MiterLimit(let value):
                 miterLimit = value
-            case .lineDash(let value):
+            case .LineDash(let value):
                 lineDash = value
-            case .lineDashPhase(let value):
+            case .LineDashPhase(let value):
                 lineDashPhase = value
-            case .flatness(let value):
+            case .Flatness(let value):
                 flatness = value
-            case .alpha(let value):
+            case .Alpha(let value):
                 alpha = value
-            case .blendMode(let value):
+            case .BlendMode(let value):
                 blendMode = value
 // TODO: add more styles here
 //            default:

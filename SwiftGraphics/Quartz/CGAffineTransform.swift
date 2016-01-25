@@ -278,7 +278,7 @@ public extension CGAffineTransform {
 
     // Constructor with two fingers' positions while moving fingers.
     init(from1: CGPoint, from2: CGPoint, to1: CGPoint, to2: CGPoint) {
-        if (from1 == from2 || to1 == to2) {
+        if from1 == from2 || to1 == to2 {
             self = CGAffineTransform.identity
         } else {
             let scale = to2.distanceTo(to1) / from2.distanceTo(from1)

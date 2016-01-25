@@ -32,7 +32,7 @@ extension RGB: Equatable {
 
 }
 
-public func ==(lhs: RGB, rhs: RGB) -> Bool {
+public func == (lhs: RGB, rhs: RGB) -> Bool {
     return lhs.r == rhs.r && lhs.g == rhs.g && lhs.b == rhs.b
 }
 
@@ -69,7 +69,7 @@ extension HSV: CustomStringConvertible {
 extension HSV: Equatable {
 }
 
-public func ==(lhs: HSV, rhs: HSV) -> Bool {
+public func == (lhs: HSV, rhs: HSV) -> Bool {
     return lhs.h == rhs.h && lhs.s == rhs.s && lhs.v == rhs.v
 }
 
@@ -107,12 +107,12 @@ public func * (lhs: HSV, rhs: CGFloat) -> HSV {
 
 public func convert(hsv: HSV) -> RGB {
     var (h, s, v) = (hsv.h, hsv.s, hsv.v)
-    if (s == 0) {
+    if s == 0 {
         return RGB(tuple: (v, v, v))
     }
     else {
         h *= 360.0
-        if (h == 360.0) {
+        if h == 360.0 {
             h = 0.0
         }
         else {

@@ -110,7 +110,7 @@ extension NSIndexSet {
 
     func with(maxCount: Int = 512, block: UnsafeBufferPointer <Int> -> Void) {
 
-        var range = NSMakeRange(0, count)
+        var range = NSRange(location: 0, length: count)
         var indices = Array <Int> (count: maxCount, repeatedValue: NSNotFound)
         indices.withUnsafeMutableBufferPointer() {
             (inout buffer: UnsafeMutableBufferPointer<Int>) -> Void in

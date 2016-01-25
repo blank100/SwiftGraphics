@@ -18,10 +18,10 @@
 import CoreGraphics
 
 public protocol ArithmeticType: Comparable {
-    func +(lhs: Self, rhs: Self) -> Self
-    func -(lhs: Self, rhs: Self) -> Self
-    func *(lhs: Self, rhs: Self) -> Self
-    func /(lhs: Self, rhs: Self) -> Self
+    func + (lhs: Self, rhs: Self) -> Self
+    func - (lhs: Self, rhs: Self) -> Self
+    func * (lhs: Self, rhs: Self) -> Self
+    func / (lhs: Self, rhs: Self) -> Self
 }
 
 extension Int: ArithmeticType {

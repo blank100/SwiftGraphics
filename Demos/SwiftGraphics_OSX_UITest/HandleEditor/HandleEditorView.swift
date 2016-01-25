@@ -33,7 +33,7 @@ class Handle: Marker, Equatable /*, Draggable */ {
 
 }
 
-func ==(lhs: Handle, rhs: Handle) -> Bool {
+func == (lhs: Handle, rhs: Handle) -> Bool {
 //    return lhs.position == rhs.position
     return lhs.position.x == rhs.position.x && lhs.position.y == rhs.position.y
     }

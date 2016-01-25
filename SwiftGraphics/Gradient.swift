@@ -20,18 +20,18 @@ public struct Gradient {
         self.axial = axial
         self.colors = colors
     }
-    public init(colors: [(CGFloat,CGFloat,CGFloat,CGFloat)], axial: Bool = false) {
+    public init(colors: [(CGFloat, CGFloat, CGFloat, CGFloat)], axial: Bool = false) {
         self.axial = axial
         setColors(colors)
     }
-    public init(colors: [(CGFloat,CGFloat,CGFloat)], axial: Bool = false) {
+    public init(colors: [(CGFloat, CGFloat, CGFloat)], axial: Bool = false) {
         self.axial = axial
         setColors(colors)
     }
-    mutating public func setColors(colors: [(CGFloat,CGFloat,CGFloat,CGFloat)]) {
+    mutating public func setColors(colors: [(CGFloat, CGFloat, CGFloat, CGFloat)]) {
         self.colors = colors.map { CGColor.color(red: $0.0, green: $0.1, blue: $0.2, alpha: $0.3) }
     }
-    mutating public func setColors(colors: [(CGFloat,CGFloat,CGFloat)]) {
+    mutating public func setColors(colors: [(CGFloat, CGFloat, CGFloat)]) {
         self.colors = colors.map { CGColor.color(red: $0.0, green: $0.1, blue: $0.2) }
     }
 
@@ -59,7 +59,7 @@ public struct Gradient {
                         }
                         components.append(a[1])
                     }
-                    else if (n == 4) {
+                    else if n == 4 {
                         for i in 0..<4 {
                             components.append(a[i])
                         }

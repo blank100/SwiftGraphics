@@ -49,7 +49,7 @@ public extension CGContext {
         var newPoints: [CGPoint] = []
         for (first, second) in anyGenerator(SlidingWindow(points)) {
             if second == nil {
-                if (closed == true) {
+                if closed == true {
                     newPoints.append(first)
                     newPoints.append(points[0])
                 }

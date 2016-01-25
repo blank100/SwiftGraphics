@@ -38,7 +38,12 @@ public extension BezierCurve {
 }
 
 public extension BezierCurve {
-    static internal let m2 = Matrix(values: [1,0,0,0, -3,3,0,0, 3,-6,3,0, -1,3,-3,1], columns: 4, rows: 4)
+    static internal let m2 = Matrix(values:
+        [1, 0, 0, 0,
+        -3, 3, 0, 0,
+        3, -6, 3, 0,
+        -1, 3, -3, 1],
+        columns: 4, rows: 4)
 
     static func pointAlongCurveMatrix(points: [CGPoint], t: CGFloat) -> CGPoint {
         assert(points.count == 4)
@@ -68,7 +73,7 @@ public extension BezierCurve {
     // Adapted from @therealpomix's "A Primer on Bézier Curves" ( https: //pomax.github.io/bezierinfo/ )
     // de Casteljau's algorithm
     static func pointAlongCurveDeCasteljaus(points: [CGPoint], t: CGFloat) -> CGPoint {
-        if (points.count == 1) {
+        if points.count == 1 {
             return points[0]
         }
         else {
@@ -89,7 +94,7 @@ public extension BezierCurve {
     }
 
     static func splitCurveDeCasteljaus(points: [CGPoint], t: CGFloat, inout left: [CGPoint], inout right: [CGPoint]) {
-        if (points.count == 1) {
+        if points.count == 1 {
             left.append(points[0])
             right.append(points[0])
         }
@@ -97,10 +102,10 @@ public extension BezierCurve {
             var newpoints: [CGPoint] = []
             for var i=0; i < points.count - 1; i++ {
 
-                if(i==0) {
+                if i==0 {
                     left.append(points[i])
                 }
-                if (i == points.count - 2) {
+                if i == points.count - 2 {
                     right.append(points[i+1])
                 }
 
@@ -176,9 +181,9 @@ public extension BezierCurve {
     }
 
     // compute the value for the first derivative of the cubic bezier function at time=t
-    private func computeCubicFirstDerivativeRoots(a: CGFloat, b: CGFloat, c: CGFloat, d: CGFloat) -> (CGFloat,CGFloat) {
+    private func computeCubicFirstDerivativeRoots(a: CGFloat, b: CGFloat, c: CGFloat, d: CGFloat) -> (CGFloat, CGFloat) {
         let u = b - a, vt = c - b, w = d - c
-        let v = abs(u+w - 2*vt)<0.001 ? vt + 0.01 : vt
+        let v = abs(u + w - 2 * vt) < 0.001 ? vt + 0.01 : vt
 
         let denominator = 2*(u - 2*v + w)
         let numerator   = 2*(u - v)

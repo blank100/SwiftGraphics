@@ -10,7 +10,7 @@ import CoreGraphics
 
 import SwiftGraphics
 
-class Grid_Array <T> {
+class GridArray <T> {
     let size: (width: Int, height: Int)
     var buffer: Array<T>
 
@@ -31,7 +31,7 @@ class Grid_Array <T> {
     }
 }
 
-class Grid_Buffer <T> {
+class GridBuffer <T> {
 
     let size: (width: Int, height: Int)
     var count: Int

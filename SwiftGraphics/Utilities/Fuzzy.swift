@@ -26,7 +26,7 @@ public func equal(lhs: Double, _ rhs: Double, accuracy: Double) -> Bool {
 // MARK: Fuzzy equality
 
 public protocol FuzzyEquatable {
-    func ==%(lhs: Self, rhs: Self) -> Bool
+    func ==% (lhs: Self, rhs: Self) -> Bool
 }
 
 infix operator ==% { associativity none precedence 130 }
