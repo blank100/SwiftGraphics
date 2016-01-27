@@ -1,12 +1,9 @@
 //: Playground - noun: a place where people can play
 
-import Cocoa
 import CoreGraphics
-
+import SwiftUtilities
 import SwiftGraphics
-
-
-var str = "Hello, playground"
+import SwiftGraphicsPlayground
 
 let context = CGContextRef.bitmapContext(CGSize(w: 1000, h: 1000))
 

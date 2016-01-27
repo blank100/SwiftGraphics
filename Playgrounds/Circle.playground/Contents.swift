@@ -1,9 +1,9 @@
 //: Playground - noun: a place where people can play
 
-import Cocoa
-
-import SwiftGraphics
+import CoreGraphics
 import SwiftUtilities
+import SwiftGraphics
+import SwiftGraphicsPlayground
 
 let a = CGPoint(x: 100, y: 100)
 let b = CGPoint(x: 200, y: 100)

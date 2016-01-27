@@ -1,6 +1,7 @@
 // Playground - noun: a place where people can play
 
-import Foundation
+import CoreGraphics
+import SwiftUtilities
 import SwiftGraphics
 import SwiftGraphicsPlayground
 

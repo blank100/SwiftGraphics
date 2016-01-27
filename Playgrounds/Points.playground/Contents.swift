@@ -1,10 +1,9 @@
 //: Playground - noun: a place where people can play
 
-import Cocoa
+import CoreGraphics
+import SwiftUtilities
 import SwiftGraphics
 import SwiftGraphicsPlayground
-import XCPlayground
-import SwiftUtilities
 
 public extension NSGraphicsContext {
     static func with(context: CGContextRef, flipped: Bool, block: Void -> Void) {

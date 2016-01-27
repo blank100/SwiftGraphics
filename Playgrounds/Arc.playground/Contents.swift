@@ -1,9 +1,9 @@
 // Playground - noun: a place where people can play
 
-import Cocoa
 import CoreGraphics
-import SwiftGraphics
 import SwiftUtilities
+import SwiftGraphics
+import SwiftGraphicsPlayground
 
 // TODO: Move
 extension NSImage {

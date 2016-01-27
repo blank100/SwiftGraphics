@@ -1,7 +1,9 @@
 //: Playground - noun: a place where people can play
 
-import SwiftGraphics
+import CoreGraphics
 import SwiftUtilities
+import SwiftGraphics
+import SwiftGraphicsPlayground
 
 let context = CGContextRef.bitmapContext(CGRect(x: -100, y: -100, w: 200, h: 200))
 

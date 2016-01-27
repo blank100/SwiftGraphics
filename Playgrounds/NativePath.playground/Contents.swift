@@ -1,8 +1,9 @@
 // Playground - noun: a place where people can play
 
-import Cocoa
 import CoreGraphics
+import SwiftUtilities
 import SwiftGraphics
+import SwiftGraphicsPlayground
 
 let pi = CGFloat(M_PI)
 
