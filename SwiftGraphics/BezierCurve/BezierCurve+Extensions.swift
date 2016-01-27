@@ -78,7 +78,7 @@ public extension BezierCurve {
         }
         else {
             var newpoints: [CGPoint] = []
-            for var i=0; i < points.count - 1; i++ {
+            for i in 0..<points.count - 1 {
                 let newPoint = (1 - t) * points[i] + t * points[i+1]
                 newpoints.append(newPoint)
             }
@@ -100,8 +100,7 @@ public extension BezierCurve {
         }
         else {
             var newpoints: [CGPoint] = []
-            for var i=0; i < points.count - 1; i++ {
-
+            for i in 0..<points.count - 1 {
                 if i==0 {
                     left.append(points[i])
                 }

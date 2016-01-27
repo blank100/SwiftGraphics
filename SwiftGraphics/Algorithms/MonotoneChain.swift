@@ -29,7 +29,7 @@ public func monotoneChain(var points: [CGPoint], sorted: Bool = false) -> [CGPoi
     }
 
     var lower: [CGPoint] = []
-    for var i = 0; i < points.count; i++ {
+    for i in 0..<points.count {
         while lower.count >= 2 && Turn(lower[lower.count - 2], lower[lower.count - 1], points[i])! != .Right {
             lower.removeLast()
         }
@@ -37,7 +37,8 @@ public func monotoneChain(var points: [CGPoint], sorted: Bool = false) -> [CGPoi
     }
 
     var upper: [CGPoint] = []
-    for var i = points.count - 1; i >= 0; i-- {
+
+    for i in (points.count - 1).stride(through: 0, by: -1) {
         while upper.count >= 2 && Turn(upper[upper.count - 2], upper[upper.count - 1], points[i])! != .Right {
             upper.removeLast()
             }

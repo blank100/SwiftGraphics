@@ -200,18 +200,20 @@ public extension CGPath {
         enumerate() { (type, points) -> Void in
             switch type.rawValue {
             case CGPathElementType.MoveToPoint.rawValue:
-                if index == i++ {
+                if index == i {
                     pt = points[0]
                 }
+                i += 1
             case CGPathElementType.AddLineToPoint.rawValue:
-                if index == i++ {
+                if index == i {
                     pt = points[1]
                 }
+                i += 1
             case CGPathElementType.AddCurveToPoint.rawValue:
                 if index >= i && index - i < 3 {
                     pt = points[index - i + 1]
                 }
-                i = i + 3
+                i += 3
             default: ()
             }
         }

@@ -193,13 +193,13 @@ public extension Triangle {
 func equalities <T> (e: (T, T, T), test: ((T, T) -> Bool)) -> Int {
     var c = 1
     if test(e.0, e.1) {
-        c++
+        c += 1
     }
     if test(e.1, e.2) {
-        c++
+        c += 1
     }
     if test(e.2, e.0) {
-        c++
+        c += 1
     }
     return min(c, 3)
 }
