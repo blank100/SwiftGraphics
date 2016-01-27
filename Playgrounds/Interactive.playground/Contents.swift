@@ -8,6 +8,9 @@ import SwiftGraphicsPlayground
 import XCPlayground
 import Cocoa
 
+// Needs Xcode 7.3b2+
+// If this doesn't work switch to the "SwiftGraphics_OSX_Playground" scheme and build it.
+
 class SimpleLiveViewController: NSViewController {
 
     var slider: NSSlider!
