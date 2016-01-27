@@ -15,25 +15,25 @@ let curves = [
 
 let styles = [
     "control":Style(elements: [
-        .strokeColor(CGColor.redColor()),
+        .StrokeColor(CGColor.redColor()),
     ]),
     "start":Style(elements: [
-        .strokeColor(CGColor.redColor()),
+        .StrokeColor(CGColor.redColor()),
     ]),
     "end":Style(elements: [
-        .strokeColor(CGColor.redColor()),
+        .StrokeColor(CGColor.redColor()),
     ]),
     "controlLine":Style(elements: [
-        .strokeColor(CGColor.blueColor()),
-        .lineDash([5,5]),
+        .StrokeColor(CGColor.blueColor()),
+        .LineDash([5,5]),
     ]),
     "boundingBox":Style(elements: [
-        .strokeColor(CGColor.blueColor()),
-        .lineDash([5,5]),
+        .StrokeColor(CGColor.blueColor()),
+        .LineDash([5,5]),
     ]),
     "simpleBounds":Style(elements: [
-        .strokeColor(CGColor.blueColor()),
-        .lineDash([5,5]),
+        .StrokeColor(CGColor.blueColor()),
+        .LineDash([5,5]),
     ]),
 ]
 

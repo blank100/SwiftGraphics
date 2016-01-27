@@ -8,7 +8,7 @@ import XCPlayground
 let context = CGContextRef.bitmapContext(CGSize(w: 320, h: 320), origin: CGPoint(x: 0.5, y: 0.5))
 
 let styleElements: [StyleElement] = [
-    .strokeColor(CGColor.blackColor().withAlpha(0.5)),
+    .StrokeColor(CGColor.blackColor().withAlpha(0.5)),
 ]
 var style = Style(elements: styleElements)
 

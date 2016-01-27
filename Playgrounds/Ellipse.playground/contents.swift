@@ -16,15 +16,15 @@ var ellipses = [
 let s = Int(ceil(sqrt(Double(ellipses.count))))
 
 let style1 = SwiftGraphics.Style(elements: [
-    .strokeColor(CGColor.redColor()),
+    .StrokeColor(CGColor.redColor()),
     ])
 let style2 = SwiftGraphics.Style(elements: [
-    .strokeColor(CGColor.blueColor()),
-    .lineDash([5,5]),
+    .StrokeColor(CGColor.blueColor()),
+    .LineDash([5,5]),
     ])
 let style3 = SwiftGraphics.Style(elements: [
-    .strokeColor(CGColor.purpleColor()),
-    .lineDash([2,2]),
+    .StrokeColor(CGColor.purpleColor()),
+    .LineDash([2,2]),
     ])
 
 let styles = [
