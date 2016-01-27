@@ -47,7 +47,7 @@ public extension CGContext {
     // TODO: Rename strokePolygon?
     func strokeLine(points: [CGPoint], closed: Bool = false) {
         var newPoints: [CGPoint] = []
-        for (first, second) in anyGenerator(SlidingWindow(points)) {
+        for (first, second) in AnyGenerator(SlidingWindow(points)) {
             if second == nil {
                 if closed == true {
                     newPoints.append(first)
