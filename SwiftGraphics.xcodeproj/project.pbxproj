@@ -261,6 +261,7 @@
 		451908931A8A8131006894B4 /* GeometryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryExtensions.swift; sourceTree = "<group>"; };
 		451CE9F31A61D73B006F721B /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ScratchPad.playground; sourceTree = "<group>"; };
 		451CE9F41A61D73C006F721B /* SwiftGraphicsTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftGraphicsTest.playground; sourceTree = "<group>"; };
+		451D1A861C588CF500CB9358 /* Interactive.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Interactive.playground; sourceTree = "<group>"; };
 		451D29091A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGraphics_iOS_UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SwiftUtilities.xcodeproj; sourceTree = "<group>"; };
 		452034B11B2B889A002CCCFA /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
@@ -561,6 +562,7 @@
 		454FE65B19C77001002E4DEF /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				451D1A861C588CF500CB9358 /* Interactive.playground */,
 				454FE65C19C7700E002E4DEF /* ConvexHull.playground */,
 				457DEBD41A649689003E4363 /* Path.playground */,
 				45ECEC301A6561D60018F7C6 /* BezierPath.playground */,
