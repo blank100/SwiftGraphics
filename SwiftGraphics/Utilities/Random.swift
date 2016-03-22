@@ -8,7 +8,7 @@
 
 import Foundation
 
-import SwiftUtilities
+import SwiftRandom
 
 public extension Random {
 

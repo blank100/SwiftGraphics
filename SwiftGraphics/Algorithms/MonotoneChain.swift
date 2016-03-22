@@ -18,7 +18,9 @@ public extension CGPoint {
 }
 
 // https: //en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain
-public func monotoneChain(var points: [CGPoint], sorted: Bool = false) -> [CGPoint] {
+public func monotoneChain(points: [CGPoint], sorted: Bool = false) -> [CGPoint] {
+
+    var points = points
 
     if points.count <= 3 {
         return points

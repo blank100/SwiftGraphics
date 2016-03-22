@@ -41,22 +41,22 @@ extension CGFloat: ArithmeticType {
 */
 
 public protocol PointType {
-    typealias ScalarType
+    associatedtype ScalarType
 
     var x: ScalarType { get }
     var y: ScalarType { get }
     }
 
 public protocol SizeType {
-    typealias ScalarType
+    associatedtype ScalarType
 
     var width: ScalarType { get }
     var height: ScalarType { get }
     }
 
 public protocol RectType {
-    typealias OriginType
-    typealias SizeType
+    associatedtype OriginType
+    associatedtype SizeType
 
     var origin: OriginType { get }
     var size: SizeType { get }

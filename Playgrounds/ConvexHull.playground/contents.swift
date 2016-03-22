@@ -1,7 +1,9 @@
 // Playground - noun: a place where people can play
 
+// Order of imports is very important
 import CoreGraphics
 import SwiftUtilities
+import SwiftRandom
 import SwiftGraphics
 import SwiftGraphicsPlayground
 
@@ -16,7 +18,7 @@ let bad_points = [
 ]
 let bad_hull = monotoneChain(bad_points)
 
-let rng = SwiftUtilities.random
+let rng = SwiftRandom.random
 
 var points = random.arrayOfRandomPoints(50, range: CGRect(w: 480, h: 320))
 points.count

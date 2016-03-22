@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-public func grahamOrdered(var points: [CGPoint]) -> [CGPoint] {
+public func grahamOrdered(points: [CGPoint]) -> [CGPoint] {
     // Find the point (and its index) with the lowest y
     typealias IndexedPoint = (index: Int, point: CGPoint)
 
@@ -17,6 +17,7 @@ public func grahamOrdered(var points: [CGPoint]) -> [CGPoint] {
         return c.point.y < u.point.y ? c : (c.point.y == u.point.y ? (c.point.x <= u.point.x ? c : u) : u)
     }
 
+    var points = points
     points.removeAtIndex(lowest.index)
     points.sortInPlace {
         return Turn(lowest.point, $0, $1)! <= .None
@@ -25,7 +26,9 @@ public func grahamOrdered(var points: [CGPoint]) -> [CGPoint] {
     return points
 }
 
-public func grahamScan(var points: [CGPoint], preordered: Bool = false) -> [CGPoint] {
+public func grahamScan(points: [CGPoint], preordered: Bool = false) -> [CGPoint] {
+    var points = points
+
     if points.count <= 3 {
         return points
     }

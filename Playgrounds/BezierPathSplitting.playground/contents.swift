@@ -1,7 +1,9 @@
 // Playground - noun: a place where people can play
 
+// Order of imports is very important
 import CoreGraphics
 import SwiftUtilities
+import SwiftRandom
 import SwiftGraphics
 import SwiftGraphicsPlayground
 

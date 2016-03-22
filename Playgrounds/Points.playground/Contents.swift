@@ -1,7 +1,9 @@
 //: Playground - noun: a place where people can play
 
+// Order of imports is very important
 import CoreGraphics
 import SwiftUtilities
+import SwiftRandom
 import SwiftGraphics
 import SwiftGraphicsPlayground
 
@@ -97,7 +99,7 @@ func pointInPolygon(point: CGPoint, polygon: [CGPoint]) -> Bool {
                 // P right of  edge
                 if turn(line: (polygon[i], polygon[i+1]), point: point) < 0 {
                     // have a valid down intersect
-                    --wn
+                    wn -= 1
                 }
             }
         }

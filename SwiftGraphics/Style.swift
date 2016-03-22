@@ -63,21 +63,22 @@ public enum StyleElement {
 var CGContext_Style_Key = 1
 // swiftlint:disable variable_name
 
+let styleAssociatedObjectHelper = AssociatedObjectHelper <Style> ()
+
 public extension CGContext {
     var style: Style {
         get {
-            let style = getAssociatedWrappedObject(self, key: &CGContext_Style_Key) as! Style?
-            if let style = style {
+            if let style = styleAssociatedObjectHelper.getAssociatedValueForObject(self) {
                 return style
             }
             else {
                 let style = Style.defaultStyle
-                setAssociatedWrappedObject(self, key: &CGContext_Style_Key, value: style)
+                styleAssociatedObjectHelper.setAssociatedValueForObject(self, value: style)
                 return style
             }
         }
         set {
-            setAssociatedWrappedObject(self, key: &CGContext_Style_Key, value: newValue)
+            styleAssociatedObjectHelper.setAssociatedValueForObject(self, value: newValue)
             apply(newValue)
         }
     }
