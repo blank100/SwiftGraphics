@@ -112,7 +112,7 @@ public struct LineString {
     }
 }
 
-extension LineString {
+public extension LineString {
     func toLineSegments() -> [LineSegment] {
         let pairs = slidingWindow(points, count: 2)
         return pairs.map() {
@@ -144,6 +144,16 @@ public struct Polygon {
     public let points: [CGPoint]
 
     public init(points: [CGPoint]) {
+        assert(points.count >= 3)
         self.points = points
+    }
+}
+
+public extension Polygon {
+    func toLineSegments() -> [LineSegment] {
+        let pairs = slidingWindow(points, count: 2)
+        return pairs.map() {
+            return LineSegment($0[0], $0[1])
+        } + [LineSegment(points.first!, points.last!)]
     }
 }

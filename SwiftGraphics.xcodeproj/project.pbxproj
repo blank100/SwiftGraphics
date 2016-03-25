@@ -374,6 +374,7 @@
 		45DA4AC419AA62A800133F32 /* SwiftGraphics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftGraphics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DA4AC719AA62A800133F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45DA4AC819AA62A800133F32 /* SwiftGraphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftGraphics.h; sourceTree = "<group>"; };
+		45DB6C2D1CA4F2BF008F19CC /* Mission.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Mission.playground; sourceTree = "<group>"; };
 		45E298721A69B2DC006FE740 /* BezierCurveChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierCurveChain.swift; sourceTree = "<group>"; };
 		45E38D1E1A74235800EC672A /* Drawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
 		45E38D1F1A74235800EC672A /* Geometry+Drawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Geometry+Drawable.swift"; sourceTree = "<group>"; };
@@ -605,6 +606,7 @@
 				457309E71C2E0065000D8A1C /* NativePath.playground */,
 				457309EA1C2F3512000D8A1C /* Circle.playground */,
 				45EFDCBE1C528F27005FE15B /* Spiral.playground */,
+				45DB6C2D1CA4F2BF008F19CC /* Mission.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
