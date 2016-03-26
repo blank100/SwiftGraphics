@@ -9,6 +9,14 @@
 
 import CoreGraphics
 
+public func dot(u: CGPoint, _ v: CGPoint) -> CGFloat {
+    return u.x * v.x + u.y * v.y
+}
+
+public func perp(u: CGPoint, _ v: CGPoint) -> CGFloat {
+    return u.x * v.y - u.y * v.x
+}
+
 public func dotProduct(lhs: CGPoint, _ rhs: CGPoint) -> CGFloat {
     return lhs.x * rhs.x + lhs.y * rhs.y
 }

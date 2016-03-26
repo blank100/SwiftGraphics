@@ -12,6 +12,12 @@ import SwiftUtilities
 
 // MARK: CGPoint
 
+extension CGPoint: Hashable {
+    public var hashValue: Int {
+        return x.hashValue ^ y.hashValue
+    }
+}
+
 extension CGPoint: CustomStringConvertible {
     public var description: String {
         return "\(x), \(y)"
