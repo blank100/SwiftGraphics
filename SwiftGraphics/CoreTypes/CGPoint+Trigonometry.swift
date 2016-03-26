@@ -9,10 +9,7 @@
 
 import CoreGraphics
 
-public func dot(u: CGPoint, _ v: CGPoint) -> CGFloat {
-    return u.x * v.x + u.y * v.y
-}
-
+// TODO: Rename perpProduct?
 public func perp(u: CGPoint, _ v: CGPoint) -> CGFloat {
     return u.x * v.y - u.y * v.x
 }

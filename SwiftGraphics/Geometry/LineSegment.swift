@@ -118,8 +118,8 @@ public extension LineSegment {
             }
             // they are collinear or degenerate
             // check if they are degenerate points
-            let du = dot(u, u)
-            let dv = dot(v, v)
+            let du = dotProduct(u, u)
+            let dv = dotProduct(v, v)
             if du==0 && dv==0 {            // both segments are points
                 if S1.start != S2.start {         // they are distinct  points
                     return .Disjoint
